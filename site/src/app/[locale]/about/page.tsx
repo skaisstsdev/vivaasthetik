@@ -4,8 +4,8 @@ import Image from 'next/image';
 import ShaderBackground from '@/components/home/ShaderBackground';
 import ConsultationCTA from '@/components/home/ConsultationCTA';
 
-export default function AboutPage({ params }: { params: { locale: string } }) {
-  const { locale } = params;
+export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   setRequestLocale(locale);
 
   const t = useTranslations('About');

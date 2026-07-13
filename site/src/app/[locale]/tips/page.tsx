@@ -5,8 +5,8 @@ import TipsClient from '@/components/tips/TipsClient';
 import ShaderBackground from '@/components/home/ShaderBackground';
 import { tipsData } from '@/data/tips';
 
-export default function TipsPage({ params }: { params: { locale: string } }) {
-  const { locale } = params;
+export default async function TipsPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   setRequestLocale(locale);
 
   const t = useTranslations('Tips');

@@ -5,8 +5,8 @@ import FAQClient from '@/components/faq/FAQClient';
 import ShaderBackground from '@/components/home/ShaderBackground';
 import { faqData } from '@/data/faq';
 
-export default function FAQPage({ params }: { params: { locale: string } }) {
-  const { locale } = params;
+export default async function FAQPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   setRequestLocale(locale);
 
   const t = useTranslations('FAQ');
