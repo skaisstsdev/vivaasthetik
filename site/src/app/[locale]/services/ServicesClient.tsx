@@ -71,12 +71,12 @@ export default function ServicesClient({ services, loc }: ServicesClientProps) {
                     src={service.imageSrc} 
                     alt={service.title[loc]} 
                     fill 
-                    className={`object-cover transition-transform duration-700 group-hover:scale-105 ${isActive ? 'scale-105' : ''}`} 
+                    className={`object-cover transition-transform duration-700 ${isActive ? 'scale-105' : 'group-hover:scale-105'}`} 
                   />
                   {/* Darkens fully on hover */}
-                  <div className={`absolute inset-0 bg-black/0 group-hover:bg-black/70 transition-colors duration-500 ${isActive ? 'bg-black/70' : ''}`} />
+                  <div className={`absolute inset-0 transition-colors duration-500 ${isActive ? 'bg-black/70' : 'bg-black/0 group-hover:bg-black/70'}`} />
                   {/* Gradient for bottom title, fades out slightly on hover */}
-                  <div className={`absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent transition-opacity duration-500 group-hover:opacity-0 ${isActive ? 'opacity-0' : 'opacity-100'}`} />
+                  <div className={`absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent transition-opacity duration-500 ${isActive ? 'opacity-0' : 'group-hover:opacity-0 opacity-100'}`} />
                 </div>
               )}
 
@@ -84,20 +84,20 @@ export default function ServicesClient({ services, loc }: ServicesClientProps) {
               <div className="relative z-10 flex flex-col h-full p-5 md:p-8 text-white">
                 {/* Top Area: Number */}
                 <div className="flex justify-between items-start">
-                  <div className={`text-sm font-mono transition-colors group-hover:text-white ${isActive ? 'text-white' : 'text-white/70'}`}>
+                  <div className={`text-sm font-mono transition-colors ${isActive ? 'text-white' : 'text-white/70 group-hover:text-white'}`}>
                     {String(idx + 1).padStart(2, '0')}
                   </div>
                 </div>
 
                 {/* Title (visible by default, fades out on hover) */}
-                <div className={`absolute left-5 md:left-8 right-5 md:right-8 bottom-5 md:bottom-8 transition-all duration-500 pointer-events-none group-hover:opacity-0 group-hover:translate-y-4 ${isActive ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}>
+                <div className={`absolute left-5 md:left-8 right-5 md:right-8 bottom-5 md:bottom-8 transition-all duration-500 pointer-events-none ${isActive ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0 group-hover:opacity-0 group-hover:translate-y-4'}`}>
                   <h3 className="text-2xl md:text-3xl font-light text-white">
                     {service.title[loc]}
                   </h3>
                 </div>
 
                 {/* Hover revealed content */}
-                <div className={`flex-grow flex flex-col pt-4 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto ${isActive ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
+                <div className={`flex-grow flex flex-col pt-4 transition-all duration-500 ease-out ${isActive ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto'}`}>
                   <p className="text-white/90 text-sm md:text-base leading-relaxed mb-4 line-clamp-5 md:line-clamp-6">
                     {service.shortDescription[loc]}
                   </p>

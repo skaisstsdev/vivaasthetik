@@ -37,7 +37,7 @@ export default function InfoModal() {
 
   return (
     <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center p-4 sm:p-6 md:p-12 bg-black/20 backdrop-blur-sm animate-in fade-in duration-500 ease-out">
-      <div className="bg-slate-900/80 backdrop-blur-3xl border border-white/10 w-full max-w-5xl max-h-[95vh] flex flex-col rounded-xl shadow-2xl relative overflow-hidden text-white animate-in zoom-in-95 duration-500 ease-out">
+      <div className="bg-[#0f172a] border border-white/10 w-full max-w-5xl max-h-[95vh] flex flex-col rounded-xl shadow-2xl relative overflow-hidden text-white animate-in zoom-in-95 duration-500 ease-out">
         
         {/* Close Button */}
         <button 
@@ -57,7 +57,7 @@ export default function InfoModal() {
                 <h3 className="text-xl md:text-2xl font-light text-white/70 leading-relaxed">{tClinic('subtitle')}</h3>
               </div>
               
-              <div className="flex flex-col gap-6 text-base md:text-lg text-white/80 font-light leading-relaxed">
+              <div className="flex flex-col gap-6 text-base md:text-lg text-white font-light leading-relaxed">
                 <p>{tClinic('p1')}</p>
                 <p>{tClinic('p2')}</p>
                 <p>{tClinic('p3')}</p>
@@ -69,7 +69,7 @@ export default function InfoModal() {
               <div className="flex flex-col border-b border-white/10 pb-8">
                 <h2 className="text-3xl md:text-4xl font-light text-white mb-4">{tTech('title')}</h2>
                 <h3 className="text-xl md:text-2xl font-light text-white/70 leading-relaxed mb-6">{tTech('subtitle')}</h3>
-                <p className="text-base md:text-lg text-white/80 font-light leading-relaxed">{tTech('intro')}</p>
+                <p className="text-base md:text-lg text-white font-light leading-relaxed">{tTech('intro')}</p>
               </div>
               
               <div className="flex flex-col gap-8">
@@ -82,7 +82,7 @@ export default function InfoModal() {
                       <h4 className="text-xl font-medium text-white transition-colors">
                         {feature.title}
                       </h4>
-                      <p className="text-white/70 leading-relaxed text-base md:text-lg font-light">
+                      <p className="text-white leading-relaxed text-base md:text-lg font-light">
                         {feature.description}
                       </p>
                     </div>

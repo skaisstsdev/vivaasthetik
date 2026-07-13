@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { useRouter } from '@/i18n/routing';
+import { Link } from '@/i18n/routing';
 import { ArrowRight } from 'lucide-react';
 
 type Card = {
@@ -13,7 +13,6 @@ type Card = {
 
 export default function FeatureCards() {
   const t = useTranslations('FeatureCards');
-  const router = useRouter();
 
   const cards: Card[] = [
     {
@@ -40,15 +39,10 @@ export default function FeatureCards() {
     <section className="py-24 px-8 bg-gray-50">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {cards.map((card, i) => (
-            <button
+            <Link
               key={i}
-              onClick={() => {
-                if (card.href.startsWith('?')) {
-                  router.push(card.href, { scroll: false });
-                } else {
-                  router.push(card.href); // Fallback if needed, though Link is better for real routes
-                }
-              }}
+              href={card.href}
+              scroll={false}
               className="group block w-full text-left bg-white p-10 hover:shadow-lg transition-shadow duration-300"
             >
               {/* Number */}
@@ -68,7 +62,7 @@ export default function FeatureCards() {
                 {card.link}
                 <ArrowRight size={14} />
               </span>
-            </button>
+            </Link>
         ))}
       </div>
     </section>
