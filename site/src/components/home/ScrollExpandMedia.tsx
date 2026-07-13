@@ -37,6 +37,7 @@ export default function ScrollExpandMedia({
     offset: ['start start', 'end end'],
   });
 
+  const [isMounted, setIsMounted] = useState(false);
   const mobileVideoRef = useRef<HTMLVideoElement>(null);
   const desktopVideoRef = useRef<HTMLVideoElement>(null);
 
