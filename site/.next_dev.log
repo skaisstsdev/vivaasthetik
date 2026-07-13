@@ -51,3 +51,4 @@ See https://react.dev/link/invalid-hook-call for tips about how to debug and fix
 ✓ Compiled in 180ms
 ✓ Compiled in 98ms
  GET /ru/faq 200 in 1218ms (next.js: 267ms, proxy.ts: 151ms, generate-params: 6ms, application-code: 800ms)
+ GET /ru/faq 200 in 797ms (next.js: 75ms, proxy.ts: 65ms, generate-params: 21ms, application-code: 657ms)

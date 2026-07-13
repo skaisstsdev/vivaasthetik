@@ -31,7 +31,7 @@ export default function FAQClient({ locale, initialData }: { locale: ServiceLoca
                 : 'border-transparent text-gray-500 hover:text-gray-900 hover:bg-gray-50'
             }`}
           >
-            {category.category[locale]}
+            {category.category?.[locale] || `[Missing: ${locale}]`}
           </button>
         ))}
       </div>
