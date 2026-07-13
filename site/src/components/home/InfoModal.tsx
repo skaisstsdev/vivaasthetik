@@ -37,7 +37,7 @@ export default function InfoModal() {
 
   return (
     <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center p-4 sm:p-6 md:p-12 bg-black/20 backdrop-blur-sm animate-in fade-in duration-300">
-      <div className="bg-black/70 backdrop-blur-3xl border border-white/10 w-full max-w-5xl max-h-[95vh] flex flex-col rounded-xl shadow-2xl relative overflow-hidden text-white">
+      <div className="bg-slate-900/80 backdrop-blur-3xl border border-white/10 w-full max-w-5xl max-h-[95vh] flex flex-col rounded-xl shadow-2xl relative overflow-hidden text-white">
         
         {/* Close Button */}
         <button 
@@ -65,24 +65,24 @@ export default function InfoModal() {
               </div>
             </div>
           ) : (
-            <div className="max-w-4xl mx-auto flex flex-col gap-12">
-              <div className="flex flex-col border-b border-gray-200 pb-8">
-                <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-4">{tTech('title')}</h2>
-                <h3 className="text-xl md:text-2xl font-light text-gray-500 leading-relaxed mb-6">{tTech('subtitle')}</h3>
-                <p className="text-base md:text-lg text-gray-700 font-light leading-relaxed">{tTech('intro')}</p>
+            <div className="max-w-4xl mx-auto flex flex-col gap-12 text-white">
+              <div className="flex flex-col border-b border-white/10 pb-8">
+                <h2 className="text-3xl md:text-4xl font-light text-white mb-4">{tTech('title')}</h2>
+                <h3 className="text-xl md:text-2xl font-light text-white/70 leading-relaxed mb-6">{tTech('subtitle')}</h3>
+                <p className="text-base md:text-lg text-white/80 font-light leading-relaxed">{tTech('intro')}</p>
               </div>
               
               <div className="flex flex-col gap-8">
                 {features.map((feature, idx) => (
                   <div key={idx} className="flex flex-col md:flex-row gap-4 md:gap-6 group">
-                    <div className="text-gray-300 font-mono text-xl md:text-2xl tracking-widest pt-1 w-10 flex-shrink-0">
+                    <div className="text-white/40 font-mono text-xl md:text-2xl tracking-widest pt-1 w-10 flex-shrink-0">
                       {String(idx + 1).padStart(2, '0')}
                     </div>
                     <div className="flex flex-col gap-2">
-                      <h4 className="text-xl font-medium text-gray-900 group-hover:text-black transition-colors">
+                      <h4 className="text-xl font-medium text-white transition-colors">
                         {feature.title}
                       </h4>
-                      <p className="text-gray-600 leading-relaxed text-base md:text-lg font-light">
+                      <p className="text-white/70 leading-relaxed text-base md:text-lg font-light">
                         {feature.description}
                       </p>
                     </div>
@@ -90,8 +90,8 @@ export default function InfoModal() {
                 ))}
               </div>
 
-              <div className="bg-gray-50 p-8 rounded-sm border border-gray-100 mt-4">
-                <p className="text-base md:text-lg text-gray-800 font-light leading-relaxed mb-6">
+              <div className="bg-white/5 p-8 rounded-sm border border-white/10 mt-4">
+                <p className="text-base md:text-lg text-white/90 font-light leading-relaxed mb-6">
                   {tTech('outro')}
                 </p>
                 <button 

@@ -18,19 +18,24 @@ export default function ServicesClient({ services, loc }: ServicesClientProps) {
   const router = useRouter();
   const pathname = usePathname();
 
-  const serviceParam = searchParams.get('service');
-  const selectedService = services.find(s => s.slug === serviceParam) || null;
+  const [selectedServiceSlug, setSelectedServiceSlug] = useState<string | null>(null);
+
+  useEffect(() => {
+    const serviceParam = searchParams.get('service');
+    if (serviceParam) {
+      setSelectedServiceSlug(serviceParam);
+    }
+  }, [searchParams]);
+
+  const selectedService = services.find(s => s.slug === selectedServiceSlug) || null;
 
   const openModal = (slug: string) => {
-    const params = new URLSearchParams(searchParams.toString());
-    params.set('service', slug);
-    router.push(`${pathname}?${params.toString()}`, { scroll: false });
+    setSelectedServiceSlug(slug);
   };
 
   const closeModal = () => {
-    const params = new URLSearchParams(searchParams.toString());
-    params.delete('service');
-    router.push(`${pathname}?${params.toString()}`, { scroll: false });
+    setSelectedServiceSlug(null);
+    window.history.replaceState(null, '', pathname);
   };
 
   const [activeCard, setActiveCard] = useState<string | null>(null);
@@ -126,7 +131,7 @@ export default function ServicesClient({ services, loc }: ServicesClientProps) {
           onClick={closeModal}
         >
           <div 
-            className="bg-black/70 backdrop-blur-3xl border border-white/10 w-full max-w-4xl h-[90vh] md:max-h-[85vh] flex flex-col rounded-xl shadow-2xl relative animate-in fade-in zoom-in-95 duration-200 overflow-hidden text-white"
+            className="bg-slate-900/80 backdrop-blur-3xl border border-white/10 w-full max-w-4xl h-[90vh] md:max-h-[85vh] flex flex-col rounded-xl shadow-2xl relative animate-in fade-in zoom-in-95 duration-200 overflow-hidden text-white"
             onClick={e => e.stopPropagation()}
           >
             {/* Fixed Close Button inside Modal */}
