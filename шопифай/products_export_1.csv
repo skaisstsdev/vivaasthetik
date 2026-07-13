@@ -1,0 +1,473 @@
+Handle,Title,Body (HTML),Vendor,Product Category,Type,Tags,Published,Option1 Name,Option1 Value,Option1 Linked To,Option2 Name,Option2 Value,Option2 Linked To,Option3 Name,Option3 Value,Option3 Linked To,Variant SKU,Variant Grams,Variant Inventory Tracker,Variant Inventory Qty,Variant Inventory Policy,Variant Fulfillment Service,Variant Price,Variant Compare At Price,Variant Requires Shipping,Variant Taxable,Unit Price Total Measure,Unit Price Total Measure Unit,Unit Price Base Measure,Unit Price Base Measure Unit,Variant Barcode,Image Src,Image Position,Image Alt Text,Gift Card,SEO Title,SEO Description,Variant Image,Variant Weight Unit,Variant Tax Code,Cost per item,Status
+мезотерапия,Mesotherapie,"<p><strong>Behandlungsdauer: </strong>ca. 30-60Minuten<br></p>
+<p><strong>Schmerzen: </strong>gering bis moderat (abhängig von der Region)<br></p>
+<p><strong>Betäubung: </strong>bei Bedarf oberflächliche Betäubung<br></p>
+<p><strong>Gesellschaftsfähigkeit:</strong> in der Regel sofort<br></p>
+<p><strong>Einschränkungen nach Behandlung: </strong>1–2 Tage keine Sauna/Sport, keine intensive Sonnenexposition<br></p>
+<p><strong>Wirkungseintritt: </strong>allmählich, sichtbare Ergebnisse nach einigen Tagen bis Wochen<br>Wirkungsdauer / Haltbarkeit: ca. 3–6 Monate (je nach Hautzustand und Produkt)<br></p>
+<p><strong>Behandlungsverlauf: </strong>Für ein optimales Ergebnis wird je nach Hautzustand eine Kur von mehreren Sitzungen empfohlen (z. B. 3–5 Behandlungen im Abstand von 2–4 Wochen).<br></p>
+<p><strong>Kosten: </strong>individuell nach Areal und Produktmenge, ab 150€</p>",Můj obchod,Разное,"","",true,Title,Default Title,,,,,,,,,0.0,,0,deny,manual,150.00,,true,true,,,,,"",https://cdn.shopify.com/s/files/1/1073/3309/1677/files/Mesotherapie_e2bfc4cb-c6b7-411e-9ce7-9fa1e3a2838f.png?v=1778271353,1,"",false,,,,kg,,,active
+biorevitalisierung,Biorevitalisierung,"<p><strong>Behandlungsdauer:</strong> ca. 30 Minuten<br></p>
+<p><strong>Schmerzen: </strong>gering (meist mit sehr feinen Nadeln)<br></p>
+<p><strong>Betäubung: </strong>auf Wunsch oberflächliche Betäubung<br></p>
+<p><strong>Gesellschaftsfähigkeit:</strong> sofort oder nach wenigen Stunden<br></p>
+<p><strong>Einschränkungen nach Behandlung: </strong>1–2 Tage keine Sauna, Sonne, Sport<br></p>
+<p><strong>Wirkungseintritt: </strong>nach einigen Tagen, volle Wirkung nach ca. 1–2 Wochen<br></p>
+<p><strong>Wirkungsdauer / Haltbarkeit: </strong>ca. 4–6 Monate (Kuranwendungen empfohlen)<br></p>
+<p><strong>Kosten:</strong> abhängig vom Produkt und Behandlungsregion, ab 150 €</p>",VIVA Ästhetik,Разное,"","",true,Title,Default Title,,,,,,,,,0.0,,0,deny,manual,150.00,,true,true,,,,,"",https://cdn.shopify.com/s/files/1/1073/3309/1677/files/Biorevitaliierurng_8a339fc9-9b11-494b-9f52-32763947b24e.png?v=1778271352,1,"",false,,,,kg,,,active
+faltenunterspritzung-mit-fillern,Faltenunterspritzung mit Fillern,"<p><strong>Behandlungsdauer:</strong><span class=""Apple-tab-span""> </span>ca. 15-60min</p>
+<p><strong>Schmerzen:<span class=""Apple-tab-span""> </span></strong>leicht-mäßig</p>
+<p><strong>Betäubung:<span class=""Apple-tab-span""> </span></strong>oberflächliche</p>
+<p><strong>Gesellschaftsfähigkeit:</strong><span class=""Apple-tab-span""> </span>sofort</p>
+<p><strong>Einschränkungen nach Behandlung:<span class=""Apple-tab-span""> </span></strong>1-2 Tage kein Sport und Sauna</p>
+<p><strong>Wirkungseintritt:</strong><span class=""Apple-tab-span""> </span>sofort</p>
+<p><strong>Wirkungsdauer/ Haltbarkeit:<span class=""Apple-tab-span""> </span></strong>6 - 18 Monate</p>
+<p><strong>Kosten:</strong><span class=""Apple-tab-span""> </span>werden individuell nach Materialverbrauch gerechnet, ab 150€</p>",VIVA Ästhetik,Разное,"","",true,Title,Default Title,,,,,,,,,0.0,,0,deny,manual,150.00,,true,true,,,,,"",https://cdn.shopify.com/s/files/1/1073/3309/1677/files/Faltensprizung_ea7fbe68-b0a1-4311-8d20-2f5ec03f8dcb.png?v=1778271351,1,"",false,,,,kg,,,active
+botox-behandlung,Botox-Behandlung  ,"<p><strong>Behandlungsdauer:</strong><span class=""Apple-tab-span""> </span>ca. 20-40min</p>
+<p><strong>Schmerzen:</strong><span class=""Apple-tab-span""> </span>kaum- gering</p>
+<p><strong>Betäubung:<span class=""Apple-tab-span""> </span></strong>keine erforderlich</p>
+<p><strong>Gesellschaftsfähigkeit:<span class=""Apple-tab-span""> </span></strong>sofort</p>
+<p><strong>Einschränkungen nach Behandlung:<span class=""Apple-tab-span""> </span></strong>ca. 3 Tage<span class=""Apple-converted-space"">  </span>kein Sport und Sauna</p>
+<p><strong>Wirkungseintritt:<span class=""Apple-tab-span""> </span></strong>nach 3-14 Tagen</p>
+<p><strong>Wirkungsdauer/ Haltbarkeit:</strong><span class=""Apple-tab-span""> </span>3-6 Monate</p>
+<p><strong>Kosten:<span class=""Apple-tab-span""> </span></strong>werden individuell nach Materialverbrauch gerechnet, ab 100€</p>",VIVA Ästhetik,Разное,"","",true,Title,Default Title,,,,,,,,,0.0,,0,continue,manual,100.00,,true,true,,,,,"",https://cdn.shopify.com/s/files/1/1073/3309/1677/files/Botox.png?v=1778271350,1,"",false,,,,kg,,,active
+lipolyse,Lipolyse,"<p><strong>Behandlungsdauer:<span class=""Apple-tab-span""> </span></strong>ca. 15 - 40 min</p>
+<p><strong>Schmerzen:</strong><span class=""Apple-tab-span""> </span>kaum - gering</p>
+<p><strong>Betäubung:</strong><span class=""Apple-tab-span""> </span>oberflächliche Betäubung nach Wunsch</p>
+<p><strong>Gesellschaftsfähigkeit:</strong><span class=""Apple-tab-span""> </span>sofort</p>
+<p><strong>Einschränkungen:<span class=""Apple-tab-span""> </span></strong>für ca. 1 - 1,5 Wochen Schwellungen und blaue Flecke, leichter Sport, keine Sauna</p>
+<p><strong>Wirkungseintritt:<span class=""Apple-tab-span""> </span></strong>nach 6 Wochen</p>
+<p><strong>Wirkungsdauer/ Haltbarkeit:</strong><span class=""Apple-tab-span""> </span>dauerhaft</p>
+<p><strong>Kosten:</strong><span class=""Apple-tab-span""> </span> wird individuell nach Materialverbrauch gerechnet ab 150€</p>",VIVA Ästhetik,Разное,"","",true,Title,Default Title,,,,,,,,,0.0,,0,deny,manual,150.00,,true,true,,,,,"",https://cdn.shopify.com/s/files/1/1073/3309/1677/files/Fett_weg_Spritze_de11ce75-0031-4d47-a003-c5afd62723a5.png?v=1778271348,1,"",false,,,,kg,,,active
+lippenkorrektur-lippenvergrosserung,Lippenkorrektur (Lippenvergrößerung),"<p><strong>Behandlungsdauer:</strong><span class=""Apple-tab-span""> </span>ca. 20-30min</p>
+<p><strong>Schmerzen:</strong><span class=""Apple-tab-span""> </span>leicht-mäßig</p>
+<p><strong>Betäubung:</strong><span class=""Apple-tab-span""> </span>immer oberflächliche Betäubung</p>
+<p><strong>Gesellschaftsfähigkeit:</strong><span class=""Apple-tab-span""> </span>sofort</p>
+<p><strong>Einschränkungen nach Behandlung:</strong><span class=""Apple-tab-span""> </span>keine</p>
+<p><strong>Wirkungseintritt:<span class=""Apple-tab-span""> </span></strong>sofort</p>
+<p><strong>Wirkungsdauer/ Haltbarkeit:</strong><span class=""Apple-tab-span""> </span>6 - 12 Monate</p>
+<p><strong>Kosten:<span class=""Apple-tab-span""> </span></strong>werden individuell nach Materialverbrauch gerechnet, ab 150€</p>",VIVA Ästhetik,Разное,"","",true,Title,Default Title,,,,,,,,,0.0,,0,deny,manual,150.00,,true,true,,,,,"",https://cdn.shopify.com/s/files/1/1073/3309/1677/files/Lippen_1a762f17-94ef-4e9e-ad89-947e4471938b.png?v=1778271348,1,"",false,,,,kg,,,active
+fadenlifting,Fadenlifting,"<p><strong>Behandlungsdauer:</strong><span class=""Apple-tab-span""> </span>ca. 20-60min</p>
+<p><strong>Schmerzen:</strong><span class=""Apple-tab-span""> </span>kaum - gering</p>
+<p><strong>Betäubung:<span class=""Apple-tab-span""> </span></strong>örtlich</p>
+<p><strong>Gesellschaftsfähigkeit:</strong><span class=""Apple-tab-span""> </span>sofort oder nach 1 Woche, abhängig vom behandelten Areal</p>
+<p><strong>Einschränkungen nach Behandlung:<span class=""Apple-tab-span""> </span></strong>1 Woche kein Sport, keine Sauna</p>
+<p><strong>Wirkungseintritt:<span class=""Apple-tab-span""> </span></strong>sofort und verzögert</p>
+<p><strong>Wirkungsdauer/ Haltbarkeit:<span class=""Apple-tab-span""> </span></strong>ca. 1,5 - 2 Jahre</p>
+<p><strong>Kosten:</strong><span class=""Apple-tab-span""> </span>individuell ab ca. 200€</p>",VIVA Ästhetik,Разное,"","",true,Title,Default Title,,,,,,,,,0.0,,0,deny,manual,200.00,,true,true,,,,,"",https://cdn.shopify.com/s/files/1/1073/3309/1677/files/Fadenlifting_44a25688-794a-4355-869a-d189a4da1441.png?v=1778271346,1,"",false,,,,kg,,,active
+vampirlifting-prp-behandlung,Vampirlifting (PRP-Behandlung),"<p><strong>Behandlungsdauer:</strong><span class=""Apple-tab-span""> </span>ca. 90min</p>
+<p><strong>Schmerzen:</strong><span class=""Apple-tab-span""> </span>leicht</p>
+<p><strong>Betäubung:</strong><span class=""Apple-tab-span""> </span>Anästhesiecreme</p>
+<p><strong>Nebenwirkungen:</strong><span class=""Apple-tab-span""> </span>leichte Schwellungen, Rötungen, ggf. leichter Schorf oder leichte Einblutungen</p>
+<p><strong>Gesellschaftsfähigkeit:<span class=""Apple-tab-span""> </span></strong>nach ca. 3 Tagen</p>
+<p><strong>Einschränkungen:<span class=""Apple-tab-span""> </span></strong>3 Tage kein Sport, 1 Woche keine heißen Vollbäder, Sauna, säurehaltige Kosmetika, 2 Wochen kein Solarium oder direkte Sonnenbestrahlung</p>
+<p><strong>Wirkungseintritt:</strong><span class=""Apple-tab-span""> </span>nach ca. 4 Wochen</p>
+<p><strong>Wirkungsdauer/ Haltbarkeit:</strong><span class=""Apple-tab-span""> </span>1-3 Jahre</p>
+<p><strong>Kosten:<span class=""Apple-tab-span""> </span></strong>individuell ab 300€</p>",VIVA Ästhetik,Разное,"","",true,Title,Default Title,,,,,,,,,0.0,,0,deny,manual,300.00,,true,true,,,,,"",https://cdn.shopify.com/s/files/1/1073/3309/1677/files/PPR_d92939ed-f083-4676-8606-9c956045db27.png?v=1778271346,1,"",false,,,,kg,,,active
+haarausfall-behandlung-und-haarwachstumsforderung,Haarausfall-Behandlung und Haarwachstumsförderung,"<p><strong>Behandlungsdauer:</strong> ca. 30–45 Minuten<br></p>
+<p><strong>Schmerzen:</strong> gering bis moderat (je nach Empfindlichkeit der Kopfhaut)<br></p>
+<p><strong>Betäubung: </strong>bei Bedarf oberflächliche Betäubung oder kühlende Anwendung<br></p>
+<p><strong>Gesellschaftsfähigkeit:</strong> in der Regel sofort, leichte Rötung kann auftreten<br></p>
+<p><strong>Einschränkungen nach Behandlung:</strong> 1–2 Tage keine Sauna/Sport, keine intensive Sonnenexposition, keine Kopfhautmassagen<br></p>
+<p><strong>Wirkungseintritt:</strong> allmählich, sichtbare Ergebnisse nach einigen Wochen<br>Wirkungsdauer / Haltbarkeit: ca. 3–6 Monate (je nach individueller Reaktion und Behandlungsziel)<br></p>
+<p><strong>Behandlungsverlauf:</strong> Für optimalen Erfolg wird eine Kur von mehreren Sitzungen empfohlen (z. B. 3–6 Behandlungen im Abstand von 2–4 Wochen).<br></p>
+<p><strong>Kosten:</strong> individuell nach Areal und Produktmenge, ab 150 €</p>",VIVA Ästhetik,Разное,"","",true,Title,Default Title,,,,,,,,,0.0,,0,deny,manual,150.00,,true,true,,,,,"",https://cdn.shopify.com/s/files/1/1073/3309/1677/files/Haarausfall_25cf7fdd-748c-40f9-9510-77770f6fdb88.png?v=1778271344,1,"",false,,,,kg,,,active
+intimlifting,Intimlifting,"<p><strong>Behandlungsdauer: </strong>ca. 30–60Minuten<br></p>
+<p><strong>Schmerzen:</strong> leicht bis mittel, individuell unterschiedlich<br></p>
+<p><strong>Betäubung:</strong> oberflächliche oder lokale Betäubung<br></p>
+<p><strong>Gesellschaftsfähigkeit: </strong>in der Regel sofort <br></p>
+<p><strong>Einschränkungen nach Behandlung: </strong>2–5 Tage Verzicht auf Geschlechtsverkehr, Sport, Sauna<br></p>
+<p><strong>Wirkungseintritt: </strong>sofort sichtbar<br></p>
+<p><strong>Wirkungsdauer / Haltbarkeit: </strong>9–18 Monate (je nach Produkt und Stoffwechsel)<br></p>
+<p><strong>Kosten: </strong>individuell nach Materialverbrauch und Behandlungsziel, ab 300 €</p>",VIVA Ästhetik,Разное,"","",true,Title,Default Title,,,,,,,,,0.0,,0,deny,manual,300.00,,false,true,,,,,"",https://cdn.shopify.com/s/files/1/1073/3309/1677/files/Intime_e901d9a8-bc49-44c0-b03c-7378404a3f8f.png?v=1778271343,1,"",false,,,,kg,,,active
+uber-viva-asthetik,Über VIVA Ästhetik,"<p data-end=""499"" data-start=""143"">Willkommen in der VIVA Ästhetik Klinik – einem Ort, an dem moderne Ästhetik auf stilvolle Wohlfühlatmosphäre trifft.<br data-end=""262"" data-start=""259"">Unsere Praxis befindet sich in einem hellen, großzügig gestalteten Raum im Herzen von Kassel. Schon beim Betreten spürt man die ruhige, entspannte Energie, die durch das durchdachte Interieur und die warme Farbgestaltung vermittelt wird.</p>
+<p data-end=""804"" data-start=""501"">Die Räumlichkeiten sind nicht nur funktional, sondern auch mit viel Liebe zum Detail eingerichtet – von eleganten Möbeln über hochwertige Materialien bis hin zu beruhigender Beleuchtung. Jede Behandlung findet in separaten, diskret eingerichteten Zimmern statt, die Privatsphäre und Komfort garantieren.</p>
+<p data-end=""1003"" data-start=""806"">Unser Empfangsbereich lädt zum Ankommen ein, während unser Wartebereich wie ein stilvolles Wohnzimmer gestaltet ist – mit gemütlichen Sitzmöglichkeiten, leiser Musik und einer Auswahl an Getränken.</p>
+<p data-end=""1250"" data-start=""1005"">Hygiene, Sicherheit und ein Gefühl von Geborgenheit stehen bei uns an erster Stelle. Daher wurde unsere Klinik nicht nur nach den höchsten medizinischen Standards ausgestattet, sondern auch so gestaltet, dass Sie sich wie zu Hause fühlen können.</p>
+<p data-end=""1250"" data-start=""1005""> </p>
+<p data-end=""1250"" data-start=""1005""><img height=""386"" width=""515"" alt="""" src=""https://cdn.shopify.com/s/files/1/0946/1746/9310/files/PHOTO-2025-05-01-00-00-19_10.jpg?v=1751208437""></p>
+<p data-end=""1250"" data-start=""1005""> </p>
+<p data-end=""1250"" data-start=""1005""><img height=""385"" width=""513"" alt="""" src=""https://cdn.shopify.com/s/files/1/0946/1746/9310/files/PHOTO-2025-05-06-08-30-56_2.jpg?v=1751208438""></p>",VIVA Ästhetik,Разное,"","",true,Title,Default Title,,,,,,,,,0.0,,0,deny,manual,0.00,,true,true,,,,,"",,,,false,,,,kg,,,active
+moderne-technologien-fur-herausragende-ergebnisse,Moderne Technologien für herausragende Ergebnisse,"<p>Moderne Technologien für herausragende Ergebnisse</p>
+<p><br></p>
+<p>Wir<span class=""Apple-converted-space"">  </span>setzen auf den fortschrittlichsten Meso-Injektor Pistor Eliance, um Mesotherapie und Haarbehandlungen durchzuführen. Diese innovative Technologie ermöglicht es uns, präzise und effektive Ergebnisse zu erzielen, die den hohen Ansprüchen unserer Kunden gerecht werden. Das ist der Grund, warum wir diesen innovativen Ansatz in der ästhetischen Medizin wählen:</p>
+<p><span class=""Apple-converted-space""> </span>1. Präzision und gleichmäßige Verteilung der Wirkstoffe</p>
+<p>Der Meso-Injektor ermöglicht uns eine exakte Dosierung der aktiven Wirkstoffe, die gleichmäßig in das Gewebe verteilt werden. Dies gewährleistet eine tiefere Penetration und maximiert die Wirkung der Behandlung — sei es bei der Hautverjüngung oder der Haarwuchs-Stimulation.</p>
+<p><span class=""Apple-converted-space""> </span>2. Minimale Schmerzen und maximaler Komfort</p>
+<p>Dank der schnellen Injektionstechnologie und der modernen Kühlung ist die Behandlung mit dem Meso-Injektor nahezu schmerzfrei. Wir legen großen Wert auf Ihren Komfort, um die Behandlung so angenehm wie möglich zu gestalten.</p>
+<p><span class=""Apple-converted-space""> </span>3. Effektive Ergebnisse in kürzerer Zeit</p>
+<p>Der Meso-Injektor ermöglicht uns eine effizientere und schnellere Behandlung, wodurch die Behandlungszeit reduziert wird. Sie erhalten maximale Ergebnisse bei minimalem Zeitaufwand, sodass Sie Ihre Zeit optimal nutzen können.</p>
+<p><span class=""Apple-converted-space""> </span>4. Minimale Erholungszeit</p>
+<p>Nach einer Behandlung mit dem Meso-Injektor benötigen Sie in der Regel keine lange Erholungszeit. Rötungen und Schwellungen klingen schnell ab, sodass Sie sofort wieder in Ihren Alltag zurückkehren können.</p>
+<p><span class=""Apple-converted-space""> </span>5. Weniger Hautirritationen, mehr Sicherheit</p>
+<p>Durch den Einsatz des Meso-Injektors wird das Risiko von Hautverletzungen und Blutergüssen erheblich minimiert. Dies macht die Behandlung auch für empfindliche Haut sicher und sanft. Ihre Haut und Haare profitieren optimal von den hochwirksamen Inhaltsstoffen.</p>
+<p><span class=""Apple-converted-space""> </span>6. Individuelle Anpassung jeder Behandlung</p>
+<p>Jede Behandlung wird individuell angepasst und auf Ihre spezifischen Bedürfnisse zugeschnitten. Wir wählen die idealsten Mesotherapie-Cocktails, abgestimmt auf Ihre Haut- oder Haartypen, um Ihnen langfristige und sichtbare Ergebnisse zu liefern.</p>
+<p><span class=""Apple-converted-space""> </span>7. Langfristige und nachhaltige Ergebnisse</p>
+<p>Dank des Meso-Injektors erzielen Sie langanhaltende Ergebnisse. Bei der Haarbehandlung fördern wir das Haarwachstum und stärken die Haarwurzeln, während wir bei der Hautverjüngung für eine nachhaltige Verbesserung des Hautbildes sorgen.</p>
+<p><br></p>
+<p>Mit Viva Ästhetik entscheiden Sie sich für modernste Technologien und Behandlungen auf höchstem Niveau, die Ihnen sichtbare Ergebnisse ohne lange Erholungszeiten bieten.</p>
+<p><br></p>
+<p>Setzen Sie auf die fortschrittlichsten Methoden der ästhetischen Medizin. Vereinbaren Sie noch heute Ihre persönliche Beratung und erleben Sie den Unterschied!</p>
+<p> </p>
+<p><img src=""https://cdn.shopify.com/s/files/1/0946/1746/9310/files/20250429_1321___remix_01jt0mcxswfxtt7aj2dgntb44t.png?v=1751208528"" alt="""" width=""537"" height=""537""></p>",VIVA Ästhetik,Красота и здоровье > Личная гигиена и уход за собой > Косметика > Косметические инструменты > Инструменты для ухода за кожей,"","",true,Title,Default Title,,,,,,,,,0.0,shopify,0,deny,manual,0.00,,true,true,,,,,"",,,,false,,,,kg,,,active
+mesotherapie-fur-die-kopfhaut-bei-viva-asthetik,Was ist ein „ Mesotherapie für Haare“?,"<p><strong>Die Mesotherapie</strong> ist eine moderne und bewährte Methode zur Behandlung von Haarausfall und zur Förderung des Haarwachstums. In der Praxis Viva Ästhetik wird eine hochpräzise, hochmoderne Mesopistole eingesetzt, um ausgewählte Wirkstoffe wie Vitamine, Aminosäuren, Mineralstoffe und Hyaluronsäure direkt in die mittlere Hautschicht der Kopfhaut einzubringen.</p>
+<p><br></p>
+<p>Durch diese gezielte Versorgung werden die Haarwurzeln gestärkt, die Durchblutung verbessert und das natürliche Haarwachstum nachhaltig angeregt. Die Anwendung ist besonders sanft, nahezu schmerzfrei und ermöglicht eine gleichmäßige Verteilung der Wirkstoffe für optimale Ergebnisse.</p>
+<p><br></p>
+<p>Nach nur wenigen Sitzungen kann das Haar kräftiger, dichter und gesünder erscheinen. Die Mesotherapie erfordert keine Ausfallzeit und lässt sich ideal in den Alltag integrieren.</p>
+<p><br></p>
+<p>Erleben Sie mit Viva Ästhetik die Kraft modernster Technik für volles, vitales Haar!</p>",VIVA Ästhetik,Красота и здоровье > Личная гигиена и уход за собой > Уход за волосами > Средства против выпадения волос,"","",true,Title,Default Title,,,,,,,,,0.0,shopify,0,deny,manual,0.00,,true,true,,,,,"",,,,false,,,,kg,,,active
+biorevitalisierung-der-haut,Was ist ein „ Biorevitalisierung“?,"<p><strong>Die Biorevitalisierung </strong>ist eine innovative Behandlung zur Wiederherstellung der Jugendlichkeit und Gesundheit der Haut. Dabei werden hochwertige Inhaltsstoffe, wie Hyaluronsäure, tief in die Haut eingeschleust, um ihre Feuchtigkeitsbalance zu verbessern, die Elastizität zu steigern und den natürlichen Glanz zurückzubringen.</p>
+<p><br></p>
+<p>In der Praxis Viva Ästhetik verwenden wir nur hochwertige Hyaluronsäure, die intensiv Feuchtigkeit spendet und die Produktion von Kollagen und Elastin anregt. Dies führt nicht nur zu einer Minderung feiner Falten, sondern auch zu einer allgemeinen Verjüngung und einem gesunden, frischen Hautbild.</p>
+<p><br></p>
+<p>Die Biorevitalisierung verbessert die Hautstruktur, verleiht der Haut ein strahlendes Aussehen und reduziert Anzeichen von Müdigkeit und Alterserscheinungen. Diese Behandlung ist ideal für alle, die das jugendliche Aussehen ihrer Haut wiederherstellen möchten und eine spürbare Verbesserung der Hauttextur wünschen.</p>
+<p><br></p>
+<p>Die Biorevitalisierung ist sicher, effektiv und nahezu schmerzfrei. Bereits nach der ersten Sitzung sind sichtbare Verbesserungen zu erkennen, mit zunehmendem Effekt nach einem Behandlungszyklus.</p>
+<p><br></p>
+<p>Verwöhnen Sie Ihre Haut mit Biorevitalisierung in Viva Ästhetik und genießen Sie das Gefühl von Frische und Selbstvertrauen!</p>",VIVA Ästhetik,Красота и здоровье > Личная гигиена и уход за собой > Косметика > Уход за кожей > Антивозрастной уход за кожей,"","",true,Title,Default Title,,,,,,,,,0.0,shopify,0,deny,manual,0.00,,true,true,,,,,"",,,,false,,,,kg,,,active
+was-ist-ein-vampir-lifting,Was ist ein „Vampir Lifting“?,"<p><strong>Das „Vampir Lifting“</strong>, die sog. PRP-Plasmatherapie (Platelet-Rich-Plasma = plättchenreiches Plasma), ist eine Innovation im Bereich der ästhetischen Medizin zur Hautverjüngung und Biostimulation. Bei der Behandlung wird Eigenblut mittels Blutentnahme gewonnen, speziell aufbereitet und nach spezieller Vorbereitung der Haut (z.B. durch Needling oder Peeling) auf die Haut aufgetragen.</p>
+<p><br></p>
+<p><strong>Wie wirkt die PRP-Therapie?</strong></p>
+<p>Die Technik stammt aus der Regenerationsmedizin und der Stammzellforschung. Das aufbereitete Blutplasma regt die Zellerneuerung an, indem es das Wachstum von Kollagen sowie Haut- und Unterhautzellen stimuliert. Die Unterspritzung der Haut mit PRP führt zur Aktivierung von Bindegewebszellen (sog. Fibroblasten), die die Produktion von Elastin und Kollagen anregen. Zudem lockt das Unterspritzen PRP Stammzellen des Bindegewebes an, die den natürlichen Prozess der Geweberegeneration mit Kollagenneubildung aktivieren. Die Hyaluronsäure-Bildung steigt, womit vermehrt Wasser gebunden und Feuchtigkeit gespeichert wird. Das Ergebnis der PRP-Therapie ist ein verbessertes, geglättetes Hautbild mit einer Erneuerung der Haut und des Bindegewebes von innen.</p>
+<p><br></p>
+<p><strong>Welche Bereiche können behandelt werden?</strong></p>
+<ul>
+<li>Gesicht („Vampir Lifting“)</li>
+<li>Hals</li>
+<li>Dekolleté</li>
+<li>Kopfhaut</li>
+<li>Handrücken</li>
+<li>Schwangerschafts- und Dehnungsstreifen</li>
+<li>OP- und Verletzungsnarben</li>
+<li>Aknenarben</li>
+<li>Welche Wirkung kann ich nach der PRP-Therapie erwarten?</li>
+<li>Verbesserung des Hautbildes, Hautstraffung, Faltenglättung</li>
+<li>Verbesserung des Hautbildes im Bereich des Halses und des Dekolleté</li>
+<li>Schnelle Hautabheilung nach Laser- oder Peeling-Behandlungen</li>
+<li>Minderung von Augenringen</li>
+<li>Stimulierung des Haarwachstums</li>
+</ul>
+<p> </p>
+<p><strong>Was bewirkt die PRP-Therapie bei dunklen Augenringen?</strong></p>
+<p>Die Partie um die Augen ist besonders fragil und kann durch eine gestörte Mikrozirkulation eine bläuliche Färbung erfahren. Wachstumsfaktoren im körpereigenen Blutkonzentrat (PRP) stimulieren die Mikroblutzirkulation um die Augenpartie, so dass die Helligkeit verbessert wird und die Haut um die Augen an Stärke wiedergewinnt.</p>
+<p><br></p>
+<p><strong>Was bewirkt die PRP-Therapie bei Haarausfall?</strong></p>
+<p>Injektionen von PRP in die Kopfhaut stimulieren die Stammzellen in den Haarwurzeln und die Mikrozirkulation durch Bildung neuer Blutgefäße. Dadurch wird der Haarwuchs unterstützt.</p>
+<p><br></p>
+<p><strong>Was ist das „Cellular Matrix Gel“?</strong></p>
+<p>Ein neues Verfahren des Vampir Liftings erlaubt es jetzt noch bessere Ergebnisse zu erzielen. Hierbei enthält das Blutröhrchen 2 ml unvernetzte Hyaluronsäure, welches dem PRP beigemischt wird. Mit diesem Verfahren ist es möglich der Haut eine sehr hohe Menge an Feuchtigkeit und Nährstoffen zuzuführen.</p>
+<p>Ein weiterer Vorteil ist die hohe Viskosität des Plasma-Hyaluronsäure Gels. Dabei werden die Thrombozyten und die Wachstumsfaktoren im Gel eingeschlossen und verbleiben über längere Zeit an der Injektionsstelle, wodurch sich die Wirkdauer des PRP erhöht.</p>
+<p><br></p>
+<p><strong>Wie läuft eine PRP-Behandlung ab?</strong></p>
+<p>Zunächst wird Blut aus der Armvene entnommen und in einem speziellen Röhrchen zentrifugiert. Anschließend wird das aktivierte Plasma auf die vorbereitete Haut aufgetragen.</p>
+<p><br></p>
+<p><strong>Wie viele PRP-Behandlungen sind notwendig?</strong></p>
+<p>Für ein effektives und lang anhaltendes Ergebnis sollten 3 Behandlungen im Abstand von 4 Wochen erfolgen.<span class=""Apple-converted-space"">  </span>Anschließend reichen jährliche Auffrischungen, um das Ergebnis zu erhalten.</p>
+<p><br></p>
+<p><strong>Was sollte vor und nach einer PRP-Behandlung beachtet werden?</strong></p>
+<p>Vor der PRP-Behandlung sollten mindestens 5 Tage kein Aspirin oder andere Blutverdünner eingenommen werden, um Blutungen und Blutergüsse zu vermeiden. Nach der Behandlung sollten für mindestens 6 Wochen starkes Sonnenlicht und Solarien gemieden werden.</p>
+<p><br></p>
+<p><strong>Welche Komplikationen und Nebenwirkungen können bei der PRP-Therapie auftreten?</strong></p>
+<p>Mögliche Nebenwirkungen sind einzig die Folgen der Injektionen, also Rötung, Blutergüsse und Infektion.<span class=""Apple-converted-space"">  </span>Da PRP ein körpereigenes Produkt ist, treten allergische Reaktionen selten auf.</p>
+<p><br></p>
+<p><strong>Wann darf eine PRP-Therapie nicht durchgeführt werden?</strong></p>
+<ul>
+<li>Keloidneigung</li>
+<li>Schwangerschaft und Stillzeit</li>
+<li>akute Hauterkrankungen im zu behandelnden Areal (Entzündungen, Neurodermitis, Akne)</li>
+<li>aktive oder chronische Infektionskrankheiten ( insbes. Hepatitis, HIV)</li>
+<li>Tumorerkrankungen</li>
+<li>akute Autoimmun oder rheumatologische Erkrankungen</li>
+<li>1 Woche vorher keine Einnahme von ASS oder anderen nichtsteroidalen Antiphlogistika außer Paracetamol</li>
+<li>schwere Blutungsneigungen (Hämophilie)</li>
+</ul>",VIVA Ästhetik,Красота и здоровье > Личная гигиена и уход за собой > Косметика > Уход за кожей > Антивозрастной уход за кожей,"","",true,Title,Default Title,,,,,,,,,0.0,shopify,0,deny,manual,0.00,,true,true,,,,,"",,,,false,,,,kg,,,active
+was-ist-ein-botox-behandlung,Was ist ein „Botox-Behandlung“?,"<p><strong>Die Gesichtsmuskulatur </strong>ist fest mit der Gesichtshaut verbunden. Spannt man diese Muskeln an entstehen sichtbare Falten. Im Laufe des Lebens verbleiben viele dieser Falten auch im entspannten Zustand im Gesicht. Eine Faltenbehandlung der mimischen Falten mit Botox ist eine sehr verbreitete Maßnahme zur Glättung mimischer Gesichtsfalten.</p>
+<p> </p>
+<p><strong>Behandlung der:</strong></p>
+<ul>
+<li>Querfalten</li>
+<li>Zornesfalten</li>
+<li>Krähenfüße</li>
+<li>Knitterfalten am Unterlied</li>
+<li>Augenbrauenlift</li>
+<li>„Bunny-Lines“/Nasenfalten</li>
+<li>Gummy-Smile/Zahnfleischlachen</li>
+<li>Open-Eye-Look/Lidspaltenvergrößerung (bei schmalen Augen, besonders beim Lachen)</li>
+<li>„negativer Mimik“/Marionettenlinien</li>
+<li>Falten der Ober- und Unterlippen</li>
+<li>Pflastersteinkinn</li>
+<li>Platysmasträngen/ausgeprägte vertikale Halsstränge</li>
+<li>Knitterfältchen im Dekolleté</li>
+<li>vermehrte Schweißbildung der Achseln, Hände und Füße (Hyperhidrose)</li>
+<li>prophylaktisch/therapeutisch bei Migräne</li>
+</ul>
+<p> </p>
+<p><strong>Wann sind erste Therapieergebnisse sichtbar und wie lange hält das Ergebnis an?</strong></p>
+<p>Das endgültige und zufrieden stellende Resultat einer Faltenbehandlung sieht man nach etwa 3-14 Tagen. Die Wirkung hält ca. 3-6 Monate an.Kann ich nach der Behandlung meiner gewohnten Tätigkeit nachgehen?</p>
+<p>Nach der Botoxbehandlung können Sie Ihren normalen Aktivitäten sofort wieder nachgehen und sind gesellschaftsfähig. Am Tag der Behandlung sollten Sie darauf achten ihren Kopf nicht nach unten zu richten, um das Entstehen von kleinen Blutergüssen zu vermeiden. Bei Bedarf können Sie die behandelten Areale zu Hause nochmals kühlen. Bis zu drei Tage nach der Behandlung sollten Sie keine Saunagänge oder sportliche Aktivitäten planen. Der Verzicht auf Alkohol und Nikotin ist ratsam.</p>
+<p>Gerne können Sie die behandelten Areale nach der Behandlung aktivieren (Stirnrunzeln, böse gucken). Das fördert die Verteilung von Botulinumtoxin im Gewebe und somit das Ansprechen der Therapie.</p>
+<p><br></p>
+<p><strong>Muss ich vor der Botoxinjektion etwas beachten?</strong></p>
+<p>Vor der Botulinumtoxininjektion sollten Sie bis zu fünf Tage vorher kein Aspirin oder andere Blutverdünner eingenommen haben. Ansonsten müssen Sie keine speziellen Maßnahmen beachten. Falls Sie spezielle Fragen haben, wird Sie Frau<span class=""Apple-converted-space"">  </span>Shnal während des Informationsgespräches persönlich ausführlich informieren.</p>
+<p>Komplikationen sind äußerst selten. An den Einstichstellen kann es vorübergehend zu kleinen Blutergüssen oder minimalen Rötungen kommen. In seltenen Fällen können 24 Stunden nach der Injektion Kopfschmerzen auftreten. Das Herabhängen von der Augenbraue oder dem Oberlied tritt extrem selten auf und ist reversibel.</p>
+<p>Auch bei Infektionen an der vorgesehenen Injektionsstelle, bei bestimmten Viruserkrankungen wie Herpes oder bei Neuromuskulären Störungen.</p>
+<p>Schwangere Frauen und stillende Mütter dürfen aus Vorsicht nicht mit Botulinumtoxin-A behandelt werden. Bei Einnahme von blutverdünnenden Medikamenten ist das Auftreten von kleinen Blutergüssen wahrscheinlicher, eine Behandlung kann in Absprache mit Frau<span class=""Apple-converted-space"">  </span>Shnal auf Wunsch dennoch durchgeführt werden.</p>
+<p><br></p>
+<p><strong>Hilft Botox auch gegen Schweiß (Hyperhidrose)?</strong></p>
+<p>Die Behandlung des vermehrten Schwitzens kann sehr gut mit Botulinumtoxin erfolgen. Das Botulinumtoxin wird hierbei sehr oberflächlich unter die Haut „gequaddelt“ und unterdrückt die Schweißproduktion der Schweißdrüßen z.B. im Bereich der Achseln, Hände oder Füße.</p>
+<p>Stimmt es, dass nach Faltenbehandlungen der Stirn Migräne-Patienten über eine Besserung der Migräne berichten?</p>
+<p>Die Besserung der Migräne kann tatsächlich als „guter“-Nebeneffekt einer Faltenbehandlung sein. Zusätzlich können spezielle, zusätzliche Triggerpunkte mit Botox zur Vorbeugung und Milderung der Migräne behandelt werden. Botulinumtoxin (Botox) ist ein für die Behandlung der chronischen Migräne zugelassenes Medikament</p>",VIVA Ästhetik,Красота и здоровье > Личная гигиена и уход за собой > Косметика > Уход за кожей > Антивозрастной уход за кожей,"","",true,Title,Default Title,,,,,,,,,0.0,shopify,0,deny,manual,0.00,,true,true,,,,,"",,,,false,,,,kg,,,active
+was-ist-ein-hyaluronsaure,Was ist ein „Faltenunterspritzung“?,"<p><strong>Hyaluronsäure </strong>ist ein natürlicher, wichtiger Feuchtigkeitsspeicher in unserer Haut der oft bei der Faltenbehandlung verwendet oft. Sie verleiht dem Gesicht Elastizität, Spannkraft, Glätte und seine weichen Konturen. Mit zunehmendem Lebensalter nimmt der Hyaluronsäuregehalt der Haut ab. Die Haut verliert ihr jugendliches und weiches Aussehen, es entstehen Falten.</p>
+<p>Es treten zunächst Knitterfalten, später tiefere Falten wie die Nasolabialfalten oder die sogenannten Marionettenfalten im seitlichen Kinnbereich auf. Auch die Konturen werden kantiger oder wirken eingefallen und erschlafft. Mit Hyaluronsäure kann dieser Volumenverlust im Wangenbereich, den Schläfen oder den Lippen auf sehr einfache Weise wieder ausgeglichen werden.</p>
+<p>Hyaluronsäure wird als synthetisch hergestelltes Gel unter die Haut injiziert und stellt derzeit das am häufigsten genutzte Füllmaterial bei der Faltenbehandlung dar. Es handelt sich um einen resorbierbaren, das heißt ein im Laufe der Zeit abbaubaren Filler.</p>
+<p>Seit über 15 Jahren wird Hyaluronsäure als Filler weltweit verwendet und hat sich neben Botox als beliebtes und sicheres Anti-Aging Verfahren stetig weiter entwickelt. Regelmäßig nimmt<span class=""Apple-converted-space"">  </span>Frau Shnal<span class=""Apple-converted-space"">  </span>an den Masterclasses international renommierter Spezialisten teil, um Ihre Patienten mit den besten Techniken behandeln zu können. Auch wissenschaftlich ist die sichere Wirksamkeit von Hyaluronsäure gut belegt. Wir verwenden ausschließlich hochwertige Materialien namhafter Firmen, deren Produkte die erforderlichen Qualitätsprüfungen vorweisen können.</p>
+<p><br></p>
+<p><strong>Welche Hyaluronsäure-Filler gibt es?</strong></p>
+<p>Mittlerweilen gibt es sehr viele verschiedene Filler für die jeweilige Indikation. Am herausragensten ist der Unterschied zwischen vernetzten und unvernetzten Hyaluronsäure-Fillern.</p>
+<p>Die vernetzten Hyaluronsäure-Filler bestehen, wie ihr Name hinweist, aus quervernetzter Hyaluronsäure. Diese Struktur leiht den Fillern Stabilität und eignet sich hervorragend für die Behandlung mittlerer bis tiefer Falten sowie zum Volumenaufbau.</p>
+<p>Unvernetzte Hyaluronsäure kann durch ihre unvernetzte Struktur ausgezeichnet für oberflächliche Falten verwendet werden, z.B. bei Knitterfältchen im Dekolleté oder um die Augen.</p>
+<p>Kommen Sie doch einfach zum Beratungsgespräch vorbei. Frau Shnal<span class=""Apple-converted-space"">  </span>wird Sie bezüglich der Filler individuell beraten.</p>
+<p><br></p>
+<p><strong>Welche Bereiche können behandelt werden?</strong></p>
+<p>Von oberflächlichen kleinen Falten bis hin zum Liquid Lifting, Ihre Ärztin Frau Dr. Schröder weiß ganz genau für welche Indikation welches Material eingesetzt werden soll. Mit Hyaluronsäure können die folgenden Bereiche von uns behandelt werden:</p>
+<ul>
+<li>Nasolabialfalten</li>
+<li>Marionettenfalten</li>
+<li>Zur Lippenkonturierung</li>
+<li>Zum Volumenaufbau der Lippen</li>
+<li>Zum Wangenaufbau</li>
+<li>Zur Harmonisierung der Gesichtskontur</li>
+<li>Falten der Ober- und Unterlippe</li>
+<li>Tränenrinnen</li>
+<li>Krähenfüßen</li>
+<li>Zornesfalte</li>
+<li>Stirnfalten</li>
+<li>Zur Brauenmodulation</li>
+<li>Zum Handrückenaufbau</li>
+<li>Zur Betonung des Ohres/Minderung der Falte vor dem Ohr</li>
+<li>Zur Anhebung der Aknenarben</li>
+<li>Zum Liquid Lifting</li>
+<li>Filler-Behandlung für den Intimbereich – mehr Volumen &amp; Straffheit</li>
+</ul>
+<p><strong>Wie lange hält die Wirkung bei den verschiedenen Hyaluronsäuren an und welche gibt es?</strong></p>
+<p>Die Wirkung hält je nach Region 6-18 Monate an und kann beliebig häufig wiederholt werden. Je nach Faltentiefe kommen unterschiedlich stark vernetzte Hyaluronsäuren zum Einsatz. Stark vernetztes Material wird zum Auffüllen tiefer Falten, beim Wangenaufbau und beim Liquid Lifting verwandt und hat eine längere Haltbarkeit. Unvernetzte Hyaluronsäure wird mit feinsten Nadeln in die Haut injiziert und verhilft müder, erschlaffter Haut wieder zu mehr Elastizität. Unvernetzte Hyaluronsäure wird schneller abgebaut und die Behandlungen werden in regelmäßigen Abständen wiederholt. Aber auch bei tieferen Falten sorgt ein so genanntes touch up, ein Nachspritzen nach 6 Monaten für eine längere Haltbarkeit des gewünschten Effektes.</p>
+<p><br></p>
+<p><strong>Wie lange dauert die Faltenunterspritzung und erfolgt eine Betäubung?</strong></p>
+<p>Die Behandlung dauert in der Regel ca. 30 - 60  min. Je nach Bedarf wird im Vorfeld eine hautbetäubende Creme auf die zu behandelnden Hautareale aufgetragen. Einigen Hyaluronsäuregelen ist auch ein örtliches Betäubungsmittel zugesetzt, so dass die Injektion weitgehend schmerzfrei verläuft.</p>
+<p><br></p>
+<p><strong>Wie sehe ich direkt nach der Faltenbehandlung mit Hyaluronsäure aus?</strong></p>
+<p>Nach der Behandlung kann vorübergehend eine leichte Rötung oder Schwellung sichtbar sein, manchmal kann sich ein kleiner Bluterguss bilden. All dies bildet sich meist sehr schnell wieder zurück, die Patienten können unter Berücksichtigung kleiner Maßnahmen ihrer normalen Beschäftigung nachgehen.</p>
+<p><br></p>
+<p><strong>Bin ich nach der Faltenunterspritzung gesellschaftsfähig? Auf was sollte ich nach der Behandlung achten?</strong></p>
+<p>Sie können sofort nach der Behandlung mit Fillern Ihrer gewohnten Alltagsbeschäftigung oder Arbeit nachgehen. Am Tag der Behandlung sollten sie die zuvor behandelten Bereiche nicht mehr massieren. Durch das beigefügte lokale Betäubungsmittel können Sie in den behandelten Bereichen noch den Tag ein Taubheitsgefühl spüren. Nach der Behandlung können Sie ebenfalls wieder duschen.</p>
+<p>Auch schwere körperliche Arbeiten, Kopfüber-Bewegungen und Sport am ersten Tag nach der Behandlung und kosmetische Behandlungen an den beiden ersten Tagen nach der Behandlung sind zu vermeiden.</p>
+<p><br></p>
+<p><strong>Was kann ich vorbeugend tun, um Schwellungen oder Hämatome zu vermeiden?</strong></p>
+<p>Sie können vor und nach der Behandlung je 5 Kügelchen (Globuli) Arnika D12 unter der Zunge zergehen lassen. Verzichten Sie 1 Woche vor und nach der Behandlung auf die Einnahme blutverdünnender Medikamente (z.B. ASS).</p>
+<p><br></p>
+<p><strong>Gibt es Alternativen zur Hyaluronsäure?</strong></p>
+<p>Eine Alternative bei tiefen Falten oder zum Volumenaufbau sowie zum Lifting bietet das Calcium hydroxylapatit- Radiesse®️.</p>
+<p> </p>
+<p><strong>Wann sollte keine Behandlung mit Hyaluronsäre durchgeführt werden?</strong></p>
+<p>Hyaluronsäure darf nicht angewendet werden bei Personen, bei denen eine Überempfindlichkeit gegen das Arzneimittel oder einen der sonstigen Bestandteile des Arzneimittels .</p>
+<p>Auch bei Infektionen an der vorgesehenen Injektionsstelle, z.B. bei bestimmten Viruserkrankungen wie Herpes oder starker Akne. Patienten unter Immunsuppression oder bei Neigung zu Keloiden sowie unter blutverdünnenden Medikamenten oder mit Gerinnungsstörungen wird von der Behandlung abgeraten.</p>
+<p>Schwangere Frauen und stillende Mütter sollten aus Vorsicht nicht mit Hyaluronsäure behandelt werden.</p>",VIVA Ästhetik,Красота и здоровье > Личная гигиена и уход за собой > Косметика > Уход за кожей > Антивозрастной уход за кожей,"","",true,Title,Default Title,,,,,,,,,0.0,shopify,0,deny,manual,0.00,,true,true,,,,,"",,,,false,,,,kg,,,active
+was-ist-ein-lipolyse,Was ist ein „Lipolyse“?,"<p><strong>Der Wirkstoff</strong> der Fett-Weg-Spritze ist das aus der Sojabohne gewonnene Naturpräparat Phosphatidylcholin (PPC). Mit einer Spritze wird das Naturpräparat Phosphatidylcholin (PPC) direkt in die unerwünschten Fettpolster injiziert. Dieser Wirkstoff wird in gleicher Zusammensetzung im Körper produziert und erfüllt dort vielfältige Aufgaben, besonders im Fettstoffwechsel. Dank der Weiterentwicklung ist es gelungen, heute schnellere und bessere Behandlungsergebnisse zu erzielen und die Therapie zu standardisieren.</p>
+<p>Die Injektions-Lipolyse dient der Reduktion kleinerer, umschriebener Fettpolster und damit der Veränderung der Kontur. Patienten, die damit eine Gewichtsverringerrung erwarten, sollten sich ernährungsmedizinisch behandeln lassen. Das Gewicht wird durch Injektions-Lipolyse nicht bzw. nur in ganz geringem Umfang reduziert.</p>
+<p> </p>
+<p><strong>Wie wird die Fett-Weg Spritze angewandt und wie wirkt die Fett-Weg-Spritze?</strong></p>
+<p>Das Mittel wird mittels feinster Nadeln direkt in die betroffenen Bereiche injiziert, wodurch ein Abschmelzen der Fettzellen und ein gesteigerter Fettabbau angeregt werden. Das Fett wird dabei vom Körper auf natürlichem Wege und dauerhaft abgebaut. Der Körperumfang dieser Region verringert sich meßbar. Auch die Haut zieht sich aufgrund ihrer Elastizität zusammen und die vom NETZWERK entwickelte Injektionstechnik erzeugt zudem eine glatte, straffe Oberfläche.</p>
+<p><br></p>
+<p><strong>Wie lange wirkt die Fett-Weg-Spritze?</strong></p>
+<p>Einmal aufgelöste Fettzellen bilden sich dem jetzigen Erkenntnisstand nach nicht wieder neu. Dadurch ist es möglich, Fettpolster dauerhaft zu reduzieren. Wenn sich Ihr Gewicht nicht verändert, bleiben die Resultate konstant.</p>
+<p><br></p>
+<p><strong>Für welche Bereiche kann die Fett-Weg-Spritze verwendet werden?</strong></p>
+<ul>
+<li>Gesichtsbereich</li>
+<li>Doppelkinn</li>
+<li>Wangen</li>
+<li>Nacken</li>
+<li>Körper</li>
+<li>Reiterhosen</li>
+<li>Oberschenkel (innen)</li>
+<li>unteres Gesäß / Übergang zum Oberschenkel Oberschenkel</li>
+<li>Love-Handles (bei Männern)</li>
+<li>Hüften</li>
+<li>Ober- und Unterbauch</li>
+<li>Fettwulste an den Schulter-Arm-Gelenken</li>
+<li>Oberarme</li>
+<li>Knie</li>
+<li>Rückenpartien</li>
+<li>Cellulite-Behandlung</li>
+<li>Oberschenkel</li>
+<li>Lipome </li>
+</ul>
+<p> </p>
+<p><strong>Wie häufig muss die Behandlung wiederholt werden?</strong></p>
+<p>In der Regel sind 2-4 Behandlungen im Abstand von 4-8 Wochen notwendig, um die Therapie erfolgreich abzuschließen.</p>
+<p>Über 80% der Patienten sind nach 2 bis 3 Behandlungen mit den Ergebnissen sehr zufrieden.</p>
+<p><br></p>
+<p><strong>Kann ich mit Hilfe der Fett-weg-Spritze / Injektions-Lipolyse abnehmen?</strong></p>
+<p>Die Therapie ist nicht geeignet zur Gewichtsreduktion, sondern zum Abschmelzen unschöner lokal eingegrenzter Fettpölsterchen wie z.B. bei Doppelkinn, Reiterhosen, an Bauch und Oberarm.</p>
+<p><br></p>
+<p><strong>Was ist der besondere Vorteil der Fettweg-Spritze / Injektions-Lipolyse?</strong></p>
+<p>Die Injektions-Lipolyse ermöglicht eine dauerhafte Reduzierung von Fettpolstern, vor allem an Stellen, die sich weder durch Diäten oder Sport gezielt verringern lassen. Dabei sind keine aufwendigen Vor- und Nachbehandlungen nötig. Ebenso entfallen Einschränkungen in der Arbeitsfähigkeit, außer bei der Behandlung von Gesichtsregionen.</p>
+<p><br></p>
+<p><strong>Wie entscheide ich, ob eine Injektions-Lipolyse oder eine Liposuction für mich sinnvoller ist?</strong></p>
+<p>Lange Zeit war die Liposuction die einzige Möglichkeit, Fettansammlungen gezielt zu entfernen. Mit Hilfe der Injektions-Lipolyse ist es nun aber mittlerweile möglich, mit minimalem Aufwand schonend Fettpölsterchen zu entfernen. Der wesentliche Unterschied besteht darin, daß die Injektions-Lipolyse eine nicht operative Behandlungsmethode ist, während die Liposuction einen operativen Eingriff erfordert. Bei der Liposuction verschwindet das Fett in kürzester Zeit. Die Injektions-Lipolyse ermöglicht eine langsamere Veränderung der Körperkontur und damit des eigenen Selbstbildes innerhalb von einigen Monaten. Die Injektions-Lipolyse ist außerdem eine ideale Behandlungsmethode nach einer Liposuction zur Beseitigung von übrig gebliebenem Fettgewebe und der Straffung der umgebenden Haut.</p>
+<p><br></p>
+<p><strong>Wieviele Behandlungen sind nötig?</strong></p>
+<p>In der Regel reichen 2-4 Anwendungen im Abstand von jeweils 4-8Wochen.</p>
+<p>Ist die Behandlung mit der Fettweg-Spritze / Injektions-Lipolyse schmerzhaft?</p>
+<p>Da es im Unterhautgewebe nur wenige Nervenfasern gibt, sind die Injektionen nicht schmerzhaft. Den Einstich spürt man kurz und fühlt dann einen leichten Juckreiz.</p>
+<p><br></p>
+<p><strong>Welche Nebenwirkungen sind mit der Fett-weg Spritze / Injektions-Lipolyse verbunden?</strong></p>
+<p>Direkt nach der Therapie können leichte Schwellungen und Druckempfindlichkeit sowie Rötung und/ oder Juckreiz entstehen, die 2 bis 7 Tage andauern können. Etwa 3 Tage ist auf Massage, Sauna und Sport zu verzichten. Eine vollständige Risikoaufklärung erhalten Sie von dem behandelnden Arzt.</p>
+<p><br></p>
+<p><strong>Unterstützende Maßnahmen bei der Behandlung mit der Fettwegspritze</strong></p>
+<p>Sie können durch Ihre Mitarbeit die Ergebnisse der Therapie positiv beeinflussen. Hier finden Sie einige Hinweise zur positiven Beeinflussung der Therapieergebnisse: Die Therapie stellt keinen Ersatz dar für eine Veränderung Ihrer Ernährungsgewohnheiten. Einige Patienten haben die irrige Auffassung, daß sie gerade wegen der Therapie sogar mehr essen können als zuvor. Eine Gewichtszunahme ist dann in den meisten Fällen eine unerwünschte Nebenwirkung. Verabschieden Sie sich also möglichst vor Beginn der Therapieaufnahme von der Vorstellung, daß die Therapie ein Ersatz für notwendige Veränderungen sein könnte.</p>
+<p>Nehmen Sie vor und nach der Therapie möglichst viel Flüssigkeit zu sich, möglichst stilles Wasser. Ihr Kreislauf wird dadurch unterstützt, So fühlen sich wesentlich wohler, wenn Sie Ihren Wasserkonsum in den ersten Tagen auf bis zu 4 l am Tag erhöhen. Dinner Canceling</p>
+<p>Dies ist eine sehr einfache Methode zur Veränderung Ihrer Eßgewohnheiten. Wenn Sie jeden 2. Tag auf Mahlzeiten und Alkohol nach 17.00 Uhr verzichten können, wird sich Ihr körperliches Befinden in kurzer Zeit erheblich verbessern. Greifen Sie nach 17.00 Uhr nur noch auf stilles Wasser oder kalorienfreie Getränke zurück. Ihr Körper wird es Ihnen danken.</p>
+<p><br></p>
+<p><strong>Fat Burning durch sportliche Betätigung</strong></p>
+<p>Der Zeitpunkt Ihrer Übungen entscheidet maßgeblich darüber, ob eine Fettverbrennung bei Ihnen einsetzt oder nicht. Gewöhnen Sie sich an, Ihre Übungen immer vor dem Frühstück mit nüchternem Magen durchzuführen, damit die Fettverbrennung möglichst schnell einsetzen kann. Sie können sowohl einen Heimtrainer benutzen, als auch Aerobic oder andere Übungen einsetzen, um den Prozeß auszulösen. Auch Joggen oder ein intensives Walking kann die Ergebnisse verbessern helfen.</p>
+<p><br></p>
+<p><strong>Wann sollte keine Behandlung mit der Fett-Weg-Spritze durchgeführt werden?</strong></p>
+<p>Nicht geeignet und darf nicht durchgeführt werden eine<span class=""Apple-converted-space"">  </span>Behandlung mit der Injektions-Lipolyse bei Minderjährigen ,bei Schwangeren und stillenden Müttern sowie bei einigen seltenen, schweren Erkrankungen. Genauere Informationen, ob eine Therapie für Sie geeignet ist, erteilt Ihnen gerne Frau Shnal beim Gespräch.</p>",VIVA Ästhetik,Красота и здоровье > Личная гигиена и уход за собой > Косметика > Уход за кожей > Сыворотки для лица,"","",true,Title,Default Title,,,,,,,,,0.0,shopify,0,deny,manual,0.00,,true,true,,,,,"",,,,false,,,,kg,,,active
+was-ist-ein-fadenlifting,Was ist ein „ Fadenlifting“?,"<p><strong>Das Fadenlifting</strong> ist eine effektive Methode zur Wiederherstellung der natürlichen Gesichtskontur. Das Fadenlifting hat gegenüber dem herkömmlichen Lifting für den Patienten viele Vorteile: Es bedeutet eine deutlich geringere Belastung, keine Narbenbildung, ein geringes Schmerz- und Entzündungsrisiko, keine lange Ausfallzeit.</p>
+<p><strong>Wie wirkt das Fadenlifting?</strong></p>
+<p>Die eingesetzten Fäden bewirken eine Aktivierung reparativer Prozesse (6 – 10 Tage), eine Förderung der lokalen Blut-Mikrozirkulation (wenige Tage bis 2 – 4 Monate), Aktivierung des Stoffwechsels der Bindegewebszellen (Fibroblasten) und Erhöhung ihrer Anzahl sowie eine Stimulierung und Synthese von Kollagen, Elastinfasern und Hyaluronsäure (2 – 6 Monate).</p>
+<p>Es gibt verschiedene Fäden für verschiedene Bedürfnisse. Sie alle straffen und glätten die Haut und sorgen für ein frischeres, strahlenderes Hautbild. Je nach Art der verwendeten Fäden kann das Ergebnis bis hin zu einem Lifting oder Neuformung der Gesichtskonturen gehen. Wie lange die Wirkung anhält und wie stark sie ausfällt, hängt auch von der Art des Fadens ab.</p>
+<p><br></p>
+<p><strong>Was bewirkt das Fadenlifting?</strong></p>
+<ul>
+<li>Lifting eingefallener Konturen</li>
+<li>Hautverjüngung (Straffung, Verbesserung des Teints)</li>
+<li>Faltenbehandlung</li>
+</ul>
+<p> </p>
+<p><strong>Wie läuft die Behandlung mit dem Fadenlifting ab?</strong></p>
+<p>Im ersten Schritt zeichnet Frau Shnal die zu behandelnden Areale ein und betäubt lokal die Eintrittsstellen. Dann werden die Lifting-Fäden in das Unterhaut-Fettgewebe eingeführt. Je nach Region und gewünschtem Effekt werden unterschiedliche Fäden und Techniken verwendet. Feine, glatte oder leicht spiralige Fäden stimulieren die Bildung von neuem Bindegewebe, so dass die Haut straffer und glatter wird. Bestimmte Arten von Fäden können außerdem das Gesichts- oder Halsgewebe anheben und so in seine ursprüngliche Position zurückbringen. Diese neue und sanfte Methode hinterlässt weder Wunden noch Narben. Die Fäden werden nach gewisser Zeit (je nach Art des Fadens) vom Gewebe resorbiert.</p>
+<p><br></p>
+<p><strong>Welche Areale können mittels Fadenlifting behandelt werden? Welcher Effekt ist zu erwarten?</strong></p>
+<ul>
+<li>Hängebäckchen, Doppelkinn » Lifting-Effekt</li>
+<li>Wangen » Glättung und/oder Lifting-Effekt</li>
+<li>Marionettenfalten » Glättung und/oder Lifting-Effekt</li>
+<li>Nasolabialfalte » Glättung und/oder Lifting-Effekt</li>
+<li>Augenbrauen » Lifting-Effekt</li>
+<li>Augenfältchen » Glättung</li>
+<li>Oberlippenfältchen » Glättung</li>
+<li>Hals » Glättung und/oder Lifting-Effekt</li>
+<li>Dekolleté » Glättung</li>
+</ul>
+<p> </p>
+<p><strong>Ist eine Fadenlifting-Behandlung schmerzhaft?</strong></p>
+<p>Vor der Behandlung wird eine lokale Betäubung an den Eintrittsstellen gesetzt, so dass die Behandlung nahezu schmerzfrei ist.</p>
+<p><br></p>
+<p><strong>Was sollte nach der Fadenlifting-Behandlung beachtet werden?</strong></p>
+<p>Vermeiden Sie Reiben und jeden direkten Druck auf das behandelte Areal für 1 Woche (z.B. Gesichtsmassagen, Zahnbehandlungen). Meiden Sie Sonnenlicht und Sonnenstudios für 1 Woche, ebenso sollten Sie auf Sport und den Besuch von Sauna, Schwimmbad oder Dampfbad für 1 Woche verzichten.</p>
+<p> </p>
+<p><strong>Wann sind die Ergebnisse des Fadenliftings sichtbar und wie lange hält das Fadenlifting an?</strong></p>
+<p>Das Ergebnis ist je nach eingesetzten Fäden sofort bis verzögert sichtbar. Bei den PDO-Fäden tritt der maximale Effekt nach ca. 4 bis 8 Wochen ein. Anschließend werden die Fäden langsam vom Körper abgebaut. Während des Abbaus wird im Unterhautgewebe verstärkt Kollagen gebildet und das Bindehautgewebe gefestigt. Ein natürliches Stützgerüst entsteht. Die Effekte halten je nach Fadenmaterial 1 bis 3 Jahre an.</p>
+<p><br></p>
+<p><strong>Welche Risiken und mögliche Nebenwirkungen gibt es beim Fadenlifting?</strong></p>
+<p>Unmittelbar nach der Behandlung kann es zu lokalen Schwellungen und vorübergehendem Schmerzempfinden kommen. Neben injektionsbedingten Blutungen können leichte Ödeme oder Erytheme entstehen, die mit Juckreiz und Druckschmerzhaftigkeit verbunden sein könne. eine leichte Rötung, Blutergüsse oder Schwellung sichtbar sein. Diese Nebenwirkungen sind in der Regel nur vorübergehend und klingen nach 1-3 Tagen ab. In seltenen Fällen können kleine Hämatome, Verhärtungen, Hypertrophien, Teleangiektasien oder Knötchenbildungen auftreten, die jedoch narbenfrei abheilen. Infektionen sind äußerst selten und können durch Schmutz oder durch Eindringen von unsauberen Wasser entstehen. Bitte informieren Sie Fr. Shnal, wenn Entzündungsreaktionen oder andere unerwünschten Nebenwirkungen länger anhalten. Damit diese entsprechend behandelt werden können.</p>
+<p><br></p>
+<p><strong>Verträgt sich meine regelmäßige Faltenbehandlung mit Botox- oder Hyaluronsäure mit dem Fadenlifting?</strong></p>
+<p>Das Fadenlifting kann sehr gut mit anderen ästhetischen Maßnahmen wie Botox, Hyaluron-Filler oder Laser kombiniert werden.</p>
+<p>Bei Botox empfiehlt sich ein zeitlich versetztes Vorgehen, zunächst wird Botox injiziert, nach 14 Tagen kann das Fadenlifting erfolgen. Filler können ggf. auch in einer Sitzung gemeinsam mit dem Fadenlift injiziert werden.</p>
+<p> </p>",VIVA Ästhetik,Красота и здоровье > Личная гигиена и уход за собой > Косметика > Косметические инструменты > Инструменты для ухода за кожей,"","",true,Title,Default Title,,,,,,,,,0.0,shopify,0,deny,manual,0.00,,true,true,,,,,"",,,,false,,,,kg,,,active
+was-ist-ein-lippenkorrektur,Was ist ein „ Lippenkorrektur“?,"<p><strong>Hyaluronsäure </strong>ist ein natürlicher, wichtiger Feuchtigkeitsspeicher in unserer Haut. Sie verleiht dem Gesicht Elastizität, Spannkraft, Glätte und seine weichen Konturen. Mit zunehmendem Lebensalter nimmt der Hyaluronsäuregehalt der Haut ab. Die Haut verliert ihr jugendliches und weiches Aussehen, es entstehen Falten.</p>
+<p><br></p>
+<p><strong>Was ist das besondere an der Hyaluronsäure für die Lippen?</strong></p>
+<p>Das besondere an der Hyaluronsäure für die Lippen ist ihre spezielle Struktur, welche einerseits besonders gut für den Volumenaufbau geeignet ist und sich zusätzlich geschmeidig und weich anfühlt. Sie ist auch hervorragend zur Konturierung der Lippen geeignet, um diese dezent zu betonen und kleine Knitterfalten auszugleichen. Ihre Lippen werden wieder frischer aussehen und bleiben dabei ganz natürlich.</p>
+<p>Es handelt sich um einen resorbierbaren, das heißt ein im Laufe der Zeit abbaubaren Filler.</p>
+<p> </p>
+<p><strong>Welche Effekte können mit der Behandlung der Lippen erreicht werden?</strong></p>
+<p>Nach ausführlicher Beratung<span class=""Apple-converted-space"">  </span>werden individuelle Ziele für die Behandlung der Lippen festgelegt. Möglich sind:</p>
+<p><br></p>
+<p>Glättung der kleinen Falten an der Ober- und Unterlippe (vermehrt bei Rauchern)</p>
+<p>Konturierung der Lippen für definierte Lippen</p>
+<p>Volumenaufbau für vollere Lippen</p>
+<p>Auffüllen der seitlichen Lippenenden für einen freundlichen Ausdruck</p>
+<p>Auffüllen der Marionettenfalten</p>
+<p> </p>
+<p><strong>Wie lange hält die Wirkung bei an?</strong></p>
+<p>Die Wirkung hält 6-12 Monate an und kann beliebig häufig wiederholt werden.</p>
+<p>Wie lange dauert die Faltenunterspritzung und erfolgt eine Betäubung?</p>
+<p> </p>
+<p>Die Behandlung dauert in der Regel ca. 20 - 30 min.</p>
+<p>Die Lippen zählen zu den empfindlichen Regionen unseres Gesichtes. Bei uns in der Praxis wird ca. 30 Minuten vor der Behandlung eine lokale Betäubung als Creme aufgetragen. Zusätzlich ist die von uns verwendete Hyaluronsäure mit einem Lokalanästhetikum angereichert, so dass die Injektion weitgehend schmerzfrei verläuft. Die lokale Betäubung kann bis zu Stunden nach der Behandlung als Taubheitsgefühl oder leichtes Prickeln zu spüren sein.</p>
+<p><br></p>
+<p><strong>Wie sehe ich direkt nach der Behandlung aus? Bin ich nach der Behandlung gesellschaftsfähig?</strong></p>
+<p>Nach der Behandlung kann vorübergehend eine leichte Rötung oder Schwellung sichtbar sein, manchmal kann sich ein kleiner Bluterguss bilden. All dies bildet sich meist sehr schnell wieder zurück, die Patienten können unter Berücksichtigung kleiner Maßnahmen ihrer normalen Beschäftigung nachgehen.</p>
+<p><br></p>
+<p><strong>Auf was sollte ich nach der Behandlung achten?</strong></p>
+<p>Am Tag der Behandlung sollten sie die zuvor behandelten Bereiche nicht mehr massieren. Auf sehr warme oder kalte Getränke sollte am Tag der Behandlung verzichtet werden. Nach der Behandlung können Sie ebenfalls wieder duschen.</p>
+<p><br></p>
+<p><strong>Was kann ich vorbeugend tun, um Schwellungen oder Hämatome zu vermeiden?</strong></p>
+<p>Sie können vor und nach der Behandlung je 5 Kügelchen (Globuli) Arnika D12 unter der Zunge zergehen lassen. Verzichten Sie 1 Woche vor und nach der Behandlung auf die Einnahme blutverdünnender Medikamente (z.B. ASS).</p>
+<p><br></p>
+<p><strong>Wann sollte keine Behandlung mit Hyaluronsäre durchgeführt werden?</strong></p>
+<p>Hyaluronsäure darf nicht angewendet werden bei Personen, bei denen eine Überempfindlichkeit gegen das Arzneimittel oder einen der sonstigen Bestandteile des Arzneimittels .</p>
+<p>Auch bei Infektionen an der vorgesehenen Injektionsstelle, z.B. bei bestimmten Viruserkrankungen wie Herpes oder starker Akne. Patienten unter Immunsuppression oder bei Neigung zu Keloiden sowie unter blutverdünnenden Medikamenten oder mit Gerinnungsstörungen wird von der Behandlung abgeraten.</p>
+<p>Schwangere Frauen und stillende Mütter sollten aus Vorsicht nicht mit Hyaluronsäure behandelt werden.</p>",VIVA Ästhetik,Красота и здоровье > Личная гигиена и уход за собой > Косметика > Уход за кожей > Средства для ухода за губами,"","",true,Title,Default Title,,,,,,,,,0.0,shopify,0,deny,manual,0.00,,true,true,,,,,"",,,,false,,,,kg,,,active
+was-ist-ein-mesotherapie,Was ist ein „Mesotherapie“?,"<p><strong>Die Mesotherapie</strong> stellt eine Behandlungsmethode dar, bei der Vitamine, Nährstoffe und Enzyme mit sehr feinen Nadeln in die mittlere Hautschicht eingebracht werden. Die konzentrierten Wirkstoffe werden direkt an den Zielort gebracht, so dass sehr geringe Mengen genügen.</p>
+<p>In der Praxis Viva Ästhetik bietet Frau Shnal<span class=""Apple-converted-space"">  </span>Ihnen die Mesotherapie in ihrer modernsten Form – mit dem Einsatz einer hochpräzisen Mesopistole. Diese Technologie ermöglicht eine besonders schonende, gleichmäßige und effektive Einbringung ausgewählter Wirkstoffe direkt in die mittlere Hautschicht (Mesoderm).</p>
+<p><br></p>
+<p><strong>Vorteile der Mesotherapie mit der Mesopistole:</strong></p>
+<p><span class=""Apple-tab-span""> </span>•<span class=""Apple-tab-span""> </span>Höchste Präzision: Die computergesteuerte Injektion gewährleistet eine exakte Dosierung und Eindringtiefe – individuell an die Hautbedürfnisse angepasst.</p>
+<p><span class=""Apple-tab-span""> </span>•<span class=""Apple-tab-span""> </span>Sanfte Anwendung: Im Vergleich zur manuellen Methode ist die Behandlung nahezu schmerzfrei und reduziert das Risiko von Hämatomen.</p>
+<p><span class=""Apple-tab-span""> </span>•<span class=""Apple-tab-span""> </span>Maximale Wirkung: Durch die gleichmäßige Verteilung der Wirkstoffe wie Hyaluronsäure, Vitamine oder Peptide werden sichtbare Ergebnisse schneller erreicht.</p>
+<p><span class=""Apple-tab-span""> </span>•<span class=""Apple-tab-span""> </span>Minimale Ausfallzeit: Die Behandlung ist besonders schonend – Alltagstauglichkeit sofort nach der Anwendung.</p>
+<p><br></p>
+<p><strong>Welche Einsatzgebiete gibt es für die Mesotherapie?</strong></p>
+<p>Für die Mesotherapie gibt es unterschiedliche Einsatzgebiete. Sie wird zur Hautverjüngung bei müder, erschlaffender Haut und Fältchen, bei verschiedenen Formen des Haarausfalls bei Männern und Frauen sowie zur Behandlung von Schwangerschafts- und Dehnungsstreifen.</p>
+<p><br></p>
+<p><strong>Was ist vor der Behandlung zu beachten?</strong></p>
+<p>Vor der Behandlung ist es wichtig keine blutverdünnenden Mittel einzunehmen oder sich impfen zu lassen. Außerdem sollten am Behandlungstag keine Cremes, Make-up oder Puder an den zu behandelnden Stellen aufgetragen werden.</p>
+<p><br></p>
+<p><strong>Wie wird die Behandlung durchgeführt?</strong></p>
+<p>Vor Beginn der Behandlung wird eine Betäubungscreme auf die Haut aufgetragen. Nach einer kurzen Einwirkzeit erfolgt eine gründliche Reinigung der zu behandelnden Haut. Dann werden mit Hilfe von äußerst feinen, kurzen Injektionsnadeln Wirkstoffe in die Haut eingebracht. Während der Behandlung können sie ein leichtes Stechen oder Brennen verspüren.</p>
+<p><br></p>
+<p><strong>Wie sieht meine Haut nach der Behandlung aus?</strong></p>
+<p>Nach der Behandlung treten leichte Rötungen und eine leichte Schwellung der Haut auf, die in den nächsten Tagen abklingen. Es können auch kleine Blutergüsse entstehen.</p>
+<p><br></p>
+<p><strong>Was ist nach der Behandlung zu beachten?</strong></p>
+<p>In der ersten Zeit nach der Behandlung sollten keine Vollbäder, Massagen, Packungen oder Lymphdrainagen erfolgen.</p>
+<p>Des Weiteren sollten Sie bitte die behandelten Stellen vor direkter Sonnenstrahlung schützen, nicht in die Sauna gehen, in den ersten 3 Tagen dort keine Röntgenbestrahlungen oder Elektrotherapie durchführen lassen und keine gefärbten, neuen oder zu engen Kleidungsstücke an dieser Stelle tragen.</p>
+<p><br></p>
+<p><strong>Wie viele Behandlungen sind notwendig?</strong></p>
+<p>Je nach Einsatzgebiet und Befund wird die Ärztin mit Ihnen einen individuellen Behandlungsplan erstellen. Um optimale Ergebnisse zu erzielen, sind mehrere Sitzungen und über das Jahr verteilte Auffrischungen notwendig.</p>",VIVA Ästhetik,Услуги > Персональные услуги > Красота и уход за собой,"","",true,Title,Default Title,,,,,,,,,0.0,shopify,0,deny,manual,0.00,,true,true,,,,,"",,,,false,,,,kg,,,active
+was-ist-ein-intimlifting,Was ist ein „Intimlifting“?,"<p>Das Intimlifting ist eine moderne, minimalinvasive Behandlung zur sanften Straffung und Verjüngung des Intimbereichs.<br>Durch den Einsatz innovativer Methoden wird die Elastizität des Gewebes verbessert, die Hautstruktur gestärkt und das ästhetische Erscheinungsbild harmonisch optimiert.<br>Diese diskrete und effektive Therapie trägt nicht nur zu einem gesteigerten Wohlbefinden bei, sondern unterstützt auch das persönliche Selbstvertrauen.</p>",VIVA Ästhetik,Разное,"","",true,Title,Default Title,,,,,,,,,0.0,shopify,0,deny,manual,0.00,,true,true,,,,,"",,,,false,,,,kg,,,active
+kollagenstimulation-mit-radiesse®️,Kollagenstimulation mit Radiesse®️,"<p>Behandlungsdauer: ca. 45–60 Minuten</p>
+<p><strong>Schmerzen:</strong> gering bis moderat (abhängig von der Region)</p>
+<p><strong>Betäubung:</strong> bei Bedarf oberflächliche Betäubung</p>
+<p><strong>Gesellschaftsfähigkeit: </strong>in der Regel sofort</p>
+<p><strong>Einschränkungen nach Behandlung: </strong>1–2 Tage keine Sauna/Sport, keine intensive Sonnenexposition</p>
+<p><strong>Wirkungseintritt:</strong> Die Effekte entwickeln sich allmählich in den folgenden Wochen durch die Neubildung von Kollagen und führen zu nachhaltiger Straffung und einem sichtbaren Lifting-Effekt</p>
+<p><strong>Wirkungsdauer / Haltbarkeit:</strong> ca. 12–18 Monate (abhängig von Hautzustand und Stoffwechsel)</p>
+<p><strong>Behandlungsverlauf:</strong> In der Regel genügt eine Behandlung, bei Bedarf Auffrischung nach 12–18 Monaten</p>
+<p><strong>Kosten:</strong> individuell nach Areal und Produktmenge, ab 350 €</p>",Viva Ästhetik,Услуги > Персональные услуги > Красота и уход за собой,"","",true,Title,Default Title,,,,,,,,,0.0,,0,deny,manual,350.00,,true,true,,,,,"",https://cdn.shopify.com/s/files/1/1073/3309/1677/files/20251005_0022___remix_01k6raqp55fj99vsq4e6ak6cq2-2_171f3aed-0565-4fd0-a85a-7622fe0507a5.png?v=1778271329,1,"",false,,,,kg,,,active
+prp-therapie-kopfhaut-stimulierung-von-haarwachstum-und-vitalitat-der-haarfollikel,PRP-Therapie Kopfhaut Stimulierung von Haarwachstum und Vitalität der Haarfollikel,"<p><strong>Behandlungsdauer: </strong>ca. 30–45 Minuten</p>
+<p><strong>Schmerzen:</strong> gering bis moderat (je nach Empfindlichkeit der Kopfhaut)</p>
+<p><strong>Betäubung:</strong> bei Bedarf kühlende Anwendung</p>
+<p><strong>Gesellschaftsfähigkeit:</strong> in der Regel sofort, leichte Rötung kann auftreten</p>
+<p><strong>Einschränkungen nach Behandlung:</strong> 1–2 Tage keine Sauna/Sport, keine intensive Sonnenexposition, keine Kopfhautmassagen</p>
+<p><strong>Wirkungseintritt:</strong> allmählich, sichtbare Ergebnisse nach einigen Wochen</p>
+<p><strong>Wirkungsdauer / Haltbarkeit:</strong> ca. 3–6 Monate (je nach individueller Reaktion und Behandlungsziel)</p>
+<p><strong>Behandlungsverlauf:</strong> Für optimalen Erfolg wird eine Kur von mehreren Sitzungen empfohlen (z. B. 3–6 Behandlungen im Abstand von 2–4 Wochen).</p>
+<p><strong>Kosten:</strong> 200€</p>",Viva Ästhetik,Красота и здоровье > Личная гигиена и уход за собой > Уход за волосами > Средства против выпадения волос,"","",true,Title,Default Title,,,,,,,,,0.0,,0,deny,manual,200.00,,true,true,,,,,"",https://cdn.shopify.com/s/files/1/1073/3309/1677/files/20251005_0010___remix_01k6ra3bgkf8dt4arwpppw375s-2_4c78d0a3-ca7a-4bfb-a2d5-78db58fbfe40.png?v=1778271328,1,"",false,,,,kg,,,active
+was-ist-ein-kollagenstimulation-mit-radiesse®️,Was ist ein „Kollagenstimulation mit Radiesse®️“?,"<p>Radiesse®️ ist eine innovative, aber seit vielen Jahren bewährte Methode zur Hautverjüngung. Der hochwertige Kollagenstimulator basiert auf Calciumhydroxylapatit – einer Substanz, die vom Körper vollständig abgebaut wird und die natürliche Kollagenbildung anregt.</p>
+<p>Warum wir eine Kollagenstimulation mit Radiesse®️ empfehlen:</p>
+<p> 1. Erprobt und bewährt – die Methode wird seit vielen Jahren klinisch erfolgreich angewendet.</p>
+<p> 2. Sanftes Volumen und natürlicher Effekt – Radiesse®️ verleiht der Haut leichtes Volumen, definiert Konturen und stimuliert gleichzeitig die körpereigene Kollagenproduktion.</p>
+<p> 3. Langfristiges Ergebnis – neues Kollagen bildet sich noch Wochen nach der Behandlung, die Haut wird straffer und fester.</p>
+<p> 4. Sofort sichtbarer Effekt – die Haut wirkt direkt nach der Behandlung frisch und glatt.</p>
+<p> 5. Sicherheit – der Wirkstoff wird vollständig im Körper abgebaut.</p>
+<p> 6. Applikation mit Kanüle – minimiert das Risiko von Blutergüssen und macht die Behandlung komfortabler.</p>
+<p> 7. Für verschiedene Bereiche geeignet – Gesicht, Hals, Hände, Wangenkonturen und Kinn.</p>
+<p>Ideal für alle, die eine sanfte, natürliche Hautstraffung, leichtes Volumen und eine verbesserte Hautstruktur ohne radikale Eingriffe wünschen.</p>",Viva Ästhetik,Разное,"","",true,Title,Default Title,,,,,,,,,0.0,shopify,0,deny,manual,0.00,,true,true,,,,,"",,,,false,,,,kg,,,active

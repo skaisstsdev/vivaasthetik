@@ -1,0 +1,288 @@
+{
+  "Navigation": {
+    "home": "Startseite",
+    "services": "Leistungen",
+    "about": "Über mich",
+    "booking": "Terminbuchung",
+    "faq": "FAQ",
+    "tips": "Empfehlungen",
+    "contact": "Kontakt",
+    "admin": "Admin",
+    "bookCta": "Termin buchen"
+  },
+  "About": {
+    "Hero": {
+      "title": "Natalia Schnal",
+      "subtitle1": "Ihre Expertin für ",
+      "subtitle2": "ästhetische Medizin",
+      "cta": "Termin buchen"
+    },
+    "ConsultationCTA": {
+      "title": "Buchen Sie einen Termin",
+      "subtitle": "Wählen Sie die beste Zeit für sich selbst",
+      "cta": "Termin buchen"
+    },
+    "Journey": {
+      "title": "Mein beruflicher Werdegang zur ästhetischen Medizin",
+      "text": "Ich bin überzeugt, dass wahre Schönheit von innen kommt, aber die richtige Behandlung kann das Selbstbewusstsein und Wohlbefinden erheblich steigern. Es ist meine Mission, Menschen zu helfen, sich in ihrer Haut wohlzufühlen und ihre individuelle Schönheit zu betonen."
+    },
+    "Quote": {
+      "text": "\"Ich liebe es, meine Patienten zu betreuen und die bestmöglichen Ergebnisse zu erzielen, um ihre natürliche Ausstrahlung zu unterstreichen. Ihre Zufriedenheit und Ihr Wohlbefinden sind für mich die wichtigste Ziele.\""
+    },
+    "Experience": {
+      "title": "Meine Ausbildung und Berufserfahrung",
+      "text1": "Ich habe mein Studium der Medizin an der Medizinischen Universität in Kasachstan im Jahr 1997 abgeschlossen und als Ärztin für Innere Medizin gearbeitet. Während meiner Tätigkeit als Internistin mit dem Schwerpunkt Endokrinologie konnte ich umfangreiche medizinische Kenntnisse und Erfahrung sammeln.",
+      "text2": "Nach meinem Umzug nach Deutschland im Jahr 2016 habe ich meinen Arztabschluss als Internistin anerkennen lassen und sowohl in Kliniken als auch in Praxen gearbeitet.",
+      "text3": "In den letzten Jahren habe ich jedoch meine Leidenschaft für die ästhetische Medizin entdeckt, die es mir ermöglicht, Menschen auf eine ganz besondere Weise zu unterstützen – indem ich ihre natürliche Schönheit zur Geltung bringe. Um mein Wissen und meine Fähigkeiten in der ästhetischen Medizin stetig zu erweitern, habe ich in Deutschland eine umfassende Weiterbildung absolviert und zahlreiche Zertifikate in ästhetischer Medizin erworben.",
+      "text4": "Ich nehme regelmäßig an Fortbildungen, Workshops und internationalen Kongressen teil, um stets auf dem neuesten Stand der Entwicklungen und Innovationen in der Branche zu bleiben."
+    }
+  },
+  "Footer": {
+    "legalTitle": "Rechtliches",
+    "impressum": "Impressum",
+    "datenschutz": "Datenschutz",
+    "agb": "AGB",
+    "rights": "Alle Rechte vorbehalten.",
+    "admin": "Admin",
+    "addressTitle": "Adresse",
+    "address": "Königstor 47, 34117 Kassel",
+    "contactTitle": "Kontakt",
+    "phone": "+49 176 80590483",
+    "email": "info@viva-aesthetik.de",
+    "socialTitle": "Social Media"
+  },
+  "Hero": {
+    "eyebrow": "Ästhetische Medizin in Kassel",
+    "title": "Ihre Schönheit.",
+    "titleEm": "Unsere Leidenschaft.",
+    "subtitle": "Individuelle Behandlungen für Ihr natürliches Strahlen – sicher, diskret und auf höchstem medizinischen Niveau.",
+    "ctaPrimary": "Leistungen entdecken",
+    "ctaSecondary": "Über uns",
+    "ctaBooking": "Termin buchen"
+  },
+  "Intro": {
+    "title": "Willkommen bei VIVA Ästhetik",
+    "text": "Bei Schönheit geht es nicht nur um das Aussehen, sondern auch um ein Gefühl von Selbstvertrauen, Wohlbefinden und Frische. Bei Viva Asthetik legen wir Wert darauf, Ihre natürliche Schönheit hervorzuheben und Ihnen ein harmonisches und gepflegtes Erscheinungsbild zu verleihen."
+  },
+  "VideoShowcase": {
+    "title": "Die Kunst der Schönheit"
+  },
+  "FeatureCards": {
+    "servicesTitle": "Unsere Leistungen",
+    "servicesText": "Von Botox und Fillern bis hin zu Mesotherapie und Fadenlifting – entdecken Sie unser umfassendes Spektrum an ästhetischen Behandlungen.",
+    "servicesLink": "Alle Leistungen ansehen",
+    "clinicTitle": "Über die Klinik",
+    "clinicText": "Erfahren Sie mehr über unsere Klinik, unsere Philosophie und unser engagiertes Team in Kassel.",
+    "clinicLink": "Mehr erfahren",
+    "techTitle": "Unsere Technologien",
+    "techText": "Wir arbeiten mit modernsten Geräten und Methoden, darunter der Pistor Eliance – dem führenden Mesoinjektions-System der Welt.",
+    "techLink": "Technologien entdecken"
+  },
+  "Testimonials": {
+    "eyebrow": "Empfehlungen",
+    "title": "Was unsere Patientinnen sagen",
+    "leaveReview": "Bewertung hinterlassen",
+    "items": [
+      {
+        "text": "Ich bin absolut begeistert von den Ergebnissen. Frau Doktor hat sich viel Zeit genommen, um meine Wünsche zu verstehen, und das Resultat ist natürlich und wunderschön.",
+        "name": "Sabina M."
+      },
+      {
+        "text": "Professionelle Beratung, sanfte Behandlung und ein fantastisches Ergebnis. Ich komme immer wieder und empfehle VIVA Ästhetik an alle weiter.",
+        "name": "Elena K."
+      },
+      {
+        "text": "Endlich habe ich die Klinik gefunden, der ich vertraue. Die Behandlung war schmerzlos und das Ergebnis übertrifft meine Erwartungen.",
+        "name": "Markus R."
+      },
+      {
+        "text": "Ich bin sehr zufrieden mit dem Ergebnis der Mesotherapie! Meine Haut strahlt wieder und kleine Fältchen sind verschwunden.",
+        "name": "Anna W."
+      },
+      {
+        "text": "Eine wunderbare Spezialistin und gemütliche Atmosphäre. Habe meine Lippenkontur machen lassen – sieht unglaublich natürlich aus.",
+        "name": "Maria S."
+      },
+      {
+        "text": "Vielen Dank für die behutsame Behandlung. Die Injektionen waren fast schmerzfrei und der Effekt ist atemberaubend.",
+        "name": "Katharina L."
+      },
+      {
+        "text": "Ich komme nicht zum ersten Mal. Die Ärztin erklärt immer alles detailliert und findet die beste Lösung.",
+        "name": "Julia D."
+      },
+      {
+        "text": "Habe eine Haarausfallbehandlung gemacht, das Ergebnis war schon nach wenigen Wochen sichtbar. Sehr zu empfehlen!",
+        "name": "Olga P."
+      },
+      {
+        "text": "Die beste Klinik für ästhetische Medizin in Kassel. Alles auf höchstem Niveau, vom Empfang bis zur Behandlung.",
+        "name": "Victoria M."
+      },
+      {
+        "text": "Sehr natürliches Ergebnis nach den Fillern. Niemand hat gemerkt, dass ich etwas gemacht habe, ich sehe einfach erholt aus.",
+        "name": "Irina K."
+      },
+      {
+        "text": "Danke für die Professionalität! Ich war vor der Behandlung sehr aufgeregt, aber die Ärztin hat mich schnell beruhigt.",
+        "name": "Svetlana N."
+      },
+      {
+        "text": "Der Effekt der Biorevitalisation ist einfach super! Die Haut ist wunderbar mit Feuchtigkeit versorgt und straff.",
+        "name": "Tatiana T."
+      },
+      {
+        "text": "Ich gehe regelmäßig zu Behandlungen. 100%iges Vertrauen in die Klinik, immer ein perfektes und stabiles Ergebnis.",
+        "name": "Natalia G."
+      }
+    ]
+  },
+  "ConsultationCTA": {
+    "eyebrow": "Ihr nächster Schritt",
+    "title": "Bereit für Ihre Transformation?",
+    "text": "Wählen Sie Ihre gewünschte Behandlung und vereinbaren Sie einen Termin. Wir kümmern uns auf höchstem Niveau um Ihre Schönheit und Gesundheit.",
+    "cta": "Behandlung buchen"
+  },
+  "Booking": {
+    "title": "Termin buchen",
+    "subtitle": "Wählen Sie Ihre gewünschte Behandlung und finden Sie den perfekten Termin für Ihre persönliche Beratung oder Anwendung.",
+    "step1": "1. Behandlung wählen",
+    "step2": "2. Datum & Zeit",
+    "step3": "3. Ihre Daten",
+    "step1_title": "Wählen Sie Ihre gewünschte Behandlung",
+    "step2_title": "Wann möchten Sie zu uns kommen?",
+    "step3_title": "Bitte geben Sie Ihre Kontaktdaten ein",
+    "btn_next": "Weiter",
+    "btn_back": "Zurück",
+    "btn_submit": "Termin anfragen",
+    "facts_title": "Kurzinfo zur Behandlung",
+    "duration": "Dauer",
+    "pain": "Schmerzen",
+    "anesthesia": "Betäubung",
+    "recovery": "Gesellschaftsfähigkeit",
+    "restrictions": "Einschränkungen",
+    "onset": "Wirkungseintritt",
+    "durationOfEffect": "Haltbarkeit",
+    "cost": "Kosten",
+    "course": "Behandlungsverlauf",
+    "form_name": "Vollständiger Name",
+    "form_email": "E-Mail-Adresse",
+    "form_phone": "Telefonnummer",
+    "form_notes": "Notizen / Wünsche",
+    "success_title": "Vielen Dank!",
+    "success_text": "Ihre Terminanfrage wurde erfolgreich gesendet. Wir werden uns in Kürze mit Ihnen in Verbindung setzen, um den Termin zu bestätigen."
+  },
+  "WhyUs": {
+    "title": "Warum Viva Ästhetik?",
+    "item1_title": "Individuelle Beratung",
+    "item1_text": "Jede Behandlung wird auf Ihre Bedürfnisse und Wünsche abgestimmt.",
+    "item2_title": "Höchste medizinische Standards",
+    "item2_text": "Wir arbeiten ausschließlich mit geprüften, hochwertigen Materialien.",
+    "item3_title": "Erfahrung und Präzision",
+    "item3_text": "Mit meiner langjährigen Erfahrung und kontinuierlichen Weiterbildungen garantiere ich Ihnen beste Ergebnisse."
+  },
+  "FAQ": {
+    "title": "Häufig gestellte Fragen",
+    "subtitle": "Antworten auf die beliebtesten Fragen zu Behandlungen, Vorbereitung und Genesung.",
+    "questions": [
+      {
+        "q": "Sind die Injektionen schmerzhaft?",
+        "a": "Die meisten Behandlungen sind nahezu schmerzfrei. Wir verwenden ultrafeine Nadeln und bei Bedarf eine oberflächliche Betäubung."
+      },
+      {
+        "q": "Wie lange hält das Ergebnis an?",
+        "a": "Abhängig von der Behandlung und den individuellen körperlichen Eigenschaften kann das Ergebnis 3 bis 18 Monate anhalten."
+      },
+      {
+        "q": "Können verschiedene Behandlungen kombiniert werden?",
+        "a": "Ja, viele Behandlungen ergänzen sich hervorragend. In der Beratung erstellen wir einen idealen Plan speziell für Sie."
+      }
+    ]
+  },
+  "Tips": {
+    "title": "Hilfreiche Tipps",
+    "subtitle": "Wie Sie Ihre Haut nach den Behandlungen richtig pflegen, um die maximale Wirkung zu erzielen.",
+    "items": [
+      {
+        "title": "Die ersten 24 Stunden",
+        "text": "Vermeiden Sie es, Ihr Gesicht zu berühren, tragen Sie kein Make-up auf und verzichten Sie auf intensive körperliche Anstrengungen."
+      },
+      {
+        "title": "Sonnenschutz",
+        "text": "Nach den meisten ästhetischen Behandlungen wird die Haut empfindlicher. Verwenden Sie unbedingt eine Creme mit SPF 50."
+      },
+      {
+        "title": "Wasserhaushalt",
+        "text": "Hydratation von innen ist genauso wichtig wie von außen. Trinken Sie ausreichend Wasser, besonders nach Behandlungen mit Hyaluronsäure."
+      }
+    ]
+  },
+  "Clinic": {
+    "title": "Über VIVA Ästhetik",
+    "subtitle": "Ein Ort, an dem moderne Ästhetik auf stilvolle Wohlfühlatmosphäre trifft",
+    "p1": "Willkommen in der VIVA Ästhetik Klinik. Unsere Praxis befindet sich in einem hellen, großzügig gestalteten Raum im Herzen von Kassel. Schon beim Betreten spürt man die ruhige, entspannte Energie, die durch das durchdachte Interieur und die warme Farbgestaltung vermittelt wird.",
+    "p2": "Die Räumlichkeiten sind nicht nur funktional, sondern auch mit viel Liebe zum Detail eingerichtet – von eleganten Möbeln über hochwertige Materialien bis hin zu beruhigender Beleuchtung. Jede Behandlung findet in separaten, diskret eingerichteten Zimmern statt, die Privatsphäre und Komfort garantieren.",
+    "p3": "Unser Empfangsbereich lädt zum Ankommen ein, während unser Wartebereich wie ein stilvolles Wohnzimmer gestaltet ist – mit gemütlichen Sitzmöglichkeiten, leiser Musik und einer Auswahl an Getränken.",
+    "p4": "Hygiene, Sicherheit und ein Gefühl von Geborgenheit stehen bei uns an erster Stelle. Daher wurde unsere Klinik nicht nur nach den höchsten medizinischen Standards ausgestattet, sondern auch so gestaltet, dass Sie sich wie zu Hause fühlen können."
+  },
+  "Technology": {
+    "title": "Unsere Moderne Behandlungen",
+    "subtitle": "Moderne Technologien für herausragende Ergebnisse",
+    "intro": "Wir setzen auf den fortschrittlichsten Meso-Injektor Pistor Eliance, um Mesotherapie und Haarbehandlungen durchzuführen. Diese innovative Technologie ermöglicht es uns, präzise und effektive Ergebnisse zu erzielen, die den hohen Ansprüchen unserer Kunden gerecht werden. Das ist der Grund, warum wir diesen innovativen Ansatz in der ästhetischen Medizin wählen:",
+    "features": [
+      {
+        "title": "Präzision und gleichmäßige Verteilung",
+        "description": "Der Meso-Injektor ermöglicht uns eine exakte Dosierung der aktiven Wirkstoffe, die gleichmäßig in das Gewebe verteilt werden. Dies gewährleistet eine tiefere Penetration und maximiert die Wirkung der Behandlung — sei es bei der Hautverjüngung oder der Haarwuchs-Stimulation."
+      },
+      {
+        "title": "Minimale Schmerzen und maximaler Komfort",
+        "description": "Dank der schnellen Injektionstechnologie und der modernen Kühlung ist die Behandlung mit dem Meso-Injektor nahezu schmerzfrei. Wir legen großen Wert auf Ihren Komfort, um die Behandlung so angenehm wie möglich zu gestalten."
+      },
+      {
+        "title": "Effektive Ergebnisse in kürzerer Zeit",
+        "description": "Der Meso-Injektor ermöglicht uns eine effizientere und schnellere Behandlung, wodurch die Behandlungszeit reduziert wird. Sie erhalten maximale Ergebnisse bei minimalem Zeitaufwand, sodass Sie Ihre Zeit optimal nutzen können."
+      },
+      {
+        "title": "Minimale Erholungszeit",
+        "description": "Nach einer Behandlung mit dem Meso-Injektor benötigen Sie in der Regel keine lange Erholungszeit. Rötungen und Schwellungen klingen schnell ab, sodass Sie sofort wieder in Ihren Alltag zurückkehren können."
+      },
+      {
+        "title": "Weniger Hautirritationen, mehr Sicherheit",
+        "description": "Durch den Einsatz des Meso-Injektors wird das Risiko von Hautverletzungen und Blutergüssen erheblich minimiert. Dies macht die Behandlung auch für empfindliche Haut sicher und sanft. Ihre Haut und Haare profitieren optimal von den hochwirksamen Inhaltsstoffen."
+      },
+      {
+        "title": "Individuelle Anpassung",
+        "description": "Jede Behandlung wird individuell angepasst und auf Ihre spezifischen Bedürfnisse zugeschnitten. Wir wählen die idealsten Mesotherapie-Cocktails, abgestimmt auf Ihre Haut- oder Haartypen, um Ihnen langfristige und sichtbare Ergebnisse zu liefern."
+      },
+      {
+        "title": "Langfristige und nachhaltige Ergebnisse",
+        "description": "Dank des Meso-Injektors erzielen Sie langanhaltende Ergebnisse. Bei der Haarbehandlung fördern wir das Haarwachstum und stärken die Haarwurzeln, während wir bei der Hautverjüngung für eine nachhaltige Verbesserung des Hautbildes sorgen."
+      }
+    ],
+    "outro": "Mit Viva Ästhetik entscheiden Sie sich für modernste Technologien und Behandlungen auf höchstem Niveau, die Ihnen sichtbare Ergebnisse ohne lange Erholungszeiten bieten. Setzen Sie auf die fortschrittlichsten Methoden der ästhetischen Medizin. Vereinbaren Sie noch heute Ihre persönliche Beratung und erleben Sie den Unterschied!"
+  },
+  "Contact": {
+    "title": "Kontakt",
+    "subtitle": "Wir freuen uns darauf, von Ihnen zu hören. Kontaktieren Sie uns für eine Terminvereinbarung oder bei Fragen.",
+    "infoTitle": "Unsere Kontaktdaten",
+    "addressTitle": "Adresse",
+    "addressText": "Königstor 47, 34117 Kassel",
+    "phoneTitle": "Telefon",
+    "phoneText": "+49 176 80590483",
+    "emailTitle": "E-Mail",
+    "emailText": "info@viva-aesthetik.de",
+    "hoursTitle": "Öffnungszeiten",
+    "hoursText": "Mo - Fr: 09:00 - 18:00\nSa: Nach Vereinbarung\nSo: Geschlossen",
+    "socialTitle": "Social Media",
+    "formTitle": "Schreiben Sie uns",
+    "formName": "Ihr Name",
+    "formEmail": "Ihre E-Mail",
+    "formMessage": "Ihre Nachricht",
+    "formSubmit": "Nachricht senden"
+  },
+  "Cookies": {
+    "text": "Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu verbessern. Wenn Sie diese Website weiterhin nutzen, gehen wir davon aus, dass Sie damit einverstanden sind.",
+    "accept": "Akzeptieren",
+    "decline": "Ablehnen"
+  }
+}

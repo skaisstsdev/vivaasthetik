@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VIVA Ästhetik Kassel — Ästhetische Medizin</title>
+  <meta name="description" content="VIVA Ästhetik in Kassel bietet professionelle ästhetische Behandlungen: Botox, Filler, Mesotherapie, PRP, Fadenlifting und mehr. Individuelle Beratung und Behandlung auf höchstem medizinischen Niveau." />
+  <link rel="canonical" href="https://vivaasthetik.de/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+
+<!-- NAV -->
+<nav id="navbar" class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VIVA<span>Ästhetik</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link active" data-de="Startseite" data-ru="Главная">Startseite</a></li>
+      <li><a href="leistungen.html" class="nav-link" data-de="Leistungen" data-ru="Услуги">Leistungen</a></li>
+      <li><a href="ueber-mich.html" class="nav-link" data-de="Über mich" data-ru="Обо мне">Über mich</a></li>
+      <li><a href="terminbuchung.html" class="nav-link" data-de="Terminbuchung" data-ru="Запись">Terminbuchung</a></li>
+      <li><a href="faq.html" class="nav-link" data-de="FAQ" data-ru="FAQ">FAQ</a></li>
+      <li><a href="empfehlungen.html" class="nav-link" data-de="Empfehlungen" data-ru="Отзывы">Empfehlungen</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button class="lang-btn" data-lang="de">DE</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="ru">RU</button>
+      </div>
+      <a href="terminbuchung.html" class="btn-nav" data-de="Termin buchen" data-ru="Записаться">Termin buchen</a>
+      <button id="burger" class="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div id="mobileMenu" class="mobile-menu">
+  <a href="index.html" data-de="Startseite" data-ru="Главная">Startseite</a>
+  <a href="leistungen.html" data-de="Leistungen" data-ru="Услуги">Leistungen</a>
+  <a href="ueber-mich.html" data-de="Über mich" data-ru="Обо мне">Über mich</a>
+  <a href="terminbuchung.html" data-de="Terminbuchung" data-ru="Запись">Terminbuchung</a>
+  <a href="faq.html" data-de="FAQ" data-ru="FAQ">FAQ</a>
+  <a href="empfehlungen.html" data-de="Empfehlungen" data-ru="Отзывы">Empfehlungen</a>
+  <a href="terminbuchung.html" class="mobile-btn-book" data-de="Termin buchen" data-ru="Записаться">Termin buchen</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-bg" id="heroBg" style="background-image: url('img/hero-bg.jpg');"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow" data-de="Ästhetische Medizin in Kassel" data-ru="Эстетическая медицина в Касселе">Ästhetische Medizin in Kassel</div>
+    <h1 class="hero-title">
+      <span data-de="Ihre Schönheit." data-ru="Ваша красота.">Ihre Schönheit.</span>
+      <em data-de="Unsere Leidenschaft." data-ru="Наша страсть.">Unsere Leidenschaft.</em>
+    </h1>
+    <p class="hero-subtitle" data-de="Individuelle Behandlungen für Ihr natürliches Strahlen – sicher, diskret und auf höchstem medizinischen Niveau." data-ru="Индивидуальные процедуры для вашего естественного сияния – безопасно, деликатно и на высочайшем медицинском уровне.">Individuelle Behandlungen für Ihr natürliches Strahlen – sicher, diskret und auf höchstem medizinischen Niveau.</p>
+    <div class="hero-actions">
+      <a href="terminbuchung.html" class="btn-primary" data-de="Termin buchen" data-ru="Записаться">Termin buchen</a>
+      <a href="leistungen.html" class="btn-secondary" data-de="Unsere Leistungen" data-ru="Наши услуги">Unsere Leistungen</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="stat-num" data-target="500" data-suffix="+">500+</span>
+        <span class="stat-label" data-de="Behandlungen" data-ru="Процедур">Behandlungen</span>
+      </div>
+      <div class="hero-stat">
+        <span class="stat-num" data-target="10" data-suffix="+">10+</span>
+        <span class="stat-label" data-de="Jahre Erfahrung" data-ru="Лет опыта">Jahre Erfahrung</span>
+      </div>
+      <div class="hero-stat">
+        <span class="stat-num">5★</span>
+        <span class="stat-label" data-de="Google Bewertung" data-ru="Рейтинг Google">Google Bewertung</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span class="scroll-label" data-de="Scrollen" data-ru="Прокрутить">Scrollen</span>
+    <div class="scroll-mouse"></div>
+  </div>
+</section>
+
+<!-- ===== MARQUEE ===== -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <!-- duplicated for infinite loop -->
+    <div class="marquee-item"><span data-de="Botox & Filler" data-ru="Ботокс и Филлеры">Botox & Filler</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span data-de="Natürliche Ergebnisse" data-ru="Натуральные результаты">Natürliche Ergebnisse</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span data-de="Mesotherapie" data-ru="Мезотерапия">Mesotherapie</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span data-de="Kassel · Königstor 47" data-ru="Кассель · Königstor 47">Kassel · Königstor 47</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span data-de="10+ Jahre Expertise" data-ru="10+ Лет опыта">10+ Jahre Expertise</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span data-de="PRP · Fadenlifting · Radiesse®" data-ru="PRP · Нитевой лифтинг · Radiesse®">PRP · Fadenlifting · Radiesse®</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span data-de="5★ Google" data-ru="5★ Google">5★ Google</span><span class="marquee-dot"></span></div>
+    <!-- repeat -->
+    <div class="marquee-item"><span data-de="Botox & Filler" data-ru="Ботокс и Филлеры">Botox & Filler</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span data-de="Natürliche Ergebnisse" data-ru="Натуральные результаты">Natürliche Ergebnisse</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span data-de="Mesotherapie" data-ru="Мезотерапия">Mesotherapie</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span data-de="Kassel · Königstor 47" data-ru="Кассель · Königstor 47">Kassel · Königstor 47</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span data-de="10+ Jahre Expertise" data-ru="10+ Лет опыта">10+ Jahre Expertise</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span data-de="PRP · Fadenlifting · Radiesse®" data-ru="PRP · Нитевой лифтинг · Radiesse®">PRP · Fadenlifting · Radiesse®</span><span class="marquee-dot"></span></div>
+    <div class="marquee-item"><span data-de="5★ Google" data-ru="5★ Google">5★ Google</span><span class="marquee-dot"></span></div>
+  </div>
+</div>
+
+<!-- ===== INTRO / ABOUT ===== -->
+<section class="intro">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-image reveal-left">
+        <img src="img/doctor.jpg" alt="Ärztin VIVA Ästhetik Kassel" loading="lazy" />
+        <div class="intro-image-badge">
+          <span class="badge-num" data-target="500" data-suffix="+">500+</span>
+          <span class="badge-text" data-de="Zufriedene Patientinnen" data-ru="Довольных клиентов">Zufriedene Patientinnen</span>
+        </div>
+      </div>
+      <div class="intro-content reveal">
+        <div class="tag-line"><span class="tag" data-de="Über VIVA Ästhetik" data-ru="О VIVA Ästhetik">Über VIVA Ästhetik</span></div>
+        <h2 data-de="Behandlung, der Sie vertrauen können" data-ru="Лечение, которому можно доверять">Behandlung, der Sie vertrauen können</h2>
+        <p data-de="Willkommen bei VIVA Ästhetik! Ich bin Ärztin mit über 10 Jahren Erfahrung in der ästhetischen Medizin und brenne für alles, was mit natürlicher Schönheit und Wohlbefinden zu tun hat. Meine Mission ist es, jedem meiner Patienten zu helfen, das Beste aus sich herauszuholen – auf sichere, diskrete und individuelle Weise." data-ru="Добро пожаловать в VIVA Ästhetik! Я врач с более чем 10-летним опытом в эстетической медицине и страстно люблю всё, что связано с естественной красотой и благополучием. Моя миссия – помочь каждому пациенту раскрыть лучшее в себе – безопасно, деликатно и индивидуально.">Willkommen bei VIVA Ästhetik! Ich bin Ärztin mit über 10 Jahren Erfahrung in der ästhetischen Medizin und brenne für alles, was mit natürlicher Schönheit und Wohlbefinden zu tun hat. Meine Mission ist es, jedem meiner Patienten zu helfen, das Beste aus sich herauszuholen – auf sichere, diskrete und individuelle Weise.</p>
+        <p data-de="Mein Ansatz ist es, die natürliche Schönheit meiner Patienten zu betonen, anstatt sie zu verändern. Ich glaube daran, dass ästhetische Medizin dazu beitragen kann, das Selbstvertrauen zu stärken und das allgemeine Wohlbefinden zu verbessern." data-ru="Мой подход – подчёркивать естественную красоту моих пациентов, а не изменять её. Я верю, что эстетическая медицина может помочь укрепить уверенность в себе и улучшить общее самочувствие.">Mein Ansatz ist es, die natürliche Schönheit meiner Patienten zu betonen, anstatt sie zu verändern. Ich glaube daran, dass ästhetische Medizin dazu beitragen kann, das Selbstvertrauen zu stärken und das allgemeine Wohlbefinden zu verbessern.</p>
+
+        <div class="intro-creds">
+          <div class="cred-item stagger-1 reveal">
+            <div class="cred-label" data-de="Erfahrung" data-ru="Опыт">Erfahrung</div>
+            <div class="cred-value" data-de="Über 10 Jahre" data-ru="Более 10 лет">Über 10 Jahre</div>
+          </div>
+          <div class="cred-item stagger-2 reveal">
+            <div class="cred-label" data-de="Sprachen" data-ru="Языки">Sprachen</div>
+            <div class="cred-value" data-de="Deutsch & Russisch" data-ru="Немецкий & Русский">Deutsch & Russisch</div>
+          </div>
+          <div class="cred-item stagger-3 reveal">
+            <div class="cred-label" data-de="Standort" data-ru="Расположение">Standort</div>
+            <div class="cred-value">Kassel, Königstor 47</div>
+          </div>
+          <div class="cred-item stagger-4 reveal">
+            <div class="cred-label" data-de="Öffnungszeiten" data-ru="Часы работы">Öffnungszeiten</div>
+            <div class="cred-value" data-de="Mi & Fr: 14–19 Uhr" data-ru="Ср & Пт: 14–19">Mi & Fr: 14–19 Uhr</div>
+          </div>
+        </div>
+        <a href="ueber-mich.html" class="btn-outline-dark" data-de="Mehr über mich" data-ru="Подробнее обо мне">Mehr über mich</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="tag" data-de="Unsere Leistungen" data-ru="Наши услуги">Unsere Leistungen</div>
+      <h2 data-de="Wählen Sie die passende Behandlung für sich" data-ru="Выберите подходящую процедуру для вас">Wählen Sie die passende <em>Behandlung</em> für sich</h2>
+      <p data-de="Individuell abgestimmt, sicher und auf höchstem medizinischen Niveau – für Ihr natürliches Strahlen." data-ru="Индивидуально подобранные, безопасные процедуры на высочайшем медицинском уровне – для вашего естественного сияния.">Individuell abgestimmt, sicher und auf höchstem medizinischen Niveau – für Ihr natürliches Strahlen.</p>
+    </div>
+
+    <div class="services-grid">
+      <a href="service-mesotherapie.html" class="service-card reveal stagger-1">
+        <div class="service-card-img-wrap">
+          <img class="service-card-img" src="img/svc-mesotherapie.png" alt="Mesotherapie" loading="lazy" />
+        </div>
+        <div class="service-card-body">
+          <h3 data-de="Mesotherapie" data-ru="Мезотерапия">Mesotherapie</h3>
+          <p data-de="Eine schonende Behandlung, bei der Vitamine, Mineralstoffe und Hyaluronsäure direkt in die Haut eingebracht werden." data-ru="Щадящая процедура, при которой витамины, минералы и гиалуроновая кислота вводятся непосредственно в кожу.">Eine schonende Behandlung, bei der Vitamine, Mineralstoffe und Hyaluronsäure direkt in die Haut eingebracht werden.</p>
+          <span class="service-cta" data-de="Erfahren Sie mehr" data-ru="Узнать больше">Erfahren Sie mehr</span>
+        </div>
+      </a>
+
+      <a href="service-biorevitalisierung.html" class="service-card reveal stagger-2">
+        <div class="service-card-img-wrap">
+          <img class="service-card-img" src="img/svc-biorevitalisierung.png" alt="Biorevitalisierung" loading="lazy" />
+        </div>
+        <div class="service-card-body">
+          <h3 data-de="Biorevitalisierung" data-ru="Биоревитализация">Biorevitalisierung</h3>
+          <p data-de="Tiefenwirksame Feuchtigkeitsversorgung durch spezielle Hyaluronsäure-Präparate, die die Haut von innen heraus verjüngen." data-ru="Глубокое увлажнение с помощью специальных препаратов гиалуроновой кислоты, омолаживающих кожу изнутри.">Tiefenwirksame Feuchtigkeitsversorgung durch spezielle Hyaluronsäure-Präparate, die die Haut von innen heraus verjüngen.</p>
+          <span class="service-cta" data-de="Erfahren Sie mehr" data-ru="Узнать больше">Erfahren Sie mehr</span>
+        </div>
+      </a>
+
+      <a href="service-botox.html" class="service-card reveal stagger-3">
+        <div class="service-card-img-wrap">
+          <img class="service-card-img" src="img/svc-botox.png" alt="Botox-Behandlung" loading="lazy" />
+        </div>
+        <div class="service-card-body">
+          <h3 data-de="Botox-Behandlung" data-ru="Ботокс">Botox-Behandlung</h3>
+          <p data-de="Gezielte Entspannung der Gesichtsmuskeln für ein glatteres, jüngeres Aussehen – ohne Beeinträchtigung der natürlichen Mimik." data-ru="Целенаправленное расслабление мышц лица для более гладкого и молодого вида без нарушения естественной мимики.">Gezielte Entspannung der Gesichtsmuskeln für ein glatteres, jüngeres Aussehen – ohne Beeinträchtigung der natürlichen Mimik.</p>
+          <span class="service-cta" data-de="Erfahren Sie mehr" data-ru="Узнать больше">Erfahren Sie mehr</span>
+        </div>
+      </a>
+
+      <a href="service-filler.html" class="service-card reveal stagger-1">
+        <div class="service-card-img-wrap">
+          <img class="service-card-img" src="img/svc-filler.png" alt="Fallenunterspritzung" loading="lazy" />
+        </div>
+        <div class="service-card-body">
+          <h3 data-de="Faltenunterspritzung mit Fillern" data-ru="Контурная пластика филлерами">Faltenunterspritzung mit Fillern</h3>
+          <p data-de="Auffüllen von Falten und Wiederherstellen von verlorenes Volumen für ein frisches und harmonisches Aussehen." data-ru="Заполнение морщин и восстановление утраченного объёма для свежего и гармоничного вида.">Auffüllen von Falten und Wiederherstellen von verlorenes Volumen für ein frisches und harmonisches Aussehen.</p>
+          <span class="service-cta" data-de="Erfahren Sie mehr" data-ru="Узнать больше">Erfahren Sie mehr</span>
+        </div>
+      </a>
+
+      <a href="service-lippen.html" class="service-card reveal stagger-2">
+        <div class="service-card-img-wrap">
+          <img class="service-card-img" src="img/svc-lippen.png" alt="Lippenkorrektur" loading="lazy" />
+        </div>
+        <div class="service-card-body">
+          <h3 data-de="Lippenkorrektur" data-ru="Коррекция губ">Lippenkorrektur</h3>
+          <p data-de="Optimierung der Lippenform und des Lippenvolumens für ein symmetrisches, jugendliches Erscheinungsbild." data-ru="Оптимизация формы и объёма губ для симметричного и молодёжного вида.">Optimierung der Lippenform und des Lippenvolumens für ein symmetrisches, jugendliches Erscheinungsbild.</p>
+          <span class="service-cta" data-de="Erfahren Sie mehr" data-ru="Узнать больше">Erfahren Sie mehr</span>
+        </div>
+      </a>
+
+      <a href="service-vampirlifting.html" class="service-card reveal stagger-3">
+        <div class="service-card-img-wrap">
+          <img class="service-card-img" src="img/svc-vampirlifting.png" alt="Vampirlifting PRP" loading="lazy" />
+        </div>
+        <div class="service-card-body">
+          <h3 data-de="Vampirlifting (PRP)" data-ru="Вампирский лифтинг (PRP)">Vampirlifting (PRP)</h3>
+          <p data-de="Nutzung körpereigener Wachstumsfaktoren zur Hautverjüngung und Kollagenproduktion – vollständig natürlich." data-ru="Использование собственных факторов роста для омоложения кожи и стимуляции коллагена – полностью натурально.">Nutzung körpereigener Wachstumsfaktoren zur Hautverjüngung und Kollagenproduktion – vollständig natürlich.</p>
+          <span class="service-cta" data-de="Erfahren Sie mehr" data-ru="Узнать больше">Erfahren Sie mehr</span>
+        </div>
+      </a>
+    </div>
+
+    <div style="text-align:center; margin-top: 56px;" class="reveal">
+      <a href="leistungen.html" class="btn-outline-dark" data-de="Alle Leistungen ansehen" data-ru="Смотреть все услуги">Alle Leistungen ansehen</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS (PROCESS) ===== -->
+<section class="process-section">
+  <div class="container">
+    <div class="section-header reveal" style="margin-bottom: 60px;">
+      <div class="tag" style="color: var(--gold);" data-de="Unser Prozess" data-ru="Наш процесс">Unser Prozess</div>
+      <h2 style="color: var(--white);" data-de="Wie es funktioniert" data-ru="Как это работает">Wie es funktioniert</h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-item reveal stagger-1">
+        <span class="process-num">01</span>
+        <div class="process-icon">
+          <svg viewBox="0 0 24 24"><path d="M8 2v3M16 2v3M3 8h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg>
+        </div>
+        <h3 data-de="Termin buchen" data-ru="Записаться">Termin buchen</h3>
+        <p data-de="Online oder telefonisch – bequem und unkompliziert." data-ru="Онлайн или по телефону – удобно и без сложностей.">Online oder telefonisch – bequem und unkompliziert.</p>
+      </div>
+      <div class="process-item reveal stagger-2">
+        <span class="process-num">02</span>
+        <div class="process-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8z"/></svg>
+        </div>
+        <h3 data-de="Erstgespräch" data-ru="Первичная консультация">Erstgespräch</h3>
+        <p data-de="Persönliche Beratung und individuelle Behandlungsplanung." data-ru="Личная консультация и индивидуальное планирование лечения.">Persönliche Beratung und individuelle Behandlungsplanung.</p>
+      </div>
+      <div class="process-item reveal stagger-3">
+        <span class="process-num">03</span>
+        <div class="process-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <h3 data-de="Behandlung" data-ru="Процедура">Behandlung</h3>
+        <p data-de="Professionelle Durchführung auf höchstem medizinischen Niveau." data-ru="Профессиональное выполнение на высочайшем медицинском уровне.">Professionelle Durchführung auf höchstem medizinischen Niveau.</p>
+      </div>
+      <div class="process-item reveal stagger-4">
+        <span class="process-num">04</span>
+        <div class="process-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14M22 4L12 14.01l-3-3"/></svg>
+        </div>
+        <h3 data-de="Ergebnis" data-ru="Результат">Ergebnis</h3>
+        <p data-de="Natürliche, begeisternde Ergebnisse und Nachsorge." data-ru="Натуральные, впечатляющие результаты и последующий уход.">Natürliche, begeisternde Ergebnisse und Nachsorge.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MODERN TREATMENT HIGHLIGHT ===== -->
+<section class="section" style="background: var(--white);">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-content reveal">
+        <div class="tag-line"><span class="tag" data-de="Modernste Technologie" data-ru="Современные технологии">Modernste Technologie</span></div>
+        <h2 data-de="Unser modernes Behandlungskonzept" data-ru="Наша современная концепция лечения">Unser modernes Behandlungskonzept</h2>
+        <p data-de="In meiner Praxis in Kassel biete ich ein breites Spektrum an ästhetischen Behandlungen an, die von Botox und Fillern über Mesotherapie und PRP bis hin zu Fadenlifting und Lipolyse reichen. Jede Behandlung wird individuell auf Sie abgestimmt, um die bestmöglichen Ergebnisse zu erzielen." data-ru="В своей клинике в Касселе я предлагаю широкий спектр эстетических процедур: от ботокса и филлеров до мезотерапии и PRP, нитевого лифтинга и липолиза. Каждая процедура подбирается индивидуально для достижения наилучших результатов.">In meiner Praxis in Kassel biete ich ein breites Spektrum an ästhetischen Behandlungen an, die von Botox und Fillern über Mesotherapie und PRP bis hin zu Fadenlifting und Lipolyse reichen. Jede Behandlung wird individuell auf Sie abgestimmt, um die bestmöglichen Ergebnisse zu erzielen.</p>
+        <p data-de="Ich setze auf neueste Techniken und hochwertige Produkte, um Ihnen die besten Ergebnisse zu liefern. Sicherheit und Qualität haben dabei immer oberste Priorität." data-ru="Я использую новейшие техники и высококачественные продукты, чтобы обеспечить вам наилучшие результаты. Безопасность и качество всегда имеют наивысший приоритет.">Ich setze auf neueste Techniken und hochwertige Produkte, um Ihnen die besten Ergebnisse zu liefern. Sicherheit und Qualität haben dabei immer oberste Priorität.</p>
+        <a href="leistungen.html" class="btn-outline-dark" style="margin-top: 8px;" data-de="Alle Behandlungen" data-ru="Все процедуры">Alle Behandlungen</a>
+      </div>
+      <div class="intro-image reveal-right">
+        <img src="img/treatment.jpg" alt="Moderne ästhetische Behandlung" loading="lazy" style="height: 500px;" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BANNER ===== -->
+<div class="cta-banner">
+  <div class="container">
+    <div class="tag reveal" data-de="Jetzt starten" data-ru="Начать сейчас">Jetzt starten</div>
+    <h2 class="reveal" style="color: var(--navy); margin-bottom: 16px;" data-de="Bereit für Ihre Verwandlung?" data-ru="Готовы к преображению?">Bereit für Ihre Verwandlung?</h2>
+    <p class="reveal" data-de="Vereinbaren Sie jetzt Ihren persönlichen Beratungstermin. Wir freuen uns auf Sie." data-ru="Запишитесь на личную консультацию прямо сейчас. Мы рады встрече с вами.">Vereinbaren Sie jetzt Ihren persönlichen Beratungstermin. Wir freuen uns auf Sie.</p>
+    <div class="reveal" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 36px;">
+      <a href="terminbuchung.html" class="btn-primary" data-de="Termin buchen" data-ru="Записаться">Termin buchen</a>
+      <a href="tel:+491799004902" class="btn-outline-dark" data-de="Jetzt anrufen" data-ru="Позвонить">Jetzt anrufen</a>
+    </div>
+    <div style="margin-top: 32px; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;" class="reveal">
+      <div style="text-align: center;">
+        <div style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px;" data-de="Telefon" data-ru="Телефон">Telefon</div>
+        <a href="tel:+491799004902" style="font-weight: 600; color: var(--navy);">+49 179 900 4902</a>
+      </div>
+      <div style="text-align: center;">
+        <div style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px;" data-de="Öffnungszeiten" data-ru="Часы работы">Öffnungszeiten</div>
+        <span style="font-weight: 600; color: var(--navy);" data-de="Mi & Fr, 14:00–19:00 Uhr" data-ru="Ср & Пт, 14:00–19:00">Mi & Fr, 14:00–19:00 Uhr</span>
+      </div>
+      <div style="text-align: center;">
+        <div style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px;" data-de="Adresse" data-ru="Адрес">Adresse</div>
+        <span style="font-weight: 600; color: var(--navy);">Königstor 47, 34117 Kassel</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FAQ ===== -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="tag" data-de="Häufige Fragen" data-ru="Частые вопросы">Häufige Fragen</div>
+      <h2 data-de="Was Sie wissen möchten" data-ru="Что вы хотите знать">Was Sie wissen möchten</h2>
+    </div>
+    <div class="faq-wrap">
+
+      <div class="faq-item reveal">
+        <button class="faq-toggle">
+          <span data-de="Was ist Mesotherapie und wie funktioniert sie?" data-ru="Что такое мезотерапия и как она работает?">Was ist Mesotherapie und wie funktioniert sie?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body"><div>
+          <div class="faq-body-inner" data-de="Die Mesotherapie ist eine minimal-invasive Behandlung, bei der Vitamine, Mineralstoffe, Aminosäuren und Hyaluronsäure direkt in die Haut injiziert werden. Diese Nährstoffe verbessern die Hautstruktur, fördern die Regeneration und versorgen die Haut intensiv mit Feuchtigkeit. Sie ist besonders wirksam gegen feine Falten und ein müdes Hautbild." data-ru="Мезотерапия – это малоинвазивная процедура, при которой витамины, минералы, аминокислоты и гиалуроновая кислота вводятся непосредственно в кожу. Эти питательные вещества улучшают структуру кожи, стимулируют регенерацию и интенсивно увлажняют её. Особенно эффективна против мелких морщин и тусклого цвета лица.">Die Mesotherapie ist eine minimal-invasive Behandlung, bei der Vitamine, Mineralstoffe, Aminosäuren und Hyaluronsäure direkt in die Haut injiziert werden. Diese Nährstoffe verbessern die Hautstruktur, fördern die Regeneration und versorgen die Haut intensiv mit Feuchtigkeit. Sie ist besonders wirksam gegen feine Falten und ein müdes Hautbild.</div>
+        </div></div>
+      </div>
+
+      <div class="faq-item reveal stagger-1">
+        <button class="faq-toggle">
+          <span data-de="Wie lange hält das Ergebnis der Botox-Behandlung an?" data-ru="Как долго сохраняется результат ботокса?">Wie lange hält das Ergebnis der Botox-Behandlung an?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body"><div>
+          <div class="faq-body-inner" data-de="Die Wirkung von Botox hält in der Regel zwischen 3 und 6 Monaten an (aktuelle Studien zeigen eine Verkürzung auf ca. 3–4 Monate). Nach dieser Zeit können sich die behandelten Falten wieder leicht sichtbar machen, und eine Auffrischung ist empfehlenswert." data-ru="Эффект ботокса, как правило, сохраняется от 3 до 6 месяцев (по последним исследованиям – около 3–4 месяцев). После этого времени обработанные морщины могут снова стать слегка заметными, и рекомендуется повторная процедура.">Die Wirkung von Botox hält in der Regel zwischen 3 und 6 Monaten an. Nach dieser Zeit können sich die behandelten Falten wieder leicht sichtbar machen, und eine Auffrischung ist empfehlenswert.</div>
+        </div></div>
+      </div>
+
+      <div class="faq-item reveal stagger-2">
+        <button class="faq-toggle">
+          <span data-de="Ist die Behandlung mit Fillern schmerzhaft?" data-ru="Больно ли делать процедуру с филлерами?">Ist die Behandlung mit Fillern schmerzhaft?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body"><div>
+          <div class="faq-body-inner" data-de="Die Behandlung mit Fillern wird in der Regel mit einer örtlichen Betäubung durchgeführt, um den Komfort der Patienten zu gewährleisten. Die meisten Kunden berichten von minimalen Schmerzen oder einem leichten Druckgefühl während der Injektionen." data-ru="Процедура с филлерами, как правило, проводится с местной анестезией для обеспечения комфорта пациентов. Большинство клиентов отмечают минимальную боль или лёгкое ощущение давления во время инъекций.">Die Behandlung mit Fillern wird in der Regel mit einer örtlichen Betäubung durchgeführt. Die meisten Kunden berichten von minimalen Schmerzen oder einem leichten Druckgefühl während der Injektionen.</div>
+        </div></div>
+      </div>
+
+      <div class="faq-item reveal stagger-3">
+        <button class="faq-toggle">
+          <span data-de="Kann ich nach einer Behandlung sofort wieder arbeiten?" data-ru="Могу ли я сразу вернуться к работе?">Kann ich nach einer Behandlung sofort wieder arbeiten?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body"><div>
+          <div class="faq-body-inner" data-de="In den meisten Fällen können Sie nach einer Behandlung wie Botox, Fillern oder Mesotherapie sofort wieder in Ihren Alltag zurückkehren. Minimale Schwellungen oder leichte Rötungen klingen schnell ab, ohne dass normale Arbeit oder Freizeitaktivitäten beeinträchtigt werden." data-ru="В большинстве случаев после таких процедур, как ботокс, филлеры или мезотерапия, вы можете сразу вернуться к повседневной жизни. Небольшие отёки или лёгкое покраснение быстро проходят.">In den meisten Fällen können Sie nach einer Behandlung wie Botox, Fillern oder Mesotherapie sofort wieder in Ihren Alltag zurückkehren. Minimale Schwellungen oder leichte Rötungen klingen schnell ab.</div>
+        </div></div>
+      </div>
+
+      <div class="faq-item reveal stagger-4">
+        <button class="faq-toggle">
+          <span data-de="Können Behandlungen kombiniert werden?" data-ru="Можно ли совмещать процедуры?">Können Behandlungen kombiniert werden?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body"><div>
+          <div class="faq-body-inner" data-de="Ja, viele unserer Behandlungen lassen sich hervorragend kombinieren, um das gewünschte Ergebnis zu erzielen. Wir beraten Sie individuell, welche Kombination für Ihre Bedürfnisse am besten geeignet ist." data-ru="Да, многие наши процедуры отлично сочетаются для достижения желаемого результата. Мы индивидуально проконсультируем вас, какая комбинация лучше всего подходит именно вам.">Ja, viele unserer Behandlungen lassen sich hervorragend kombinieren. Wir beraten Sie individuell, welche Kombination für Ihre Bedürfnisse am besten geeignet ist.</div>
+        </div></div>
+      </div>
+
+    </div>
+    <div style="text-align:center; margin-top: 48px;" class="reveal">
+      <a href="faq.html" class="btn-outline-dark" data-de="Alle Fragen ansehen" data-ru="Смотреть все вопросы">Alle Fragen ansehen</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NEWSLETTER ===== -->
+<section class="newsletter-section">
+  <div class="container">
+    <div class="newsletter-inner">
+      <div class="newsletter-text reveal">
+        <h3 data-de="Bleiben Sie informiert" data-ru="Оставайтесь в курсе">Bleiben Sie informiert</h3>
+        <p data-de="Neuigkeiten, Angebote und Tipps direkt in Ihren Posteingang." data-ru="Новости, акции и советы прямо в ваш почтовый ящик.">Neuigkeiten, Angebote und Tipps direkt in Ihren Posteingang.</p>
+      </div>
+      <form id="newsletterForm" class="newsletter-form reveal stagger-2">
+        <input type="email" placeholder="Ihre E-Mail-Adresse" 
+          data-placeholder-de="Ihre E-Mail-Adresse" 
+          data-placeholder-ru="Ваш email-адрес"
+          required />
+        <button type="submit" data-de="Abonnieren" data-ru="Подписаться">Abonnieren</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">VIVA<span>Ästhetik</span></a>
+        <p data-de="Ästhetische Medizin auf höchstem Niveau – individuell, diskret und mit Leidenschaft für natürliche Ergebnisse." data-ru="Эстетическая медицина высочайшего уровня – индивидуально, деликатно и с любовью к естественным результатам.">Ästhetische Medizin auf höchstem Niveau – individuell, diskret und mit Leidenschaft für natürliche Ergebnisse.</p>
+        <div style="margin-top: 20px;">
+          <a href="tel:+491799004902" style="display: block; font-size: 0.88rem; color: rgba(255,255,255,0.5); margin-bottom: 6px; transition: color 0.25s;" onmouseover="this.style.color='var(--gold-light)'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">+49 179 900 4902</a>
+          <a href="mailto:vivasthetik@gmail.com" style="display: block; font-size: 0.88rem; color: rgba(255,255,255,0.5); transition: color 0.25s;" onmouseover="this.style.color='var(--gold-light)'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">vivasthetik@gmail.com</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-de="Navigation" data-ru="Навигация">Navigation</h4>
+        <ul>
+          <li><a href="index.html" data-de="Startseite" data-ru="Главная">Startseite</a></li>
+          <li><a href="leistungen.html" data-de="Leistungen" data-ru="Услуги">Leistungen</a></li>
+          <li><a href="ueber-mich.html" data-de="Über mich" data-ru="Обо мне">Über mich</a></li>
+          <li><a href="terminbuchung.html" data-de="Terminbuchung" data-ru="Запись">Terminbuchung</a></li>
+          <li><a href="empfehlungen.html" data-de="Empfehlungen" data-ru="Отзывы">Empfehlungen</a></li>
+          <li><a href="faq.html" data-de="FAQ" data-ru="FAQ">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-de="Öffnungszeiten" data-ru="Часы работы">Öffnungszeiten</h4>
+        <p data-de="Mittwoch: 14:00–19:00 Uhr" data-ru="Среда: 14:00–19:00">Mittwoch: 14:00–19:00 Uhr</p>
+        <p data-de="Freitag: 14:00–19:00 Uhr" data-ru="Пятница: 14:00–19:00" style="margin-top: 6px;">Freitag: 14:00–19:00 Uhr</p>
+        <p style="margin-top: 12px;" data-de="Nur mit Terminvereinbarung" data-ru="Только по записи">Nur mit Terminvereinbarung</p>
+        <p style="margin-top: 20px;">📍 Königstor 47<br>34117 Kassel</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-de="Leistungen" data-ru="Услуги">Leistungen</h4>
+        <ul>
+          <li><a href="service-mesotherapie.html">Mesotherapie</a></li>
+          <li><a href="service-botox.html">Botox</a></li>
+          <li><a href="service-filler.html" data-de="Faltenunterspritzung" data-ru="Контурная пластика">Faltenunterspritzung</a></li>
+          <li><a href="service-lippen.html" data-de="Lippenkorrektur" data-ru="Коррекция губ">Lippenkorrektur</a></li>
+          <li><a href="service-fadenlifting.html">Fadenlifting</a></li>
+          <li><a href="service-vampirlifting.html">Vampirlifting (PRP)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span style="color: rgba(255,255,255,0.3);">© 2025 VIVA Ästhetik, Kassel</span>
+      <div class="footer-legal">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html" data-de="Datenschutzerklärung" data-ru="Конфиденциальность">Datenschutzerklärung</a>
+        <a href="agb.html">AGB</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

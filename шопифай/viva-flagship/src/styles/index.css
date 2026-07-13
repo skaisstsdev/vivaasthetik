@@ -1,0 +1,117 @@
+:root {
+    /* Premium Navy & Gold Palette */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f3f3f3;
+    --bg-dark: #0b2a54;
+    /* Deep Navy from reference */
+    --accent-gold: #d4af37;
+    /* Premium Gold from reference */
+    --text-primary: #121212;
+    --text-on-dark: #ffffff;
+    --text-secondary: #4a4a4a;
+    --text-muted: #8e8e8e;
+    --border-subtle: rgba(18, 18, 18, 0.05);
+    --border-strong: rgba(18, 18, 18, 0.1);
+
+    /* Typography */
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Inter', sans-serif;
+    --font-accent: 'Outfit', sans-serif;
+    /* Similar to Assistant/Poppins */
+
+    /* Spacing */
+    --space-unit: 1rem;
+    --section-padding: clamp(3rem, 8vw, 6rem);
+
+    /* Motion */
+    --transition-smooth: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* Typography Utilities */
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.heading-xl {
+    font-size: clamp(3rem, 10vw, 5rem);
+}
+
+.heading-lg {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+}
+
+.heading-md {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Global components */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    font-family: var(--font-accent);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: var(--transition-smooth);
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.btn-gold {
+    background: var(--accent-gold);
+    color: white;
+}
+
+.btn-gold:hover {
+    background: transparent;
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+}
+
+.btn-navy {
+    background: var(--bg-dark);
+    color: white;
+}
+
+.btn-outline {
+    border: 1px solid var(--text-primary);
+    color: var(--text-primary);
+}
+
+.btn-outline:hover {
+    background: var(--text-primary);
+    color: white;
+}

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terminbuchung – VIVA Ästhetik Kassel</title>
+  <meta name="description" content="Buchen Sie Ihren Termin bei VIVA Ästhetik in Kassel online. Wählen Sie Ihre Behandlung und Ihren Wunschtermin." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-inner">
+
+<nav id="navbar" class="navbar scrolled">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VIVA<span>Ästhetik</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link" data-de="Startseite" data-ru="Главная">Startseite</a></li>
+      <li><a href="leistungen.html" class="nav-link" data-de="Leistungen" data-ru="Услуги">Leistungen</a></li>
+      <li><a href="ueber-mich.html" class="nav-link" data-de="Über mich" data-ru="Обо мне">Über mich</a></li>
+      <li><a href="terminbuchung.html" class="nav-link active" data-de="Terminbuchung" data-ru="Запись">Terminbuchung</a></li>
+      <li><a href="faq.html" class="nav-link" data-de="FAQ" data-ru="FAQ">FAQ</a></li>
+      <li><a href="empfehlungen.html" class="nav-link" data-de="Empfehlungen" data-ru="Отзывы">Empfehlungen</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button class="lang-btn" data-lang="de">DE</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="ru">RU</button>
+      </div>
+      <button id="burger" class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div id="mobileMenu" class="mobile-menu">
+  <a href="index.html" data-de="Startseite" data-ru="Главная">Startseite</a>
+  <a href="leistungen.html" data-de="Leistungen" data-ru="Услуги">Leistungen</a>
+  <a href="ueber-mich.html" data-de="Über mich" data-ru="Обо мне">Über mich</a>
+  <a href="terminbuchung.html" data-de="Terminbuchung" data-ru="Запись">Terminbuchung</a>
+  <a href="faq.html" data-de="FAQ" data-ru="FAQ">FAQ</a>
+  <a href="empfehlungen.html" data-de="Empfehlungen" data-ru="Отзывы">Empfehlungen</a>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="tag" data-de="Jetzt anfragen" data-ru="Записаться сейчас">Jetzt anfragen</div>
+    <h1><em data-de="Terminbuchung" data-ru="Запись на приём">Terminbuchung</em></h1>
+    <p data-de="Wählen Sie Ihre Behandlung, Ihren Wunschtermin und senden Sie uns eine Anfrage." data-ru="Выберите процедуру, желаемое время и отправьте нам запрос.">Wählen Sie Ihre Behandlung, Ihren Wunschtermin und senden Sie uns eine Anfrage.</p>
+  </div>
+</section>
+
+<section class="booking-section">
+  <div class="container">
+    <div class="booking-grid">
+
+      <!-- FORM -->
+      <div class="booking-form-card reveal">
+        <h2 data-de="Termin anfragen" data-ru="Запросить приём">Termin anfragen</h2>
+        <p data-de="Füllen Sie das Formular aus. Wir melden uns innerhalb von 24 Stunden." data-ru="Заполните форму. Мы свяжемся с вами в течение 24 часов.">Füllen Sie das Formular aus. Wir melden uns innerhalb von 24 Stunden.</p>
+
+        <!-- Step indicators -->
+        <div class="step-indicators">
+          <div class="step-ind active" id="ind1">
+            <span class="step-num">1</span>
+            <span data-de="Leistung" data-ru="Услуга">Leistung</span>
+          </div>
+          <div class="step-ind" id="ind2">
+            <span class="step-num">2</span>
+            <span data-de="Termin" data-ru="Дата">Termin</span>
+          </div>
+          <div class="step-ind" id="ind3">
+            <span class="step-num">3</span>
+            <span data-de="Kontakt" data-ru="Контакт">Kontakt</span>
+          </div>
+          <div class="step-ind" id="ind4">
+            <span class="step-num">4</span>
+            <span data-de="Bestätigung" data-ru="Подтверждение">Bestätigung</span>
+          </div>
+        </div>
+
+        <form id="bookingForm" novalidate>
+
+          <!-- STEP 1: Service -->
+          <div class="booking-step active" id="step1">
+            <p style="margin-bottom: 20px; font-size: 0.9rem;" data-de="Welche Behandlung wünschen Sie?" data-ru="Какую процедуру вы желаете?">Welche Behandlung wünschen Sie?</p>
+            <div class="svc-grid">
+              <div class="svc-card" data-service="Mesotherapie" data-de="Mesotherapie" data-ru="Мезотерапия">Mesotherapie</div>
+              <div class="svc-card" data-service="Biorevitalisierung" data-de="Biorevitalisierung" data-ru="Биоревитализация">Biorevitalisierung</div>
+              <div class="svc-card" data-service="Botox-Behandlung" data-de="Botox-Behandlung" data-ru="Ботокс">Botox-Behandlung</div>
+              <div class="svc-card" data-service="Faltenunterspritzung mit Fillern" data-de="Faltenunterspritzung mit Fillern" data-ru="Контурная пластика">Faltenunterspritzung mit Fillern</div>
+              <div class="svc-card" data-service="Lippenkorrektur" data-de="Lippenkorrektur" data-ru="Коррекция губ">Lippenkorrektur</div>
+              <div class="svc-card" data-service="Lipolyse" data-de="Lipolyse" data-ru="Липолиз">Lipolyse</div>
+              <div class="svc-card" data-service="Fadenlifting" data-de="Fadenlifting" data-ru="Нитевой лифтинг">Fadenlifting</div>
+              <div class="svc-card" data-service="Vampirlifting (PRP)" data-de="Vampirlifting (PRP)" data-ru="Вампирский лифтинг">Vampirlifting (PRP)</div>
+              <div class="svc-card" data-service="Haarausfall-Behandlung" data-de="Haarausfall-Behandlung" data-ru="Лечение волос">Haarausfall-Behandlung</div>
+              <div class="svc-card" data-service="Intimlifting" data-de="Intimlifting" data-ru="Интимный лифтинг">Intimlifting</div>
+              <div class="svc-card" data-service="Radiesse® Kollagenstimulation" data-de="Radiesse® Kollagenstimulation" data-ru="Radiesse® Коллаген">Radiesse® Kollagenstimulation</div>
+              <div class="svc-card" data-service="Erstberatung" data-de="Erstberatung / Ich bin unsicher" data-ru="Первичная консультация">Erstberatung</div>
+            </div>
+            <div class="step-nav">
+              <span></span>
+              <button type="button" class="btn-step-next" id="toStep2" data-de="Weiter" data-ru="Далее">Weiter</button>
+            </div>
+          </div>
+
+          <!-- STEP 2: Date/Time -->
+          <div class="booking-step" id="step2">
+            <div class="form-group">
+              <label class="form-label" for="preferredDate" data-de="Wunschdatum" data-ru="Желаемая дата">Wunschdatum</label>
+              <input type="date" id="preferredDate" class="form-field" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-de="Bevorzugte Uhrzeit" data-ru="Предпочтительное время">Bevorzugte Uhrzeit</label>
+              <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 4px;">
+                <div class="time-slot svc-card" data-time="14:00" style="border-radius: 8px; font-size: 0.85rem; padding: 12px 6px;">14:00</div>
+                <div class="time-slot svc-card" data-time="14:30" style="border-radius: 8px; font-size: 0.85rem; padding: 12px 6px;">14:30</div>
+                <div class="time-slot svc-card" data-time="15:00" style="border-radius: 8px; font-size: 0.85rem; padding: 12px 6px;">15:00</div>
+                <div class="time-slot svc-card" data-time="15:30" style="border-radius: 8px; font-size: 0.85rem; padding: 12px 6px;">15:30</div>
+                <div class="time-slot svc-card" data-time="16:00" style="border-radius: 8px; font-size: 0.85rem; padding: 12px 6px;">16:00</div>
+                <div class="time-slot svc-card" data-time="16:30" style="border-radius: 8px; font-size: 0.85rem; padding: 12px 6px;">16:30</div>
+                <div class="time-slot svc-card" data-time="17:00" style="border-radius: 8px; font-size: 0.85rem; padding: 12px 6px;">17:00</div>
+                <div class="time-slot svc-card" data-time="17:30" style="border-radius: 8px; font-size: 0.85rem; padding: 12px 6px;">17:30</div>
+                <div class="time-slot svc-card" data-time="18:00" style="border-radius: 8px; font-size: 0.85rem; padding: 12px 6px;">18:00</div>
+                <div class="time-slot svc-card" data-time="18:30" style="border-radius: 8px; font-size: 0.85rem; padding: 12px 6px;">18:30</div>
+              </div>
+            </div>
+            <div class="step-nav">
+              <button type="button" class="btn-step-back" id="toStep2Back">← <span data-de="Zurück" data-ru="Назад">Zurück</span></button>
+              <button type="button" class="btn-step-next" id="toStep3" data-de="Weiter" data-ru="Далее">Weiter</button>
+            </div>
+          </div>
+
+          <!-- STEP 3: Contact -->
+          <div class="booking-step" id="step3">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="firstName" data-de="Vorname" data-ru="Имя">Vorname</label>
+                <input type="text" id="firstName" class="form-field" placeholder="Max" data-placeholder-de="Max" data-placeholder-ru="Имя" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="lastName" data-de="Nachname" data-ru="Фамилия">Nachname</label>
+                <input type="text" id="lastName" class="form-field" placeholder="Mustermann" data-placeholder-de="Mustermann" data-placeholder-ru="Фамилия" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="bookEmail" data-de="E-Mail" data-ru="Email">E-Mail</label>
+              <input type="email" id="bookEmail" class="form-field" placeholder="max@beispiel.de" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="phone" data-de="Telefon" data-ru="Телефон">Telefon</label>
+              <input type="tel" id="phone" class="form-field" placeholder="+49 ..." />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="message" data-de="Nachricht (optional)" data-ru="Сообщение (опционально)">Nachricht (optional)</label>
+              <textarea id="message" class="form-field" placeholder="Beschreiben Sie Ihr Anliegen..."
+                data-placeholder-de="Beschreiben Sie Ihr Anliegen..."
+                data-placeholder-ru="Опишите ваш запрос..."></textarea>
+            </div>
+            <!-- Summary -->
+            <div id="bookingSummary" style="padding: 16px; background: var(--cream); border-radius: 12px; border-left: 2px solid var(--gold); font-size: 0.88rem; margin-bottom: 20px; display: flex; flex-direction: column; gap: 6px;"></div>
+            <div class="step-nav">
+              <button type="button" class="btn-step-back" id="toStep3Back">← <span data-de="Zurück" data-ru="Назад">Zurück</span></button>
+              <button type="submit" class="btn-step-next gold" data-de="Anfrage senden" data-ru="Отправить запрос">Anfrage senden</button>
+            </div>
+          </div>
+
+          <!-- STEP 4: Confirmation -->
+          <div class="booking-step" id="step4" style="text-align: center; padding: 20px 0;">
+            <div style="width: 64px; height: 64px; border-radius: 50%; background: var(--cream); border: 1.5px solid var(--gold); display: flex; align-items: center; justify-content: center; margin: 0 auto 24px;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <h3 style="color: var(--navy); margin-bottom: 12px;" data-de="Anfrage gesendet!" data-ru="Запрос отправлен!">Anfrage gesendet!</h3>
+            <p data-de="Vielen Dank! Wir melden uns innerhalb von 24 Stunden bei Ihnen." data-ru="Большое спасибо! Мы свяжемся с вами в течение 24 часов.">Vielen Dank! Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+            <div style="margin-top: 28px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+              <a href="tel:+491799004902" class="btn-outline-dark" style="font-size: 0.82rem;" data-de="Jetzt anrufen" data-ru="Позвонить">Jetzt anrufen</a>
+              <a href="index.html" class="btn-primary" style="font-size: 0.82rem;" data-de="Zur Startseite" data-ru="На главную">Zur Startseite</a>
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="booking-sidebar">
+        <div class="sidebar-cta-card reveal">
+          <h3 data-de="Direktkontakt" data-ru="Прямой контакт">Direktkontakt</h3>
+          <p data-de="Lieber persönlich? Rufen Sie uns an!" data-ru="Предпочитаете лично? Позвоните нам!">Lieber persönlich? Rufen Sie uns an!</p>
+          <a href="tel:+491799004902" class="btn-primary" style="display: flex; justify-content: center; width: 100%;">+49 179 900 4902</a>
+        </div>
+
+        <div class="booking-info-card reveal stagger-1">
+          <h4 data-de="Öffnungszeiten" data-ru="Часы работы">Öffnungszeiten</h4>
+          <p style="margin-bottom: 8px;" data-de="Ersttermine: Mi & Fr, 14:00–19:00 Uhr" data-ru="Первичный приём: Ср & Пт, 14:00–19:00">Ersttermine: Mi & Fr, 14:00–19:00 Uhr</p>
+          <p data-de="Folgetermine nach Vereinbarung." data-ru="Повторные – по договорённости.">Folgetermine nach Vereinbarung.</p>
+        </div>
+
+        <div class="booking-info-card reveal stagger-2">
+          <h4 data-de="Was erwartet Sie?" data-ru="Что вас ждёт?">Was erwartet Sie?</h4>
+          <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 4px;">
+            <div class="benefit-item">
+              <div class="benefit-dot"></div>
+              <span style="font-size: 0.88rem;" data-de="Kostenlose Erstberatung" data-ru="Бесплатная первичная консультация">Kostenlose Erstberatung</span>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-dot"></div>
+              <span style="font-size: 0.88rem;" data-de="Individuelle Behandlungsplanung" data-ru="Индивидуальное планирование">Individuelle Behandlungsplanung</span>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-dot"></div>
+              <span style="font-size: 0.88rem;" data-de="Professionelle Durchführung" data-ru="Профессиональное выполнение">Professionelle Durchführung</span>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-dot"></div>
+              <span style="font-size: 0.88rem;" data-de="Nachsorge & Begleitung" data-ru="Последующий уход и сопровождение">Nachsorge & Begleitung</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="booking-info-card reveal stagger-3">
+          <h4 data-de="Kontakt" data-ru="Контакт">Kontakt</h4>
+          <p style="margin-bottom: 8px;"><a href="tel:+491799004902" style="color: var(--gold-dark); font-weight: 600;">+49 179 900 4902</a></p>
+          <p style="margin-bottom: 8px;"><a href="mailto:vivasthetik@gmail.com" style="color: var(--gold-dark); font-weight: 600; font-size: 0.85rem;">vivasthetik@gmail.com</a></p>
+          <p style="font-size: 0.88rem;">Königstor 47, 34117 Kassel</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">VIVA<span>Ästhetik</span></a>
+        <p data-de="Ästhetische Medizin auf höchstem Niveau." data-ru="Эстетическая медицина высочайшего уровня.">Ästhetische Medizin auf höchstem Niveau.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-de="Navigation" data-ru="Навигация">Navigation</h4>
+        <ul>
+          <li><a href="index.html" data-de="Startseite" data-ru="Главная">Startseite</a></li>
+          <li><a href="leistungen.html" data-de="Leistungen" data-ru="Услуги">Leistungen</a></li>
+          <li><a href="ueber-mich.html" data-de="Über mich" data-ru="Обо мне">Über mich</a></li>
+          <li><a href="faq.html" data-de="FAQ" data-ru="FAQ">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-de="Öffnungszeiten" data-ru="Часы работы">Öffnungszeiten</h4>
+        <p data-de="Mi & Fr: 14:00–19:00 Uhr" data-ru="Ср и Пт: 14:00–19:00">Mi & Fr: 14:00–19:00 Uhr</p>
+        <p style="margin-top:8px;" data-de="Nur mit Terminvereinbarung" data-ru="Только по записи">Nur mit Terminvereinbarung</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-de="Kontakt" data-ru="Контакт">Kontakt</h4>
+        <p><a href="tel:+491799004902">+49 179 900 4902</a></p>
+        <p style="margin-top:6px;"><a href="mailto:vivasthetik@gmail.com">vivasthetik@gmail.com</a></p>
+        <p style="margin-top:6px;">Königstor 47, Kassel</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span style="color: rgba(255,255,255,0.3);">© 2025 VIVA Ästhetik</span>
+      <div class="footer-legal">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html" data-de="Datenschutz" data-ru="Конфиденциальность">Datenschutz</a>
+        <a href="agb.html">AGB</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>
