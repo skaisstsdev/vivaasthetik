@@ -1,5 +1,4 @@
-import { setRequestLocale } from 'next-intl/server';
-import { useTranslations } from 'next-intl';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 import ConsultationCTA from '@/components/home/ConsultationCTA';
 import ShaderBackground from '@/components/home/ShaderBackground';
 
@@ -7,7 +6,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const t = await useTranslations('Contact');
+  const t = await getTranslations({ locale, namespace: 'Contact' });
 
   return (
     <main className="bg-white pb-24">

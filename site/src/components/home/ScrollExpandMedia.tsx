@@ -37,9 +37,18 @@ export default function ScrollExpandMedia({
     offset: ['start start', 'end end'],
   });
 
-  const [isMounted, setIsMounted] = useState(false);
+  const mobileVideoRef = useRef<HTMLVideoElement>(null);
+  const desktopVideoRef = useRef<HTMLVideoElement>(null);
+
   useEffect(() => {
     setIsMounted(true);
+    // Force play on mount to ensure they play immediately
+    if (mobileVideoRef.current) {
+      mobileVideoRef.current.play().catch(() => {});
+    }
+    if (desktopVideoRef.current) {
+      desktopVideoRef.current.play().catch(() => {});
+    }
   }, []);
 
   // To achieve 60fps perfectly smooth animation without layout thrashing,
@@ -139,6 +148,7 @@ export default function ScrollExpandMedia({
               {mediaType === 'video' ? (
                 <>
                   <video
+                    ref={mobileMediaSrc ? mobileVideoRef : desktopVideoRef}
                     src={mobileMediaSrc || mediaSrc}
                     poster={posterSrc}
                     autoPlay
@@ -149,6 +159,7 @@ export default function ScrollExpandMedia({
                   />
                   {mobileMediaSrc && (
                     <video
+                      ref={desktopVideoRef}
                       src={mediaSrc}
                       poster={posterSrc}
                       autoPlay
