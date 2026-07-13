@@ -32,26 +32,24 @@ export default async function ServiceDetailPage({
     <main className="bg-white pb-24">
       
       {/* Full-screen Hero Section for the specific service */}
-      <section className="relative w-full h-[100dvh] flex items-center justify-center bg-gray-50 overflow-hidden">
-        {/* Abstract background elements to make it look premium */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-gray-200/50 to-transparent" />
-        <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-gradient-to-tr from-gray-200/30 to-transparent" />
+      <section className="relative w-full h-[100dvh] flex items-center justify-center bg-gray-900 overflow-hidden">
+        <ShaderBackground />
 
         <div className="relative z-10 w-full max-w-5xl mx-auto px-6 md:px-12 flex flex-col items-center justify-center text-center">
           
           <Link 
             href="/services" 
-            className="inline-flex items-center gap-3 text-xs md:text-sm uppercase tracking-widest text-gray-500 hover:text-gray-900 transition-colors mb-10 md:mb-16"
+            className="inline-flex items-center gap-3 text-xs md:text-sm uppercase tracking-widest text-white/70 hover:text-white transition-colors mb-10 md:mb-16"
           >
             <ArrowLeft size={16} />
             {loc === 'de' ? 'Zurück zu Leistungen' : 'Назад к услугам'}
           </Link>
 
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-light text-gray-900 mb-8 leading-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-light text-white mb-8 leading-tight">
             {service.title[loc]}
           </h1>
           
-          <p className="text-lg md:text-xl text-gray-500 max-w-3xl font-light leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-300 max-w-3xl font-light leading-relaxed">
             {service.shortDescription[loc]}
           </p>
         </div>

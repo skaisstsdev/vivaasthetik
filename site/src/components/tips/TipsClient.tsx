@@ -41,13 +41,13 @@ export default function TipsClient({ locale, initialData }: { locale: ServiceLoc
             )}
             
             <div className="space-y-12">
-              {activeData.sections.map((section, idx) => (
+              {activeData.sections.map((section: any, idx: number) => (
                 <div key={idx} className="bg-gray-50 p-6 sm:p-8 border border-gray-100">
                   {(section as any).subtitle && (
                     <h3 className="text-xl font-medium text-gray-900 mb-6 border-b border-gray-200 pb-4">{(section as any).subtitle[locale]}</h3>
                   )}
                   <ul className="space-y-4">
-                    {section.items.map((item, itemIdx) => (
+                    {section.items.map((item: any, itemIdx: number) => (
                       <li key={itemIdx} className="text-gray-700 leading-relaxed flex items-start">
                         <span className="text-gray-400 mr-4 mt-1">—</span>
                         <span>{item[locale]}</span>

@@ -38,7 +38,7 @@ export default function FAQClient({ locale, initialData }: { locale: ServiceLoca
 
       {/* Main Content */}
       <div className="w-full md:w-2/3 lg:w-3/4 flex flex-col gap-6">
-        {activeData?.items.map((item) => {
+        {activeData?.items.map((item: any) => {
           const isOpen = openItemId === item.id;
           return (
             <div 
