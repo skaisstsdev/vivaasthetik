@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 import ConsultationCTA from '@/components/home/ConsultationCTA';
 import TipsClient from '@/components/tips/TipsClient';
 import ShaderBackground from '@/components/home/ShaderBackground';
-import { getTipsData } from '@/data/tips';
+import { tipsData } from '@/data/tips';
 
 export default function TipsPage({ params }: { params: { locale: string } }) {
   const { locale } = params;
@@ -11,7 +11,6 @@ export default function TipsPage({ params }: { params: { locale: string } }) {
 
   const t = useTranslations('Tips');
   const serviceLocale = locale as 'de' | 'ru';
-  const tipsData = getTipsData(serviceLocale);
 
   return (
     <main className="bg-white pb-24">

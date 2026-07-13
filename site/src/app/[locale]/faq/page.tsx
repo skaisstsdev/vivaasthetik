@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 import ConsultationCTA from '@/components/home/ConsultationCTA';
 import FAQClient from '@/components/faq/FAQClient';
 import ShaderBackground from '@/components/home/ShaderBackground';
-import { getFAQData } from '@/data/faq';
+import { faqData } from '@/data/faq';
 
 export default function FAQPage({ params }: { params: { locale: string } }) {
   const { locale } = params;
@@ -11,7 +11,6 @@ export default function FAQPage({ params }: { params: { locale: string } }) {
 
   const t = useTranslations('FAQ');
   const serviceLocale = locale as 'de' | 'ru';
-  const faqData = getFAQData(serviceLocale);
 
   return (
     <main className="bg-white pb-24">
