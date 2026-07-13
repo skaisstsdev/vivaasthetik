@@ -1,13 +1,12 @@
 "use client";
 
 import { useState } from 'react';
-import { tipsData } from '@/data/tips';
 import { ServiceLocale } from '@/data/services/types';
 
-export default function TipsClient({ locale }: { locale: ServiceLocale }) {
-  const [activeCategory, setActiveCategory] = useState(tipsData[0].id);
+export default function TipsClient({ locale, initialData }: { locale: ServiceLocale, initialData: any[] }) {
+  const [activeCategory, setActiveCategory] = useState(initialData[0].id);
 
-  const activeData = tipsData.find((c) => c.id === activeCategory);
+  const activeData = initialData.find((c) => c.id === activeCategory);
 
   return (
     <div className="flex flex-col md:flex-row gap-12 lg:gap-24 items-start relative">
@@ -16,7 +15,7 @@ export default function TipsClient({ locale }: { locale: ServiceLocale }) {
         <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-400 mb-2 px-4">
           {locale === 'de' ? 'Kategorien' : 'Категории'}
         </h3>
-        {tipsData.map((category) => (
+        {initialData.map((category) => (
           <button
             key={category.id}
             onClick={() => setActiveCategory(category.id)}

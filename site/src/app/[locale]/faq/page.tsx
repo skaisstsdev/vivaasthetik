@@ -3,6 +3,7 @@ import { useTranslations } from 'next-intl';
 import ConsultationCTA from '@/components/home/ConsultationCTA';
 import FAQClient from '@/components/faq/FAQClient';
 import ShaderBackground from '@/components/home/ShaderBackground';
+import { getFAQData } from '@/data/faq';
 
 export default function FAQPage({ params }: { params: { locale: string } }) {
   const { locale } = params;
@@ -10,11 +11,12 @@ export default function FAQPage({ params }: { params: { locale: string } }) {
 
   const t = useTranslations('FAQ');
   const serviceLocale = locale as 'de' | 'ru';
+  const faqData = getFAQData(serviceLocale);
 
   return (
     <main className="bg-white pb-24">
       {/* Hero Section */}
-      <section className="relative w-full h-[60vh] flex items-center justify-center overflow-hidden bg-gray-900">
+      <section className="relative w-full h-[100dvh] flex items-center justify-center overflow-hidden bg-gray-900">
         <ShaderBackground />
         <div className="relative z-10 w-full max-w-4xl mx-auto px-6 flex flex-col items-center justify-center text-center pt-20">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-white mb-6 leading-tight">
@@ -28,7 +30,7 @@ export default function FAQPage({ params }: { params: { locale: string } }) {
 
       {/* FAQ Content */}
       <section className="max-w-6xl mx-auto px-6 md:px-8 mt-24 mb-24">
-        <FAQClient locale={serviceLocale} />
+        <FAQClient locale={serviceLocale} initialData={faqData} />
       </section>
 
       {/* Consultation CTA */}

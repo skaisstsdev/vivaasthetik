@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
-import HeroBackground from './HeroBackground';
+import ShaderBackground from './ShaderBackground';
 
 export default function Hero() {
   const t = useTranslations('Hero');
@@ -10,8 +10,7 @@ export default function Hero() {
   return (
     <section className="relative w-full h-[100dvh] flex items-center justify-center overflow-hidden bg-gray-900">
       {/* Animated navy + gold background */}
-      <HeroBackground />
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900" />
+      <ShaderBackground />
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-4xl mx-auto px-6 flex flex-col items-center justify-center text-center pt-20">

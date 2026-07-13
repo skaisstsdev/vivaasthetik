@@ -11,7 +11,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
   return (
     <main className="bg-white pb-24">
       {/* Hero Section */}
-      <section className="relative w-full h-[60vh] flex items-center justify-center overflow-hidden bg-gray-900">
+      <section className="relative w-full h-[100dvh] flex items-center justify-center overflow-hidden bg-gray-900">
         <ShaderBackground />
         <div className="relative z-10 w-full max-w-4xl mx-auto px-6 flex flex-col items-center justify-center text-center pt-20">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-white mb-6 leading-tight">

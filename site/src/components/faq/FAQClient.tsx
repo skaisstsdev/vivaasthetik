@@ -1,14 +1,13 @@
 "use client";
 
 import { useState } from 'react';
-import { faqData } from '@/data/faq';
 import { ServiceLocale } from '@/data/services/types';
 
-export default function FAQClient({ locale }: { locale: ServiceLocale }) {
-  const [activeCategory, setActiveCategory] = useState(faqData[0].id);
+export default function FAQClient({ locale, initialData }: { locale: ServiceLocale, initialData: any[] }) {
+  const [activeCategory, setActiveCategory] = useState(initialData[0].id);
   const [openItemId, setOpenItemId] = useState<number | null>(null);
 
-  const activeData = faqData.find((c) => c.id === activeCategory);
+  const activeData = initialData.find((c) => c.id === activeCategory);
 
   const handleCategoryClick = (categoryId: string) => {
     setActiveCategory(categoryId);
@@ -22,7 +21,7 @@ export default function FAQClient({ locale }: { locale: ServiceLocale }) {
         <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-400 mb-2 px-4">
           {locale === 'de' ? 'Kategorien' : 'Категории'}
         </h3>
-        {faqData.map((category) => (
+        {initialData.map((category) => (
           <button
             key={category.id}
             onClick={() => handleCategoryClick(category.id)}
