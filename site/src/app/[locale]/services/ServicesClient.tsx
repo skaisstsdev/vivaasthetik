@@ -93,7 +93,7 @@ export default function ServicesClient({ services, loc }: ServicesClientProps) {
 
                 {/* Hover revealed content */}
                 <div className={`flex-grow flex flex-col pt-4 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto ${isActive ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
-                  <p className="text-white/90 text-sm md:text-base leading-relaxed mb-4">
+                  <p className="text-white/90 text-sm md:text-base leading-relaxed mb-4 line-clamp-2 sm:line-clamp-3 md:line-clamp-4">
                     {service.shortDescription[loc]}
                   </p>
                   <div className="mt-auto flex flex-col gap-2 md:gap-3">
