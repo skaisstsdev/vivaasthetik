@@ -61,7 +61,8 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
       {/* Video Showcase Section */}
       <ScrollExpandMedia
         mediaType="video"
-        mediaSrc="/video2.mov"
+        mediaSrc="/video2_desktop.mov"
+        mobileMediaSrc="/video2_mobile.mov"
         bgImageSrc="/stranica2.jpg"
         title={loc === 'de' ? 'Ihre Verwandlung' : 'Ваше преображение'}
       />

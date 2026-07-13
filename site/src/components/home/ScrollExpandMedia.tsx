@@ -12,6 +12,7 @@ import {
 interface Props {
   mediaType?: 'video' | 'image';
   mediaSrc: string;
+  mobileMediaSrc?: string;
   posterSrc?: string;
   bgImageSrc: string;
   title?: string;
@@ -22,6 +23,7 @@ interface Props {
 export default function ScrollExpandMedia({
   mediaType = 'video',
   mediaSrc,
+  mobileMediaSrc,
   posterSrc,
   bgImageSrc,
   title,
@@ -135,20 +137,28 @@ export default function ScrollExpandMedia({
               }}
             >
               {mediaType === 'video' ? (
-                <video
-                  src={mediaSrc}
-                  poster={posterSrc}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    display: 'block',
-                  }}
-                />
+                <>
+                  <video
+                    src={mobileMediaSrc || mediaSrc}
+                    poster={posterSrc}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className={mobileMediaSrc ? "block md:hidden object-cover w-full h-full" : "block object-cover w-full h-full"}
+                  />
+                  {mobileMediaSrc && (
+                    <video
+                      src={mediaSrc}
+                      poster={posterSrc}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="hidden md:block object-cover w-full h-full"
+                    />
+                  )}
+                </>
               ) : (
                 <Image src={mediaSrc} alt="" fill style={{ objectFit: 'cover' }} />
               )}
