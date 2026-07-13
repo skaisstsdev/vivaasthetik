@@ -22,3 +22,32 @@ Error: Route "/[locale]/faq" used `params.locale`. `params` is a Promise and mus
   12 |   const t = useTranslations('FAQ');
  GET /ru/faq 200 in 2.2s (next.js: 1942ms, proxy.ts: 9ms, generate-params: 1043ms, application-code: 297ms)
 ✓ Compiled in 1752ms
+Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
+⨯ Error: `useTranslations` is not callable within an async component. Please refer to https://next-intl.dev/docs/environments/server-client-components#async-components
+    at FAQPage (src/app/[locale]/faq/page.tsx:12:28)
+  10 |   setRequestLocale(locale);
+  11 |
+> 12 |   const t = useTranslations('FAQ');
+     |                            ^
+  13 |   const serviceLocale = locale as 'de' | 'ru';
+  14 |
+  15 |   return ( {
+  digest: '98627940',
+  [cause]: TypeError: Cannot read properties of null (reading 'use')
+      at FAQPage (src/app/[locale]/faq/page.tsx:12:28)
+    10 |   setRequestLocale(locale);
+    11 |
+  > 12 |   const t = useTranslations('FAQ');
+       |                            ^
+    13 |   const serviceLocale = locale as 'de' | 'ru';
+    14 |
+    15 |   return (
+}
+ GET /ru/faq 500 in 1837ms (next.js: 76ms, proxy.ts: 17ms, generate-params: 20ms, application-code: 1744ms)
+✓ Compiled in 180ms
+✓ Compiled in 98ms
+ GET /ru/faq 200 in 1218ms (next.js: 267ms, proxy.ts: 151ms, generate-params: 6ms, application-code: 800ms)

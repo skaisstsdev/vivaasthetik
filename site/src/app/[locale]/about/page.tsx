@@ -1,5 +1,4 @@
-import { setRequestLocale } from 'next-intl/server';
-import { useTranslations } from 'next-intl';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 import ShaderBackground from '@/components/home/ShaderBackground';
 import ConsultationCTA from '@/components/home/ConsultationCTA';
@@ -8,7 +7,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const t = useTranslations('About');
+  const t = await getTranslations({ locale, namespace: 'About' });
 
   return (
     <main className="bg-white pb-24">

@@ -1,5 +1,4 @@
-import { setRequestLocale } from 'next-intl/server';
-import { useTranslations } from 'next-intl';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 import ConsultationCTA from '@/components/home/ConsultationCTA';
 import TipsClient from '@/components/tips/TipsClient';
 import ShaderBackground from '@/components/home/ShaderBackground';
@@ -9,7 +8,7 @@ export default async function TipsPage({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const t = useTranslations('Tips');
+  const t = await getTranslations({ locale, namespace: 'Tips' });
   const serviceLocale = locale as 'de' | 'ru';
 
   return (
