@@ -4,6 +4,7 @@ import { Link } from '@/i18n/routing';
 import BookNowButton from '@/components/booking/BookNowButton';
 import ConsultationCTA from '@/components/home/ConsultationCTA';
 import ScrollExpandMedia from '@/components/home/ScrollExpandMedia';
+import { Suspense } from 'react';
 import ServicesClient from './ServicesClient';
 
 // Функция для определения размера карточки (Bento Grid)
@@ -66,7 +67,9 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
 
       {/* Cards Grid */}
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-24 md:py-32">
-        <ServicesClient services={servicesData} loc={loc} />
+        <Suspense fallback={<div>Loading...</div>}>
+          <ServicesClient services={servicesData} loc={loc} />
+        </Suspense>
       </section>
 
       {/* Bottom CTA */}

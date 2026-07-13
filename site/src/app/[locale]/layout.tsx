@@ -6,7 +6,9 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import {BookingProvider} from '@/context/BookingContext';
 import BookingModal from '@/components/booking/BookingModal';
+import { Suspense } from 'react';
 import InfoModal from '@/components/home/InfoModal';
+
 import CookieBanner from '@/components/layout/CookieBanner';
 import '@/app/globals.css';
 
@@ -37,8 +39,12 @@ export default async function LocaleLayout({
             <Navbar />
             {children}
             <Footer />
-            <BookingModal />
-            <InfoModal />
+            <Suspense fallback={null}>
+              <BookingModal />
+            </Suspense>
+            <Suspense fallback={null}>
+              <InfoModal />
+            </Suspense>
             <CookieBanner />
           </BookingProvider>
         </NextIntlClientProvider>
