@@ -2,6 +2,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import BookingWizard from '@/components/booking/BookingWizard';
 import { Suspense } from 'react';
+import ShaderBackground from '@/components/home/ShaderBackground';
 
 export default function BookingPage({ params }: { params: { locale: string } }) {
   const { locale } = params;
@@ -14,7 +15,7 @@ export default function BookingPage({ params }: { params: { locale: string } }) 
       
       {/* Hero Section */}
       <section className="relative w-full h-[100dvh] flex items-center justify-center overflow-hidden bg-gray-900">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900" />
+        <ShaderBackground />
         <div className="relative z-10 w-full max-w-4xl mx-auto px-6 flex flex-col items-center justify-center text-center pt-20">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-white mb-6 leading-tight">
             {t('title')}

@@ -108,8 +108,8 @@ export default function Navbar() {
 
       {/* Полноэкранное меню, открывается по бургеру */}
       <div 
-        className={`fixed inset-0 z-40 bg-white transition-transform duration-700 ease-in-out flex flex-col justify-center px-8 md:px-24 pt-32 pb-12 overflow-y-auto ${
-          isMenuOpen ? 'translate-y-0' : '-translate-y-full'
+        className={`fixed inset-0 z-40 bg-slate-900/80 backdrop-blur-3xl transition-all duration-500 ease-out flex flex-col justify-center px-8 md:px-24 pt-32 pb-12 overflow-y-auto ${
+          isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
         <ul className="flex flex-col gap-6 sm:gap-8 max-w-7xl mx-auto w-full">
@@ -118,8 +118,8 @@ export default function Navbar() {
               <Link
                 href={link.href}
                 onClick={() => setIsMenuOpen(false)}
-                className={`block py-1 text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 hover:text-gray-500 transition-all transform ${
-                  isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
+                className={`block py-1 text-3xl sm:text-4xl md:text-5xl font-light text-white hover:text-white/70 transition-all transform ${
+                  isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
                 }`}
                 style={{ 
                   transitionDelay: `${index * 50}ms`,

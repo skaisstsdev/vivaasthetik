@@ -430,8 +430,8 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
 
       {/* Overlay Modal for Steps 2+ on the Booking page */}
       {step > 1 && (
-        <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center p-4 sm:p-6 md:p-12 bg-black/20 backdrop-blur-sm animate-in fade-in duration-300">
-          <div className="bg-white w-full max-w-6xl max-h-[95vh] flex flex-col rounded shadow-2xl relative overflow-hidden">
+        <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center p-4 sm:p-6 md:p-12 bg-black/20 backdrop-blur-sm animate-in fade-in duration-500 ease-out">
+          <div className="bg-white/30 backdrop-blur-md border border-white/40 w-full max-w-6xl max-h-[95vh] flex flex-col rounded-xl shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] relative overflow-hidden animate-in zoom-in-95 duration-500 ease-out">
             
             {/* Close Button */}
             <button 

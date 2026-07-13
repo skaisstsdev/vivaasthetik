@@ -6,6 +6,7 @@ import ConsultationCTA from '@/components/home/ConsultationCTA';
 import ScrollExpandMedia from '@/components/home/ScrollExpandMedia';
 import { Suspense } from 'react';
 import ServicesClient from './ServicesClient';
+import ShaderBackground from '@/components/home/ShaderBackground';
 
 // Функция для определения размера карточки (Bento Grid)
 const getCardClasses = (slug: string) => {
@@ -30,7 +31,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
       
       {/* Hero Section */}
       <section className="relative w-full h-[100dvh] flex items-center justify-center overflow-hidden bg-gray-900">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900" />
+        <ShaderBackground />
         <div className="relative z-10 w-full max-w-4xl mx-auto px-6 flex flex-col items-center justify-center text-center pt-20">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-white mb-6 leading-tight">
             {loc === 'de' ? 'Unsere Leistungen' : 'Наши услуги'}

@@ -36,8 +36,8 @@ export default function InfoModal() {
   const features = tTech.raw('features') as Array<{ title: string; description: string }>;
 
   return (
-    <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center p-4 sm:p-6 md:p-12 bg-black/20 backdrop-blur-sm animate-in fade-in duration-300">
-      <div className="bg-slate-900/80 backdrop-blur-3xl border border-white/10 w-full max-w-5xl max-h-[95vh] flex flex-col rounded-xl shadow-2xl relative overflow-hidden text-white">
+    <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center p-4 sm:p-6 md:p-12 bg-black/20 backdrop-blur-sm animate-in fade-in duration-500 ease-out">
+      <div className="bg-slate-900/80 backdrop-blur-3xl border border-white/10 w-full max-w-5xl max-h-[95vh] flex flex-col rounded-xl shadow-2xl relative overflow-hidden text-white animate-in zoom-in-95 duration-500 ease-out">
         
         {/* Close Button */}
         <button 

@@ -1,20 +1,23 @@
-import { setRequestLocale, getTranslations } from 'next-intl/server';
+import { setRequestLocale } from 'next-intl/server';
+import { useTranslations } from 'next-intl';
 import ConsultationCTA from '@/components/home/ConsultationCTA';
 import FAQClient from '@/components/faq/FAQClient';
-import { ServiceLocale } from '@/data/services/types';
+import { getFAQData } from '@/data/faq';
+import ShaderBackground from '@/components/home/ShaderBackground';
 
-export default async function FAQPage({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
-  const serviceLocale = locale as ServiceLocale;
+export default function FAQPage({ params }: { params: { locale: string } }) {
+  const { locale } = params;
   setRequestLocale(locale);
 
-  const t = await getTranslations({ locale, namespace: 'FAQ' });
+  const t = useTranslations('FAQ');
+  const loc = locale as 'de' | 'ru';
+  const faqData = getFAQData(loc);
 
   return (
     <main className="bg-white pb-24">
       {/* Hero Section */}
-      <section className="relative w-full h-[100dvh] flex items-center justify-center overflow-hidden bg-gray-900">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900" />
+      <section className="relative w-full h-[60vh] flex items-center justify-center overflow-hidden bg-gray-900">
+        <ShaderBackground />
         <div className="relative z-10 w-full max-w-4xl mx-auto px-6 flex flex-col items-center justify-center text-center pt-20">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-white mb-6 leading-tight">
             {t('title')}

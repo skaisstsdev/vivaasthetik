@@ -19,6 +19,9 @@ export default function FAQClient({ locale }: { locale: ServiceLocale }) {
     <div className="flex flex-col md:flex-row gap-12 lg:gap-24 items-start relative">
       {/* Sidebar Navigation */}
       <div className="w-full md:w-1/3 lg:w-1/4 flex flex-col gap-2 md:sticky md:top-32 self-start h-fit">
+        <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-400 mb-2 px-4">
+          {locale === 'de' ? 'Kategorien' : 'Категории'}
+        </h3>
         {faqData.map((category) => (
           <button
             key={category.id}

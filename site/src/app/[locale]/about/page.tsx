@@ -1,6 +1,7 @@
 import { setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/routing';
+import Image from 'next/image';
+import ShaderBackground from '@/components/home/ShaderBackground';
 import ConsultationCTA from '@/components/home/ConsultationCTA';
 
 export default function AboutPage({ params }: { params: { locale: string } }) {
@@ -10,11 +11,11 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
   const t = useTranslations('About');
 
   return (
-    <main className="bg-white pb-0">
+    <main className="bg-white pb-24">
       
       {/* Hero Section */}
-      <section className="relative w-full h-[100dvh] flex items-center justify-center overflow-hidden bg-gray-900">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900" />
+      <section className="relative w-full h-[80vh] flex items-center justify-center overflow-hidden bg-gray-900">
+        <ShaderBackground />
         <div className="relative z-10 w-full max-w-4xl mx-auto px-6 flex flex-col items-center justify-center text-center pt-20">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-white mb-6 leading-tight">
             {t('Hero.title')}
@@ -45,7 +46,13 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
           {/* Photo Placeholder */}
           <div className="w-full md:w-1/2 flex justify-center">
             <div className="w-full aspect-[4/5] bg-gray-200 relative overflow-hidden flex items-center justify-center text-gray-400">
-              <span className="uppercase tracking-widest text-sm">Portrait Placeholder</span>
+              <Image 
+                src="/about-new.jpg" 
+                alt="Nataliia Kholodna" 
+                fill 
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
           </div>
 
