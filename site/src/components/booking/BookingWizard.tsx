@@ -10,7 +10,7 @@ import { format } from 'date-fns';
 import { de, ru } from 'date-fns/locale';
 import { ArrowRight, X, ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useBooking } from '@/context/BookingContext';
-import 'react-day-picker/dist/style.css';
+import 'react-day-picker/style.css';
 
 type Step = 1 | 2 | 3 | 4;
 
@@ -181,16 +181,21 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
         {step === 2 && (
           <div className="flex flex-col gap-10 animate-in fade-in slide-in-from-right-4 duration-500 w-full max-w-lg mx-auto">
               
-            <div className="w-full flex justify-center max-w-full overflow-hidden px-1">
-              <div className="bg-white border border-gray-100 p-2 sm:p-6 shadow-sm rounded-sm inline-block w-full max-w-[100vw] overflow-hidden">
+            <div className="w-full flex justify-center max-w-full overflow-x-auto overflow-y-hidden px-1 py-2">
+              <div className="bg-white border border-gray-100 p-4 sm:p-6 shadow-sm rounded-sm w-fit mx-auto min-w-[280px]">
                 <DayPicker 
                   mode="single"
                   selected={selectedDate}
                   onSelect={handleDateSelect}
                   locale={locale === 'de' ? de : ru}
                   disabled={[{ before: new Date() }, { dayOfWeek: [0] }]}
-                  className="font-sans text-[0.85rem] md:text-[1.05rem] w-full flex justify-center"
-                  style={{ '--rdp-cell-size': 'min(11vw, 44px)' } as React.CSSProperties}
+                  className="font-sans text-[0.85rem] md:text-[1.05rem]"
+                  style={{ 
+                    '--rdp-day-width': 'min(11vw, 44px)', 
+                    '--rdp-day-height': 'min(11vw, 44px)',
+                    '--rdp-day_button-width': 'min(11vw, 44px)',
+                    '--rdp-day_button-height': 'min(11vw, 44px)' 
+                  } as React.CSSProperties}
                   modifiersClassNames={{
                     selected: "bg-gray-900 text-white font-medium hover:bg-gray-800 rounded-sm",
                     today: "font-semibold text-gray-900 bg-gray-50 rounded-sm",
