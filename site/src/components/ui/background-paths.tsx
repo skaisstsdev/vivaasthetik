@@ -18,7 +18,7 @@ function FloatingPaths({ position }: { position: number }) {
     return (
         <div className="absolute inset-0 pointer-events-none">
             <svg
-                className="w-full h-full text-[#D4AF37]"
+                className="w-full h-full text-[#FDE047] drop-shadow-[0_0_10px_rgba(234,179,8,0.8)]"
                 viewBox="0 0 696 316"
                 fill="none"
             >
@@ -28,12 +28,12 @@ function FloatingPaths({ position }: { position: number }) {
                         key={path.id}
                         d={path.d}
                         stroke="currentColor"
-                        strokeWidth={path.width}
-                        strokeOpacity={0.15 + path.id * 0.03}
+                        strokeWidth={path.width * 1.5} // Make lines slightly thicker for better glow
+                        strokeOpacity={0.2 + path.id * 0.03}
                         initial={{ pathLength: 0.3, opacity: 0.6 }}
                         animate={{
                             pathLength: 1,
-                            opacity: [0.3, 0.6, 0.3],
+                            opacity: [0.4, 0.9, 0.4], // Higher opacity for more glow
                             pathOffset: [0, 1, 0],
                         }}
                         transition={{
@@ -51,13 +51,14 @@ function FloatingPaths({ position }: { position: number }) {
 export function BackgroundPaths() {
     return (
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-            {/* Deep blue background matching the theme */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#0a192f] via-[#020c1b] to-[#000000]" />
+            {/* Brighter, more delicate blue gradient */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#2563eb] via-[#1e40af] to-[#0f172a] opacity-90" />
+            
             <FloatingPaths position={1} />
             <FloatingPaths position={-1} />
             
             {/* Subtle overlay for depth */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0a192f]/50" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/80 to-transparent" />
         </div>
     );
 }
