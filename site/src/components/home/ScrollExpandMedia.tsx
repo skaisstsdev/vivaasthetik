@@ -13,7 +13,9 @@ import {
 interface Props {
   mediaType?: 'video' | 'image';
   mediaSrc: string;
+  mediaPoster?: string;
   mobileMediaSrc?: string;
+  mobileMediaPoster?: string;
   bgImageSrc: string;
   title?: string;
   scrollToExpand?: string;
@@ -23,7 +25,9 @@ interface Props {
 export default function ScrollExpandMedia({
   mediaType = 'video',
   mediaSrc,
+  mediaPoster,
   mobileMediaSrc,
+  mobileMediaPoster,
   bgImageSrc,
   title,
   scrollToExpand,
@@ -145,6 +149,7 @@ export default function ScrollExpandMedia({
                     <video
                       ref={mobileMediaSrc ? mobileVideoRef : desktopVideoRef}
                       src={mobileMediaSrc || mediaSrc}
+                      poster={mobileMediaPoster || mediaPoster}
                       autoPlay
                       muted
                       loop
@@ -156,6 +161,7 @@ export default function ScrollExpandMedia({
                       <video
                         ref={desktopVideoRef}
                         src={mediaSrc}
+                        poster={mediaPoster}
                         autoPlay
                         muted
                         loop
