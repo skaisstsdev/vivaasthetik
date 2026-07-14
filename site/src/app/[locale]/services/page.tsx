@@ -61,14 +61,22 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
         </div>
       </section>
 
-      {/* Video Showcase Section */}
-      <ScrollExpandMedia
-        mediaType="video"
-        mediaSrc="/video2_desktop.mp4"
-        posterSrc="/video2_poster.jpg"
-        bgImageSrc="/stranica2.webp"
-        title={loc === 'de' ? 'Ihre Verwandlung' : 'Ваше преображение'}
-      />
+      {/* Static Video Showcase Section */}
+      <section className="w-full h-[88vh] md:h-screen relative overflow-hidden bg-[#080d1a]">
+        <video
+          src="/video2_desktop.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/20 flex items-center justify-center pointer-events-none">
+          <h2 className="text-4xl md:text-6xl font-light text-white drop-shadow-lg text-center px-4">
+            {loc === 'de' ? 'Ihre Verwandlung' : 'Ваше преображение'}
+          </h2>
+        </div>
+      </section>
 
       {/* Cards Grid */}
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-24 md:py-32">

@@ -15,7 +15,6 @@ export default function VideoShowcase() {
     <ScrollExpandMedia
       mediaType="video"
       mediaSrc="/video2_desktop.mp4"
-      posterSrc="/video2_poster.jpg"
       bgImageSrc="/stranica1.webp"
       title={t('title')}
     />

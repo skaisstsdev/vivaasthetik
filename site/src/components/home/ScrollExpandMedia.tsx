@@ -7,14 +7,11 @@ import {
   motion,
   useScroll,
   useTransform,
-  useSpring,
 } from 'framer-motion';
 
 interface Props {
   mediaType?: 'video' | 'image';
   mediaSrc: string;
-  mobileMediaSrc?: string;
-  posterSrc?: string;
   bgImageSrc: string;
   title?: string;
   scrollToExpand?: string;
@@ -24,135 +21,56 @@ interface Props {
 export default function ScrollExpandMedia({
   mediaType = 'video',
   mediaSrc,
-  mobileMediaSrc,
-  posterSrc,
   bgImageSrc,
   title,
   scrollToExpand,
   children,
 }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const videoWrapperRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ['start start', 'end end'],
   });
 
-  // 1. ADD SPRING PHYSICS for buttery smooth gliding on mobile/desktop
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
-
   const [isMounted, setIsMounted] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     setIsMounted(true);
-    
-    // Eager preload hint as fallback
-    if (mediaSrc && typeof document !== 'undefined') {
-      const link = document.createElement('link');
-      link.rel = 'preload';
-      link.as = 'video';
-      link.href = window.innerWidth < 768 && mobileMediaSrc ? mobileMediaSrc : mediaSrc;
-      document.head.appendChild(link);
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {});
     }
-    
-    // Force video to play aggressively 
-    const tryPlay = () => {
-      if (videoWrapperRef.current) {
-        const video = videoWrapperRef.current as unknown as HTMLVideoElement;
-        if (video.paused) {
-          video.play().catch(() => {});
-        }
-      }
-    };
-    
-    tryPlay();
-    const interval = setInterval(tryPlay, 500);
+  }, []);
 
-    return () => {
-      clearInterval(interval);
-    };
-  }, [mediaSrc, mobileMediaSrc, mediaType]);
-
-  // COMBINED TRANSFORM FOR WRAPPER (GPU Accelerated) - USING smoothProgress
-  const combinedTransform = useTransform(smoothProgress, (v) => {
-    if (!isMounted || typeof window === 'undefined') return 'translateZ(0) scale(1, 1)';
+  // Native Framer Motion scale values for perfect GPU acceleration
+  const scaleX = useTransform(scrollYProgress, (v) => {
+    if (!isMounted || typeof window === 'undefined') return 1;
     const w = window.innerWidth;
-    const h = window.innerHeight;
-    
-    if (w >= 768) {
-      return 'translateZ(0) scale(1, 1)';
-    } else {
-      const targetW = w * 0.95;
-      const startW = 260; 
-      const currentW = startW + v * (targetW - startW);
-      const sX = currentW / targetW;
-      
-      const targetH = h * 0.88;
-      const startH = 320; 
-      const currentH = startH + v * (targetH - startH);
-      const sY = currentH / targetH;
-      
-      return `translateZ(0) scale(${sX}, ${sY})`;
-    }
+    const targetW = w * 0.95;
+    const startW = w < 768 ? 260 : 360;
+    const currentW = startW + v * (targetW - startW);
+    return currentW / targetW;
   });
 
-  // COMBINED TRANSFORM FOR INNER WRAPPER (Inverse Scale) - USING smoothProgress
-  const innerCombinedTransform = useTransform(smoothProgress, (v) => {
-    if (!isMounted || typeof window === 'undefined') return 'scale(1, 1)';
+  const scaleY = useTransform(scrollYProgress, (v) => {
+    if (!isMounted || typeof window === 'undefined') return 1;
     const w = window.innerWidth;
     const h = window.innerHeight;
-    
-    if (w >= 768) {
-      return 'scale(1, 1)';
-    } else {
-      const targetW = w * 0.95;
-      const startW = 260; 
-      const currentW = startW + v * (targetW - startW);
-      const sX = currentW / targetW;
-      
-      const targetH = h * 0.88;
-      const startH = 320; 
-      const currentH = startH + v * (targetH - startH);
-      const sY = currentH / targetH;
-      
-      return `scale(${1 / sX}, ${1 / sY})`;
-    }
+    const targetH = h * 0.88;
+    const startH = w < 768 ? 320 : 420;
+    const currentH = startH + v * (targetH - startH);
+    return currentH / targetH;
   });
 
-  // COMBINED CLIP PATH (Only for Desktop) - USING smoothProgress
-  const combinedClipPath = useTransform(smoothProgress, (v) => {
-    if (!isMounted || typeof window === 'undefined') {
-      return 'inset(30% 35% round 16px)';
-    }
-    const w = window.innerWidth;
-    const h = window.innerHeight;
-    
-    if (w < 768) {
-      return 'none';
-    } else {
-      const targetW = w * 0.95;
-      const targetH = h * 0.88;
-      const startW = 360;
-      const startH = 420;
-      const currentW = startW + v * (targetW - startW);
-      const currentH = startH + v * (targetH - startH);
-      const insetX = (w - currentW) / 2;
-      const insetY = (h - currentH) / 2;
-      return `inset(${insetY}px ${insetX}px round 16px)`;
-    }
-  });
+  const invScaleX = useTransform(scaleX, (s) => 1 / s);
+  const invScaleY = useTransform(scaleY, (s) => 1 / s);
 
-  // Shared parallax/fade - USING smoothProgress
-  const mediaScale     = useTransform(smoothProgress, [0, 1], [1.2, 1]);
-  const bgOpacity      = useTransform(smoothProgress, [0, 0.7],  [1, 0]);
-  const text1X         = useTransform(smoothProgress, [0, 0.85], ['0vw', '-45vw']);
-  const text2X         = useTransform(smoothProgress, [0, 0.85], ['0vw',  '45vw']);
-  const hintOpacity    = useTransform(smoothProgress, [0, 0.08], [1, 0]);
+  const mediaScale     = useTransform(scrollYProgress, [0, 1], [1.2, 1]);
+  const bgOpacity      = useTransform(scrollYProgress, [0, 0.7],  [1, 0]);
+  const text1X         = useTransform(scrollYProgress, [0, 0.85], ['0vw', '-45vw']);
+  const text2X         = useTransform(scrollYProgress, [0, 0.85], ['0vw',  '45vw']);
+  const hintOpacity    = useTransform(scrollYProgress, [0, 0.08], [1, 0]);
 
   const words     = (title ?? '').split(' ');
   const mid       = Math.ceil(words.length / 2);
@@ -161,44 +79,13 @@ export default function ScrollExpandMedia({
 
   return (
     <>
-      {/* 
-        SAFARI HACK: 
-        iOS Safari pauses and delays decoding of off-screen videos. 
-        By placing a 1x1 pixel fixed clone of the video on the screen, 
-        it is ALWAYS in the viewport. Safari is forced to download and decode it immediately!
-        When the user scrolls down to the real video, it's already 100% loaded and playing.
-      */}
-      {mediaType === 'video' && (
-        <video
-          src={mediaSrc}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '1px',
-            height: '1px',
-            opacity: 0.001,
-            pointerEvents: 'none',
-            zIndex: -9999,
-          }}
-        />
-      )}
-
-      <div ref={containerRef} style={{ height: '160dvh', position: 'relative', zIndex: 10 }}>
+      <div ref={containerRef} style={{ height: '160dvh' }}>
         <div
           style={{
             position: 'sticky',
             top: 0,
             height: '100dvh',
             overflow: 'hidden',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
           }}
         >
           {/* Base dark bg */}
@@ -220,7 +107,6 @@ export default function ScrollExpandMedia({
               inset: 0,
             }}
           >
-            {/* Animated Shader Background Frozen */}
             <ShaderBackground isStatic={true} />
             <div className="absolute inset-0 bg-black/10" />
           </motion.div>
@@ -237,27 +123,29 @@ export default function ScrollExpandMedia({
               pointerEvents: 'none',
             }}
           >
-            {/* Hybrid Desktop (clip-path) / Mobile (scale) Wrapper */}
             <motion.div
-              className="w-[95vw] h-[88dvh] md:w-full md:h-full rounded-2xl md:rounded-none"
               style={{
-                position: 'relative',
+                width: '95vw',
+                height: '88vh',
+                borderRadius: '16px',
                 overflow: 'hidden',
-                willChange: 'transform, clip-path',
+                position: 'relative',
+                willChange: 'transform',
                 transformOrigin: 'center center',
-                transform: combinedTransform,
-                clipPath: combinedClipPath,
-                WebkitClipPath: combinedClipPath,
+                scaleX,
+                scaleY,
+                transform: 'translateZ(0)', // Force GPU layer
               }}
             >
-              {/* Inner wrapper for inverse scaling on mobile */}
+              {/* Inverse scale wrapper to prevent video from squishing */}
               <motion.div
                 style={{
                   width: '100%',
                   height: '100%',
                   willChange: 'transform',
                   transformOrigin: 'center center',
-                  transform: innerCombinedTransform,
+                  scaleX: invScaleX,
+                  scaleY: invScaleY,
                 }}
               >
                 {/* Parallax wrapper */}
@@ -270,21 +158,20 @@ export default function ScrollExpandMedia({
                     transformOrigin: 'center center',
                   }}
                 >
-                  {mediaType === 'video' ? (
-                    <video
-                      ref={videoWrapperRef as any}
-                      src={mediaSrc}
-                      poster={posterSrc}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      preload="auto"
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <Image src={mediaSrc} alt="" fill style={{ objectFit: 'cover' }} />
-                  )}
+              {mediaType === 'video' ? (
+                  <video
+                    ref={videoRef}
+                    src={mediaSrc}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                    className="block object-cover w-full h-full"
+                  />
+              ) : (
+                <Image src={mediaSrc} alt="" fill style={{ objectFit: 'cover' }} />
+              )}
                 </motion.div>
               </motion.div>
             </motion.div>
@@ -302,7 +189,6 @@ export default function ScrollExpandMedia({
               justifyContent: 'center',
               textAlign: 'center',
               pointerEvents: 'none',
-              transform: 'translateZ(1px)', // Fix Safari bug where text disappears
             }}
           >
             <motion.div
