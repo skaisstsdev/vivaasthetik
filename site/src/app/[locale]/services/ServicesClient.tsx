@@ -61,7 +61,7 @@ export default function ServicesClient({ services, loc }: ServicesClientProps) {
           return (
             <div 
               key={service.slug} 
-              className="relative group overflow-hidden rounded-sm aspect-square bg-gray-900 flex flex-col cursor-pointer"
+              className="relative group overflow-hidden aspect-square bg-gray-900 flex flex-col cursor-pointer"
               onClick={() => setActiveCard(isActive ? null : service.slug)}
             >
               {/* Image Background */}
