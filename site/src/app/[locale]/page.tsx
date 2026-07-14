@@ -10,12 +10,18 @@ import ConsultationCTA from '@/components/home/ConsultationCTA';
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const loc = locale as 'de' | 'ru';
 
   return (
     <main>
       <Hero />
       <Intro />
-      <PlaceholderBlock desktopVideo="/video1_desktop.mp4" mobileVideo="/video1_mobile.mp4" titleLine1="Natürliche" titleLine2="Schönheit." />
+      <PlaceholderBlock 
+        desktopVideo="/video1_desktop.mp4" 
+        mobileVideo="/video1_mobile.mp4" 
+        titleLine1={loc === 'de' ? "Natürliche" : "Естественная"} 
+        titleLine2={loc === 'de' ? "Schönheit." : "Красота."} 
+      />
       <FeatureCards />
       <WhyUs />
       <TestimonialsPreview />
