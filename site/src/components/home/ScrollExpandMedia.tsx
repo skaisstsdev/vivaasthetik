@@ -119,9 +119,15 @@ export default function ScrollExpandMedia({
               inset: 0,
             }}
           >
-            {/* Animated Shader Background */}
-            <ShaderBackground />
-            <div className="absolute inset-0 bg-black/10" />
+            <Image 
+              src={bgImageSrc} 
+              alt="Background" 
+              fill 
+              style={{ objectFit: 'cover' }} 
+              quality={90} 
+              priority 
+            />
+            <div className="absolute inset-0 bg-black/40" />
           </motion.div>
 
           {/* 
