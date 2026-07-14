@@ -158,32 +158,21 @@ export default function ScrollExpandMedia({
                 }}
               >
               {mediaType === 'video' ? (
-                <>
-                  <video
-                    ref={mobileVideoRef}
-                    src={mobileMediaSrc || mediaSrc}
-                    poster={posterSrc}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                    className={mobileMediaSrc ? "block md:hidden object-cover w-full h-full" : "block object-cover w-full h-full"}
-                  />
+                <video
+                  ref={desktopVideoRef}
+                  poster={posterSrc}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  className="block object-cover w-full h-full"
+                >
                   {mobileMediaSrc && (
-                    <video
-                      ref={desktopVideoRef}
-                      src={mediaSrc}
-                      poster={posterSrc}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      preload="metadata"
-                      className="hidden md:block object-cover w-full h-full"
-                    />
+                    <source src={mobileMediaSrc} media="(max-width: 767px)" />
                   )}
-                </>
+                  <source src={mediaSrc} />
+                </video>
               ) : (
                 <Image src={mediaSrc} alt="" fill style={{ objectFit: 'cover' }} />
               )}
