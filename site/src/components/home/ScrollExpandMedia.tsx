@@ -37,11 +37,11 @@ export default function ScrollExpandMedia({
     offset: ['start end', 'end start'],
   });
 
-  // Text stays centered until the block is fully in view (v=0.45), 
-  // then splits apart as the user scrolls past it (v=0.45 to 0.7)
+  // Start splitting as soon as the text enters the viewport (v=0.25)
+  // and finish when it leaves (v=0.75) for a very slow, smooth animation
   const mediaScale  = useTransform(scrollYProgress, [0, 0.5, 1], [0.95, 1, 0.95]);
-  const text1X      = useTransform(scrollYProgress, [0, 0.45, 0.7, 1], ['0vw', '0vw', '-50vw', '-50vw']);
-  const text2X      = useTransform(scrollYProgress, [0, 0.45, 0.7, 1], ['0vw', '0vw',  '50vw',  '50vw']);
+  const text1X      = useTransform(scrollYProgress, [0, 0.25, 0.75, 1], ['0vw', '0vw', '-50vw', '-50vw']);
+  const text2X      = useTransform(scrollYProgress, [0, 0.25, 0.75, 1], ['0vw', '0vw',  '50vw',  '50vw']);
 
   const words     = (title ?? '').split(' ');
   const mid       = Math.ceil(words.length / 2);
@@ -66,9 +66,8 @@ export default function ScrollExpandMedia({
           style={{ transform: 'translateZ(0)' }}
         >
           <motion.div
+            className="rounded-[24px] overflow-hidden w-full h-full"
             style={{
-              width: '100%',
-              height: '100%',
               scale: mediaScale,
               willChange: 'transform',
             }}
@@ -81,7 +80,7 @@ export default function ScrollExpandMedia({
                   muted
                   loop
                   playsInline
-                  className={mobileMediaSrc ? "block md:hidden object-cover w-full h-full" : "block object-cover w-full h-full"}
+                  className={mobileMediaSrc ? "block md:hidden object-cover w-full h-full rounded-[24px]" : "block object-cover w-full h-full rounded-[24px]"}
                 />
                 {mobileMediaSrc && (
                   <video
@@ -90,12 +89,12 @@ export default function ScrollExpandMedia({
                     muted
                     loop
                     playsInline
-                    className="hidden md:block object-cover w-full h-full"
+                    className="hidden md:block object-cover w-full h-full rounded-[24px]"
                   />
                 )}
               </>
             ) : (
-              <Image src={mediaSrc} alt="" fill style={{ objectFit: 'cover' }} />
+              <Image src={mediaSrc} alt="" fill style={{ objectFit: 'cover', borderRadius: '24px' }} />
             )}
           </motion.div>
         </div>
