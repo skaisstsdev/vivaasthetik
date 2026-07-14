@@ -115,7 +115,7 @@ export default function ScrollExpandMedia({
             }}
           >
             {/* Animated Shader Background */}
-            <ShaderBackground />
+            <ShaderBackground isStatic={true} />
             <div className="absolute inset-0 bg-black/10" />
           </motion.div>
 
