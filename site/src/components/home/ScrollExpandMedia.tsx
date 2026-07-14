@@ -37,11 +37,12 @@ export default function ScrollExpandMedia({
     offset: ['start end', 'end start'],
   });
 
-  // Parallax effects tied directly to scroll position (no spring, zero lag)
-  const mediaScale  = useTransform(scrollYProgress, [0, 1], [0.95, 1.1]);
-  const text1X      = useTransform(scrollYProgress, [0, 1], ['-15vw', '-60vw']);
-  const text2X      = useTransform(scrollYProgress, [0, 1], ['15vw',  '60vw']);
-  const opacityText = useTransform(scrollYProgress, [0.3, 0.5, 0.7], [0, 1, 0]);
+  // Text stays centered until the block is fully in view (v=0.45), 
+  // then splits apart as the user scrolls past it (v=0.45 to 0.7)
+  const mediaScale  = useTransform(scrollYProgress, [0, 0.5, 1], [0.95, 1, 0.95]);
+  const text1X      = useTransform(scrollYProgress, [0, 0.45, 0.7, 1], ['0vw', '0vw', '-60vw', '-60vw']);
+  const text2X      = useTransform(scrollYProgress, [0, 0.45, 0.7, 1], ['0vw', '0vw',  '60vw',  '60vw']);
+  const opacityText = useTransform(scrollYProgress, [0, 0.45, 0.6, 1], [1, 1, 0, 0]);
 
   const words     = (title ?? '').split(' ');
   const mid       = Math.ceil(words.length / 2);
@@ -101,16 +102,16 @@ export default function ScrollExpandMedia({
         </div>
 
         {/* Floating Text */}
-        <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
+        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center pointer-events-none gap-2 md:gap-4">
           <motion.div
             style={{ x: text1X, opacity: opacityText, willChange: 'transform, opacity' }}
-            className="absolute text-5xl md:text-6xl lg:text-7xl font-semibold text-white drop-shadow-2xl"
+            className="text-5xl md:text-6xl lg:text-7xl font-semibold text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.6)]"
           >
             {firstWord}
           </motion.div>
           <motion.div
             style={{ x: text2X, opacity: opacityText, willChange: 'transform, opacity' }}
-            className="absolute text-5xl md:text-6xl lg:text-7xl font-semibold text-white drop-shadow-2xl"
+            className="text-5xl md:text-6xl lg:text-7xl font-semibold text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.6)]"
           >
             {rest}
           </motion.div>
