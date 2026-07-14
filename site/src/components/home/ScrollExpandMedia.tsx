@@ -38,6 +38,7 @@ export default function ScrollExpandMedia({
   });
 
   const [isMounted, setIsMounted] = useState(false);
+  const mobileVideoRef = useRef<HTMLVideoElement>(null);
   const desktopVideoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -52,17 +53,18 @@ export default function ScrollExpandMedia({
       document.head.appendChild(link);
     }
     
-    const video = desktopVideoRef.current;
-    if (video) {
-      // Try to play immediately
-      video.play().catch(() => {});
-      // Also play when enough data is available (handles slow networks)
-      const onCanPlay = () => video.play().catch(() => {});
-      video.addEventListener('canplay', onCanPlay);
-      video.load();
-      return () => {
-        video.removeEventListener('canplay', onCanPlay);
-      };
+    // Play both videos to ensure they start loading immediately
+    if (mobileVideoRef.current) {
+      mobileVideoRef.current.play().catch(() => {});
+      const onCanPlayMobile = () => mobileVideoRef.current?.play().catch(() => {});
+      mobileVideoRef.current.addEventListener('canplay', onCanPlayMobile);
+      mobileVideoRef.current.load();
+    }
+    if (desktopVideoRef.current) {
+      desktopVideoRef.current.play().catch(() => {});
+      const onCanPlayDesktop = () => desktopVideoRef.current?.play().catch(() => {});
+      desktopVideoRef.current.addEventListener('canplay', onCanPlayDesktop);
+      desktopVideoRef.current.load();
     }
   }, [mediaSrc, mobileMediaSrc]);
 
@@ -170,22 +172,34 @@ export default function ScrollExpandMedia({
                 }}
               >
               {mediaType === 'video' ? (
-                <video
-                  ref={desktopVideoRef}
-                  poster={posterSrc}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="auto"
-                  className="block object-cover w-full h-full"
-                >
-                  {/* Native iOS Autoplay Fix */}
+                <>
+                  {/* Mobile Video - natively loads immediately via direct src attribute */}
+                  <video
+                    ref={mobileVideoRef}
+                    src={mobileMediaSrc || mediaSrc}
+                    poster={posterSrc}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                    className={mobileMediaSrc ? "block md:hidden object-cover w-full h-full" : "block object-cover w-full h-full"}
+                  />
+                  {/* Desktop Video - natively loads immediately via direct src attribute */}
                   {mobileMediaSrc && (
-                    <source src={mobileMediaSrc} media="(max-width: 767px)" />
+                    <video
+                      ref={desktopVideoRef}
+                      src={mediaSrc}
+                      poster={posterSrc}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="auto"
+                      className="hidden md:block object-cover w-full h-full"
+                    />
                   )}
-                  <source src={mediaSrc} />
-                </video>
+                </>
               ) : (
                 <Image src={mediaSrc} alt="" fill style={{ objectFit: 'cover' }} />
               )}
