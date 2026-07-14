@@ -8,7 +8,7 @@ type Props = {
 export default function PlaceholderBlock({ desktopVideo, mobileVideo }: Props) {
   return (
     <section 
-      className="relative w-full h-[100svh] md:h-[100vh] flex items-center justify-center overflow-hidden py-4 px-4 sm:py-8 sm:px-8 lg:py-12 lg:px-12"
+      className="relative w-full h-[100svh] md:h-[80vh] flex items-center justify-center overflow-hidden py-4 px-4 sm:py-8 sm:px-8 lg:py-16"
       style={{
         backgroundColor: '#0a192f',
         backgroundImage: `
@@ -18,7 +18,7 @@ export default function PlaceholderBlock({ desktopVideo, mobileVideo }: Props) {
         `
       }}
     >
-      <div className="relative w-full h-full rounded-3xl md:rounded-[2.5rem] overflow-hidden shadow-2xl bg-black/20">
+      <div className="relative w-full h-full md:w-auto md:aspect-[9/16] rounded-3xl md:rounded-[2.5rem] overflow-hidden shadow-2xl bg-black/20 mx-auto">
         <video
           autoPlay
           loop
