@@ -44,7 +44,6 @@ export default function PlaceholderBlock({ desktopVideo, mobileVideo, titleLine1
           autoPlay
           loop
           muted
-          defaultMuted
           playsInline
           preload="auto"
           className="absolute inset-0 w-full h-full object-cover hidden md:block"
@@ -55,7 +54,6 @@ export default function PlaceholderBlock({ desktopVideo, mobileVideo, titleLine1
           autoPlay
           loop
           muted
-          defaultMuted
           playsInline
           preload="auto"
           className="absolute inset-0 w-full h-full object-cover md:hidden"
