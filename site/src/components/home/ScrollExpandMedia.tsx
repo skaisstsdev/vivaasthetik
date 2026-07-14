@@ -127,7 +127,7 @@ export default function ScrollExpandMedia({
             }}
           >
             <div
-              className="w-[92vw] h-[86dvh] md:w-[95vw] md:h-[88dvh]"
+              className="w-[92vw] h-[86dvh] md:w-[80vw] md:h-[75dvh]"
               style={{
                 borderRadius: '24px',
                 overflow: 'hidden',
