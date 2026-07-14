@@ -38,24 +38,19 @@ export default function ScrollExpandMedia({
   });
 
   const [isMounted, setIsMounted] = useState(false);
-  const [isMobileSize, setIsMobileSize] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const mobileVideoRef = useRef<HTMLVideoElement>(null);
+  const desktopVideoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     setIsMounted(true);
     
-    const checkMobile = () => {
-      setIsMobileSize(window.innerWidth < 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    if (videoRef.current) {
-      videoRef.current.play().catch(() => {});
+    // Force play on mount to ensure they play immediately
+    if (mobileVideoRef.current) {
+      mobileVideoRef.current.play().catch(() => {});
     }
-    
-    return () => window.removeEventListener('resize', checkMobile);
+    if (desktopVideoRef.current) {
+      desktopVideoRef.current.play().catch(() => {});
+    }
   }, []);
 
   // We revert to `clip-path` because inverse scaling with different X/Y ratios distorts the video.
@@ -163,18 +158,32 @@ export default function ScrollExpandMedia({
                 }}
               >
               {mediaType === 'video' ? (
-                <video
-                  key={isMobileSize ? 'mobile' : 'desktop'} // Force remount when changing source type to ensure it plays
-                  ref={videoRef}
-                  src={isMobileSize && mobileMediaSrc ? mobileMediaSrc : mediaSrc}
-                  poster={posterSrc}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="auto"
-                  className="block object-cover w-full h-full"
-                />
+                <>
+                  <video
+                    ref={mobileVideoRef}
+                    src={mobileMediaSrc || mediaSrc}
+                    poster={posterSrc}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    className={mobileMediaSrc ? "block md:hidden object-cover w-full h-full" : "block object-cover w-full h-full"}
+                  />
+                  {mobileMediaSrc && (
+                    <video
+                      ref={desktopVideoRef}
+                      src={mediaSrc}
+                      poster={posterSrc}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      className="hidden md:block object-cover w-full h-full"
+                    />
+                  )}
+                </>
               ) : (
                 <Image src={mediaSrc} alt="" fill style={{ objectFit: 'cover' }} />
               )}
