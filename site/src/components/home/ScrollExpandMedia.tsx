@@ -53,24 +53,29 @@ export default function ScrollExpandMedia({
   }, []);
 
   // To achieve 60fps smooth animation on Safari with video and WebGL,
-  // we animate width and height of an absolute centered div. 
-  // clip-path is notoriously laggy on Apple devices when intersecting with video/WebGL.
-  const mediaWidth = useTransform(scrollYProgress, (v) => {
-    if (!isMounted || typeof window === 'undefined') return '30vw';
+  // we use the inverse-scale masking technique. We animate `scale` instead of `width`/`height` 
+  // to prevent layout thrashing, and apply the inverse scale to the child so it doesn't warp.
+  const scaleX = useTransform(scrollYProgress, (v) => {
+    if (!isMounted || typeof window === 'undefined') return 1;
     const w = window.innerWidth;
     const targetW = w * 0.95;
     const startW = w < 768 ? 260 : 360;
-    return `${startW + v * (targetW - startW)}px`;
+    const currentW = startW + v * (targetW - startW);
+    return currentW / targetW;
   });
 
-  const mediaHeight = useTransform(scrollYProgress, (v) => {
-    if (!isMounted || typeof window === 'undefined') return '30vh';
+  const scaleY = useTransform(scrollYProgress, (v) => {
+    if (!isMounted || typeof window === 'undefined') return 1;
     const w = window.innerWidth;
     const h = window.innerHeight;
     const targetH = h * 0.88;
     const startH = w < 768 ? 320 : 420;
-    return `${startH + v * (targetH - startH)}px`;
+    const currentH = startH + v * (targetH - startH);
+    return currentH / targetH;
   });
+
+  const invScaleX = useTransform(scaleX, (s) => 1 / s);
+  const invScaleY = useTransform(scaleY, (s) => 1 / s);
 
   // Parallax scale effect: media slightly zooms out as the mask expands
   const mediaScale     = useTransform(scrollYProgress, [0, 1], [1.2, 1]);
@@ -133,23 +138,39 @@ export default function ScrollExpandMedia({
           >
             <motion.div
               style={{
-                width: mediaWidth,
-                height: mediaHeight,
+                width: '95vw',
+                height: '88vh',
                 borderRadius: '16px',
                 overflow: 'hidden',
                 position: 'relative',
-                willChange: 'width, height',
-                transform: 'translateZ(0)',
+                willChange: 'transform',
+                transformOrigin: 'center center',
+                scaleX,
+                scaleY,
+                transform: 'translateZ(0)', // Force GPU layer
               }}
             >
+              {/* Inverse scale wrapper to prevent video from squishing */}
               <motion.div
                 style={{
                   width: '100%',
                   height: '100%',
-                  scale: mediaScale,
                   willChange: 'transform',
+                  transformOrigin: 'center center',
+                  scaleX: invScaleX,
+                  scaleY: invScaleY,
                 }}
               >
+                {/* Parallax wrapper */}
+                <motion.div
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    scale: mediaScale,
+                    willChange: 'transform',
+                    transformOrigin: 'center center',
+                  }}
+                >
               {mediaType === 'video' ? (
                 <>
                   <video
@@ -180,6 +201,7 @@ export default function ScrollExpandMedia({
               ) : (
                 <Image src={mediaSrc} alt="" fill style={{ objectFit: 'cover' }} />
               )}
+                </motion.div>
               </motion.div>
             </motion.div>
           </div>
