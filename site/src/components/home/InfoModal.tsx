@@ -37,7 +37,7 @@ export default function InfoModal() {
 
   return (
     <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center p-4 sm:p-6 md:p-12 bg-black/20 backdrop-blur-sm animate-in fade-in duration-500 ease-out">
-      <div className="bg-white w-full max-w-5xl max-h-[95vh] flex flex-col rounded-xl shadow-2xl relative overflow-hidden text-gray-900 animate-in zoom-in-95 duration-500 ease-out">
+      <div className="bg-white/95 backdrop-blur-3xl border border-gray-200 w-full max-w-5xl max-h-[95vh] flex flex-col rounded-xl shadow-2xl relative overflow-hidden text-gray-900 animate-in zoom-in-95 duration-500 ease-out">
         
         {/* Close Button */}
         <button 

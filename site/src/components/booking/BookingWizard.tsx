@@ -85,7 +85,7 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
 
   // We use this function to render the interactive forms for Step 2, 3, and 4
   const renderStepsTwoToFour = () => (
-    <div ref={topRef} className="flex flex-col md:flex-row w-full min-h-full bg-white relative">
+    <div ref={topRef} className="flex flex-col md:flex-row w-full min-h-full bg-transparent relative">
       {/* Left Column: Quick Facts */}
       {step > 1 && step < 4 && selectedService && selectedService.bookingDetails && (
         <div className={`${step === 3 ? 'hidden md:flex' : 'flex'} w-full md:w-1/3 bg-gray-50 border-r border-gray-100 p-8 md:p-12 flex-col flex-shrink-0`}>
@@ -163,7 +163,7 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
       )}
 
       {/* Right Column / Full Column */}
-      <div className={`w-full ${step === 4 ? 'md:w-full' : 'md:w-2/3'} p-8 md:p-12 flex flex-col flex-grow bg-white`}>
+      <div className={`w-full ${step === 4 ? 'md:w-full' : 'md:w-2/3'} p-8 md:p-12 flex flex-col flex-grow bg-transparent`}>
         
         {/* Step Indicator */}
         {step < 4 && (
@@ -436,7 +436,7 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
       {/* Overlay Modal for Steps 2+ on the Booking page */}
       {step > 1 && (
         <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center p-4 sm:p-6 md:p-12 bg-black/20 backdrop-blur-sm animate-in fade-in duration-500 ease-out">
-          <div className="bg-white/30 backdrop-blur-md border border-white/40 w-full max-w-6xl max-h-[95vh] flex flex-col rounded-xl shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] relative overflow-hidden animate-in zoom-in-95 duration-500 ease-out">
+          <div className="bg-white/95 backdrop-blur-3xl border border-gray-200 w-full max-w-6xl max-h-[95vh] flex flex-col rounded-xl shadow-2xl relative overflow-hidden animate-in zoom-in-95 duration-500 ease-out">
             
             {/* Close Button */}
             <button 
@@ -447,13 +447,13 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
                   setStep(1);
                 }
               }}
-              className="absolute top-6 right-6 p-2 text-gray-400 hover:text-gray-900 transition-colors bg-white hover:bg-gray-100 rounded-full z-50 shadow-sm border border-gray-100"
+              className="absolute top-6 right-6 p-2 text-gray-500 hover:text-gray-900 transition-colors bg-gray-100 hover:bg-gray-200 rounded-full z-50 border border-gray-200 shadow-sm"
             >
               <X size={24} strokeWidth={1.5} />
             </button>
 
             {/* Scrollable Modal Content */}
-            <div className="overflow-y-auto flex-1 w-full bg-white">
+            <div className="overflow-y-auto flex-1 w-full bg-transparent">
               {renderStepsTwoToFour()}
             </div>
             
