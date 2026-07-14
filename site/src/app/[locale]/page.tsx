@@ -1,7 +1,7 @@
 import { setRequestLocale } from 'next-intl/server';
 import Hero from '@/components/home/Hero';
 import Intro from '@/components/home/Intro';
-import VideoShowcase from '@/components/home/VideoShowcase';
+import PlaceholderBlock from '@/components/home/PlaceholderBlock';
 import FeatureCards from '@/components/home/FeatureCards';
 import TestimonialsPreview from '@/components/home/TestimonialsPreview';
 import WhyUs from '@/components/home/WhyUs';
@@ -15,7 +15,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     <main>
       <Hero />
       <Intro />
-      <VideoShowcase />
+      <PlaceholderBlock />
       <FeatureCards />
       <WhyUs />
       <TestimonialsPreview />

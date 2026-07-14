@@ -3,7 +3,7 @@ import { servicesData } from '@/data/services';
 import { Link } from '@/i18n/routing';
 import BookNowButton from '@/components/booking/BookNowButton';
 import ConsultationCTA from '@/components/home/ConsultationCTA';
-import ScrollExpandMedia from '@/components/home/ScrollExpandMedia';
+import PlaceholderBlock from '@/components/home/PlaceholderBlock';
 import { Suspense } from 'react';
 import ServicesClient from './ServicesClient';
 import ShaderBackground from '@/components/home/ShaderBackground';
@@ -58,14 +58,8 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
         </div>
       </section>
 
-      {/* Video Showcase Section */}
-      <ScrollExpandMedia
-        mediaType="video"
-        mediaSrc="/video2_desktop.mov"
-        mobileMediaSrc="/video2_mobile.mov"
-        bgImageSrc="/stranica2.webp"
-        title={loc === 'de' ? 'Ihre Verwandlung' : 'Ваше преображение'}
-      />
+      {/* Placeholder block replacing the video */}
+      <PlaceholderBlock />
 
       {/* Cards Grid */}
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-24 md:py-32">
