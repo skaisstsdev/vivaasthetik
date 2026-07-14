@@ -131,13 +131,13 @@ export default function ServicesClient({ services, loc }: ServicesClientProps) {
           onClick={closeModal}
         >
           <div 
-            className="bg-slate-900/80 backdrop-blur-3xl border border-white/10 w-full max-w-4xl h-[90vh] md:max-h-[85vh] flex flex-col rounded-xl shadow-2xl relative animate-in fade-in zoom-in-95 duration-500 ease-out overflow-hidden text-white"
+            className="bg-white/95 backdrop-blur-3xl border border-gray-200 w-full max-w-4xl h-[90vh] md:max-h-[85vh] flex flex-col rounded-xl shadow-2xl relative animate-in fade-in zoom-in-95 duration-500 ease-out overflow-hidden text-gray-900"
             onClick={e => e.stopPropagation()}
           >
             {/* Fixed Close Button inside Modal */}
             <button 
               onClick={closeModal}
-              className="absolute top-6 right-6 p-2 text-white/70 hover:text-white transition-colors bg-white/10 hover:bg-white/20 rounded-full z-50 border border-white/10 shadow-sm"
+              className="absolute top-6 right-6 p-2 text-gray-500 hover:text-gray-900 transition-colors bg-gray-100 hover:bg-gray-200 rounded-full z-50 border border-gray-200 shadow-sm"
             >
               <X size={24} strokeWidth={1.5} />
             </button>
@@ -146,8 +146,8 @@ export default function ServicesClient({ services, loc }: ServicesClientProps) {
             <div className="overflow-y-auto flex-1 w-full">
               
               {/* Header Area */}
-              <div className="p-8 md:pt-16 md:pb-12 text-center border-b border-white/10">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-white leading-tight pr-12 md:pr-0">
+              <div className="p-8 md:pt-16 md:pb-12 text-center border-b border-gray-200">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 leading-tight pr-12 md:pr-0">
                   {selectedService.title[loc]}
                 </h2>
               </div>
@@ -155,20 +155,20 @@ export default function ServicesClient({ services, loc }: ServicesClientProps) {
               {/* Content Area */}
               <div className="p-8 md:p-16">
                 <div 
-                  className="prose prose-lg md:prose-xl prose-invert prose-headings:font-light prose-h3:text-3xl prose-h4:text-2xl max-w-none mx-auto"
+                  className="prose prose-lg md:prose-xl prose-headings:font-light prose-h3:text-3xl prose-h4:text-2xl max-w-none mx-auto text-gray-800"
                   dangerouslySetInnerHTML={{ __html: selectedService.content[loc] }}
                 />
               </div>
 
               {/* Action Area */}
-              <div className="p-8 md:p-16 bg-white/5 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
-                <p className="text-white/90 font-medium text-lg">
+              <div className="p-8 md:p-16 bg-gray-50 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-6">
+                <p className="text-gray-700 font-medium text-lg">
                   {loc === 'de' ? 'Interesse an dieser Behandlung?' : 'Заинтересовала эта процедура?'}
                 </p>
                 <div onClick={closeModal}>
                   <BookNowButton 
                     serviceSlug={selectedService.slug}
-                    className="w-full sm:w-auto px-10 py-5 bg-white text-gray-900 hover:bg-gray-200 transition-colors uppercase tracking-widest text-sm font-medium text-center inline-block shadow-lg"
+                    className="w-full sm:w-auto px-10 py-5 bg-black text-white hover:bg-gray-800 transition-colors uppercase tracking-widest text-sm font-medium text-center inline-block shadow-lg"
                   >
                     {loc === 'de' ? 'Termin buchen' : 'Записаться на прием'}
                   </BookNowButton>
