@@ -2,7 +2,6 @@
 
 import { useTranslations } from 'next-intl';
 import ScrollExpandMedia from './ScrollExpandMedia';
-
 import ReactDOM from 'react-dom';
 
 export default function VideoShowcase() {

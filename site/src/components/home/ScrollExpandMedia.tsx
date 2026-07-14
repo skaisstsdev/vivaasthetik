@@ -3,18 +3,12 @@
 import { useRef, ReactNode } from 'react';
 import Image from 'next/image';
 import ShaderBackground from './ShaderBackground';
-import {
-  motion,
-  useScroll,
-  useTransform,
-} from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 interface Props {
   mediaType?: 'video' | 'image';
   mediaSrc: string;
-  mediaPoster?: string;
   mobileMediaSrc?: string;
-  mobileMediaPoster?: string;
   bgImageSrc: string;
   title?: string;
   scrollToExpand?: string;
@@ -31,20 +25,20 @@ export default function ScrollExpandMedia({
 }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Track scroll position of THIS specific element as it moves through viewport
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ['start end', 'end start'],
   });
 
-  // Simple text split as it passes the center
-  const text1X      = useTransform(scrollYProgress, [0, 0.45, 0.7, 1], ['0vw', '0vw', '-50vw', '-50vw']);
-  const text2X      = useTransform(scrollYProgress, [0, 0.45, 0.7, 1], ['0vw', '0vw',  '50vw',  '50vw']);
+  // Simple text split as it passes the center. 
+  // No video scaling. No sticky containers. No fading out.
+  const text1X = useTransform(scrollYProgress, [0, 0.45, 0.7, 1], ['0vw', '0vw', '-50vw', '-50vw']);
+  const text2X = useTransform(scrollYProgress, [0, 0.45, 0.7, 1], ['0vw', '0vw',  '50vw',  '50vw']);
 
-  const words     = (title ?? '').split(' ');
-  const mid       = Math.ceil(words.length / 2);
+  const words = (title ?? '').split(' ');
+  const mid = Math.ceil(words.length / 2);
   const firstWord = words.slice(0, mid).join(' ');
-  const rest      = words.slice(mid).join(' ');
+  const rest = words.slice(mid).join(' ');
 
   return (
     <>
@@ -52,16 +46,16 @@ export default function ScrollExpandMedia({
         ref={containerRef} 
         className="relative w-full h-[100dvh] flex items-center justify-center overflow-hidden bg-[#080d1a]"
       >
-        {/* Background photo */}
+        {/* 1. Изначально синий статичный фон */}
         <div className="absolute inset-0 z-0">
           <ShaderBackground isStatic={true} />
           <div className="absolute inset-0 bg-black/10" />
         </div>
 
-        {/* Video Container (No scaling, pure static rounded container) */}
+        {/* 2. Видео в контйнере скругленном. По размеру такое как в последней версии */}
         <div
           className="relative z-10 w-[92vw] h-[86dvh] md:w-[80vw] md:h-[75dvh] rounded-[24px] overflow-hidden"
-          style={{ transform: 'translateZ(0)' }}
+          style={{ transform: 'translateZ(0)' }} // Hardware clipping for perfectly round corners
         >
           <div className="w-full h-full">
             {mediaType === 'video' ? (
