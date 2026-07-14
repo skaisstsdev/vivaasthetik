@@ -14,13 +14,31 @@ export default function PlaceholderBlock({ desktopVideo, mobileVideo, titleLine1
 
   useEffect(() => {
     if (!containerRef.current) return;
-    // Force play on all videos in this block to handle Next.js client-side navigation
     const videos = containerRef.current.querySelectorAll('video');
-    videos.forEach(video => {
-      video.defaultMuted = true;
-      video.muted = true;
-      video.play().catch(() => {});
-    });
+    
+    const tryPlay = () => {
+      videos.forEach(video => {
+        video.defaultMuted = true;
+        video.muted = true;
+        if (video.paused) {
+          video.play().catch(() => {});
+        }
+      });
+    };
+
+    // Try immediately on mount
+    tryPlay();
+
+    // If blocked by iOS (like coming from Google App), try again on first interaction
+    window.addEventListener('touchstart', tryPlay, { once: true });
+    window.addEventListener('scroll', tryPlay, { once: true });
+    window.addEventListener('click', tryPlay, { once: true });
+
+    return () => {
+      window.removeEventListener('touchstart', tryPlay);
+      window.removeEventListener('scroll', tryPlay);
+      window.removeEventListener('click', tryPlay);
+    };
   }, []);
 
   return (
