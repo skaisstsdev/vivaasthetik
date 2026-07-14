@@ -150,6 +150,7 @@ export default function ScrollExpandMedia({
                 <>
                   <video
                     ref={mobileMediaSrc ? mobileVideoRef : desktopVideoRef}
+                    src={mobileMediaSrc || mediaSrc}
                     poster={posterSrc}
                     autoPlay
                     muted
@@ -157,12 +158,11 @@ export default function ScrollExpandMedia({
                     playsInline
                     preload="auto"
                     className={mobileMediaSrc ? "block md:hidden object-cover w-full h-full" : "block object-cover w-full h-full"}
-                  >
-                    <source src={mobileMediaSrc || mediaSrc} type="video/mp4" />
-                  </video>
+                  />
                   {mobileMediaSrc && (
                     <video
                       ref={desktopVideoRef}
+                      src={mediaSrc}
                       poster={posterSrc}
                       autoPlay
                       muted
@@ -170,9 +170,7 @@ export default function ScrollExpandMedia({
                       playsInline
                       preload="auto"
                       className="hidden md:block object-cover w-full h-full"
-                    >
-                      <source src={mediaSrc} type="video/mp4" />
-                    </video>
+                    />
                   )}
                 </>
               ) : (
