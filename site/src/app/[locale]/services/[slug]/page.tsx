@@ -32,7 +32,7 @@ export default async function ServiceDetailPage({
     <main className="bg-white pb-24">
       
       {/* Full-screen Hero Section for the specific service */}
-      <section className="relative w-full h-[100dvh] flex items-center justify-center bg-gray-900 overflow-hidden">
+      <section className="relative w-full h-[100svh] flex items-center justify-center bg-gray-900 overflow-hidden">
         <ShaderBackground />
 
         <div className="relative z-10 w-full max-w-5xl mx-auto px-6 md:px-12 flex flex-col items-center justify-center text-center">
