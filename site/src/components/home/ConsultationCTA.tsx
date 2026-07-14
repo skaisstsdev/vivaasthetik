@@ -23,10 +23,9 @@ export default function ConsultationCTA() {
         </p>
         <Link
           href="/booking"
-          className="inline-block px-12 py-5 bg-transparent border border-white text-white text-xs md:text-sm tracking-[0.2em] uppercase font-medium hover:bg-white hover:text-gray-900 transition-colors relative overflow-hidden group"
+          className="inline-block px-12 py-5 bg-transparent border border-white text-white text-xs md:text-sm tracking-[0.2em] uppercase font-medium hover:bg-white hover:text-gray-900 transition-colors"
         >
-          <span className="shimmer-text relative z-10" style={{ animationDelay: '6s' }}>{t('cta')}</span>
-          <div className="absolute inset-0 border border-transparent shimmer-border rounded-none pointer-events-none" style={{ animationDelay: '6.2s' }}></div>
+          {t('cta')}
         </Link>
       </div>
     </section>

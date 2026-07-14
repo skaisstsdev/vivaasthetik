@@ -26,7 +26,7 @@ export default function BookingModal() {
       />
 
       {/* Modal Content container */}
-      <div className="relative bg-white w-full max-w-6xl max-h-full overflow-y-auto shadow-2xl rounded-sm flex flex-col border border-[#d4af37] animate-in zoom-in-95 duration-500 ease-out">
+      <div className="relative bg-white w-full max-w-6xl max-h-full overflow-y-auto shadow-2xl rounded-sm flex flex-col animate-in zoom-in-95 duration-500 ease-out">
         
         {/* Header with close button */}
         <div className="sticky top-0 right-0 z-10 flex justify-end p-4 pointer-events-none">

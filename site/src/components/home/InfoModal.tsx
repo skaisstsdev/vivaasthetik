@@ -37,7 +37,7 @@ export default function InfoModal() {
 
   return (
     <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center p-4 sm:p-6 md:p-12 bg-black/20 backdrop-blur-sm animate-in fade-in duration-500 ease-out">
-      <div className="bg-white border border-[#d4af37] w-full max-w-5xl max-h-[95vh] flex flex-col rounded-sm shadow-2xl relative overflow-hidden text-gray-900 animate-in zoom-in-95 duration-500 ease-out">
+      <div className="bg-white w-full max-w-5xl max-h-[95vh] flex flex-col rounded-xl shadow-2xl relative overflow-hidden text-gray-900 animate-in zoom-in-95 duration-500 ease-out">
         
         {/* Close Button */}
         <button 
@@ -75,7 +75,7 @@ export default function InfoModal() {
               <div className="flex flex-col gap-8">
                 {features.map((feature, idx) => (
                   <div key={idx} className="flex flex-col md:flex-row gap-4 md:gap-6 group">
-                    <div className="text-gray-300 font-mono text-xl md:text-2xl tracking-widest pt-1 w-10 flex-shrink-0 shimmer-text" style={{ animationDelay: `${idx * 0.5}s` }}>
+                    <div className="text-gray-300 font-mono text-xl md:text-2xl tracking-widest pt-1 w-10 flex-shrink-0">
                       {String(idx + 1).padStart(2, '0')}
                     </div>
                     <div className="flex flex-col gap-2">

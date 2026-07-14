@@ -76,9 +76,9 @@ export default function Navbar() {
             <Link 
               href="/" 
               onClick={() => setIsMenuOpen(false)}
-              className="text-xl md:text-2xl font-light tracking-[0.2em] uppercase text-center group"
+              className="text-xl md:text-2xl font-light tracking-[0.2em] uppercase text-center"
             >
-              VIVA <span className="font-medium shimmer-text inline-block" style={{ animationDelay: '1.5s' }}>Ästhetik</span>
+              VIVA <span className="font-medium">Ästhetik</span>
             </Link>
           </div>
 
@@ -86,7 +86,7 @@ export default function Navbar() {
           <div className="flex-1 flex items-center justify-end gap-6">
             <div className={`flex items-center gap-2 text-xs font-medium tracking-widest ${isScrolled || isMenuOpen ? 'text-gray-400' : 'text-white/70'}`}>
               <Link href="/" locale="de" className={`hover:${isScrolled || isMenuOpen ? 'text-gray-900' : 'text-white'} transition-colors`}>DE</Link>
-              <span className="font-light shimmer-text" style={{ animationDelay: '3.2s' }}>/</span>
+              <span className="font-light">/</span>
               <Link href="/" locale="ru" className={`hover:${isScrolled || isMenuOpen ? 'text-gray-900' : 'text-white'} transition-colors`}>RU</Link>
             </div>
 

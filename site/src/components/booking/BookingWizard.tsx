@@ -232,10 +232,9 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
             <div className="flex gap-4 mt-8 pt-8 border-t border-gray-100">
               <button 
                 onClick={handleBack}
-                className="px-8 py-4 border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors uppercase tracking-widest text-sm relative overflow-hidden group"
+                className="px-8 py-4 border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors uppercase tracking-widest text-sm"
               >
-                <span className="shimmer-text relative z-10" style={{ animationDelay: '5s' }}>{t('btn_back')}</span>
-                <div className="absolute inset-0 border border-transparent shimmer-border rounded-none pointer-events-none" style={{ animationDelay: '5.2s' }}></div>
+                {t('btn_back')}
               </button>
               <button 
                 onClick={handleNext}
@@ -296,10 +295,9 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
               <button 
                 type="button"
                 onClick={handleBack}
-                className="px-8 py-4 border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors uppercase tracking-widest text-sm relative overflow-hidden group"
+                className="px-8 py-4 border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors uppercase tracking-widest text-sm"
               >
-                <span className="shimmer-text relative z-10" style={{ animationDelay: '5.5s' }}>{t('btn_back')}</span>
-                <div className="absolute inset-0 border border-transparent shimmer-border rounded-none pointer-events-none" style={{ animationDelay: '5.7s' }}></div>
+                {t('btn_back')}
               </button>
               <button 
                 type="submit"

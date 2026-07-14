@@ -34,7 +34,7 @@ export default function TestimonialsPreview() {
             {items.map((item, i) => (
               <div key={i} className="flex flex-col gap-6 w-[300px] md:w-[400px] whitespace-normal">
                 {/* Quote mark */}
-                <span className="text-4xl font-serif text-gray-200 leading-none shimmer-text" style={{ animationDelay: `${i * 0.4}s` }}>&ldquo;</span>
+                <span className="text-4xl font-serif text-gray-200 leading-none">&ldquo;</span>
                 <p className="text-gray-600 leading-relaxed italic">
                   {item.text}
                 </p>
@@ -51,8 +51,7 @@ export default function TestimonialsPreview() {
       <div className="text-center mt-16 px-8">
         <a
           href="#"
-          className="inline-block border border-gray-300 text-gray-700 text-sm px-8 py-3 hover:border-gray-900 hover:text-gray-900 transition-colors uppercase tracking-widest shimmer-border"
-          style={{ animationDelay: '3.5s' }}
+          className="inline-block border border-gray-300 text-gray-700 text-sm px-8 py-3 hover:border-gray-900 hover:text-gray-900 transition-colors uppercase tracking-widest"
         >
           {t('leaveReview')}
         </a>
