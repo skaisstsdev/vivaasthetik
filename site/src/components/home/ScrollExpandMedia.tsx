@@ -38,8 +38,7 @@ export default function ScrollExpandMedia({
   });
 
   const [isMounted, setIsMounted] = useState(false);
-  const [isMobileSize, setIsMobileSize] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const desktopVideoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     setIsMounted(true);
@@ -49,18 +48,11 @@ export default function ScrollExpandMedia({
       const link = document.createElement('link');
       link.rel = 'preload';
       link.as = 'video';
-      link.href = isMobileSize && mobileMediaSrc ? mobileMediaSrc : mediaSrc;
+      link.href = window.innerWidth < 768 && mobileMediaSrc ? mobileMediaSrc : mediaSrc;
       document.head.appendChild(link);
     }
 
-    const checkMobile = () => {
-      setIsMobileSize(window.innerWidth < 768);
-    };
-
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-
-    const video = videoRef.current;
+    const video = desktopVideoRef.current;
     if (video) {
       // Try to play immediately
       video.play().catch(() => {});
@@ -70,12 +62,9 @@ export default function ScrollExpandMedia({
       video.load();
       return () => {
         video.removeEventListener('canplay', onCanPlay);
-        window.removeEventListener('resize', checkMobile);
       };
     }
-
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
+  }, [mediaSrc, mobileMediaSrc]);
 
   // We revert to `clip-path` because inverse scaling with different X/Y ratios distorts the video.
   // Since we fixed the double-video decoding issue, clip-path is now buttery smooth.
@@ -183,9 +172,7 @@ export default function ScrollExpandMedia({
               >
               {mediaType === 'video' ? (
                 <video
-                  key={isMobileSize ? 'mobile' : 'desktop'} // Force remount when changing source type to ensure it plays
-                  ref={videoRef}
-                  src={isMobileSize && mobileMediaSrc ? mobileMediaSrc : mediaSrc}
+                  ref={desktopVideoRef}
                   poster={posterSrc}
                   autoPlay
                   muted
@@ -193,7 +180,12 @@ export default function ScrollExpandMedia({
                   playsInline
                   preload="auto"
                   className="block object-cover w-full h-full"
-                />
+                >
+                  {mobileMediaSrc && (
+                    <source src={mobileMediaSrc} media="(max-width: 767px)" />
+                  )}
+                  <source src={mediaSrc} />
+                </video>
               ) : (
                 <Image src={mediaSrc} alt="" fill style={{ objectFit: 'cover' }} />
               )}
