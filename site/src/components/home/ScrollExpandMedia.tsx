@@ -47,24 +47,10 @@ export default function ScrollExpandMedia({
   });
 
   const [isMounted, setIsMounted] = useState(false);
-  const [blobUrl, setBlobUrl] = useState<string | null>(null);
 
   useEffect(() => {
     setIsMounted(true);
     
-    // 2. FETCH VIDEO AS BLOB TO FORCE 100% PRELOAD INTO RAM
-    // This totally bypasses iOS Safari's aggressive network-pausing for off-screen videos.
-    if (mediaType === 'video' && mediaSrc) {
-      const urlToFetch = window.innerWidth < 768 && mobileMediaSrc ? mobileMediaSrc : mediaSrc;
-      fetch(urlToFetch)
-        .then(res => res.blob())
-        .then(blob => {
-          const objectUrl = URL.createObjectURL(blob);
-          setBlobUrl(objectUrl);
-        })
-        .catch(err => console.error("Failed to preload video blob:", err));
-    }
-
     // Eager preload hint as fallback
     if (mediaSrc && typeof document !== 'undefined') {
       const link = document.createElement('link');
@@ -74,29 +60,23 @@ export default function ScrollExpandMedia({
       document.head.appendChild(link);
     }
     
-    // Force video to load and play aggressively to bypass iOS client-side routing blocks
-    const timer = setTimeout(() => {
+    // Force video to play aggressively 
+    const tryPlay = () => {
       if (videoWrapperRef.current) {
         const video = videoWrapperRef.current as unknown as HTMLVideoElement;
-        video.play().catch(() => {});
-        const onCanPlay = () => video.play().catch(() => {});
-        video.addEventListener('canplay', onCanPlay);
-        // Only load() if it hasn't started natively
-        if (video.readyState === 0) {
-          video.load();
+        if (video.paused) {
+          video.play().catch(() => {});
         }
-        return () => video.removeEventListener('canplay', onCanPlay);
       }
-    }, 100);
-    return () => clearTimeout(timer);
-  }, [mediaSrc, mobileMediaSrc, mediaType]);
-
-  // Cleanup blob URL when unmounting
-  useEffect(() => {
-    return () => {
-      if (blobUrl) URL.revokeObjectURL(blobUrl);
     };
-  }, [blobUrl]);
+    
+    tryPlay();
+    const interval = setInterval(tryPlay, 500);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [mediaSrc, mobileMediaSrc, mediaType]);
 
   // COMBINED TRANSFORM FOR WRAPPER (GPU Accelerated) - USING smoothProgress
   const combinedTransform = useTransform(smoothProgress, (v) => {
@@ -265,7 +245,7 @@ export default function ScrollExpandMedia({
                   {mediaType === 'video' ? (
                     <video
                       ref={videoWrapperRef as any}
-                      src={blobUrl || mediaSrc}
+                      src={mediaSrc}
                       poster={posterSrc}
                       autoPlay
                       muted
