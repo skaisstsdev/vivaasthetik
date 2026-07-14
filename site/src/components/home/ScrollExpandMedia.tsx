@@ -7,6 +7,7 @@ import {
   motion,
   useScroll,
   useTransform,
+  useSpring,
 } from 'framer-motion';
 
 interface Props {
@@ -38,12 +39,33 @@ export default function ScrollExpandMedia({
     offset: ['start start', 'end end'],
   });
 
+  // 1. ADD SPRING PHYSICS for buttery smooth gliding on mobile/desktop
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
   const [isMounted, setIsMounted] = useState(false);
+  const [blobUrl, setBlobUrl] = useState<string | null>(null);
 
   useEffect(() => {
     setIsMounted(true);
     
-    // Eager preload hint
+    // 2. FETCH VIDEO AS BLOB TO FORCE 100% PRELOAD INTO RAM
+    // This totally bypasses iOS Safari's aggressive network-pausing for off-screen videos.
+    if (mediaType === 'video' && mediaSrc) {
+      const urlToFetch = window.innerWidth < 768 && mobileMediaSrc ? mobileMediaSrc : mediaSrc;
+      fetch(urlToFetch)
+        .then(res => res.blob())
+        .then(blob => {
+          const objectUrl = URL.createObjectURL(blob);
+          setBlobUrl(objectUrl);
+        })
+        .catch(err => console.error("Failed to preload video blob:", err));
+    }
+
+    // Eager preload hint as fallback
     if (mediaSrc && typeof document !== 'undefined') {
       const link = document.createElement('link');
       link.rel = 'preload';
@@ -67,10 +89,17 @@ export default function ScrollExpandMedia({
       }
     }, 100);
     return () => clearTimeout(timer);
-  }, [mediaSrc, mobileMediaSrc]);
+  }, [mediaSrc, mobileMediaSrc, mediaType]);
 
-  // COMBINED TRANSFORM FOR WRAPPER (GPU Accelerated)
-  const combinedTransform = useTransform(scrollYProgress, (v) => {
+  // Cleanup blob URL when unmounting
+  useEffect(() => {
+    return () => {
+      if (blobUrl) URL.revokeObjectURL(blobUrl);
+    };
+  }, [blobUrl]);
+
+  // COMBINED TRANSFORM FOR WRAPPER (GPU Accelerated) - USING smoothProgress
+  const combinedTransform = useTransform(smoothProgress, (v) => {
     if (!isMounted || typeof window === 'undefined') return 'translateZ(0) scale(1, 1)';
     const w = window.innerWidth;
     const h = window.innerHeight;
@@ -92,8 +121,8 @@ export default function ScrollExpandMedia({
     }
   });
 
-  // COMBINED TRANSFORM FOR INNER WRAPPER (Inverse Scale)
-  const innerCombinedTransform = useTransform(scrollYProgress, (v) => {
+  // COMBINED TRANSFORM FOR INNER WRAPPER (Inverse Scale) - USING smoothProgress
+  const innerCombinedTransform = useTransform(smoothProgress, (v) => {
     if (!isMounted || typeof window === 'undefined') return 'scale(1, 1)';
     const w = window.innerWidth;
     const h = window.innerHeight;
@@ -115,8 +144,8 @@ export default function ScrollExpandMedia({
     }
   });
 
-  // COMBINED CLIP PATH (Only for Desktop)
-  const combinedClipPath = useTransform(scrollYProgress, (v) => {
+  // COMBINED CLIP PATH (Only for Desktop) - USING smoothProgress
+  const combinedClipPath = useTransform(smoothProgress, (v) => {
     if (!isMounted || typeof window === 'undefined') {
       return 'inset(30% 35% round 16px)';
     }
@@ -138,19 +167,17 @@ export default function ScrollExpandMedia({
     }
   });
 
-  // Shared parallax/fade
-  const mediaScale     = useTransform(scrollYProgress, [0, 1], [1.2, 1]);
-  const bgOpacity      = useTransform(scrollYProgress, [0, 0.7],  [1, 0]);
-  const text1X         = useTransform(scrollYProgress, [0, 0.85], ['0vw', '-45vw']);
-  const text2X         = useTransform(scrollYProgress, [0, 0.85], ['0vw',  '45vw']);
-  const hintOpacity    = useTransform(scrollYProgress, [0, 0.08], [1, 0]);
+  // Shared parallax/fade - USING smoothProgress
+  const mediaScale     = useTransform(smoothProgress, [0, 1], [1.2, 1]);
+  const bgOpacity      = useTransform(smoothProgress, [0, 0.7],  [1, 0]);
+  const text1X         = useTransform(smoothProgress, [0, 0.85], ['0vw', '-45vw']);
+  const text2X         = useTransform(smoothProgress, [0, 0.85], ['0vw',  '45vw']);
+  const hintOpacity    = useTransform(smoothProgress, [0, 0.08], [1, 0]);
 
   const words     = (title ?? '').split(' ');
   const mid       = Math.ceil(words.length / 2);
   const firstWord = words.slice(0, mid).join(' ');
   const rest      = words.slice(mid).join(' ');
-
-
 
   return (
     <>
@@ -238,7 +265,7 @@ export default function ScrollExpandMedia({
                   {mediaType === 'video' ? (
                     <video
                       ref={videoWrapperRef as any}
-                      src={mediaSrc}
+                      src={blobUrl || mediaSrc}
                       poster={posterSrc}
                       autoPlay
                       muted
