@@ -2,15 +2,15 @@
 
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
-import { SilkBackgroundAnimation } from '@/components/ui/silk-background-animation';
+import { BackgroundPaths } from '@/components/ui/background-paths';
 
 export default function Hero() {
   const t = useTranslations('Hero');
 
   return (
     <section className="relative w-full h-[100dvh] flex items-center justify-center overflow-hidden bg-gray-900">
-      {/* Animated navy + gold background */}
-      <SilkBackgroundAnimation />
+      {/* Animated deep blue background with floating gold paths */}
+      <BackgroundPaths />
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-4xl mx-auto px-6 flex flex-col items-center justify-center text-center pt-20">
