@@ -2,7 +2,7 @@ import { ServiceContent } from './types';
 
 export const haarausfall: ServiceContent = {
   slug: 'haarausfall',
-  imageSrc: '/images/services/волосы лечение.PNG',
+  imageSrc: '/images/services/hair_final.webp',
   title: {
     de: 'Haarausfall-Behandlung und Haarwachstumsförderung',
     ru: 'Лечение выпадения волос и стимуляция роста волос'

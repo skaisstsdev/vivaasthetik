@@ -2,7 +2,7 @@ import { ServiceContent } from './types';
 
 export const faltenunterspritzung: ServiceContent = {
   slug: 'faltenunterspritzung',
-  imageSrc: '/images/services/филлеры.PNG',
+  imageSrc: '/images/services/filler_final.webp',
   title: {
     de: 'Faltenunterspritzung mit Fillern',
     ru: 'Контурная пластика морщин'

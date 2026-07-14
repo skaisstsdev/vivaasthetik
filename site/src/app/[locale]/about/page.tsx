@@ -46,9 +46,10 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           <div className="w-full md:w-1/2 flex justify-center">
             <div className="w-full aspect-[4/5] bg-gray-200 relative overflow-hidden flex items-center justify-center text-gray-400">
               <Image 
-                src="/about-new.jpg" 
+                src="/about-new.webp" 
                 alt="Nataliia Kholodna" 
                 fill 
+                priority
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />

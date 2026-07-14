@@ -2,7 +2,7 @@ import { ServiceContent } from './types';
 
 export const lipolyse: ServiceContent = {
   slug: 'lipolyse',
-  imageSrc: '/images/services/lipolyse_macro.jpg',
+  imageSrc: '/images/services/lipolyse_macro.webp',
   title: {
     de: 'Lipolyse',
     ru: 'Липолиз'

@@ -2,7 +2,7 @@ import { ServiceContent } from './types';
 
 export const biorevitalisierung: ServiceContent = {
   slug: 'biorevitalisierung',
-  imageSrc: '/images/services/biorev_v3.jpg',
+  imageSrc: '/images/services/biorev_v3.webp',
   title: {
     de: 'Biorevitalisierung',
     ru: 'Биоревитализация'

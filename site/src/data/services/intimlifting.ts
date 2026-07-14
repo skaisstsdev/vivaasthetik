@@ -2,7 +2,7 @@ import { ServiceContent } from './types';
 
 export const intimlifting: ServiceContent = {
   slug: 'intimlifting',
-  imageSrc: '/images/services/интимлифтинг.PNG',
+  imageSrc: '/images/services/intim_final.webp',
   title: {
     de: 'Intimlifting',
     ru: 'Интимный лифтинг'

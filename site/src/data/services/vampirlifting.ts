@@ -2,7 +2,7 @@ import { ServiceContent } from './types';
 
 export const vampirlifting: ServiceContent = {
   slug: 'vampirlifting',
-  imageSrc: '/images/services/вампирлифтинг.PNG',
+  imageSrc: '/images/services/vampire_final.webp',
   title: {
     de: 'Vampirlifting (PRP-Behandlung)',
     ru: 'Вампирлифтинг (PRP-лечение)'

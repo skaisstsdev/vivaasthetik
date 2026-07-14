@@ -2,7 +2,7 @@ import { ServiceContent } from './types';
 
 export const fadenlifting: ServiceContent = {
   slug: 'fadenlifting',
-  imageSrc: '/images/services/фаденлифтинг.PNG',
+  imageSrc: '/images/services/faden_final.webp',
   title: {
     de: 'Fadenlifting',
     ru: 'Нитевой лифтинг'

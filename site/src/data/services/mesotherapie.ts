@@ -2,7 +2,7 @@ import { ServiceContent } from './types';
 
 export const mesotherapie: ServiceContent = {
   slug: 'mesotherapie',
-  imageSrc: '/images/services/мезотерапия.PNG',
+  imageSrc: '/images/services/meso_final.webp',
   title: {
     de: 'Mesotherapie',
     ru: 'Мезотерапия'

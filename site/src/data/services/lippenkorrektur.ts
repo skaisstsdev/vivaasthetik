@@ -2,7 +2,7 @@ import { ServiceContent } from './types';
 
 export const lippenkorrektur: ServiceContent = {
   slug: 'lippenkorrektur',
-  imageSrc: '/images/services/коррекция губ.PNG',
+  imageSrc: '/images/services/lips_final.webp',
   title: {
     de: 'Lippenkorrektur (Lippenvergrößerung)',
     ru: 'Коррекция губ (увеличение губ)'

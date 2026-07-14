@@ -2,7 +2,7 @@ import { ServiceContent } from './types';
 
 export const botox: ServiceContent = {
   slug: 'botox',
-  imageSrc: '/images/services/ботокс.PNG',
+  imageSrc: '/images/services/botox_final.webp',
   title: {
     de: 'Botox-Behandlung',
     ru: 'Ботокс-лечение'
