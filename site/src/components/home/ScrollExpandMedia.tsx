@@ -48,13 +48,19 @@ export default function ScrollExpandMedia({
 
   useEffect(() => {
     setIsMounted(true);
-    // Force play on mount to ensure they play immediately
-    if (mobileVideoRef.current) {
-      mobileVideoRef.current.play().catch(() => {});
-    }
-    if (desktopVideoRef.current) {
-      desktopVideoRef.current.play().catch(() => {});
-    }
+    
+    const tryPlay = () => {
+      if (mobileVideoRef.current && mobileVideoRef.current.paused) {
+        mobileVideoRef.current.play().catch(() => {});
+      }
+      if (desktopVideoRef.current && desktopVideoRef.current.paused) {
+        desktopVideoRef.current.play().catch(() => {});
+      }
+    };
+    
+    tryPlay();
+    const interval = setInterval(tryPlay, 500);
+    return () => clearInterval(interval);
   }, []);
 
   // Removed scaling of the video entirely as requested.
