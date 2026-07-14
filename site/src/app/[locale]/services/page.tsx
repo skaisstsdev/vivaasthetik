@@ -7,6 +7,7 @@ import ScrollExpandMedia from '@/components/home/ScrollExpandMedia';
 import { Suspense } from 'react';
 import ServicesClient from './ServicesClient';
 import ShaderBackground from '@/components/home/ShaderBackground';
+import ReactDOM from 'react-dom';
 
 // Функция для определения размера карточки (Bento Grid)
 const getCardClasses = (slug: string) => {
@@ -25,6 +26,8 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
   setRequestLocale(locale);
 
   const loc = locale as 'de' | 'ru';
+
+  ReactDOM.preload('/video2_desktop.mp4', { as: 'video' });
 
   return (
     <main className="bg-gray-50 pb-0">
@@ -61,7 +64,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
       {/* Video Showcase Section */}
       <ScrollExpandMedia
         mediaType="video"
-        mediaSrc="/video2_desktop.mov"
+        mediaSrc="/video2_desktop.mp4"
         bgImageSrc="/stranica2.webp"
         title={loc === 'de' ? 'Ihre Verwandlung' : 'Ваше преображение'}
       />
