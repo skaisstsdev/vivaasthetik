@@ -27,8 +27,8 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
 
   const loc = locale as 'de' | 'ru';
 
-  ReactDOM.preload('/video1_desktop.mp4', { as: 'video' });
-  ReactDOM.preload('/video1_mobile.mp4', { as: 'video' });
+  ReactDOM.preload('/video2_desktop.mp4', { as: 'video' });
+  ReactDOM.preload('/video2_mobile.mp4', { as: 'video' });
 
   return (
     <main className="bg-gray-50 pb-0">
@@ -65,8 +65,8 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
       {/* Video Showcase Section */}
       <ScrollExpandMedia
         mediaType="video"
-        mediaSrc="/video1_desktop.mp4"
-        mobileMediaSrc="/video1_mobile.mp4"
+        mediaSrc="/video2_desktop.mp4"
+        mobileMediaSrc="/video2_mobile.mp4"
         bgImageSrc="/stranica2.webp"
         title={loc === 'de' ? 'Ihre Verwandlung' : 'Ваше преображение'}
       />

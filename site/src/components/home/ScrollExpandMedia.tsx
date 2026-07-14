@@ -7,6 +7,7 @@ import {
   motion,
   useScroll,
   useTransform,
+  useSpring,
 } from 'framer-motion';
 
 interface Props {
@@ -35,6 +36,12 @@ export default function ScrollExpandMedia({
     offset: ['start start', 'end end'],
   });
 
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
   const [isMounted, setIsMounted] = useState(false);
   const mobileVideoRef = useRef<HTMLVideoElement>(null);
   const desktopVideoRef = useRef<HTMLVideoElement>(null);
@@ -52,11 +59,11 @@ export default function ScrollExpandMedia({
 
   // Removed scaling of the video entirely as requested.
   // Kept parallax and text split animations.
-  const mediaScale     = useTransform(scrollYProgress, [0, 1], [1.1, 1]);
-  const bgOpacity      = useTransform(scrollYProgress, [0, 0.7],  [1, 0]);
-  const text1X         = useTransform(scrollYProgress, [0, 0.85], ['0vw', '-50vw']);
-  const text2X         = useTransform(scrollYProgress, [0, 0.85], ['0vw',  '50vw']);
-  const hintOpacity    = useTransform(scrollYProgress, [0, 0.08], [1, 0]);
+  const mediaScale     = useTransform(smoothProgress, [0, 1], [1.1, 1]);
+  const bgOpacity      = useTransform(smoothProgress, [0, 0.7],  [1, 0]);
+  const text1X         = useTransform(smoothProgress, [0, 0.85], ['0vw', '-50vw']);
+  const text2X         = useTransform(smoothProgress, [0, 0.85], ['0vw',  '50vw']);
+  const hintOpacity    = useTransform(smoothProgress, [0, 0.08], [1, 0]);
 
   const words     = (title ?? '').split(' ');
   const mid       = Math.ceil(words.length / 2);
