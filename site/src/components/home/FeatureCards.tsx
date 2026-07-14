@@ -46,7 +46,7 @@ export default function FeatureCards() {
               className="group block w-full text-left bg-white p-10 hover:shadow-lg transition-shadow duration-300"
             >
               {/* Number */}
-              <p className="text-xs text-gray-300 font-mono mb-6">
+              <p className="text-xs text-gray-300 font-mono mb-6 shimmer-text" style={{ animationDelay: `${i * 1.5 + 2}s` }}>
                 {String(i + 1).padStart(2, '0')}
               </p>
               {/* Title */}

@@ -40,9 +40,14 @@ export default function WhyUs() {
             {features.map((feature, idx) => (
               <div 
                 key={idx} 
-                className="flex flex-col gap-4 border-b border-gray-100 pb-12 last:border-0 last:pb-0"
+                className="flex flex-col gap-4 relative pb-12 mb-12 last:mb-0 last:pb-0"
               >
-                <span className="text-sm font-mono text-gray-300">
+                {/* Custom animated divider (except for last item) */}
+                {idx !== features.length - 1 && (
+                  <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gray-100 shimmer-bg" style={{ animationDelay: `${idx * 1.2}s` }}></div>
+                )}
+                
+                <span className="text-sm font-mono text-gray-300 shimmer-text" style={{ animationDelay: `${idx * 1.8 + 1}s` }}>
                   {feature.number}
                 </span>
                 <h3 className="text-2xl md:text-3xl font-light text-gray-900">

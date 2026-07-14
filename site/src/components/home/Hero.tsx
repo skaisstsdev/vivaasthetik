@@ -17,7 +17,7 @@ export default function Hero() {
 
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-white mb-6 leading-tight">
           {t('title')}{' '}
-          <em className="italic">{t('titleEm')}</em>
+          <em className="italic shimmer-text" style={{ animationDelay: '2.5s' }}>{t('titleEm')}</em>
         </h1>
         <p className="max-w-2xl text-lg text-white/60 font-light mx-auto mb-10 leading-relaxed">
           {t('subtitle')}
@@ -25,9 +25,10 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center w-full mt-4">
           <Link
             href="/booking"
-            className="px-8 py-3 md:px-12 md:py-4 bg-transparent border border-white/30 text-white text-xs md:text-sm uppercase tracking-[0.2em] font-medium hover:bg-white/10 transition-colors"
+            className="px-8 py-3 md:px-12 md:py-4 bg-transparent border border-white/30 text-white text-xs md:text-sm uppercase tracking-[0.2em] font-medium hover:bg-white/10 transition-colors relative overflow-hidden group"
           >
-            {t('ctaBooking')}
+            <span className="shimmer-text" style={{ animationDelay: '4s' }}>{t('ctaBooking')}</span>
+            <div className="absolute inset-0 border border-transparent shimmer-border rounded-none pointer-events-none" style={{ animationDelay: '4.2s' }}></div>
           </Link>
         </div>
       </div>

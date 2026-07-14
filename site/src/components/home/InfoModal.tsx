@@ -37,12 +37,12 @@ export default function InfoModal() {
 
   return (
     <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center p-4 sm:p-6 md:p-12 bg-black/20 backdrop-blur-sm animate-in fade-in duration-500 ease-out">
-      <div className="bg-slate-900/80 backdrop-blur-3xl border border-white/10 w-full max-w-5xl max-h-[95vh] flex flex-col rounded-xl shadow-2xl relative overflow-hidden text-white animate-in zoom-in-95 duration-500 ease-out">
+      <div className="bg-white border border-[#d4af37] w-full max-w-5xl max-h-[95vh] flex flex-col rounded-sm shadow-2xl relative overflow-hidden text-gray-900 animate-in zoom-in-95 duration-500 ease-out">
         
         {/* Close Button */}
         <button 
           onClick={close}
-          className="absolute top-6 right-6 p-2 text-white/70 hover:text-white transition-colors bg-white/10 hover:bg-white/20 rounded-full z-50 border border-white/10 shadow-sm"
+          className="absolute top-6 right-6 p-2 text-gray-500 hover:text-gray-900 transition-colors bg-gray-100 hover:bg-gray-200 rounded-full z-50 border border-gray-200 shadow-sm"
         >
           <X size={24} strokeWidth={1.5} />
         </button>
@@ -52,12 +52,12 @@ export default function InfoModal() {
           
           {isClinic ? (
             <div className="max-w-3xl mx-auto flex flex-col gap-10">
-              <div className="flex flex-col border-b border-white/10 pb-8">
-                <h2 className="text-3xl md:text-4xl font-light text-white mb-4">{tClinic('title')}</h2>
-                <h3 className="text-xl md:text-2xl font-light text-white/70 leading-relaxed">{tClinic('subtitle')}</h3>
+              <div className="flex flex-col border-b border-gray-200 pb-8">
+                <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-4">{tClinic('title')}</h2>
+                <h3 className="text-xl md:text-2xl font-light text-gray-600 leading-relaxed">{tClinic('subtitle')}</h3>
               </div>
               
-              <div className="flex flex-col gap-6 text-base md:text-lg text-white font-light leading-relaxed">
+              <div className="flex flex-col gap-6 text-base md:text-lg text-gray-700 font-light leading-relaxed">
                 <p>{tClinic('p1')}</p>
                 <p>{tClinic('p2')}</p>
                 <p>{tClinic('p3')}</p>
@@ -65,24 +65,24 @@ export default function InfoModal() {
               </div>
             </div>
           ) : (
-            <div className="max-w-4xl mx-auto flex flex-col gap-12 text-white">
-              <div className="flex flex-col border-b border-white/10 pb-8">
-                <h2 className="text-3xl md:text-4xl font-light text-white mb-4">{tTech('title')}</h2>
-                <h3 className="text-xl md:text-2xl font-light text-white/70 leading-relaxed mb-6">{tTech('subtitle')}</h3>
-                <p className="text-base md:text-lg text-white font-light leading-relaxed">{tTech('intro')}</p>
+            <div className="max-w-4xl mx-auto flex flex-col gap-12 text-gray-700">
+              <div className="flex flex-col border-b border-gray-200 pb-8">
+                <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-4">{tTech('title')}</h2>
+                <h3 className="text-xl md:text-2xl font-light text-gray-600 leading-relaxed mb-6">{tTech('subtitle')}</h3>
+                <p className="text-base md:text-lg text-gray-700 font-light leading-relaxed">{tTech('intro')}</p>
               </div>
               
               <div className="flex flex-col gap-8">
                 {features.map((feature, idx) => (
                   <div key={idx} className="flex flex-col md:flex-row gap-4 md:gap-6 group">
-                    <div className="text-white/40 font-mono text-xl md:text-2xl tracking-widest pt-1 w-10 flex-shrink-0">
+                    <div className="text-gray-300 font-mono text-xl md:text-2xl tracking-widest pt-1 w-10 flex-shrink-0 shimmer-text" style={{ animationDelay: `${idx * 0.5}s` }}>
                       {String(idx + 1).padStart(2, '0')}
                     </div>
                     <div className="flex flex-col gap-2">
-                      <h4 className="text-xl font-medium text-white transition-colors">
+                      <h4 className="text-xl font-medium text-gray-900 transition-colors">
                         {feature.title}
                       </h4>
-                      <p className="text-white leading-relaxed text-base md:text-lg font-light">
+                      <p className="text-gray-700 leading-relaxed text-base md:text-lg font-light">
                         {feature.description}
                       </p>
                     </div>
@@ -90,8 +90,8 @@ export default function InfoModal() {
                 ))}
               </div>
 
-              <div className="bg-white/5 p-8 rounded-sm border border-white/10 mt-4">
-                <p className="text-base md:text-lg text-white/90 font-light leading-relaxed mb-6">
+              <div className="bg-gray-50 p-8 rounded-sm border border-gray-200 mt-4">
+                <p className="text-base md:text-lg text-gray-800 font-light leading-relaxed mb-6">
                   {tTech('outro')}
                 </p>
                 <button 
