@@ -161,7 +161,35 @@ export default function ScrollExpandMedia({
 
   return (
     <>
-      <div ref={containerRef} style={{ height: '220dvh', position: 'relative', zIndex: 10 }}>
+      {/* 
+        SAFARI HACK: 
+        iOS Safari pauses and delays decoding of off-screen videos. 
+        By placing a 1x1 pixel fixed clone of the video on the screen, 
+        it is ALWAYS in the viewport. Safari is forced to download and decode it immediately!
+        When the user scrolls down to the real video, it's already 100% loaded and playing.
+      */}
+      {mediaType === 'video' && (
+        <video
+          src={mediaSrc}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '1px',
+            height: '1px',
+            opacity: 0.001,
+            pointerEvents: 'none',
+            zIndex: -9999,
+          }}
+        />
+      )}
+
+      <div ref={containerRef} style={{ height: '160dvh', position: 'relative', zIndex: 10 }}>
         <div
           style={{
             position: 'sticky',
