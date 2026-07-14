@@ -37,11 +37,9 @@ export default function ScrollExpandMedia({
     offset: ['start end', 'end start'],
   });
 
-  // Start splitting as soon as the text enters the viewport (v=0.25)
-  // and finish when it leaves (v=0.75) for a very slow, smooth animation
-  const mediaScale  = useTransform(scrollYProgress, [0, 0.5, 1], [0.95, 1, 0.95]);
-  const text1X      = useTransform(scrollYProgress, [0, 0.25, 0.75, 1], ['0vw', '0vw', '-50vw', '-50vw']);
-  const text2X      = useTransform(scrollYProgress, [0, 0.25, 0.75, 1], ['0vw', '0vw',  '50vw',  '50vw']);
+  // Simple text split as it passes the center
+  const text1X      = useTransform(scrollYProgress, [0, 0.45, 0.7, 1], ['0vw', '0vw', '-50vw', '-50vw']);
+  const text2X      = useTransform(scrollYProgress, [0, 0.45, 0.7, 1], ['0vw', '0vw',  '50vw',  '50vw']);
 
   const words     = (title ?? '').split(' ');
   const mid       = Math.ceil(words.length / 2);
@@ -60,18 +58,12 @@ export default function ScrollExpandMedia({
           <div className="absolute inset-0 bg-black/10" />
         </div>
 
-        {/* Video Container */}
+        {/* Video Container (No scaling, pure static rounded container) */}
         <div
           className="relative z-10 w-[92vw] h-[86dvh] md:w-[80vw] md:h-[75dvh] rounded-[24px] overflow-hidden"
           style={{ transform: 'translateZ(0)' }}
         >
-          <motion.div
-            className="rounded-[24px] overflow-hidden w-full h-full"
-            style={{
-              scale: mediaScale,
-              willChange: 'transform',
-            }}
-          >
+          <div className="w-full h-full">
             {mediaType === 'video' ? (
               <>
                 <video
@@ -80,7 +72,7 @@ export default function ScrollExpandMedia({
                   muted
                   loop
                   playsInline
-                  className={mobileMediaSrc ? "block md:hidden object-cover w-full h-full rounded-[24px]" : "block object-cover w-full h-full rounded-[24px]"}
+                  className={mobileMediaSrc ? "block md:hidden object-cover w-full h-full" : "block object-cover w-full h-full"}
                 />
                 {mobileMediaSrc && (
                   <video
@@ -89,14 +81,14 @@ export default function ScrollExpandMedia({
                     muted
                     loop
                     playsInline
-                    className="hidden md:block object-cover w-full h-full rounded-[24px]"
+                    className="hidden md:block object-cover w-full h-full"
                   />
                 )}
               </>
             ) : (
-              <Image src={mediaSrc} alt="" fill style={{ objectFit: 'cover', borderRadius: '24px' }} />
+              <Image src={mediaSrc} alt="" fill style={{ objectFit: 'cover' }} />
             )}
-          </motion.div>
+          </div>
         </div>
 
         {/* Floating Text */}
