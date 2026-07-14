@@ -1,7 +1,5 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-
 type Props = {
   desktopVideo: string;
   mobileVideo: string;
@@ -10,22 +8,6 @@ type Props = {
 };
 
 export default function PlaceholderBlock({ desktopVideo, mobileVideo, titleLine1, titleLine2 }: Props) {
-  const desktopRef = useRef<HTMLVideoElement>(null);
-  const mobileRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    if (desktopRef.current) {
-      desktopRef.current.defaultMuted = true;
-      desktopRef.current.muted = true;
-      desktopRef.current.play().catch(() => {});
-    }
-    if (mobileRef.current) {
-      mobileRef.current.defaultMuted = true;
-      mobileRef.current.muted = true;
-      mobileRef.current.play().catch(() => {});
-    }
-  }, []);
-
   return (
     <section 
       className="relative w-full h-[100svh] md:h-[85vh] flex items-center justify-center overflow-hidden py-4 px-4 sm:py-8 sm:px-8 lg:py-12 lg:px-16 xl:px-24"
@@ -39,25 +21,14 @@ export default function PlaceholderBlock({ desktopVideo, mobileVideo, titleLine1
       }}
     >
       <div className="relative w-full h-full max-w-7xl mx-auto rounded-3xl md:rounded-[2.5rem] overflow-hidden shadow-2xl bg-black/20">
-        <video
-          ref={desktopRef}
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          className="absolute inset-0 w-full h-full object-cover hidden md:block"
-          src={desktopVideo}
-        />
-        <video
-          ref={mobileRef}
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          className="absolute inset-0 w-full h-full object-cover md:hidden"
-          src={mobileVideo}
+        <div 
+          className="absolute inset-0 w-full h-full pointer-events-none"
+          dangerouslySetInnerHTML={{
+            __html: `
+              <video autoplay loop muted playsinline preload="auto" class="absolute inset-0 w-full h-full object-cover hidden md:block" src="${desktopVideo}"></video>
+              <video autoplay loop muted playsinline preload="auto" class="absolute inset-0 w-full h-full object-cover md:hidden" src="${mobileVideo}"></video>
+            `
+          }}
         />
         
         {(titleLine1 || titleLine2) && (
