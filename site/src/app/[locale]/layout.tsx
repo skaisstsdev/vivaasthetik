@@ -4,6 +4,7 @@ import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import SmoothScroll from '@/components/layout/SmoothScroll';
 import {BookingProvider} from '@/context/BookingContext';
 import BookingModal from '@/components/booking/BookingModal';
 import { Suspense } from 'react';
@@ -35,18 +36,20 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <body>
         <NextIntlClientProvider messages={messages} locale={locale}>
-          <BookingProvider>
-            <Navbar />
-            {children}
-            <Footer />
-            <Suspense fallback={null}>
-              <BookingModal />
-            </Suspense>
-            <Suspense fallback={null}>
-              <InfoModal />
-            </Suspense>
-            <CookieBanner />
-          </BookingProvider>
+          <SmoothScroll>
+            <BookingProvider>
+              <Navbar />
+              {children}
+              <Footer />
+              <Suspense fallback={null}>
+                <BookingModal />
+              </Suspense>
+              <Suspense fallback={null}>
+                <InfoModal />
+              </Suspense>
+              <CookieBanner />
+            </BookingProvider>
+          </SmoothScroll>
         </NextIntlClientProvider>
       </body>
     </html>

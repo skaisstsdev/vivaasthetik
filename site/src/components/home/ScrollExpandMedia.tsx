@@ -38,12 +38,17 @@ export default function ScrollExpandMedia({
   });
 
   const [isMounted, setIsMounted] = useState(false);
+  const [isMobileSize, setIsMobileSize] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoFailed, setVideoFailed] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
+    setIsMobileSize(window.innerWidth < 768);
     
+    const handleResize = () => setIsMobileSize(window.innerWidth < 768);
+    window.addEventListener('resize', handleResize);
+
     if (videoRef.current) {
       videoRef.current.play().catch((err) => {
         // If iOS blocks autoplay (e.g. Low Power Mode), hide the broken video element 
@@ -53,6 +58,8 @@ export default function ScrollExpandMedia({
         }
       });
     }
+
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   // We revert to `clip-path` because inverse scaling with different X/Y ratios distorts the video.
@@ -160,23 +167,26 @@ export default function ScrollExpandMedia({
                 }}
               >
               {mediaType === 'video' ? (
-                <video
-                  ref={videoRef}
-                  poster={posterSrc}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  className={`block object-cover w-full h-full transition-opacity duration-500 ${videoFailed ? 'opacity-0' : 'opacity-100'}`}
-                >
-                  {mobileMediaSrc && (
-                    <source src={mobileMediaSrc} media="(max-width: 767px)" type="video/mp4" />
-                  )}
-                  <source src={mediaSrc} type="video/mp4" />
-                </video>
+                // Only render the video on the client to ensure the correct one (mobile vs desktop) mounts.
+                // Before mounting, we show the poster Image to prevent layout shift or empty screen.
+                isMounted ? (
+                  <video
+                    key={isMobileSize ? 'mobile' : 'desktop'}
+                    ref={videoRef}
+                    src={isMobileSize ? mobileMediaSrc || mediaSrc : mediaSrc}
+                    poster={posterSrc}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                    className={`block object-cover w-full h-full transition-opacity duration-500 ${videoFailed ? 'opacity-0' : 'opacity-100'}`}
+                  />
+                ) : (
+                  <Image src={posterSrc || ''} alt="" fill style={{ objectFit: 'cover' }} priority />
+                )
               ) : (
-                <Image src={mediaSrc} alt="" fill style={{ objectFit: 'cover' }} />
+                <Image src={mediaSrc} alt="" fill style={{ objectFit: 'cover' }} priority />
               )}
               </motion.div>
             </motion.div>
