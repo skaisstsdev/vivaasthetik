@@ -36,3 +36,4 @@ body {
   animation: marquee 120s linear infinite;
 }
 /* Cache bust 1784025189 */
+html, body { overscroll-behavior-y: none; }

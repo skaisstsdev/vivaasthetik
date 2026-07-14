@@ -8,7 +8,7 @@ export default function Hero() {
   const t = useTranslations('Hero');
 
   return (
-    <section className="relative w-full h-[100dvh] flex items-center justify-center overflow-hidden bg-[#0a192f]">
+    <section className="relative w-full h-[100svh] flex items-center justify-center overflow-hidden bg-[#0a192f]">
       {/* Animated navy + gold background */}
       <ShaderBackground />
 

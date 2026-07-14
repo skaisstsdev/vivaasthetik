@@ -50,10 +50,10 @@ export default function Navbar() {
         - При скролле: белый фон, blur, текст становится черным, появляется бордер.
       */}
       <nav 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 border-b py-5 ${
           isScrolled || isMenuOpen
-            ? 'bg-white/90 backdrop-blur-md border-b border-gray-100 text-gray-900 py-4' 
-            : 'bg-transparent text-white py-6'
+            ? 'bg-white/90 backdrop-blur-md border-gray-100 text-gray-900' 
+            : 'bg-transparent border-transparent text-white'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-8 flex items-center justify-between">
