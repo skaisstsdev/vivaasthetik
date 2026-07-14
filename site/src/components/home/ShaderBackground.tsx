@@ -1,17 +1,18 @@
 'use client';
 
-import { MeshGradient } from "@paper-design/shaders-react"
-
-export default function ShaderBackground({ isStatic = false }: { isStatic?: boolean }) {
+export default function ShaderBackground() {
   return (
-    // bg-[#0a192f] is painted immediately (CSS, no JS needed) — no flash
-    <div className="absolute inset-0 z-0 bg-[#0a192f] overflow-hidden pointer-events-none">
-      <MeshGradient
-        className="w-full h-full absolute inset-0"
-        colors={["#000000", "#0a192f", "#1d4ed8", "#60a5fa"]}
-        speed={isStatic ? 0 : 1.2}
-      />
-    </div>
+    <div 
+      className="absolute inset-0 z-0 overflow-hidden pointer-events-none"
+      style={{
+        backgroundColor: '#0a192f',
+        backgroundImage: `
+          radial-gradient(circle at 20% 30%, rgba(96, 165, 250, 0.4) 0%, transparent 50%),
+          radial-gradient(circle at 80% 70%, rgba(29, 78, 216, 0.5) 0%, transparent 50%),
+          radial-gradient(circle at 50% 50%, rgba(10, 25, 47, 0.8) 0%, transparent 70%)
+        `
+      }}
+    />
   );
 }
 
