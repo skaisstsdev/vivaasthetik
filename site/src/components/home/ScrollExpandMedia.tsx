@@ -71,45 +71,74 @@ export default function ScrollExpandMedia({
     return () => clearTimeout(timer);
   }, [mediaSrc, mobileMediaSrc]);
 
-  // DESKTOP: clip-path calculations
-  const clipPath = useTransform(scrollYProgress, (v) => {
+  // COMBINED TRANSFORM FOR WRAPPER (GPU Accelerated)
+  const combinedTransform = useTransform(scrollYProgress, (v) => {
+    if (!isMounted || typeof window === 'undefined') return 'translateZ(0) scale(1, 1)';
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+    
+    if (w >= 768) {
+      return 'translateZ(0) scale(1, 1)';
+    } else {
+      const targetW = w * 0.95;
+      const startW = 260; 
+      const currentW = startW + v * (targetW - startW);
+      const sX = currentW / targetW;
+      
+      const targetH = h * 0.88;
+      const startH = 320; 
+      const currentH = startH + v * (targetH - startH);
+      const sY = currentH / targetH;
+      
+      return `translateZ(0) scale(${sX}, ${sY})`;
+    }
+  });
+
+  // COMBINED TRANSFORM FOR INNER WRAPPER (Inverse Scale)
+  const innerCombinedTransform = useTransform(scrollYProgress, (v) => {
+    if (!isMounted || typeof window === 'undefined') return 'scale(1, 1)';
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+    
+    if (w >= 768) {
+      return 'scale(1, 1)';
+    } else {
+      const targetW = w * 0.95;
+      const startW = 260; 
+      const currentW = startW + v * (targetW - startW);
+      const sX = currentW / targetW;
+      
+      const targetH = h * 0.88;
+      const startH = 320; 
+      const currentH = startH + v * (targetH - startH);
+      const sY = currentH / targetH;
+      
+      return `scale(${1 / sX}, ${1 / sY})`;
+    }
+  });
+
+  // COMBINED CLIP PATH (Only for Desktop)
+  const combinedClipPath = useTransform(scrollYProgress, (v) => {
     if (!isMounted || typeof window === 'undefined') {
       return 'inset(30% 35% round 16px)';
     }
     const w = window.innerWidth;
     const h = window.innerHeight;
-    const targetW = w * 0.95;
-    const targetH = h * 0.88;
-    const startW = w < 768 ? 260 : 360;
-    const startH = w < 768 ? 320 : 420;
-    const currentW = startW + v * (targetW - startW);
-    const currentH = startH + v * (targetH - startH);
-    const insetX = (w - currentW) / 2;
-    const insetY = (h - currentH) / 2;
-    return `inset(${insetY}px ${insetX}px round 16px)`;
+    
+    if (w < 768) {
+      return 'none';
+    } else {
+      const targetW = w * 0.95;
+      const targetH = h * 0.88;
+      const startW = 360;
+      const startH = 420;
+      const currentW = startW + v * (targetW - startW);
+      const currentH = startH + v * (targetH - startH);
+      const insetX = (w - currentW) / 2;
+      const insetY = (h - currentH) / 2;
+      return `inset(${insetY}px ${insetX}px round 16px)`;
+    }
   });
-
-  // MOBILE: inverse scale calculations
-  const scaleX = useTransform(scrollYProgress, (v) => {
-    if (!isMounted || typeof window === 'undefined') return 1;
-    const w = window.innerWidth;
-    const targetW = w * 0.95;
-    const startW = 260; // Mobile start width
-    const currentW = startW + v * (targetW - startW);
-    return currentW / targetW;
-  });
-
-  const scaleY = useTransform(scrollYProgress, (v) => {
-    if (!isMounted || typeof window === 'undefined') return 1;
-    const h = window.innerHeight;
-    const targetH = h * 0.88;
-    const startH = 320; // Mobile start height
-    const currentH = startH + v * (targetH - startH);
-    return currentH / targetH;
-  });
-
-  const invScaleX = useTransform(scaleX, (s) => 1 / s);
-  const invScaleY = useTransform(scaleY, (s) => 1 / s);
 
   // Shared parallax/fade
   const mediaScale     = useTransform(scrollYProgress, [0, 1], [1.2, 1]);
@@ -141,32 +170,6 @@ export default function ScrollExpandMedia({
 
   return (
     <>
-      <style>{`
-        .smart-video-wrapper {
-          clip-path: var(--clip-path);
-          -webkit-clip-path: var(--clip-path);
-          width: 100% !important;
-          height: 100% !important;
-          border-radius: 0 !important;
-        }
-        .smart-video-inner {
-          transform: none !important;
-        }
-        @media (max-width: 767px) {
-          .smart-video-wrapper {
-            clip-path: none !important;
-            -webkit-clip-path: none !important;
-            width: 95vw !important;
-            height: 88dvh !important;
-            border-radius: 16px !important;
-            transform: translateZ(0) scale(var(--scale-x), var(--scale-y)) !important;
-          }
-          .smart-video-inner {
-            transform: scale(var(--inv-scale-x), var(--inv-scale-y)) !important;
-          }
-        }
-      `}</style>
-
       <div ref={containerRef} style={{ height: '220dvh', position: 'relative', zIndex: 10 }}>
         <div
           style={{
@@ -217,30 +220,26 @@ export default function ScrollExpandMedia({
           >
             {/* Hybrid Desktop (clip-path) / Mobile (scale) Wrapper */}
             <motion.div
-              className="smart-video-wrapper"
+              className="w-[95vw] h-[88dvh] md:w-full md:h-full rounded-2xl md:rounded-none"
               style={{
                 position: 'relative',
                 overflow: 'hidden',
                 willChange: 'transform, clip-path',
                 transformOrigin: 'center center',
-                transform: 'translateZ(0)', // Force GPU layer
-                // Pass motion values as CSS vars
-                '--clip-path': clipPath,
-                '--scale-x': scaleX,
-                '--scale-y': scaleY,
-              } as any}
+                transform: combinedTransform,
+                clipPath: combinedClipPath,
+                WebkitClipPath: combinedClipPath,
+              }}
             >
               {/* Inner wrapper for inverse scaling on mobile */}
               <motion.div
-                className="smart-video-inner"
                 style={{
                   width: '100%',
                   height: '100%',
                   willChange: 'transform',
                   transformOrigin: 'center center',
-                  '--inv-scale-x': invScaleX,
-                  '--inv-scale-y': invScaleY,
-                } as any}
+                  transform: innerCombinedTransform,
+                }}
               >
                 {/* Parallax wrapper */}
                 <motion.div
