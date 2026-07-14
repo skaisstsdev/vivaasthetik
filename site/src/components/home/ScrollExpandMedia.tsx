@@ -38,18 +38,24 @@ export default function ScrollExpandMedia({
   });
 
   const [isMounted, setIsMounted] = useState(false);
-  const mobileVideoRef = useRef<HTMLVideoElement>(null);
-  const desktopVideoRef = useRef<HTMLVideoElement>(null);
+  const [isMobileSize, setIsMobileSize] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     setIsMounted(true);
-    // Force play on mount to ensure they play immediately
-    if (mobileVideoRef.current) {
-      mobileVideoRef.current.play().catch(() => {});
+    
+    const checkMobile = () => {
+      setIsMobileSize(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {});
     }
-    if (desktopVideoRef.current) {
-      desktopVideoRef.current.play().catch(() => {});
-    }
+    
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   // To achieve 60fps smooth animation on Safari with video and WebGL,
@@ -172,32 +178,18 @@ export default function ScrollExpandMedia({
                   }}
                 >
               {mediaType === 'video' ? (
-                <>
-                  <video
-                    ref={mobileMediaSrc ? mobileVideoRef : desktopVideoRef}
-                    src={mobileMediaSrc || mediaSrc}
-                    poster={posterSrc}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="auto"
-                    className={mobileMediaSrc ? "block md:hidden object-cover w-full h-full" : "block object-cover w-full h-full"}
-                  />
-                  {mobileMediaSrc && (
-                    <video
-                      ref={desktopVideoRef}
-                      src={mediaSrc}
-                      poster={posterSrc}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      preload="auto"
-                      className="hidden md:block object-cover w-full h-full"
-                    />
-                  )}
-                </>
+                <video
+                  key={isMobileSize ? 'mobile' : 'desktop'} // Force remount when changing source type to ensure it plays
+                  ref={videoRef}
+                  src={isMobileSize && mobileMediaSrc ? mobileMediaSrc : mediaSrc}
+                  poster={posterSrc}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="auto"
+                  className="block object-cover w-full h-full"
+                />
               ) : (
                 <Image src={mediaSrc} alt="" fill style={{ objectFit: 'cover' }} />
               )}
