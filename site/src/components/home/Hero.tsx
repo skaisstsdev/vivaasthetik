@@ -2,15 +2,15 @@
 
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
-import { BackgroundPaths } from '@/components/ui/background-paths';
+import ShaderBackground from './ShaderBackground';
 
 export default function Hero() {
   const t = useTranslations('Hero');
 
   return (
     <section className="relative w-full h-[100dvh] flex items-center justify-center overflow-hidden bg-gray-900">
-      {/* Animated deep blue background with floating gold paths */}
-      <BackgroundPaths />
+      {/* Animated navy + gold background */}
+      <ShaderBackground />
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-4xl mx-auto px-6 flex flex-col items-center justify-center text-center pt-20">
