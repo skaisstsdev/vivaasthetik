@@ -1,5 +1,7 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
+
 type Props = {
   desktopVideo: string;
   mobileVideo: string;
@@ -8,6 +10,19 @@ type Props = {
 };
 
 export default function PlaceholderBlock({ desktopVideo, mobileVideo, titleLine1, titleLine2 }: Props) {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+    // Force play on all videos in this block to handle Next.js client-side navigation
+    const videos = containerRef.current.querySelectorAll('video');
+    videos.forEach(video => {
+      video.defaultMuted = true;
+      video.muted = true;
+      video.play().catch(() => {});
+    });
+  }, []);
+
   return (
     <section 
       className="relative w-full h-[100svh] md:h-[85vh] flex items-center justify-center overflow-hidden py-4 px-4 sm:py-8 sm:px-8 lg:py-12 lg:px-16 xl:px-24"
@@ -22,6 +37,7 @@ export default function PlaceholderBlock({ desktopVideo, mobileVideo, titleLine1
     >
       <div className="relative w-full h-full max-w-7xl mx-auto rounded-3xl md:rounded-[2.5rem] overflow-hidden shadow-2xl bg-black/20">
         <div 
+          ref={containerRef}
           className="absolute inset-0 w-full h-full pointer-events-none"
           dangerouslySetInnerHTML={{
             __html: `
