@@ -12,6 +12,8 @@ import InfoModal from '@/components/home/InfoModal';
 import CookieBanner from '@/components/layout/CookieBanner';
 import '@/app/globals.css';
 
+import SmoothScroll from '@/components/layout/SmoothScroll';
+
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({locale}));
 }
@@ -36,9 +38,11 @@ export default async function LocaleLayout({
       <body>
         <NextIntlClientProvider messages={messages} locale={locale}>
           <BookingProvider>
-            <Navbar />
-            {children}
-            <Footer />
+            <SmoothScroll>
+              <Navbar />
+              {children}
+              <Footer />
+            </SmoothScroll>
             <Suspense fallback={null}>
               <BookingModal />
             </Suspense>
