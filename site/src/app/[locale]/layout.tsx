@@ -10,7 +10,6 @@ import { Suspense } from 'react';
 import InfoModal from '@/components/home/InfoModal';
 
 import CookieBanner from '@/components/layout/CookieBanner';
-import SmoothScroll from '@/components/layout/SmoothScroll';
 import '@/app/globals.css';
 
 export function generateStaticParams() {
@@ -37,11 +36,9 @@ export default async function LocaleLayout({
       <body>
         <NextIntlClientProvider messages={messages} locale={locale}>
           <BookingProvider>
-            <SmoothScroll>
-              <Navbar />
-              {children}
-              <Footer />
-            </SmoothScroll>
+            <Navbar />
+            {children}
+            <Footer />
             <Suspense fallback={null}>
               <BookingModal />
             </Suspense>
