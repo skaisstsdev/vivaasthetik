@@ -1,0 +1,40 @@
+import { setRequestLocale, getTranslations } from 'next-intl/server';
+import { useTranslations } from 'next-intl';
+import ConsultationCTA from '@/components/home/ConsultationCTA';
+import Image from 'next/image';
+import FAQClient from '@/components/faq/FAQClient';
+import ShaderBackground from '@/components/home/ShaderBackground';
+import { faqData } from '@/data/faq';
+
+export default async function FAQPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  const t = await getTranslations({ locale, namespace: 'FAQ' });
+  const serviceLocale = locale as 'de' | 'ru';
+
+  return (
+    <main className="bg-white pb-24">
+      {/* Hero Section */}
+      <section className="relative w-full h-[100svh] flex items-center justify-center overflow-hidden bg-gray-900">
+        <ShaderBackground />
+        <div className="relative z-10 w-full max-w-4xl mx-auto px-6 flex flex-col items-center justify-center text-center pt-20">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-white mb-6 leading-tight">
+            {t('title')}
+          </h1>
+          <p className="max-w-2xl text-lg text-gray-300 font-light mx-auto mb-10 leading-relaxed">
+            {t('subtitle')}
+          </p>
+        </div>
+      </section>
+
+      {/* FAQ Content */}
+      <section className="max-w-6xl mx-auto px-6 md:px-8 mt-24 mb-24">
+        <FAQClient locale={serviceLocale} initialData={faqData} />
+      </section>
+
+      {/* Consultation CTA */}
+      <ConsultationCTA />
+    </main>
+  );
+}

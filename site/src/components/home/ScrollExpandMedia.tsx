@@ -55,17 +55,15 @@ export default function ScrollExpandMedia({
     // Force video to load and play aggressively to bypass iOS client-side routing blocks
     const timer = setTimeout(() => {
       if (videoWrapperRef.current) {
-        const video = videoWrapperRef.current.querySelector('video');
-        if (video) {
-          video.play().catch(() => {});
-          const onCanPlay = () => video.play().catch(() => {});
-          video.addEventListener('canplay', onCanPlay);
-          // Only load() if it hasn't started natively
-          if (video.readyState === 0) {
-            video.load();
-          }
-          return () => video.removeEventListener('canplay', onCanPlay);
+        const video = videoWrapperRef.current as unknown as HTMLVideoElement;
+        video.play().catch(() => {});
+        const onCanPlay = () => video.play().catch(() => {});
+        video.addEventListener('canplay', onCanPlay);
+        // Only load() if it hasn't started natively
+        if (video.readyState === 0) {
+          video.load();
         }
+        return () => video.removeEventListener('canplay', onCanPlay);
       }
     }, 100);
     return () => clearTimeout(timer);
@@ -152,21 +150,7 @@ export default function ScrollExpandMedia({
   const firstWord = words.slice(0, mid).join(' ');
   const rest      = words.slice(mid).join(' ');
 
-  // Dangerously inject video to completely bypass React hydration bugs and iOS Safari client-side route autoplay blockers
-  const videoHTML = `
-    <video
-      ${posterSrc ? `poster="${posterSrc}"` : ''}
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="auto"
-      class="block object-cover w-full h-full"
-    >
-      ${mobileMediaSrc ? `<source src="${mobileMediaSrc}" media="(max-width: 767px)" />` : ''}
-      <source src="${mediaSrc}" />
-    </video>
-  `;
+
 
   return (
     <>
@@ -252,10 +236,16 @@ export default function ScrollExpandMedia({
                   }}
                 >
                   {mediaType === 'video' ? (
-                    <div 
-                      ref={videoWrapperRef} 
-                      className="w-full h-full"
-                      dangerouslySetInnerHTML={{ __html: videoHTML }} 
+                    <video
+                      ref={videoWrapperRef as any}
+                      src={mediaSrc}
+                      poster={posterSrc}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="auto"
+                      className="w-full h-full object-cover"
                     />
                   ) : (
                     <Image src={mediaSrc} alt="" fill style={{ objectFit: 'cover' }} />

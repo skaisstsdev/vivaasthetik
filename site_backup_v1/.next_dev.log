@@ -1,0 +1,55 @@
+
+> site@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.10 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.158:3000
+✓ Ready in 703ms
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+
+○ Compiling /[locale] ...
+ HEAD /ru 200 in 4.7s (next.js: 4.2s, proxy.ts: 106ms, generate-params: 553ms, application-code: 410ms)
+ HEAD /ru/%3Finfo=clinic 404 in 433ms (next.js: 382ms, proxy.ts: 7ms, application-code: 44ms)
+Error: Route "/[locale]/faq" used `params.locale`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at FAQPage (src/app/[locale]/faq/page.tsx:9:11)
+   7 |
+   8 | export default function FAQPage({ params }: { params: { locale: string } }) {
+>  9 |   const { locale } = params;
+     |           ^
+  10 |   setRequestLocale(locale);
+  11 |
+  12 |   const t = useTranslations('FAQ');
+ GET /ru/faq 200 in 2.2s (next.js: 1942ms, proxy.ts: 9ms, generate-params: 1043ms, application-code: 297ms)
+✓ Compiled in 1752ms
+Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem.
+⨯ Error: `useTranslations` is not callable within an async component. Please refer to https://next-intl.dev/docs/environments/server-client-components#async-components
+    at FAQPage (src/app/[locale]/faq/page.tsx:12:28)
+  10 |   setRequestLocale(locale);
+  11 |
+> 12 |   const t = useTranslations('FAQ');
+     |                            ^
+  13 |   const serviceLocale = locale as 'de' | 'ru';
+  14 |
+  15 |   return ( {
+  digest: '98627940',
+  [cause]: TypeError: Cannot read properties of null (reading 'use')
+      at FAQPage (src/app/[locale]/faq/page.tsx:12:28)
+    10 |   setRequestLocale(locale);
+    11 |
+  > 12 |   const t = useTranslations('FAQ');
+       |                            ^
+    13 |   const serviceLocale = locale as 'de' | 'ru';
+    14 |
+    15 |   return (
+}
+ GET /ru/faq 500 in 1837ms (next.js: 76ms, proxy.ts: 17ms, generate-params: 20ms, application-code: 1744ms)
+✓ Compiled in 180ms
+✓ Compiled in 98ms
+ GET /ru/faq 200 in 1218ms (next.js: 267ms, proxy.ts: 151ms, generate-params: 6ms, application-code: 800ms)
+ GET /ru/faq 200 in 797ms (next.js: 75ms, proxy.ts: 65ms, generate-params: 21ms, application-code: 657ms)
+[?25h
