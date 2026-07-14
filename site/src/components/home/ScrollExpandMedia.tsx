@@ -1,13 +1,12 @@
 'use client';
 
-import { useRef, ReactNode, useState, useEffect } from 'react';
+import { useRef, ReactNode } from 'react';
 import Image from 'next/image';
 import ShaderBackground from './ShaderBackground';
 import {
   motion,
   useScroll,
   useTransform,
-  useSpring,
 } from 'framer-motion';
 
 interface Props {
@@ -25,55 +24,24 @@ interface Props {
 export default function ScrollExpandMedia({
   mediaType = 'video',
   mediaSrc,
-  mediaPoster,
   mobileMediaSrc,
-  mobileMediaPoster,
   bgImageSrc,
   title,
-  scrollToExpand,
   children,
 }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
 
+  // Track scroll position of THIS specific element as it moves through viewport
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ['start start', 'end end'],
+    offset: ['start end', 'end start'],
   });
 
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
-
-  const [isMounted, setIsMounted] = useState(false);
-  const mobileVideoRef = useRef<HTMLVideoElement>(null);
-  const desktopVideoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    setIsMounted(true);
-    
-    const tryPlay = () => {
-      if (mobileVideoRef.current && mobileVideoRef.current.paused) {
-        mobileVideoRef.current.play().catch(() => {});
-      }
-      if (desktopVideoRef.current && desktopVideoRef.current.paused) {
-        desktopVideoRef.current.play().catch(() => {});
-      }
-    };
-    
-    tryPlay();
-    const interval = setInterval(tryPlay, 500);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Removed scaling of the video entirely as requested.
-  // Kept parallax and text split animations.
-  const mediaScale     = useTransform(smoothProgress, [0, 1], [1.1, 1]);
-  const bgOpacity      = useTransform(smoothProgress, [0, 0.7],  [1, 0]);
-  const text1X         = useTransform(smoothProgress, [0, 0.85], ['0vw', '-50vw']);
-  const text2X         = useTransform(smoothProgress, [0, 0.85], ['0vw',  '50vw']);
-  const hintOpacity    = useTransform(smoothProgress, [0, 0.08], [1, 0]);
+  // Parallax effects tied directly to scroll position (no spring, zero lag)
+  const mediaScale  = useTransform(scrollYProgress, [0, 1], [0.95, 1.1]);
+  const text1X      = useTransform(scrollYProgress, [0, 1], ['-15vw', '-60vw']);
+  const text2X      = useTransform(scrollYProgress, [0, 1], ['15vw',  '60vw']);
+  const opacityText = useTransform(scrollYProgress, [0.3, 0.5, 0.7], [0, 1, 0]);
 
   const words     = (title ?? '').split(' ');
   const mid       = Math.ceil(words.length / 2);
@@ -82,140 +50,72 @@ export default function ScrollExpandMedia({
 
   return (
     <>
-      <div ref={containerRef} style={{ height: '160dvh' }}>
-        <div
-          style={{
-            position: 'sticky',
-            top: 0,
-            height: '100dvh',
-            overflow: 'hidden',
-          }}
-        >
-          {/* Base dark bg */}
-          <div
-            style={{
-              position: 'absolute',
-              inset: 0,
-              zIndex: 0,
-              backgroundColor: '#080d1a',
-            }}
-          />
+      <section 
+        ref={containerRef} 
+        className="relative w-full h-[100dvh] flex items-center justify-center overflow-hidden bg-[#080d1a]"
+      >
+        {/* Background photo */}
+        <div className="absolute inset-0 z-0">
+          <ShaderBackground isStatic={true} />
+          <div className="absolute inset-0 bg-black/10" />
+        </div>
 
-          {/* Background photo — fades out */}
+        {/* Video Container */}
+        <div
+          className="relative z-10 w-[92vw] h-[86dvh] md:w-[80vw] md:h-[75dvh] rounded-[24px] overflow-hidden"
+          style={{ transform: 'translateZ(0)' }}
+        >
           <motion.div
             style={{
-              opacity: bgOpacity,
-              zIndex: 1,
-              position: 'absolute',
-              inset: 0,
+              width: '100%',
+              height: '100%',
+              scale: mediaScale,
+              willChange: 'transform',
             }}
           >
-            <ShaderBackground isStatic={true} />
-            <div className="absolute inset-0 bg-black/10" />
-          </motion.div>
-
-          {/* Static Rounded Video Container (No expansion) */}
-          <div
-            style={{
-              position: 'absolute',
-              inset: 0,
-              zIndex: 10,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              pointerEvents: 'none',
-            }}
-          >
-            <div
-              className="w-[92vw] h-[86dvh] md:w-[80vw] md:h-[75dvh]"
-              style={{
-                borderRadius: '24px',
-                overflow: 'hidden',
-                position: 'relative',
-                transform: 'translateZ(0)', // Force GPU layer
-              }}
-            >
-              <motion.div
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  scale: mediaScale,
-                  willChange: 'transform',
-                  transformOrigin: 'center center',
-                }}
-              >
-                {mediaType === 'video' ? (
-                  <>
-                    <video
-                      ref={mobileMediaSrc ? mobileVideoRef : desktopVideoRef}
-                      src={mobileMediaSrc || mediaSrc}
-                      poster={mobileMediaPoster || mediaPoster}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      preload="auto"
-                      className={mobileMediaSrc ? "block md:hidden object-cover w-full h-full" : "block object-cover w-full h-full"}
-                    />
-                    {mobileMediaSrc && (
-                      <video
-                        ref={desktopVideoRef}
-                        src={mediaSrc}
-                        poster={mediaPoster}
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        preload="auto"
-                        className="hidden md:block object-cover w-full h-full"
-                      />
-                    )}
-                  </>
-                ) : (
-                  <Image src={mediaSrc} alt="" fill style={{ objectFit: 'cover' }} />
+            {mediaType === 'video' ? (
+              <>
+                <video
+                  src={mobileMediaSrc || mediaSrc}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className={mobileMediaSrc ? "block md:hidden object-cover w-full h-full" : "block object-cover w-full h-full"}
+                />
+                {mobileMediaSrc && (
+                  <video
+                    src={mediaSrc}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="hidden md:block object-cover w-full h-full"
+                  />
                 )}
-              </motion.div>
-            </div>
-          </div>
-
-          {/* Title — splits apart on scroll */}
-          <div
-            style={{
-              position: 'absolute',
-              inset: 0,
-              zIndex: 20,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-              textAlign: 'center',
-              pointerEvents: 'none',
-            }}
-          >
-            <motion.div
-              style={{ x: text1X, willChange: 'transform' }}
-              className="text-5xl md:text-6xl lg:text-7xl font-semibold leading-snug px-4 text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.6)]"
-            >
-              {firstWord}
-            </motion.div>
-            <motion.div
-              style={{ x: text2X, willChange: 'transform' }}
-              className="text-5xl md:text-6xl lg:text-7xl font-semibold leading-snug px-4 text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.6)]"
-            >
-              {rest}
-            </motion.div>
-
-            {scrollToExpand && (
-              <motion.p
-                style={{ opacity: hintOpacity, willChange: 'opacity' }}
-                className="mt-8 text-[10px] uppercase tracking-[0.3em] text-white/50"
-              >
-                {scrollToExpand}
-              </motion.p>
+              </>
+            ) : (
+              <Image src={mediaSrc} alt="" fill style={{ objectFit: 'cover' }} />
             )}
-          </div>
+          </motion.div>
         </div>
-      </div>
+
+        {/* Floating Text */}
+        <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
+          <motion.div
+            style={{ x: text1X, opacity: opacityText, willChange: 'transform, opacity' }}
+            className="absolute text-5xl md:text-6xl lg:text-7xl font-semibold text-white drop-shadow-2xl"
+          >
+            {firstWord}
+          </motion.div>
+          <motion.div
+            style={{ x: text2X, opacity: opacityText, willChange: 'transform, opacity' }}
+            className="absolute text-5xl md:text-6xl lg:text-7xl font-semibold text-white drop-shadow-2xl"
+          >
+            {rest}
+          </motion.div>
+        </div>
+      </section>
 
       {children && (
         <div className="bg-white relative z-30">
