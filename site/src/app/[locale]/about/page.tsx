@@ -44,7 +44,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           
           {/* Photo Placeholder */}
           <div className="w-full md:w-1/2 flex justify-center">
-            <div className="relative w-full max-w-sm aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="w-full aspect-[4/5] bg-gray-200 relative overflow-hidden flex items-center justify-center text-gray-400">
               <Image 
                 src="/natalia.webp" 
                 alt={locale === 'de' ? 'Natalia Schnall' : 'Наталья Шналь'}
