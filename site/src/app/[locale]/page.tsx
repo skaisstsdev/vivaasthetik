@@ -15,7 +15,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     <main>
       <Hero />
       <Intro />
-      <PlaceholderBlock desktopVideo="/video1_desktop.mp4" mobileVideo="/video1_mobile.mp4" />
+      <PlaceholderBlock desktopVideo="/video1_desktop.mp4" mobileVideo="/video1_mobile.mp4" titleLine1="Natürliche" titleLine2="Schönheit." />
       <FeatureCards />
       <WhyUs />
       <TestimonialsPreview />

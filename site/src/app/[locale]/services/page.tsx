@@ -59,7 +59,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
       </section>
 
       {/* Placeholder block replacing the video */}
-      <PlaceholderBlock desktopVideo="/video2_desktop.mp4" mobileVideo="/video2_mobile.mp4" />
+      <PlaceholderBlock desktopVideo="/video2_desktop.mp4" mobileVideo="/video2_mobile.mp4" titleLine1="Unsere" titleLine2="Leistungen." />
 
       {/* Cards Grid */}
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-24 md:py-32">

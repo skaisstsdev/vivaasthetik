@@ -11,9 +11,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand & Address */}
           <div>
-            <p className="text-xl font-light tracking-widest uppercase text-gray-900 mb-4">
-              VIVA <span className="font-medium">Ästhetik</span>
-            </p>
+            <div className="mb-6">
+              <img src="/logo.png" alt="VIVA Ästhetik" className="w-14 md:w-16 h-auto brightness-0" />
+            </div>
             <p className="text-sm font-medium text-gray-900 mb-1">{t('addressTitle')}</p>
             <p className="text-sm text-gray-500">{t('address')}</p>
           </div>
