@@ -131,7 +131,7 @@ export default function ServicesClient({ services, loc }: ServicesClientProps) {
           onClick={closeModal}
         >
           <div 
-            className="bg-white/95 backdrop-blur-3xl border border-gray-200 w-full max-w-4xl h-[90vh] md:max-h-[85vh] flex flex-col rounded-xl shadow-2xl relative animate-in fade-in zoom-in-95 duration-500 ease-out overflow-hidden text-gray-900"
+            className="bg-white w-full max-w-4xl h-[90vh] md:max-h-[85vh] flex flex-col rounded-xl shadow-2xl relative animate-in fade-in zoom-in-95 duration-500 ease-out overflow-hidden text-gray-900"
             onClick={e => e.stopPropagation()}
           >
             {/* Fixed Close Button inside Modal */}
