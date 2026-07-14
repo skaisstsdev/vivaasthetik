@@ -38,18 +38,20 @@ export default function ScrollExpandMedia({
   });
 
   const [isMounted, setIsMounted] = useState(false);
-  const mobileVideoRef = useRef<HTMLVideoElement>(null);
-  const desktopVideoRef = useRef<HTMLVideoElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoFailed, setVideoFailed] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
     
-    // Force play on mount to ensure they play immediately
-    if (mobileVideoRef.current) {
-      mobileVideoRef.current.play().catch(() => {});
-    }
-    if (desktopVideoRef.current) {
-      desktopVideoRef.current.play().catch(() => {});
+    if (videoRef.current) {
+      videoRef.current.play().catch((err) => {
+        // If iOS blocks autoplay (e.g. Low Power Mode), hide the broken video element 
+        // so the poster image shows smoothly instead of a huge play button.
+        if (err.name === 'NotAllowedError') {
+          setVideoFailed(true);
+        }
+      });
     }
   }, []);
 
@@ -159,19 +161,19 @@ export default function ScrollExpandMedia({
               >
               {mediaType === 'video' ? (
                 <video
-                  ref={desktopVideoRef}
+                  ref={videoRef}
                   poster={posterSrc}
                   autoPlay
                   muted
                   loop
                   playsInline
                   preload="metadata"
-                  className="block object-cover w-full h-full"
+                  className={`block object-cover w-full h-full transition-opacity duration-500 ${videoFailed ? 'opacity-0' : 'opacity-100'}`}
                 >
                   {mobileMediaSrc && (
-                    <source src={mobileMediaSrc} media="(max-width: 767px)" />
+                    <source src={mobileMediaSrc} media="(max-width: 767px)" type="video/mp4" />
                   )}
-                  <source src={mediaSrc} />
+                  <source src={mediaSrc} type="video/mp4" />
                 </video>
               ) : (
                 <Image src={mediaSrc} alt="" fill style={{ objectFit: 'cover' }} />

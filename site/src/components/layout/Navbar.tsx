@@ -108,8 +108,8 @@ export default function Navbar() {
 
       {/* Полноэкранное меню, открывается по бургеру */}
       <div 
-        className={`fixed inset-0 z-40 bg-white transition-all duration-500 ease-out flex flex-col justify-center px-8 md:px-24 pt-32 pb-12 overflow-y-auto ${
-          isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        className={`fixed inset-0 bg-white transition-all duration-500 ease-out flex flex-col justify-center px-8 md:px-24 pt-32 pb-12 overflow-y-auto ${
+          isMenuOpen ? 'opacity-100 pointer-events-auto z-40' : 'opacity-0 pointer-events-none -z-10 invisible'
         }`}
       >
         <ul className="flex flex-col gap-6 sm:gap-8 max-w-7xl mx-auto w-full">
