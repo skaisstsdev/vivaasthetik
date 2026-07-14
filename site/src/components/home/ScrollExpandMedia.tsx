@@ -52,29 +52,24 @@ export default function ScrollExpandMedia({
     }
   }, []);
 
-  // To achieve 60fps perfectly smooth animation without layout thrashing,
-  // we animate `clip-path` (masking) and `scale` instead of `width`/`height`.
-  const clipPath = useTransform(scrollYProgress, (v) => {
-    if (!isMounted || typeof window === 'undefined') {
-      return 'inset(30% 35% round 16px)';
-    }
-    
+  // To achieve 60fps smooth animation on Safari with video and WebGL,
+  // we animate width and height of an absolute centered div. 
+  // clip-path is notoriously laggy on Apple devices when intersecting with video/WebGL.
+  const mediaWidth = useTransform(scrollYProgress, (v) => {
+    if (!isMounted || typeof window === 'undefined') return '30vw';
+    const w = window.innerWidth;
+    const targetW = w * 0.95;
+    const startW = w < 768 ? 260 : 360;
+    return `${startW + v * (targetW - startW)}px`;
+  });
+
+  const mediaHeight = useTransform(scrollYProgress, (v) => {
+    if (!isMounted || typeof window === 'undefined') return '30vh';
     const w = window.innerWidth;
     const h = window.innerHeight;
-    
-    const targetW = w * 0.95;
     const targetH = h * 0.88;
-    
-    const startW = w < 768 ? 260 : 360;
     const startH = w < 768 ? 320 : 420;
-    
-    const currentW = startW + v * (targetW - startW);
-    const currentH = startH + v * (targetH - startH);
-    
-    const insetX = (w - currentW) / 2;
-    const insetY = (h - currentH) / 2;
-    
-    return `inset(${insetY}px ${insetX}px round 16px)`;
+    return `${startH + v * (targetH - startH)}px`;
   });
 
   // Parallax scale effect: media slightly zooms out as the mask expands
@@ -119,39 +114,42 @@ export default function ScrollExpandMedia({
               inset: 0,
             }}
           >
-            <Image 
-              src={bgImageSrc} 
-              alt="Background" 
-              fill 
-              style={{ objectFit: 'cover' }} 
-              quality={90} 
-              priority 
-            />
-            <div className="absolute inset-0 bg-black/40" />
+            {/* Animated Shader Background */}
+            <ShaderBackground />
+            <div className="absolute inset-0 bg-black/10" />
           </motion.div>
 
-          {/* 
-            Expanding media — perfectly smooth GPU accelerated.
-            Instead of animating layout width/height, we animate a clip-path mask.
-          */}
-          <motion.div
+          {/* Expanding media wrapper */}
+          <div
             style={{
               position: 'absolute',
               inset: 0,
               zIndex: 10,
-              clipPath,
-              WebkitClipPath: clipPath,
-              willChange: 'clip-path',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              pointerEvents: 'none',
             }}
           >
             <motion.div
               style={{
-                width: '100%',
-                height: '100%',
-                scale: mediaScale,
-                willChange: 'transform',
+                width: mediaWidth,
+                height: mediaHeight,
+                borderRadius: '16px',
+                overflow: 'hidden',
+                position: 'relative',
+                willChange: 'width, height',
+                transform: 'translateZ(0)',
               }}
             >
+              <motion.div
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  scale: mediaScale,
+                  willChange: 'transform',
+                }}
+              >
               {mediaType === 'video' ? (
                 <>
                   <video
@@ -182,8 +180,9 @@ export default function ScrollExpandMedia({
               ) : (
                 <Image src={mediaSrc} alt="" fill style={{ objectFit: 'cover' }} />
               )}
+              </motion.div>
             </motion.div>
-          </motion.div>
+          </div>
 
           {/* Title — splits apart on scroll */}
           <div
