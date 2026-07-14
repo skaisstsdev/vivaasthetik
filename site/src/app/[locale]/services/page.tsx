@@ -27,7 +27,8 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
 
   const loc = locale as 'de' | 'ru';
 
-  ReactDOM.preload('/video2_desktop.mp4', { as: 'video' });
+  ReactDOM.preload('/video1_desktop.mp4', { as: 'video' });
+  ReactDOM.preload('/video1_mobile.mp4', { as: 'video' });
 
   return (
     <main className="bg-gray-50 pb-0">
@@ -61,22 +62,14 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
         </div>
       </section>
 
-      {/* Static Video Showcase Section */}
-      <section className="w-full h-[88vh] md:h-screen relative overflow-hidden bg-[#080d1a]">
-        <video
-          src="/video2_desktop.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/20 flex items-center justify-center pointer-events-none">
-          <h2 className="text-4xl md:text-6xl font-light text-white drop-shadow-lg text-center px-4">
-            {loc === 'de' ? 'Ihre Verwandlung' : 'Ваше преображение'}
-          </h2>
-        </div>
-      </section>
+      {/* Video Showcase Section */}
+      <ScrollExpandMedia
+        mediaType="video"
+        mediaSrc="/video1_desktop.mp4"
+        mobileMediaSrc="/video1_mobile.mp4"
+        bgImageSrc="/stranica2.webp"
+        title={loc === 'de' ? 'Ihre Verwandlung' : 'Ваше преображение'}
+      />
 
       {/* Cards Grid */}
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-24 md:py-32">

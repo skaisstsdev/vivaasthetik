@@ -12,6 +12,7 @@ import {
 interface Props {
   mediaType?: 'video' | 'image';
   mediaSrc: string;
+  mobileMediaSrc?: string;
   bgImageSrc: string;
   title?: string;
   scrollToExpand?: string;
@@ -21,6 +22,7 @@ interface Props {
 export default function ScrollExpandMedia({
   mediaType = 'video',
   mediaSrc,
+  mobileMediaSrc,
   bgImageSrc,
   title,
   scrollToExpand,
@@ -34,42 +36,26 @@ export default function ScrollExpandMedia({
   });
 
   const [isMounted, setIsMounted] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const mobileVideoRef = useRef<HTMLVideoElement>(null);
+  const desktopVideoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     setIsMounted(true);
-    if (videoRef.current) {
-      videoRef.current.play().catch(() => {});
+    // Force play on mount to ensure they play immediately
+    if (mobileVideoRef.current) {
+      mobileVideoRef.current.play().catch(() => {});
+    }
+    if (desktopVideoRef.current) {
+      desktopVideoRef.current.play().catch(() => {});
     }
   }, []);
 
-  // Native Framer Motion scale values for perfect GPU acceleration
-  const scaleX = useTransform(scrollYProgress, (v) => {
-    if (!isMounted || typeof window === 'undefined') return 1;
-    const w = window.innerWidth;
-    const targetW = w * 0.95;
-    const startW = w < 768 ? 260 : 360;
-    const currentW = startW + v * (targetW - startW);
-    return currentW / targetW;
-  });
-
-  const scaleY = useTransform(scrollYProgress, (v) => {
-    if (!isMounted || typeof window === 'undefined') return 1;
-    const w = window.innerWidth;
-    const h = window.innerHeight;
-    const targetH = h * 0.88;
-    const startH = w < 768 ? 320 : 420;
-    const currentH = startH + v * (targetH - startH);
-    return currentH / targetH;
-  });
-
-  const invScaleX = useTransform(scaleX, (s) => 1 / s);
-  const invScaleY = useTransform(scaleY, (s) => 1 / s);
-
-  const mediaScale     = useTransform(scrollYProgress, [0, 1], [1.2, 1]);
+  // Removed scaling of the video entirely as requested.
+  // Kept parallax and text split animations.
+  const mediaScale     = useTransform(scrollYProgress, [0, 1], [1.1, 1]);
   const bgOpacity      = useTransform(scrollYProgress, [0, 0.7],  [1, 0]);
-  const text1X         = useTransform(scrollYProgress, [0, 0.85], ['0vw', '-45vw']);
-  const text2X         = useTransform(scrollYProgress, [0, 0.85], ['0vw',  '45vw']);
+  const text1X         = useTransform(scrollYProgress, [0, 0.85], ['0vw', '-50vw']);
+  const text2X         = useTransform(scrollYProgress, [0, 0.85], ['0vw',  '50vw']);
   const hintOpacity    = useTransform(scrollYProgress, [0, 0.08], [1, 0]);
 
   const words     = (title ?? '').split(' ');
@@ -111,7 +97,7 @@ export default function ScrollExpandMedia({
             <div className="absolute inset-0 bg-black/10" />
           </motion.div>
 
-          {/* Expanding media wrapper */}
+          {/* Static Rounded Video Container (No expansion) */}
           <div
             style={{
               position: 'absolute',
@@ -123,58 +109,54 @@ export default function ScrollExpandMedia({
               pointerEvents: 'none',
             }}
           >
-            <motion.div
+            <div
+              className="w-[92vw] h-[86dvh] md:w-[95vw] md:h-[88dvh]"
               style={{
-                width: '95vw',
-                height: '88vh',
-                borderRadius: '16px',
+                borderRadius: '24px',
                 overflow: 'hidden',
                 position: 'relative',
-                willChange: 'transform',
-                transformOrigin: 'center center',
-                scaleX,
-                scaleY,
                 transform: 'translateZ(0)', // Force GPU layer
               }}
             >
-              {/* Inverse scale wrapper to prevent video from squishing */}
               <motion.div
                 style={{
                   width: '100%',
                   height: '100%',
+                  scale: mediaScale,
                   willChange: 'transform',
                   transformOrigin: 'center center',
-                  scaleX: invScaleX,
-                  scaleY: invScaleY,
                 }}
               >
-                {/* Parallax wrapper */}
-                <motion.div
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    scale: mediaScale,
-                    willChange: 'transform',
-                    transformOrigin: 'center center',
-                  }}
-                >
-              {mediaType === 'video' ? (
-                  <video
-                    ref={videoRef}
-                    src={mediaSrc}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="auto"
-                    className="block object-cover w-full h-full"
-                  />
-              ) : (
-                <Image src={mediaSrc} alt="" fill style={{ objectFit: 'cover' }} />
-              )}
-                </motion.div>
+                {mediaType === 'video' ? (
+                  <>
+                    <video
+                      ref={mobileMediaSrc ? mobileVideoRef : desktopVideoRef}
+                      src={mobileMediaSrc || mediaSrc}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="auto"
+                      className={mobileMediaSrc ? "block md:hidden object-cover w-full h-full" : "block object-cover w-full h-full"}
+                    />
+                    {mobileMediaSrc && (
+                      <video
+                        ref={desktopVideoRef}
+                        src={mediaSrc}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        preload="auto"
+                        className="hidden md:block object-cover w-full h-full"
+                      />
+                    )}
+                  </>
+                ) : (
+                  <Image src={mediaSrc} alt="" fill style={{ objectFit: 'cover' }} />
+                )}
               </motion.div>
-            </motion.div>
+            </div>
           </div>
 
           {/* Title — splits apart on scroll */}
