@@ -234,17 +234,17 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
               )}
             </div>
 
-            <div className="flex gap-4 mt-8 pt-8 border-t border-gray-100">
+            <div className="flex flex-col sm:flex-row gap-4 mt-8 pt-8 border-t border-gray-100 w-full">
               <button 
                 onClick={handleBack}
-                className="px-8 py-4 border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors uppercase tracking-widest text-sm"
+                className="w-full sm:w-auto px-6 sm:px-8 py-4 border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors uppercase tracking-widest text-sm"
               >
                 {t('btn_back')}
               </button>
               <button 
                 onClick={handleNext}
                 disabled={!selectedDate || !selectedTime}
-                className="px-8 py-4 bg-gray-900 text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-800 transition-colors uppercase tracking-widest text-sm"
+                className="w-full sm:w-auto px-6 sm:px-8 py-4 bg-gray-900 text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-800 transition-colors uppercase tracking-widest text-sm"
               >
                 {t('btn_next')}
               </button>
@@ -296,17 +296,17 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
               </div>
             </div>
 
-            <div className="flex gap-4 mt-8 pt-8 border-t border-gray-100">
+            <div className="flex flex-col sm:flex-row gap-4 mt-8 pt-8 border-t border-gray-100 w-full">
               <button 
                 type="button"
                 onClick={handleBack}
-                className="px-8 py-4 border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors uppercase tracking-widest text-sm"
+                className="w-full sm:w-auto px-6 sm:px-8 py-4 border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors uppercase tracking-widest text-sm"
               >
                 {t('btn_back')}
               </button>
               <button 
                 type="submit"
-                className="px-8 py-4 bg-gray-900 text-white hover:bg-gray-800 transition-colors uppercase tracking-widest text-sm"
+                className="w-full sm:w-auto px-6 sm:px-8 py-4 bg-gray-900 text-white hover:bg-gray-800 transition-colors uppercase tracking-widest text-sm"
               >
                 {t('btn_submit')}
               </button>
