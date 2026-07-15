@@ -5,6 +5,7 @@ import {routing} from '@/i18n/routing';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import {BookingProvider} from '@/context/BookingContext';
+import {DatabaseProvider} from '@/context/DatabaseContext';
 import BookingModal from '@/components/booking/BookingModal';
 import { Suspense } from 'react';
 import InfoModal from '@/components/home/InfoModal';
@@ -54,18 +55,20 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <body>
         <NextIntlClientProvider messages={messages} locale={locale}>
-          <BookingProvider>
-            <Navbar />
-            {children}
-            <Footer />
-            <Suspense fallback={null}>
-              <BookingModal />
-            </Suspense>
-            <Suspense fallback={null}>
-              <InfoModal />
-            </Suspense>
-            <CookieBanner />
-          </BookingProvider>
+          <DatabaseProvider>
+            <BookingProvider>
+              <Navbar />
+              {children}
+              <Footer />
+              <Suspense fallback={null}>
+                <BookingModal />
+              </Suspense>
+              <Suspense fallback={null}>
+                <InfoModal />
+              </Suspense>
+              <CookieBanner />
+            </BookingProvider>
+          </DatabaseProvider>
         </NextIntlClientProvider>
       </body>
     </html>

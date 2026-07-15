@@ -8,8 +8,9 @@ import { ServiceContent, ServiceLocale } from '@/data/services/types';
 import { DayPicker } from 'react-day-picker';
 import { format } from 'date-fns';
 import { de, ru } from 'date-fns/locale';
-import { ArrowRight, X, ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, X, ChevronDown, ChevronLeft, ChevronRight, Loader2 } from 'lucide-react';
 import { useBooking } from '@/context/BookingContext';
+import { useDatabase } from '@/context/DatabaseContext';
 import 'react-day-picker/style.css';
 
 type Step = 1 | 2 | 3 | 4;
@@ -32,6 +33,10 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const [isFactsExpanded, setIsFactsExpanded] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+
+  const { workingHours, blockedDates, blockedHours, bookings, addBooking } = useDatabase();
 
   // Form State
   const [name, setName] = useState('');
@@ -75,13 +80,70 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
 
   const handleBack = () => setStep(s => Math.max(s - 1, 1) as Step);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Submitting:', { selectedService: selectedService?.slug, selectedDate, selectedTime, name, email, phone, notes });
-    setStep(4);
+    if (!selectedService || !selectedDate || !selectedTime) return;
+    
+    setIsSubmitting(true);
+    setSubmitError('');
+    
+    const success = await addBooking({
+      serviceSlug: selectedService.slug,
+      date: format(selectedDate, 'yyyy-MM-dd'),
+      time: selectedTime,
+      clientName: name,
+      clientEmail: email,
+      clientPhone: phone,
+      clientNotes: notes,
+    });
+    
+    setIsSubmitting(false);
+    if (success) {
+      setStep(4);
+    } else {
+      setSubmitError(locale === 'de' ? 'Dieser Termin ist leider nicht mehr verfügbar.' : 'К сожалению, это время уже занято.');
+    }
   };
 
-  const timeSlots = ["10:00", "11:30", "13:00", "14:30", "16:00", "17:30"];
+  const disabledDays = [
+    { before: new Date() },
+    { after: (() => { const d = new Date(); d.setMonth(d.getMonth() + 2); return d; })() },
+    (date: Date) => {
+      const dayStr = format(date, 'yyyy-MM-dd');
+      if (blockedDates.includes(dayStr)) return true;
+      const dayOfWeek = date.getDay();
+      if (!workingHours[dayOfWeek]?.isWorking) return true;
+      
+      // We could optionally disable days that are fully booked here, 
+      // but for simplicity we let the user click and see "No slots available".
+      return false;
+    }
+  ];
+
+  const generateTimeSlots = () => {
+    if (!selectedDate) return [];
+    const dayOfWeek = selectedDate.getDay();
+    const dayConfig = workingHours[dayOfWeek];
+    if (!dayConfig || !dayConfig.isWorking) return [];
+    
+    const dayStr = format(selectedDate, 'yyyy-MM-dd');
+    const dayBlockedHours = blockedHours[dayStr] || [];
+    const dayBookings = bookings.filter(b => b.date === dayStr && b.status !== 'cancelled');
+
+    const slots = [];
+    let [startH] = dayConfig.startTime.split(':').map(Number);
+    let [endH] = dayConfig.endTime.split(':').map(Number);
+
+    for (let h = startH; h < endH; h++) {
+      const timeStr = `${h.toString().padStart(2, '0')}:00`;
+      if (dayBlockedHours.includes(timeStr)) continue;
+      if (dayBookings.some(b => b.time === timeStr)) continue;
+      slots.push(timeStr);
+    }
+    return slots;
+  };
+
+  const availableTimeSlots = generateTimeSlots();
 
   // We use this function to render the interactive forms for Step 2, 3, and 4
   const renderStepsTwoToFour = () => (
@@ -188,7 +250,7 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
                   selected={selectedDate}
                   onSelect={handleDateSelect}
                   locale={locale === 'de' ? de : ru}
-                  disabled={[{ before: new Date() }, { dayOfWeek: [0] }]}
+                  disabled={disabledDays}
                   className="font-sans text-[0.85rem] md:text-[1.05rem]"
                   style={{ 
                     '--rdp-day-width': 'min(11vw, 44px)', 
@@ -212,8 +274,13 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
               </h4>
               
               <div className={`grid grid-cols-2 gap-4 transition-all duration-300 ${!selectedDate ? 'opacity-30 pointer-events-none grayscale' : ''}`}>
-                {timeSlots.map(time => (
-                  <button
+                {selectedDate && availableTimeSlots.length === 0 ? (
+                  <div className="col-span-2 text-center text-sm text-gray-500 py-4">
+                    {locale === 'de' ? 'Keine Termine verfügbar' : 'Нет свободного времени'}
+                  </div>
+                ) : (
+                  availableTimeSlots.map(time => (
+                    <button
                     key={time}
                     onClick={() => handleTimeSelect(time)}
                     className={`p-4 border text-sm md:text-base transition-colors rounded-sm tracking-wide ${
@@ -224,7 +291,7 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
                   >
                     {time}
                   </button>
-                ))}
+                )))}
               </div>
               
               {!selectedDate && (
@@ -297,17 +364,23 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 mt-8 pt-8 border-t border-gray-100 w-full">
+              {submitError && (
+                <div className="w-full text-red-500 text-sm mb-4 text-center">{submitError}</div>
+              )}
               <button 
                 type="button"
                 onClick={handleBack}
-                className="w-full sm:w-auto px-6 sm:px-8 py-4 border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors uppercase tracking-widest text-sm"
+                disabled={isSubmitting}
+                className="w-full sm:w-auto px-6 sm:px-8 py-4 border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors uppercase tracking-widest text-sm disabled:opacity-50"
               >
                 {t('btn_back')}
               </button>
               <button 
                 type="submit"
-                className="w-full sm:w-auto px-6 sm:px-8 py-4 bg-gray-900 text-white hover:bg-gray-800 transition-colors uppercase tracking-widest text-sm"
+                disabled={isSubmitting}
+                className="w-full sm:w-auto px-6 sm:px-8 py-4 bg-gray-900 text-white hover:bg-gray-800 transition-colors uppercase tracking-widest text-sm flex justify-center items-center gap-2 disabled:opacity-80"
               >
+                {isSubmitting && <Loader2 className="w-4 h-4 animate-spin" />}
                 {t('btn_submit')}
               </button>
             </div>
