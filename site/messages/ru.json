@@ -11,7 +11,7 @@
     "faq": "Частые вопросы",
     "tips": "Советы",
     "contact": "Контакт",
-    "admin": "Админка",
+    "admin": "Админ",
     "bookCta": "Записаться"
   },
   "About": {
@@ -42,12 +42,12 @@
     "datenschutz": "Защита данных",
     "agb": "Условия и Cookies",
     "rights": "Все права защищены.",
-    "admin": "Админка",
+    "admin": "Админ",
     "addressTitle": "Адрес",
     "address": "Königstor 47, 34117 Kassel",
     "contactTitle": "Контакт",
     "phone": "+49 179 9004902",
-    "email": "info@viva-aesthetik.de",
+    "email": "vivaasthetik@gmail.com",
     "socialTitle": "Соц. сети"
   },
   "Hero": {
@@ -172,7 +172,7 @@
     "success_text": "Ваша заявка успешно отправлена. Мы скоро свяжемся с вами для подтверждения времени визита."
   },
   "WhyUs": {
-    "title": "Почему Вива Эстетик?",
+    "title": "Почему VIVA Ästhetik?",
     "item1_title": "Индивидуальное консультирование",
     "item1_text": "Каждое лечение будет адаптировано к вашим потребностям и желаниям.",
     "item2_title": "Высшие медицинские стандарты",
@@ -269,7 +269,7 @@
     "phoneTitle": "Телефон",
     "phoneText": "+49 179 9004902",
     "emailTitle": "E-Mail",
-    "emailText": "info@viva-aesthetik.de",
+    "emailText": "vivaasthetik@gmail.com",
     "hoursTitle": "Часы работы",
     "hoursText": "Пн - Пт: 09:00 - 18:00\nСб: По предварительной записи\nВс: Выходной",
     "socialTitle": "Соц. сети",

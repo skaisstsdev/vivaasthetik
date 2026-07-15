@@ -48,7 +48,7 @@ export default function AdminClient({ locale }: { locale: string }) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4 font-sans text-gray-900">
         <form onSubmit={handleLogin} className="bg-white p-8 md:p-12 shadow-xl border border-gray-100 rounded-sm w-full max-w-md">
-          <h2 className="text-3xl font-light text-center mb-8 text-gray-900">Вход в Админку</h2>
+          <h2 className="text-3xl font-light text-center mb-8 text-gray-900">Вход в админ панель</h2>
           <div className="flex flex-col gap-2 mb-6">
             <label className="text-xs uppercase tracking-widest text-gray-500 font-mono">Пароль</label>
             <input 

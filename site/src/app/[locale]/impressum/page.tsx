@@ -33,7 +33,7 @@ export default async function ImpressumPage({ params }: { params: Promise<{ loca
             <h2>Kontakt</h2>
             <p>
               Telefon: +49 179 9004902<br />
-              E-Mail: info@viva-aesthetik.de
+              E-Mail: vivaasthetik@gmail.com
             </p>
 
             <h2>Berufsbezeichnung und berufsrechtliche Regelungen</h2>
@@ -68,7 +68,7 @@ export default async function ImpressumPage({ params }: { params: Promise<{ loca
             <h2>Kontakt</h2>
             <p>
               Telefon: +49 179 9004902<br />
-              E-Mail: info@viva-aesthetik.de
+              E-Mail: vivaasthetik@gmail.com
             </p>
 
             <h2>Berufsbezeichnung und berufsrechtliche Regelungen</h2>
