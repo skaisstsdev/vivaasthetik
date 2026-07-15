@@ -1,0 +1,49 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+}
+
+model Booking {
+  id          String   @id @default(cuid())
+  serviceSlug String
+  date        String   // YYYY-MM-DD
+  time        String   // HH:MM
+  clientName  String
+  clientEmail String?
+  clientPhone String?
+  clientNotes String?
+  status      String   @default("pending") // pending, confirmed, cancelled
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([date, time])
+  @@index([status])
+}
+
+model WorkingDay {
+  id        String   @id @default(cuid())
+  dayOfWeek Int      @unique // 0 = Sunday, 1 = Monday, etc.
+  isWorking Boolean  @default(true)
+  startTime String   @default("10:00")
+  endTime   String   @default("17:00")
+  updatedAt DateTime @updatedAt
+}
+
+model BlockedPeriod {
+  id        String   @id @default(cuid())
+  startDate String   // YYYY-MM-DD
+  endDate   String   // YYYY-MM-DD
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model DateException {
+  id           String   @id @default(cuid())
+  date         String   @unique // YYYY-MM-DD
+  isWorking    Boolean  @default(false) // If true, only blockedHours are blocked. If false, whole day is blocked.
+  blockedHours String[] // Array of "HH:MM"
+  updatedAt    DateTime @updatedAt
+}

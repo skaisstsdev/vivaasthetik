@@ -11,6 +11,7 @@
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@paper-design/shaders-react": "^0.0.77",
+    "@prisma/client": "^7.8.0",
     "@react-three/fiber": "^9.6.1",
     "@supabase/supabase-js": "^2.110.2",
     "@types/three": "^0.185.1",
@@ -35,6 +36,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.10",
+    "prisma": "^7.8.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
