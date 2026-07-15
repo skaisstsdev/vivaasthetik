@@ -1,7 +1,6 @@
 'use server';
 
 import { prisma } from '@/lib/prisma';
-import { revalidatePath } from 'next/cache';
 
 // ------------------------------------------------------------------
 // SETTINGS (WorkingDays, BlockedPeriods, Exceptions)
@@ -28,19 +27,16 @@ export async function updateWorkingHoursAction(dayOfWeek: number, data: { isWork
     update: data,
     create: { dayOfWeek, ...data }
   });
-  revalidatePath('/admin');
   return true;
 }
 
 export async function addBlockedPeriodAction(data: { startDate: string, endDate: string }) {
   await prisma.blockedPeriod.create({ data });
-  revalidatePath('/admin');
   return true;
 }
 
 export async function removeBlockedPeriodAction(id: string) {
   await prisma.blockedPeriod.delete({ where: { id } });
-  revalidatePath('/admin');
   return true;
 }
 
@@ -50,13 +46,11 @@ export async function updateDateExceptionAction(date: string, data: { isWorking:
     update: data,
     create: { date, ...data }
   });
-  revalidatePath('/admin');
   return true;
 }
 
 export async function removeDateExceptionAction(date: string) {
   await prisma.dateException.delete({ where: { date } });
-  revalidatePath('/admin');
   return true;
 }
 
@@ -89,7 +83,6 @@ export async function addBookingAction(data: { serviceSlug: string, date: string
   await prisma.booking.create({
     data: { ...data, status }
   });
-  revalidatePath('/admin');
   return true;
 }
 
@@ -98,7 +91,6 @@ export async function updateBookingStatusAction(id: string, status: string) {
     where: { id },
     data: { status }
   });
-  revalidatePath('/admin');
   return true;
 }
 
@@ -113,6 +105,5 @@ export async function rescheduleBookingAction(id: string, newDate: string, newTi
     where: { id },
     data: { date: newDate, time: newTime }
   });
-  revalidatePath('/admin');
   return true;
 }
