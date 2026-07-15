@@ -14,7 +14,12 @@ export async function getSettings() {
     prisma.dateException.findMany()
   ]);
 
-  return { workingDays, blockedPeriods, dateExceptions };
+  // Strip Date objects for client component serialization
+  return { 
+    workingDays: workingDays.map(d => ({ ...d, updatedAt: d.updatedAt.toISOString() })),
+    blockedPeriods: blockedPeriods.map(d => ({ ...d, createdAt: d.createdAt.toISOString(), updatedAt: d.updatedAt.toISOString() })),
+    dateExceptions: dateExceptions.map(d => ({ ...d, updatedAt: d.updatedAt.toISOString() }))
+  };
 }
 
 export async function updateWorkingHoursAction(dayOfWeek: number, data: { isWorking: boolean, startTime: string, endTime: string }) {
@@ -60,12 +65,17 @@ export async function removeDateExceptionAction(date: string) {
 // ------------------------------------------------------------------
 
 export async function getBookings() {
-  return await prisma.booking.findMany({
+  const bookings = await prisma.booking.findMany({
     orderBy: [
       { date: 'asc' },
       { time: 'asc' }
     ]
   });
+  return bookings.map(b => ({
+    ...b,
+    createdAt: b.createdAt.toISOString(),
+    updatedAt: b.updatedAt.toISOString()
+  }));
 }
 
 export async function addBookingAction(data: { serviceSlug: string, date: string, time: string, clientName: string, clientEmail?: string, clientPhone?: string, clientNotes?: string }, status: string = 'pending') {
