@@ -67,13 +67,22 @@ video::part(media-controls-overlay-play-button) {
 }
 
 /* React Day Picker Contrast Overrides */
-.rdp-day:not(.rdp-day_disabled) {
+.rdp-day:not(.rdp-day_disabled):not(.rdp-day_selected) {
   color: #111827 !important;
   font-weight: 500 !important;
 }
-.rdp-day:not(.rdp-day_disabled):hover {
+.rdp-day:not(.rdp-day_disabled):not(.rdp-day_selected):hover {
   background-color: #f3f4f6 !important;
   color: #000 !important;
+}
+.rdp-day_selected {
+  background-color: #111827 !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+.rdp-day_selected:hover {
+  background-color: #000000 !important;
+  color: #ffffff !important;
 }
 .rdp-day_disabled {
   color: #e5e7eb !important;
