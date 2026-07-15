@@ -164,7 +164,7 @@ function CalendarTab({ db, locale }: { db: ReturnType<typeof useDatabase>, local
               hasBooking: (date) => db.bookings.some(b => b.date === format(date, 'yyyy-MM-dd') && b.status !== 'cancelled')
             }}
             modifiersClassNames={{
-              selected: "bg-gray-900 text-white font-medium hover:bg-gray-800 rounded-sm",
+              selected: "!bg-blue-600 !text-white !font-bold rounded-md shadow-md hover:!bg-blue-700",
               today: "font-semibold text-gray-900 bg-gray-50 rounded-sm",
               hasBooking: "bg-blue-50 border border-blue-200 text-blue-800 font-bold relative after:content-[''] after:absolute after:bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-1.5 after:h-1.5 after:bg-blue-600 after:rounded-full"
             }}
@@ -581,7 +581,7 @@ function BookingCard({ booking, db, locale, showDate = false }: { booking: any, 
             mode="single" selected={newDate} onSelect={(d) => { d && setNewDate(d); setNewTime(''); }} 
             locale={ru} disabled={[(date: Date) => db.isDayBlockedOrNonWorking(date)]}
             className="bg-white p-4 border border-gray-100 rounded-sm font-sans mx-auto lg:mx-0 w-full md:w-auto overflow-x-auto"
-            modifiersClassNames={{ selected: "bg-gray-900 text-white font-medium hover:bg-gray-800 rounded-sm", today: "font-semibold text-gray-900 bg-gray-50 rounded-sm" }}
+            modifiersClassNames={{ selected: "!bg-blue-600 !text-white !font-bold rounded-md shadow-md hover:!bg-blue-700", today: "font-semibold text-gray-900 bg-gray-50 rounded-sm" }}
           />
           <div className="flex-1 w-full">
             <label className="text-[10px] text-gray-400 uppercase tracking-widest mb-2 block">Доступное время на {newDate ? format(newDate, 'd MMMM') : ''}</label>
@@ -730,7 +730,7 @@ function ManualBookingModal({ db, locale, defaultDate, onClose }: { db: ReturnTy
               mode="single" selected={date} onSelect={(d) => { d && setDate(d); setTime(''); }} 
               locale={ru} disabled={[(d: Date) => db.isDayBlockedOrNonWorking(d)]}
               className="bg-white p-4 border border-gray-100 rounded-sm font-sans mx-auto min-w-min"
-              modifiersClassNames={{ selected: "bg-gray-900 text-white font-medium hover:bg-gray-800 rounded-sm", today: "font-semibold text-gray-900 bg-gray-50 rounded-sm" }}
+              modifiersClassNames={{ selected: "!bg-blue-600 !text-white !font-bold rounded-md shadow-md hover:!bg-blue-700", today: "font-semibold text-gray-900 bg-gray-50 rounded-sm" }}
             />
           </div>
           <div className="mt-6">

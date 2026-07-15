@@ -75,15 +75,6 @@ video::part(media-controls-overlay-play-button) {
   background-color: #f3f4f6 !important;
   color: #000 !important;
 }
-.rdp-day_selected {
-  background-color: #111827 !important;
-  color: #ffffff !important;
-  font-weight: 600 !important;
-}
-.rdp-day_selected:hover {
-  background-color: #000000 !important;
-  color: #ffffff !important;
-}
 .rdp-day_disabled {
   color: #e5e7eb !important;
   font-weight: 300 !important;
