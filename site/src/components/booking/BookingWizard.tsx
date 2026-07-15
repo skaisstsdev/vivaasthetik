@@ -126,7 +126,7 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
 
         // Send email to Client
         emailjs.send(
-          'service_j8x4368',
+          'service_69x9vql',
           'template_b6dht9m',
           templateParams,
           'AY8TnxaGP6C_LoA28'
