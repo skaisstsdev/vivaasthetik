@@ -29,7 +29,7 @@ export default function AdminClient({ locale }: { locale: string }) {
         audio.play().catch(() => {});
       } catch (e) {}
       
-      setTimeout(() => setToastMessage(''), 8000);
+      setTimeout(() => setToastMessage(''), 3000);
     }
     prevBookingsCount.current = db.bookings.length;
   }, [db.bookings.length]);
