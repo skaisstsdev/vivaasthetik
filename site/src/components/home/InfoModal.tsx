@@ -91,20 +91,9 @@ export default function InfoModal() {
               </div>
 
               <div className="bg-gray-50 p-8 rounded-sm border border-gray-200 mt-4">
-                <p className="text-base md:text-lg text-gray-800 font-light leading-relaxed mb-6">
+                <p className="text-base md:text-lg text-gray-800 font-light leading-relaxed">
                   {tTech('outro')}
                 </p>
-                <button 
-                  onClick={() => {
-                    const newParams = new URLSearchParams(searchParams.toString());
-                    newParams.delete('info');
-                    newParams.set('booking', 'true');
-                    router.push(pathname + '?' + newParams.toString(), { scroll: false });
-                  }}
-                  className="px-8 py-4 bg-gray-900 text-white hover:bg-gray-800 transition-colors uppercase tracking-widest text-sm inline-block"
-                >
-                  {locale === 'de' ? 'Beratung vereinbaren' : 'Записаться на консультацию'}
-                </button>
               </div>
             </div>
           )}
