@@ -41,9 +41,8 @@ export default function Footer() {
 
             <p className="text-sm font-medium text-gray-900 mb-3">{t('socialTitle')}</p>
             <div className="flex gap-4">
-              <a href="#" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">Instagram</a>
-              <a href="#" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">Facebook</a>
-              <a href="#" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">WhatsApp</a>
+              <a href="https://www.instagram.com/viva_asthetik?igsh=bW5vYnB2dDhmeGdo" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">Instagram</a>
+              <a href="https://wa.me/491799004902" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">WhatsApp</a>
             </div>
           </div>
 

@@ -84,9 +84,8 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                   <div>
                     <h3 className="font-medium text-gray-900 text-lg mb-1">{t('socialTitle')}</h3>
                     <div className="flex gap-4 mt-2">
-                      <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">Instagram</a>
-                      <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">Facebook</a>
-                      <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">WhatsApp</a>
+                      <a href="https://www.instagram.com/viva_asthetik?igsh=bW5vYnB2dDhmeGdo" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 transition-colors">Instagram</a>
+                      <a href="https://wa.me/491799004902" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 transition-colors">WhatsApp</a>
                     </div>
                   </div>
                 </div>
