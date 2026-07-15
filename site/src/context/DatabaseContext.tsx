@@ -107,44 +107,55 @@ export function DatabaseProvider({ children }: { children: React.ReactNode }) {
 
   const addBooking = async (b: Omit<Booking, 'id' | 'status'>, status: BookingStatus = 'pending') => {
     const success = await addBookingAction(b, status);
-    if (success) await refreshData();
+    if (success) refreshData();
     return success;
   };
 
   const updateBookingStatus = async (id: string, status: BookingStatus) => {
+    setBookings(prev => prev.map(booking => booking.id === id ? { ...booking, status } : booking));
     await updateBookingStatusAction(id, status);
-    await refreshData();
+    refreshData();
   };
 
   const rescheduleBooking = async (id: string, newDate: string, newTime: string) => {
+    setBookings(prev => prev.map(booking => booking.id === id ? { ...booking, date: newDate, time: newTime } : booking));
     const success = await rescheduleBookingAction(id, newDate, newTime);
-    if (success) await refreshData();
+    if (success) refreshData();
     return success;
   };
 
   const updateWorkingHours = async (dayOfWeek: number, data: Omit<WorkingDay, 'dayOfWeek'>) => {
+    setWorkingHours(prev => ({ ...prev, [dayOfWeek]: { dayOfWeek, ...data } }));
     await updateWorkingHoursAction(dayOfWeek, data);
-    await refreshData();
+    refreshData();
   };
 
   const addBlockedPeriod = async (period: Omit<BlockedPeriod, 'id'>) => {
+    setBlockedPeriods(prev => [...prev, { id: 'temp-' + Date.now(), ...period }]);
     await addBlockedPeriodAction(period);
-    await refreshData();
+    refreshData();
   };
 
   const removeBlockedPeriod = async (id: string) => {
+    setBlockedPeriods(prev => prev.filter(p => p.id !== id));
     await removeBlockedPeriodAction(id);
-    await refreshData();
+    refreshData();
   };
 
   const updateDateException = async (date: string, data: Omit<DateException, 'date'>) => {
+    setDateExceptions(prev => ({ ...prev, [date]: { date, ...data } }));
     await updateDateExceptionAction(date, data);
-    await refreshData();
+    refreshData();
   };
 
   const removeDateException = async (date: string) => {
+    setDateExceptions(prev => {
+      const copy = { ...prev };
+      delete copy[date];
+      return copy;
+    });
     await removeDateExceptionAction(date);
-    await refreshData();
+    refreshData();
   };
 
   const isDayBlockedOrNonWorking = (date: Date) => {
