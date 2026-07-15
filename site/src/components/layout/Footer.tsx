@@ -86,11 +86,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-gray-200 pt-6 flex justify-between items-center">
-          <p className="text-xs text-gray-400">
+        <div className="border-t border-gray-200 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
+          <p className="text-xs text-gray-400 text-center md:text-left">
             &copy; {new Date().getFullYear()} VIVA Ästhetik. {t('rights')}
           </p>
-          <Link href="/admin" className="text-xs text-gray-400 hover:text-gray-900 transition-colors">
+          <Link href="/admin" className="text-sm md:text-xs font-medium md:font-normal text-gray-500 md:text-gray-400 hover:text-gray-900 transition-colors w-full md:w-auto text-center py-3 md:py-0">
             {t('admin')}
           </Link>
         </div>
