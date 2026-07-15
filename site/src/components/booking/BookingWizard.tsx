@@ -113,25 +113,27 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
         client_notes: notes || 'Нет комментариев'
       };
 
-      try {
         // Send email to Admin
-        await emailjs.send(
+        emailjs.send(
           'service_69x9vql',
           'template_sitesq1',
           templateParams,
           'AY8TnxaGP6C_LoA28'
-        );
+        ).catch(error => {
+          console.error('Admin email failed:', error);
+          alert('Ошибка отправки админу: ' + (error.text || error.message || JSON.stringify(error)));
+        });
 
         // Send email to Client
-        await emailjs.send(
+        emailjs.send(
           'service_j8x4368',
           'template_b6dht9m',
           templateParams,
           'AY8TnxaGP6C_LoA28'
-        );
-      } catch (error) {
-        console.error('Failed to send email notifications', error);
-      }
+        ).catch(error => {
+          console.error('Client email failed:', error);
+          alert('Ошибка отправки клиенту: ' + (error.text || error.message || JSON.stringify(error)));
+        });
 
     } else {
       setSubmitError(locale === 'de' ? 'Dieser Termin ist leider nicht mehr verfügbar.' : 'К сожалению, это время уже занято.');
