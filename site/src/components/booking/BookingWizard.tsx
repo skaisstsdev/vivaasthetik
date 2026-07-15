@@ -109,6 +109,7 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
         booking_time: selectedTime,
         client_name: name,
         client_email: email,
+        email: email, // Fallback in case they used {{email}} in EmailJS
         client_phone: phone,
         client_notes: notes || 'Нет комментариев'
       };
