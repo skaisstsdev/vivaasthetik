@@ -1,9 +1,14 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/routing';
+import { Link, usePathname } from '@/i18n/routing';
 
 export default function Footer() {
   const t = useTranslations('Footer');
   const nav = useTranslations('Navigation');
+  const pathname = usePathname();
+
+  if (pathname.startsWith('/admin')) return null;
 
   return (
     <footer className="bg-gray-50 border-t border-gray-100">

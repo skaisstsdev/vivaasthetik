@@ -42,6 +42,13 @@ export default function Navbar() {
     }
   }, [isMenuOpen]);
 
+  // Close menu when route changes
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
+
+  if (pathname.startsWith('/admin')) return null;
+
   return (
     <>
       {/* 
