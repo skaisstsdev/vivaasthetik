@@ -298,7 +298,7 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
                   required
                   value={name}
                   onChange={e => setName(e.target.value)}
-                  className="border border-gray-300 p-3 outline-none focus:border-gray-900 transition-colors" 
+                  className="border border-gray-300 p-3 outline-none focus:border-gray-900 transition-colors text-gray-900 bg-white" 
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -308,7 +308,7 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
                   required
                   value={email}
                   onChange={e => setEmail(e.target.value)}
-                  className="border border-gray-300 p-3 outline-none focus:border-gray-900 transition-colors" 
+                  className="border border-gray-300 p-3 outline-none focus:border-gray-900 transition-colors text-gray-900 bg-white" 
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -318,7 +318,7 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
                   required
                   value={phone}
                   onChange={e => setPhone(e.target.value)}
-                  className="border border-gray-300 p-3 outline-none focus:border-gray-900 transition-colors" 
+                  className="border border-gray-300 p-3 outline-none focus:border-gray-900 transition-colors text-gray-900 bg-white" 
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -326,7 +326,7 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
                 <textarea 
                   value={notes}
                   onChange={e => setNotes(e.target.value)}
-                  className="border border-gray-300 p-3 outline-none focus:border-gray-900 transition-colors h-32 resize-none" 
+                  className="border border-gray-300 p-3 outline-none focus:border-gray-900 transition-colors h-32 resize-none text-gray-900 bg-white" 
                 ></textarea>
               </div>
             </div>
