@@ -12,6 +12,7 @@ import { ArrowRight, X, ChevronDown, ChevronLeft, ChevronRight, Loader2 } from '
 import { useBooking } from '@/context/BookingContext';
 import { useDatabase } from '@/context/DatabaseContext';
 import 'react-day-picker/style.css';
+import emailjs from '@emailjs/browser';
 
 type Step = 1 | 2 | 3 | 4;
 
@@ -100,6 +101,38 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
     setIsSubmitting(false);
     if (success) {
       setStep(4);
+      
+      // Prepare EmailJS params
+      const templateParams = {
+        service_name: selectedService.title[locale],
+        booking_date: format(selectedDate, 'dd.MM.yyyy'),
+        booking_time: selectedTime,
+        client_name: name,
+        client_email: email,
+        client_phone: phone,
+        client_notes: notes || 'Нет комментариев'
+      };
+
+      try {
+        // Send email to Admin
+        await emailjs.send(
+          'service_69x9vql',
+          'template_sitesq1',
+          templateParams,
+          'AY8TnxaGP6C_LoA28'
+        );
+
+        // Send email to Client
+        await emailjs.send(
+          'service_j8x4368',
+          'template_b6dht9m',
+          templateParams,
+          'AY8TnxaGP6C_LoA28'
+        );
+      } catch (error) {
+        console.error('Failed to send email notifications', error);
+      }
+
     } else {
       setSubmitError(locale === 'de' ? 'Dieser Termin ist leider nicht mehr verfügbar.' : 'К сожалению, это время уже занято.');
     }
