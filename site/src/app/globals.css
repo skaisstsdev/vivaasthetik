@@ -65,3 +65,17 @@ video::part(media-controls-overlay-play-button) {
 *::-webkit-media-controls-overlay-play-button {
   display: none !important;
 }
+
+/* React Day Picker Contrast Overrides */
+.rdp-day:not(.rdp-day_disabled) {
+  color: #111827 !important;
+  font-weight: 500 !important;
+}
+.rdp-day:not(.rdp-day_disabled):hover {
+  background-color: #f3f4f6 !important;
+  color: #000 !important;
+}
+.rdp-day_disabled {
+  color: #e5e7eb !important;
+  font-weight: 300 !important;
+}
