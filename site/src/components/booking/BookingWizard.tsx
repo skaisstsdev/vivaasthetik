@@ -36,7 +36,7 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState('');
 
-  const { workingHours, blockedDates, blockedHours, bookings, addBooking } = useDatabase();
+  const { addBooking, getAvailableSlots, isDayBlockedOrNonWorking } = useDatabase();
 
   // Form State
   const [name, setName] = useState('');
@@ -108,42 +108,10 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
   const disabledDays = [
     { before: new Date() },
     { after: (() => { const d = new Date(); d.setMonth(d.getMonth() + 2); return d; })() },
-    (date: Date) => {
-      const dayStr = format(date, 'yyyy-MM-dd');
-      if (blockedDates.includes(dayStr)) return true;
-      const dayOfWeek = date.getDay();
-      if (!workingHours[dayOfWeek]?.isWorking) return true;
-      
-      // We could optionally disable days that are fully booked here, 
-      // but for simplicity we let the user click and see "No slots available".
-      return false;
-    }
+    (date: Date) => isDayBlockedOrNonWorking(date)
   ];
 
-  const generateTimeSlots = () => {
-    if (!selectedDate) return [];
-    const dayOfWeek = selectedDate.getDay();
-    const dayConfig = workingHours[dayOfWeek];
-    if (!dayConfig || !dayConfig.isWorking) return [];
-    
-    const dayStr = format(selectedDate, 'yyyy-MM-dd');
-    const dayBlockedHours = blockedHours[dayStr] || [];
-    const dayBookings = bookings.filter(b => b.date === dayStr && b.status !== 'cancelled');
-
-    const slots = [];
-    let [startH] = dayConfig.startTime.split(':').map(Number);
-    let [endH] = dayConfig.endTime.split(':').map(Number);
-
-    for (let h = startH; h < endH; h++) {
-      const timeStr = `${h.toString().padStart(2, '0')}:00`;
-      if (dayBlockedHours.includes(timeStr)) continue;
-      if (dayBookings.some(b => b.time === timeStr)) continue;
-      slots.push(timeStr);
-    }
-    return slots;
-  };
-
-  const availableTimeSlots = generateTimeSlots();
+  const availableTimeSlots = selectedDate ? getAvailableSlots(selectedDate) : [];
 
   // We use this function to render the interactive forms for Step 2, 3, and 4
   const renderStepsTwoToFour = () => (
