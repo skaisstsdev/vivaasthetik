@@ -103,6 +103,27 @@ export function DatabaseProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     refreshData();
+    
+    // Poll for updates every 5 seconds so users see admin changes without refreshing
+    const interval = setInterval(() => {
+      // Background refresh without triggering the loading spinner
+      Promise.all([getBookings(), getSettings()]).then(([b, s]) => {
+        setBookings(b as Booking[]);
+        const wh: Record<number, WorkingDay> = {};
+        s.workingDays.forEach(d => { wh[d.dayOfWeek] = d; });
+        if (Object.keys(wh).length === 0) {
+          [1,2,3,4,5].forEach(d => { wh[d] = { dayOfWeek: d, isWorking: true, startTime: '10:00', endTime: '17:00' }; });
+          [0,6].forEach(d => { wh[d] = { dayOfWeek: d, isWorking: false, startTime: '10:00', endTime: '17:00' }; });
+        }
+        setWorkingHours(wh);
+        setBlockedPeriods(s.blockedPeriods);
+        const de: Record<string, DateException> = {};
+        s.dateExceptions.forEach(e => { de[e.date] = e; });
+        setDateExceptions(de);
+      }).catch(e => console.error("Error in background sync", e));
+    }, 5000);
+
+    return () => clearInterval(interval);
   }, []);
 
   const addBooking = async (b: Omit<Booking, 'id' | 'status'>, status: BookingStatus = 'pending') => {
