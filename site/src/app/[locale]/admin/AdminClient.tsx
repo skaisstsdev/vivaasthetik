@@ -30,16 +30,16 @@ export default function AdminClient({ locale }: { locale: string }) {
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4 font-sans">
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4 font-sans text-gray-900">
         <form onSubmit={handleLogin} className="bg-white p-8 md:p-12 shadow-xl border border-gray-100 rounded-sm w-full max-w-md">
-          <h2 className="text-3xl font-light text-center mb-8">Вход в Админку</h2>
+          <h2 className="text-3xl font-light text-center mb-8 text-gray-900">Вход в Админку</h2>
           <div className="flex flex-col gap-2 mb-6">
-            <label className="text-xs uppercase tracking-widest text-gray-400 font-mono">Пароль</label>
+            <label className="text-xs uppercase tracking-widest text-gray-500 font-mono">Пароль</label>
             <input 
               type="password" 
               value={password}
               onChange={e => setPassword(e.target.value)}
-              className="border-b border-gray-300 py-2 outline-none focus:border-gray-900 transition-colors"
+              className="border-b border-gray-300 py-2 outline-none focus:border-gray-900 transition-colors text-gray-900 bg-transparent w-full"
               autoFocus
             />
             {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
@@ -148,23 +148,20 @@ function CalendarTab({ db, locale }: { db: ReturnType<typeof useDatabase>, local
 
         <div className="bg-white p-4 md:p-6 border border-gray-100 rounded-sm shadow-sm flex flex-col">
           <h4 className="text-[10px] uppercase tracking-widest text-gray-400 mb-4">Занятость (8:00 - 20:00)</h4>
-          <div className="flex h-8 w-full border border-gray-200 rounded-sm overflow-hidden">
+          <div className="flex w-full border border-gray-200 rounded-sm overflow-hidden">
             {hours.map((slot, i) => (
               <div 
                 key={slot.time} 
-                className={`flex-1 border-r last:border-r-0 border-gray-100 relative group transition-colors ${slot.isBooked ? 'bg-blue-500' : 'bg-gray-50 hover:bg-gray-100'}`}
+                className={`flex-1 flex items-center justify-center py-2 border-r last:border-r-0 border-gray-100 transition-colors ${slot.isBooked ? 'bg-blue-500 text-white' : 'bg-gray-50 hover:bg-gray-100 text-gray-400'}`}
                 title={slot.time + (slot.isBooked ? ' (Занято)' : ' (Свободно)')}
               >
-                {/* Tiny label for every other hour */}
-                {i % 2 === 0 && (
-                  <span className="absolute -bottom-5 left-1/2 -translate-x-1/2 text-[9px] text-gray-400 font-mono">
-                    {slot.label}
-                  </span>
-                )}
+                <span className="text-[10px] font-mono font-medium">
+                  {slot.label}
+                </span>
               </div>
             ))}
           </div>
-          <div className="mt-8 flex items-center gap-4 text-xs text-gray-500">
+          <div className="mt-4 flex items-center gap-4 text-xs text-gray-500">
             <div className="flex items-center gap-1"><div className="w-3 h-3 bg-gray-50 border border-gray-200"></div> Свободно</div>
             <div className="flex items-center gap-1"><div className="w-3 h-3 bg-blue-500"></div> Занято</div>
           </div>
@@ -275,7 +272,7 @@ function ScheduleTab({ db }: { db: ReturnType<typeof useDatabase> }) {
   ];
 
   return (
-    <div className="flex flex-col gap-6 animate-in fade-in duration-300">
+    <div className="flex flex-col gap-8 animate-in fade-in duration-300">
       <div>
         <h2 className="text-2xl font-light mb-2">Стандартный график работы</h2>
         <p className="text-gray-500 text-sm max-w-2xl">
@@ -283,43 +280,47 @@ function ScheduleTab({ db }: { db: ReturnType<typeof useDatabase> }) {
         </p>
       </div>
       
-      <div className="bg-white border border-gray-100 rounded-sm overflow-hidden shadow-sm max-w-2xl">
+      <div className="bg-white border border-gray-100 rounded-sm overflow-hidden shadow-sm w-full max-w-4xl">
         {daysOfWeek.map((day, index) => {
           const config = db.workingHours[day.id];
           return (
-            <div key={day.id} className={`flex items-center justify-between p-3 md:p-4 ${index !== daysOfWeek.length - 1 ? 'border-b border-gray-50' : ''}`}>
-              <div className="flex items-center gap-3 w-1/2">
+            <div key={day.id} className={`flex flex-col sm:flex-row sm:items-center justify-between p-5 md:p-6 ${index !== daysOfWeek.length - 1 ? 'border-b border-gray-100' : ''}`}>
+              <div className="flex items-center gap-4 sm:w-1/3 mb-4 sm:mb-0">
                 <div 
-                  className={`w-10 h-5 rounded-full p-1 cursor-pointer transition-colors flex-shrink-0 ${config?.isWorking ? 'bg-gray-900' : 'bg-gray-300'}`}
+                  className={`w-12 h-6 rounded-full p-1 cursor-pointer transition-colors flex-shrink-0 ${config?.isWorking ? 'bg-gray-900' : 'bg-gray-300'}`}
                   onClick={() => db.updateWorkingHours(day.id, { ...config, isWorking: !config?.isWorking })}
                 >
-                  <div className={`w-3 h-3 bg-white rounded-full transition-transform ${config?.isWorking ? 'translate-x-5' : 'translate-x-0'}`} />
+                  <div className={`w-4 h-4 bg-white rounded-full transition-transform ${config?.isWorking ? 'translate-x-6' : 'translate-x-0'}`} />
                 </div>
-                <span className={`text-sm md:text-base font-medium ${config?.isWorking ? 'text-gray-900' : 'text-gray-400'}`}>{day.label}</span>
+                <span className={`text-base md:text-lg font-medium ${config?.isWorking ? 'text-gray-900' : 'text-gray-400'}`}>{day.label}</span>
               </div>
               
-              <div className={`flex items-center gap-2 transition-opacity ${config?.isWorking ? 'opacity-100' : 'opacity-30 pointer-events-none'}`}>
-                <select 
-                  value={config?.startTime || '10:00'}
-                  onChange={e => db.updateWorkingHours(day.id, { ...config, startTime: e.target.value })}
-                  className="border border-gray-200 p-1 md:p-2 text-xs md:text-sm outline-none focus:border-gray-900 bg-transparent rounded-sm"
-                >
-                  {Array.from({length: 13}).map((_, i) => {
-                    const time = `${(i + 8).toString().padStart(2, '0')}:00`;
-                    return <option key={time} value={time}>{time}</option>;
-                  })}
-                </select>
-                <span className="text-gray-300">—</span>
-                <select 
-                  value={config?.endTime || '17:00'}
-                  onChange={e => db.updateWorkingHours(day.id, { ...config, endTime: e.target.value })}
-                  className="border border-gray-200 p-1 md:p-2 text-xs md:text-sm outline-none focus:border-gray-900 bg-transparent rounded-sm"
-                >
-                  {Array.from({length: 13}).map((_, i) => {
-                    const time = `${(i + 10).toString().padStart(2, '0')}:00`;
-                    return <option key={time} value={time}>{time}</option>;
-                  })}
-                </select>
+              <div className={`flex items-center gap-4 sm:w-2/3 sm:justify-end transition-opacity ${config?.isWorking ? 'opacity-100' : 'opacity-30 pointer-events-none'}`}>
+                <div className="flex items-center gap-3 bg-gray-50 p-2 md:p-3 border border-gray-100 rounded-sm w-full sm:w-auto justify-between sm:justify-start">
+                  <span className="text-xs text-gray-500 uppercase tracking-widest hidden sm:inline">С</span>
+                  <select 
+                    value={config?.startTime || '10:00'}
+                    onChange={e => db.updateWorkingHours(day.id, { ...config, startTime: e.target.value })}
+                    className="border border-gray-200 p-2 text-sm md:text-base outline-none focus:border-gray-900 bg-white rounded-sm w-24 text-center"
+                  >
+                    {Array.from({length: 13}).map((_, i) => {
+                      const time = `${(i + 8).toString().padStart(2, '0')}:00`;
+                      return <option key={time} value={time}>{time}</option>;
+                    })}
+                  </select>
+                  <span className="text-gray-400">—</span>
+                  <span className="text-xs text-gray-500 uppercase tracking-widest hidden sm:inline">ДО</span>
+                  <select 
+                    value={config?.endTime || '17:00'}
+                    onChange={e => db.updateWorkingHours(day.id, { ...config, endTime: e.target.value })}
+                    className="border border-gray-200 p-2 text-sm md:text-base outline-none focus:border-gray-900 bg-white rounded-sm w-24 text-center"
+                  >
+                    {Array.from({length: 13}).map((_, i) => {
+                      const time = `${(i + 10).toString().padStart(2, '0')}:00`;
+                      return <option key={time} value={time}>{time}</option>;
+                    })}
+                  </select>
+                </div>
               </div>
             </div>
           );
