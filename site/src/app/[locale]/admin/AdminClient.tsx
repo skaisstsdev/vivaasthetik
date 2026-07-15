@@ -1,12 +1,12 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useDatabase, BookingStatus } from '@/context/DatabaseContext';
 import { format, parseISO, isSameDay } from 'date-fns';
 import { ru } from 'date-fns/locale';
 import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/style.css';
-import { Calendar, Clock, LogOut, Check, X, Trash2, Edit2, Plus, ArrowLeft, Info, ChevronDown, ChevronUp } from 'lucide-react';
+import { Calendar, Clock, LogOut, Check, X, Trash2, Edit2, Plus, ArrowLeft, Info, ChevronDown, ChevronUp, Bell } from 'lucide-react';
 import { servicesData } from '@/data/services';
 
 export default function AdminClient({ locale }: { locale: string }) {
@@ -15,8 +15,24 @@ export default function AdminClient({ locale }: { locale: string }) {
   const [error, setError] = useState('');
   
   const [activeTab, setActiveTab] = useState<'calendar' | 'bookings' | 'schedule' | 'exceptions'>('calendar');
+  const [toastMessage, setToastMessage] = useState('');
 
   const db = useDatabase();
+  const prevBookingsCount = useRef(0);
+
+  useEffect(() => {
+    if (db.bookings.length > prevBookingsCount.current && prevBookingsCount.current !== 0) {
+      setToastMessage('У вас новая запись! Проверьте вкладку заявок.');
+      // Add sound if possible
+      try {
+        const audio = new Audio('/notification.mp3');
+        audio.play().catch(() => {});
+      } catch (e) {}
+      
+      setTimeout(() => setToastMessage(''), 8000);
+    }
+    prevBookingsCount.current = db.bookings.length;
+  }, [db.bookings.length]);
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -54,6 +70,15 @@ export default function AdminClient({ locale }: { locale: string }) {
 
   return (
     <div className="min-h-screen bg-gray-50 pb-20 font-sans text-gray-900 w-full overflow-x-hidden">
+      
+      {/* Toast Notification */}
+      <div className={`fixed top-6 right-6 z-50 transition-all duration-500 transform ${toastMessage ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0 pointer-events-none'}`}>
+        <div className="bg-gray-900 text-white px-6 py-4 rounded-md shadow-2xl flex items-center gap-3 border border-gray-700">
+          <Bell className="w-5 h-5 text-gray-300" />
+          <span className="font-medium tracking-wide">{toastMessage}</span>
+        </div>
+      </div>
+
       {/* Header */}
       <div className="bg-gray-900 text-white pt-12 pb-8 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end justify-between gap-6">
