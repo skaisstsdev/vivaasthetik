@@ -71,6 +71,7 @@ export default function ServicesClient({ services, loc }: ServicesClientProps) {
                     src={service.imageSrc} 
                     alt={service.title[loc]} 
                     fill 
+                    priority={idx < 4}
                     className={`object-cover transition-transform duration-700 ${isActive ? 'scale-105' : 'group-hover:scale-105'}`} 
                   />
                   {/* Darkens fully on hover */}

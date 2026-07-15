@@ -54,16 +54,26 @@ export default function PlaceholderBlock({ desktopVideo, mobileVideo, titleLine1
       }}
     >
       <div className="relative w-full h-full max-w-7xl mx-auto rounded-3xl md:rounded-[2.5rem] overflow-hidden shadow-2xl bg-black/20">
-        <div 
-          ref={containerRef}
-          className="absolute inset-0 w-full h-full pointer-events-none"
-          dangerouslySetInnerHTML={{
-            __html: `
-              <video autoplay loop muted playsinline preload="auto" class="absolute inset-0 w-full h-full object-cover hidden md:block" src="${desktopVideo}"></video>
-              <video autoplay loop muted playsinline preload="auto" class="absolute inset-0 w-full h-full object-cover md:hidden" src="${mobileVideo}"></video>
-            `
-          }}
-        />
+        <div ref={containerRef} className="absolute inset-0 w-full h-full pointer-events-none">
+          <video
+            ref={(el) => {
+              if (el && !el.hasAttribute('data-init')) {
+                el.setAttribute('data-init', 'true');
+                el.defaultMuted = true;
+                el.muted = true;
+              }
+            }}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src={desktopVideo} media="(min-width: 768px)" type="video/mp4" />
+            <source src={mobileVideo} media="(max-width: 767px)" type="video/mp4" />
+          </video>
+        </div>
         
         {(titleLine1 || titleLine2) && (
           <div className="absolute bottom-4 left-4 md:bottom-8 md:left-8 z-10 pointer-events-none flex flex-col gap-2">
