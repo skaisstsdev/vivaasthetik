@@ -107,3 +107,10 @@ export async function rescheduleBookingAction(id: string, newDate: string, newTi
   });
   return true;
 }
+
+export async function deleteBookingAction(id: string) {
+  await prisma.booking.delete({
+    where: { id }
+  });
+  return true;
+}

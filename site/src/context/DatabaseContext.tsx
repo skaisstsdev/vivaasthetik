@@ -6,7 +6,7 @@ import {
   getSettings, getBookings, 
   updateWorkingHoursAction, addBlockedPeriodAction, removeBlockedPeriodAction,
   updateDateExceptionAction, removeDateExceptionAction,
-  addBookingAction, updateBookingStatusAction, rescheduleBookingAction
+  addBookingAction, updateBookingStatusAction, rescheduleBookingAction, deleteBookingAction
 } from '@/app/actions/database';
 
 export type BookingStatus = 'pending' | 'confirmed' | 'cancelled';
@@ -53,6 +53,7 @@ interface DatabaseContextType {
   addBooking: (booking: Omit<Booking, 'id' | 'status'>, status?: BookingStatus) => Promise<boolean>;
   updateBookingStatus: (id: string, status: BookingStatus) => Promise<void>;
   rescheduleBooking: (id: string, newDate: string, newTime: string) => Promise<boolean>;
+  deleteBooking: (id: string) => Promise<void>;
   
   updateWorkingHours: (dayOfWeek: number, data: Omit<WorkingDay, 'dayOfWeek'>) => Promise<void>;
   addBlockedPeriod: (period: Omit<BlockedPeriod, 'id'>) => Promise<void>;
@@ -145,6 +146,12 @@ export function DatabaseProvider({ children }: { children: React.ReactNode }) {
     return success;
   };
 
+  const deleteBooking = async (id: string) => {
+    setBookings(prev => prev.filter(booking => booking.id !== id));
+    await deleteBookingAction(id);
+    refreshData();
+  };
+
   const updateWorkingHours = async (dayOfWeek: number, data: Omit<WorkingDay, 'dayOfWeek'>) => {
     setWorkingHours(prev => ({ ...prev, [dayOfWeek]: { dayOfWeek, ...data } }));
     await updateWorkingHoursAction(dayOfWeek, data);
@@ -228,7 +235,7 @@ export function DatabaseProvider({ children }: { children: React.ReactNode }) {
   return (
     <DatabaseContext.Provider value={{
       bookings, workingHours, blockedPeriods, dateExceptions, isLoading,
-      addBooking, updateBookingStatus, rescheduleBooking,
+      addBooking, updateBookingStatus, rescheduleBooking, deleteBooking,
       updateWorkingHours, addBlockedPeriod, removeBlockedPeriod,
       updateDateException, removeDateException,
       isDayBlockedOrNonWorking, getAvailableSlots

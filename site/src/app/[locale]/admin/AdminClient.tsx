@@ -687,9 +687,21 @@ function BookingCard({ booking, db, locale, showDate = false }: { booking: any, 
             </>
           )}
           {booking.status === 'cancelled' && (
-            <button onClick={() => db.updateBookingStatus(booking.id, 'pending')} className="text-[10px] md:text-xs text-gray-400 hover:text-gray-900 underline underline-offset-4 uppercase tracking-widest ml-4">
-              Восстановить
-            </button>
+            <div className="flex items-center gap-4 ml-4">
+              <button onClick={() => db.updateBookingStatus(booking.id, 'pending')} className="text-[10px] md:text-xs text-gray-400 hover:text-gray-900 underline underline-offset-4 uppercase tracking-widest">
+                Восстановить
+              </button>
+              <button 
+                onClick={() => {
+                  if (window.confirm('Вы уверены, что хотите удалить эту запись навсегда? Это действие нельзя отменить.')) {
+                    db.deleteBooking(booking.id);
+                  }
+                }} 
+                className="text-[10px] md:text-xs text-red-400 hover:text-red-600 underline underline-offset-4 uppercase tracking-widest"
+              >
+                Удалить навсегда
+              </button>
+            </div>
           )}
         </div>
       </div>
