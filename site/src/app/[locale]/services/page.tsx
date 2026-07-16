@@ -62,6 +62,8 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
       <PlaceholderBlock 
         desktopVideo="/video2_desktop.mp4" 
         mobileVideo="/video2_mobile.mp4" 
+        desktopPoster="/video2_desktop_poster.jpg"
+        mobilePoster="/video2_mobile_poster.jpg"
         titleLine1={loc === 'de' ? "Unsere" : "Наши"} 
         titleLine2={loc === 'de' ? "Leistungen." : "Услуги."} 
       />

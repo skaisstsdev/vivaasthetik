@@ -5,11 +5,13 @@ import { useEffect, useRef } from 'react';
 type Props = {
   desktopVideo: string;
   mobileVideo: string;
+  desktopPoster: string;
+  mobilePoster: string;
   titleLine1?: string;
   titleLine2?: string;
 };
 
-export default function PlaceholderBlock({ desktopVideo, mobileVideo, titleLine1, titleLine2 }: Props) {
+export default function PlaceholderBlock({ desktopVideo, mobileVideo, desktopPoster, mobilePoster, titleLine1, titleLine2 }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -54,7 +56,11 @@ export default function PlaceholderBlock({ desktopVideo, mobileVideo, titleLine1
       }}
     >
       <div className="relative w-full h-full max-w-7xl mx-auto rounded-3xl md:rounded-[2.5rem] overflow-hidden shadow-2xl bg-black/20">
-        <div ref={containerRef} className="absolute inset-0 w-full h-full pointer-events-none">
+        <picture className="absolute inset-0 w-full h-full pointer-events-none z-0">
+          <source srcSet={desktopPoster} media="(min-width: 768px)" />
+          <img src={mobilePoster} alt="Video Poster" className="absolute inset-0 w-full h-full object-cover" />
+        </picture>
+        <div ref={containerRef} className="absolute inset-0 w-full h-full pointer-events-none z-10">
           <video
             ref={(el) => {
               if (el && !el.hasAttribute('data-init')) {
