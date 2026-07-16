@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 type Props = {
   desktopVideo: string;
@@ -13,9 +13,18 @@ type Props = {
 
 export default function PlaceholderBlock({ desktopVideo, mobileVideo, desktopPoster, mobilePoster, titleLine1, titleLine2 }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    // Delay video loading to prevent network contention during page transition
+    const timer = setTimeout(() => {
+      setShouldLoadVideo(true);
+    }, 50);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (!shouldLoadVideo || !containerRef.current) return;
     const videos = containerRef.current.querySelectorAll('video');
     
     const tryPlay = () => {
@@ -41,7 +50,7 @@ export default function PlaceholderBlock({ desktopVideo, mobileVideo, desktopPos
       window.removeEventListener('scroll', tryPlay);
       window.removeEventListener('click', tryPlay);
     };
-  }, []);
+  }, [shouldLoadVideo]);
 
   return (
     <section 
@@ -61,24 +70,26 @@ export default function PlaceholderBlock({ desktopVideo, mobileVideo, desktopPos
           <img src={mobilePoster} alt="Video Poster" className="absolute inset-0 w-full h-full object-cover" />
         </picture>
         <div ref={containerRef} className="absolute inset-0 w-full h-full pointer-events-none z-10">
-          <video
-            ref={(el) => {
-              if (el && !el.hasAttribute('data-init')) {
-                el.setAttribute('data-init', 'true');
-                el.defaultMuted = true;
-                el.muted = true;
-              }
-            }}
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            className="absolute inset-0 w-full h-full object-cover"
-          >
-            <source src={desktopVideo} media="(min-width: 768px)" type="video/mp4" />
-            <source src={mobileVideo} media="(max-width: 767px)" type="video/mp4" />
-          </video>
+          {shouldLoadVideo && (
+            <video
+              ref={(el) => {
+                if (el && !el.hasAttribute('data-init')) {
+                  el.setAttribute('data-init', 'true');
+                  el.defaultMuted = true;
+                  el.muted = true;
+                }
+              }}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              className="absolute inset-0 w-full h-full object-cover"
+            >
+              <source src={desktopVideo} media="(min-width: 768px)" type="video/mp4" />
+              <source src={mobileVideo} media="(max-width: 767px)" type="video/mp4" />
+            </video>
+          )}
         </div>
         
         {(titleLine1 || titleLine2) && (
