@@ -445,12 +445,12 @@ function ExceptionsTab({ db }: { db: ReturnType<typeof useDatabase> }) {
         <h2 className="text-xl md:text-2xl font-light mb-2">Исключения для конкретных дней</h2>
         <p className="text-gray-500 mb-6 text-xs md:text-sm max-w-3xl">Здесь можно переопределить настройки для одного конкретного дня.</p>
         
-        {!editingException ? (
-          <div className="flex flex-col gap-2 mb-8 max-w-xs">
-            <label className="text-[10px] text-gray-400 uppercase tracking-widest">Выберите дату для настройки</label>
-            <input type="date" value={exceptionDate} onChange={e => handleDateSelect(e.target.value)} className="border border-gray-200 p-3 rounded-sm outline-none focus:border-gray-900 w-full" />
-          </div>
-        ) : (
+        <div className="flex flex-col gap-2 mb-8 max-w-xs">
+          <label className="text-[10px] text-gray-400 uppercase tracking-widest">Выберите дату для настройки</label>
+          <input type="date" value={exceptionDate} onChange={e => handleDateSelect(e.target.value)} className="border border-gray-200 p-3 rounded-sm outline-none focus:border-gray-900 w-full" />
+        </div>
+        
+        {editingException && (
           <div className="border border-gray-200 rounded-sm p-4 md:p-6 bg-gray-50 animate-in fade-in relative mb-8">
             <h3 className="font-medium text-base md:text-lg mb-6">Настройка исключения на {format(parseISO(exceptionDate), 'd MMMM yyyy', { locale: ru })}</h3>
             
