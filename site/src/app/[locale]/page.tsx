@@ -14,16 +14,17 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   return (
     <>
-      <link rel="preload" as="image" href="/video1_mobile_poster.jpg" media="(max-width: 767px)" />
-      <link rel="preload" as="image" href="/video1_desktop_poster.jpg" media="(min-width: 768px)" />
-      <main>
-        <Hero />
+      <link rel="preload" as="image" href="/videos/video1_desktop_poster.jpg" media="(max-width: 767px)" />
+      <link rel="preload" as="image" href="/videos/video1_desktop_poster.jpg" media="(min-width: 768px)" />
+      
+      <main className="flex-grow bg-white">
+        {/* Intro section that appears exactly after shader */}
         <Intro />
         <PlaceholderBlock 
-          desktopVideo="/video1_desktop.mp4" 
-          mobileVideo="/video1_desktop.mp4"
-          desktopPoster="/video1_desktop_poster.jpg"
-          mobilePoster="/video1_mobile_poster.jpg"
+          desktopVideo="/videos/video1_desktop.mp4" 
+          mobileVideo="/videos/video1_desktop.mp4"
+          desktopPoster="/videos/video1_desktop_poster.jpg"
+          mobilePoster="/videos/video1_desktop_poster.jpg"
           titleLine1={loc === 'de' ? "Natürliche" : "Естественная"} 
           titleLine2={loc === 'de' ? "Schönheit." : "Красота."} 
         />

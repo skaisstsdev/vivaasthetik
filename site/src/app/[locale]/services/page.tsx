@@ -28,8 +28,8 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
 
   return (
     <>
-      <link rel="preload" as="image" href="/video2_mobile_poster.jpg" media="(max-width: 767px)" />
-      <link rel="preload" as="image" href="/video2_desktop_poster.jpg" media="(min-width: 768px)" />
+      <link rel="preload" as="image" href="/videos/video2_mobile_poster.jpg" media="(max-width: 767px)" />
+      <link rel="preload" as="image" href="/videos/video2_desktop_poster.jpg" media="(min-width: 768px)" />
       <main className="bg-gray-50 pb-0">
       
       {/* Hero Section */}
@@ -63,10 +63,10 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
 
       {/* Placeholder block replacing the video */}
       <PlaceholderBlock 
-        desktopVideo="/video2_desktop.mp4" 
-        mobileVideo="/video2_mobile.mp4" 
-        desktopPoster="/video2_desktop_poster.jpg"
-        mobilePoster="/video2_mobile_poster.jpg"
+        desktopVideo="/videos/video2_desktop.mp4" 
+        mobileVideo="/videos/video2_mobile.mp4" 
+        desktopPoster="/videos/video2_desktop_poster.jpg"
+        mobilePoster="/videos/video2_mobile_poster.jpg"
         titleLine1={loc === 'de' ? "Unsere" : "Наши"} 
         titleLine2={loc === 'de' ? "Leistungen." : "Услуги."} 
       />
