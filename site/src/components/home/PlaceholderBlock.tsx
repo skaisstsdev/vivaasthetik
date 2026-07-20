@@ -83,7 +83,7 @@ export default function PlaceholderBlock({ desktopVideo, mobileVideo, desktopPos
               loop
               muted
               playsInline
-              preload="auto"
+              preload="metadata"
               className="absolute inset-0 w-full h-full object-cover"
             >
               <source src={desktopVideo} media="(min-width: 768px)" type="video/mp4" />
