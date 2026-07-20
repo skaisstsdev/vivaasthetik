@@ -1,6 +1,7 @@
 'use client';
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { format, isWithinInterval, parseISO } from 'date-fns';
 import { 
   getSettings, getBookings, 
@@ -73,6 +74,8 @@ export function DatabaseProvider({ children }: { children: React.ReactNode }) {
   const [blockedPeriods, setBlockedPeriods] = useState<BlockedPeriod[]>([]);
   const [dateExceptions, setDateExceptions] = useState<Record<string, DateException>>({});
   const [isLoading, setIsLoading] = useState(true);
+  const pathname = usePathname();
+  const isAdmin = pathname?.includes('/admin');
 
   const refreshData = async () => {
     setIsLoading(true);
@@ -105,7 +108,9 @@ export function DatabaseProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     refreshData();
     
-    // Poll for updates every 5 seconds so users see admin changes without refreshing
+    // Only poll on admin pages — regular visitors don't need real-time sync
+    if (!isAdmin) return;
+
     const interval = setInterval(() => {
       // Background refresh without triggering the loading spinner
       Promise.all([getBookings(), getSettings()]).then(([b, s]) => {
@@ -125,7 +130,7 @@ export function DatabaseProvider({ children }: { children: React.ReactNode }) {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isAdmin]);
 
   const addBooking = async (b: Omit<Booking, 'id' | 'status'>, status: BookingStatus = 'pending') => {
     const success = await addBookingAction(b, status);

@@ -27,7 +27,10 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
   const loc = locale as 'de' | 'ru';
 
   return (
-    <main className="bg-gray-50 pb-0">
+    <>
+      <link rel="preload" as="image" href="/video2_mobile_poster.jpg" media="(max-width: 767px)" />
+      <link rel="preload" as="image" href="/video2_desktop_poster.jpg" media="(min-width: 768px)" />
+      <main className="bg-gray-50 pb-0">
       
       {/* Hero Section */}
       <section className="relative w-full h-[100svh] flex items-center justify-center overflow-hidden bg-gray-900">
@@ -78,5 +81,6 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
       {/* Bottom CTA */}
       <ConsultationCTA />
     </main>
+    </>
   );
 }

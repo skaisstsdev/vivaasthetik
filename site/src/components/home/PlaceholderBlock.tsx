@@ -67,7 +67,7 @@ export default function PlaceholderBlock({ desktopVideo, mobileVideo, desktopPos
       <div className="relative w-full h-full max-w-7xl mx-auto rounded-3xl md:rounded-[2.5rem] overflow-hidden shadow-2xl bg-black/20">
         <picture className="absolute inset-0 w-full h-full pointer-events-none z-0">
           <source srcSet={desktopPoster} media="(min-width: 768px)" />
-          <img src={mobilePoster} alt="Video Poster" className="absolute inset-0 w-full h-full object-cover" />
+          <img src={mobilePoster} alt="" fetchPriority="high" className="absolute inset-0 w-full h-full object-cover" />
         </picture>
         <div ref={containerRef} className="absolute inset-0 w-full h-full pointer-events-none z-10">
           {shouldLoadVideo && (
