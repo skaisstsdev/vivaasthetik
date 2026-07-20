@@ -18,6 +18,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <link rel="preload" as="image" href="/videos/video1_desktop_poster.jpg" media="(min-width: 768px)" />
       
       <main className="flex-grow bg-white">
+        <Hero />
         {/* Intro section that appears exactly after shader */}
         <Intro />
         <PlaceholderBlock 
