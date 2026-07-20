@@ -54,7 +54,7 @@ export default function PlaceholderBlock({ desktopVideo, mobileVideo, desktopPos
 
   return (
     <section 
-      className="relative w-full h-[100svh] md:h-[85vh] flex items-center justify-center overflow-hidden py-4 px-4 sm:py-8 sm:px-8 lg:py-12 lg:px-16 xl:px-24"
+      className="relative w-full h-[100svh] md:h-[85vh] overflow-hidden"
       style={{
         backgroundColor: '#0a192f',
         backgroundImage: `
@@ -64,7 +64,7 @@ export default function PlaceholderBlock({ desktopVideo, mobileVideo, desktopPos
         `
       }}
     >
-      <div className="relative w-full h-full max-w-7xl mx-auto rounded-3xl md:rounded-[2.5rem] overflow-hidden shadow-2xl bg-black/20">
+      <div className="absolute inset-4 sm:inset-8 lg:inset-12 rounded-3xl md:rounded-[2.5rem] overflow-hidden shadow-2xl bg-black/20">
         <picture className="absolute inset-0 w-full h-full pointer-events-none z-0">
           <source srcSet={desktopPoster} media="(min-width: 768px)" />
           <img src={mobilePoster} alt="" fetchPriority="high" className="absolute inset-0 w-full h-full object-cover" />
