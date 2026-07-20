@@ -3,7 +3,6 @@ import { servicesData } from '@/data/services';
 import { Link } from '@/i18n/routing';
 import BookNowButton from '@/components/booking/BookNowButton';
 import ConsultationCTA from '@/components/home/ConsultationCTA';
-import PlaceholderBlock from '@/components/home/PlaceholderBlock';
 import { Suspense } from 'react';
 import ServicesClient from './ServicesClient';
 import ShaderBackground from '@/components/home/ShaderBackground';
@@ -28,8 +27,6 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
 
   return (
     <>
-      <link rel="preload" as="image" href="/videos/video2_mobile_poster.jpg" media="(max-width: 767px)" />
-      <link rel="preload" as="image" href="/videos/video2_desktop_poster.jpg" media="(min-width: 768px)" />
       <main className="bg-gray-50 pb-0">
       
       {/* Hero Section */}
@@ -60,17 +57,6 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
           </p>
         </div>
       </section>
-
-      {/* Placeholder block replacing the video */}
-      <PlaceholderBlock 
-        desktopVideo="/videos/video2_desktop.mp4" 
-        mobileVideo="/videos/video2_mobile.mp4" 
-        desktopPoster="/videos/video2_desktop_poster.jpg"
-        mobilePoster="/videos/video2_mobile_poster.jpg"
-        titleLine1={loc === 'de' ? "Unsere" : "Наши"} 
-        titleLine2={loc === 'de' ? "Leistungen." : "Услуги."} 
-      />
-
       {/* Cards Grid */}
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-24 md:py-32">
         <Suspense fallback={<div>Loading...</div>}>
