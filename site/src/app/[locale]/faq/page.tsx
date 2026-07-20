@@ -3,7 +3,8 @@ import { useTranslations } from 'next-intl';
 import ConsultationCTA from '@/components/home/ConsultationCTA';
 import Image from 'next/image';
 import FAQClient from '@/components/faq/FAQClient';
-import ShaderBackground from '@/components/home/ShaderBackground';
+import dynamic from 'next/dynamic';
+const ShaderBackground = dynamic(() => import('@/components/home/ShaderBackground'));
 import { faqData } from '@/data/faq';
 
 export default async function FAQPage({ params }: { params: Promise<{ locale: string }> }) {

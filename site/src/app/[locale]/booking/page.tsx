@@ -1,8 +1,17 @@
 import { setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
-import BookingWizard from '@/components/booking/BookingWizard';
-import { Suspense } from 'react';
-import ShaderBackground from '@/components/home/ShaderBackground';
+import dynamic from 'next/dynamic';
+
+// Dynamic imports — separate JS chunks, load in parallel after page shell renders
+const BookingWizard = dynamic(() => import('@/components/booking/BookingWizard'), {
+  loading: () => (
+    <div className="flex justify-center p-20 text-gray-400 animate-pulse">
+      Loading...
+    </div>
+  ),
+});
+
+const ShaderBackground = dynamic(() => import('@/components/home/ShaderBackground'));
 
 export default function BookingPage({ params }: { params: { locale: string } }) {
   const { locale } = params;
@@ -13,7 +22,7 @@ export default function BookingPage({ params }: { params: { locale: string } }) 
   return (
     <main className="bg-white pb-24">
       
-      {/* Hero Section */}
+      {/* Hero Section — bg-gray-900 shows instantly while shader loads */}
       <section className="relative w-full h-[100svh] flex items-center justify-center overflow-hidden bg-gray-900">
         <ShaderBackground />
         <div className="relative z-10 w-full max-w-4xl mx-auto px-6 flex flex-col items-center justify-center text-center pt-20">
@@ -27,15 +36,7 @@ export default function BookingPage({ params }: { params: { locale: string } }) 
       </section>
 
       <div className="max-w-7xl mx-auto px-6 md:px-8 mt-24 flex flex-col gap-12">
-        {/* Wizard Component */}
-        <Suspense fallback={
-          <div className="flex justify-center p-20 text-gray-400 animate-pulse">
-            Loading...
-          </div>
-        }>
-          <BookingWizard />
-        </Suspense>
-
+        <BookingWizard />
       </div>
     </main>
   );

@@ -1,7 +1,8 @@
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import ConsultationCTA from '@/components/home/ConsultationCTA';
 import TipsClient from '@/components/tips/TipsClient';
-import ShaderBackground from '@/components/home/ShaderBackground';
+import dynamic from 'next/dynamic';
+const ShaderBackground = dynamic(() => import('@/components/home/ShaderBackground'));
 import { tipsData } from '@/data/tips';
 
 export default async function TipsPage({ params }: { params: Promise<{ locale: string }> }) {

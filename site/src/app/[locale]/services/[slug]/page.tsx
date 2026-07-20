@@ -2,7 +2,8 @@ import { setRequestLocale } from 'next-intl/server';
 import { getServiceBySlug, servicesData } from '@/data/services';
 import { notFound } from 'next/navigation';
 import BookNowButton from '@/components/booking/BookNowButton';
-import ShaderBackground from '@/components/home/ShaderBackground';
+import dynamic from 'next/dynamic';
+const ShaderBackground = dynamic(() => import('@/components/home/ShaderBackground'));
 import { Link } from '@/i18n/routing';
 import { ArrowLeft } from 'lucide-react';
 

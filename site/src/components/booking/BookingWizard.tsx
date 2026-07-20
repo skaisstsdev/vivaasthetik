@@ -263,8 +263,9 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
                     '--rdp-day_button-height': 'min(11vw, 44px)' 
                   } as React.CSSProperties}
                   modifiersClassNames={{
-                    selected: "bg-gray-900 text-white font-medium hover:bg-gray-800 rounded-sm",
-                    today: "font-semibold text-gray-900 bg-gray-50 rounded-sm",
+                    selected: "!bg-[#0a192f]/8 !text-[#0a192f] ring-2 ring-[#0a192f] ring-inset rounded-sm font-semibold",
+                    today: "font-semibold !text-[#1d4ed8] bg-blue-50 rounded-sm",
+                    disabled: "!text-gray-300 !cursor-not-allowed !line-through",
                   }}
                 />
               </div>

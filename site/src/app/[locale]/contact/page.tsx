@@ -1,6 +1,7 @@
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import ConsultationCTA from '@/components/home/ConsultationCTA';
-import ShaderBackground from '@/components/home/ShaderBackground';
+import dynamic from 'next/dynamic';
+const ShaderBackground = dynamic(() => import('@/components/home/ShaderBackground'));
 
 export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

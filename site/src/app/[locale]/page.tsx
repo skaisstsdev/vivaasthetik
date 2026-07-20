@@ -21,7 +21,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <Intro />
         <PlaceholderBlock 
           desktopVideo="/video1_desktop.mp4" 
-          mobileVideo="/video1_mobile.mp4" 
+          mobileVideo="/video1_desktop.mp4"
           desktopPoster="/video1_desktop_poster.jpg"
           mobilePoster="/video1_mobile_poster.jpg"
           titleLine1={loc === 'de' ? "Natürliche" : "Естественная"} 
