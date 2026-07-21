@@ -1,6 +1,6 @@
 "use client";
 import * as React from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Image from "next/image";
 import { useLocale } from 'next-intl';
 
@@ -14,8 +14,15 @@ export default function ParallaxMarquee() {
     offset: ["start end", "end start"]
   });
   
-  // As the user scrolls down, the text moves left
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-40%"]);
+  // Smooth out the scroll progress so it doesn't jump with mouse wheel ticks
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 80,
+    damping: 25,
+    restDelta: 0.001
+  });
+  
+  // As the user scrolls down, the text moves left more smoothly and slightly less drastically
+  const x = useTransform(smoothProgress, [0, 1], ["0%", "-20%"]);
 
   return (
     <section ref={containerRef} className="relative w-full bg-white overflow-hidden pt-0 md:pt-4">
