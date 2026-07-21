@@ -451,7 +451,7 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
               >
                 <div className="flex flex-col gap-2 max-w-xl w-full min-w-0">
                   <h3 
-                    className="text-lg md:text-xl font-medium text-gray-900 group-hover:text-black transition-colors break-all sm:break-words hyphens-auto"
+                    className="text-lg md:text-xl font-medium text-gray-900 group-hover:text-black transition-colors sm:break-words hyphens-auto"
                   >
                     {service.title[locale]}
                   </h3>
@@ -498,7 +498,7 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
             >
               <div className="flex flex-col gap-2 max-w-xl w-full min-w-0">
                 <h3 
-                  className="text-lg md:text-xl font-medium text-gray-900 group-hover:text-black transition-colors break-all sm:break-words hyphens-auto"
+                  className="text-lg md:text-xl font-medium text-gray-900 group-hover:text-black transition-colors sm:break-words hyphens-auto"
                 >
                   {service.title[locale]}
                 </h3>
