@@ -4,7 +4,7 @@ export const radiesse: ServiceContent = {
   slug: 'radiesse',
   hideBookingButton: true,
   title: {
-    de: 'Kollagenstimulation mit Radiesse®️',
+    de: 'Kollagen\u00ADstimulation mit Radiesse®️',
     ru: 'Стимуляция коллагена с Radiesse®️'
   },
   shortDescription: {

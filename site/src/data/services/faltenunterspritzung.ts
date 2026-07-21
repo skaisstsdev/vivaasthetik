@@ -4,7 +4,7 @@ export const faltenunterspritzung: ServiceContent = {
   slug: 'faltenunterspritzung',
   imageSrc: '/images/services/filler_final.webp',
   title: {
-    de: 'Faltenunterspritzung mit Fillern',
+    de: 'Falten\u00ADunterspritzung mit Fillern',
     ru: 'Контурная пластика морщин'
   },
   shortDescription: {
