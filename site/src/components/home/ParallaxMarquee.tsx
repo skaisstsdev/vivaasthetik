@@ -17,7 +17,8 @@ export default function ParallaxMarquee() {
           <motion.div
             className="flex whitespace-nowrap"
             animate={{ x: ["0%", "-50%"] }}
-            transition={{ repeat: Infinity, duration: 150, ease: "linear" }}
+            transition={{ repeat: Infinity, duration: 80, ease: "linear" }}
+            style={{ willChange: "transform" }}
           >
             {[...Array(6)].map((_, i) => (
               <span 
@@ -37,7 +38,7 @@ export default function ParallaxMarquee() {
       </div>
 
       {/* Foreground Image */}
-      <div className="relative z-10 w-full max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto flex justify-center items-end px-4 md:px-0">
+      <div className="relative z-10 w-full max-w-2xl lg:max-w-3xl xl:max-w-4xl mx-auto flex justify-center items-end px-4 md:px-0">
         <Image
           src="/images/hero-no-bg-v2.png"
           alt="Natalya Schnal"
