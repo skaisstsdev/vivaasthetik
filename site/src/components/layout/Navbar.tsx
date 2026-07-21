@@ -87,7 +87,7 @@ export default function Navbar() {
               className="relative w-[180px] h-[40px] md:w-[220px] md:h-[50px]"
             >
               <div 
-                className={`w-full h-full bg-[#c9a84c] transition-all duration-300 ${
+                className={`w-full h-full bg-gradient-to-tr from-[#a67c00] via-[#fceab8] to-[#a67c00] transition-all duration-300 ${
                   isScrolled || isMenuOpen 
                     ? 'drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]' 
                     : ''
