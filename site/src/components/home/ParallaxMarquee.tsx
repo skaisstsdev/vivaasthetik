@@ -6,7 +6,7 @@ import { useLocale } from 'next-intl';
 
 export default function ParallaxMarquee() {
   const locale = useLocale();
-  const text = locale === 'ru' ? "ЭСТЕТИКА В ДЕТАЛЯХ • " : "BEAUTY IN DETAILS • ";
+  const text = locale === 'ru' ? "ЕСТЕСТВЕННАЯ КРАСОТА" : "NATÜRLICHE SCHÖNHEIT";
   
   return (
     <section className="relative w-full bg-white overflow-hidden pt-0 md:pt-4">
@@ -20,10 +20,10 @@ export default function ParallaxMarquee() {
             transition={{ repeat: Infinity, duration: 80, ease: "linear" }}
             style={{ willChange: "transform" }}
           >
-            {[...Array(6)].map((_, i) => (
+            {[...Array(8)].map((_, i) => (
               <span 
                 key={i}
-                className="text-[3rem] sm:text-[4rem] md:text-[5.5rem] lg:text-[7rem] leading-none px-4 font-light text-transparent bg-clip-text opacity-90"
+                className="text-[4.5rem] sm:text-[5.5rem] md:text-[8rem] lg:text-[10rem] leading-none px-6 md:px-12 font-light text-transparent bg-clip-text opacity-90"
                 style={{ 
                   fontFamily: "var(--font-bodoni), Georgia, serif",
                   backgroundImage: "linear-gradient(to right, #b8860b, #e0c273, #d4af37, #b8860b)",
