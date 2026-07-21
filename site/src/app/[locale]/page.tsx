@@ -2,7 +2,6 @@ import { setRequestLocale } from 'next-intl/server';
 import Hero from '@/components/home/Hero';
 import Intro from '@/components/home/Intro';
 import FeatureCards from '@/components/home/FeatureCards';
-import SmoothScrollHero from '@/components/ui/smooth-scroll-hero';
 import TestimonialsPreview from '@/components/home/TestimonialsPreview';
 import WhyUs from '@/components/home/WhyUs';
 import ConsultationCTA from '@/components/home/ConsultationCTA';
@@ -16,8 +15,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     <>
       <main className="flex-grow bg-white">
         <Hero />
+        {/* Intro section that appears exactly after shader */}
         <Intro />
-        <SmoothScrollHero />
         <FeatureCards />
         <WhyUs />
         <TestimonialsPreview />
