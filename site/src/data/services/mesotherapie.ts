@@ -16,7 +16,7 @@ export const mesotherapie: ServiceContent = {
 <h3>Was ist ein „Mesotherapie“?</h3>
 <p>Die Mesotherapie stellt eine Behandlungsmethode dar, bei der Vitamine, Nährstoffe und Enzyme mit sehr feinen Nadeln in die mittlere Hautschicht eingebracht werden. Die konzentrierten Wirkstoffe werden direkt an den Zielort gebracht, so dass sehr geringe Mengen genügen.</p>
 
-<p>In der Praxis Viva Ästhetik bietet Frau Shnal Ihnen die Mesotherapie in ihrer modernsten Form – mit dem Einsatz einer hochpräzisen Mesopistole. Diese Technologie ermöglicht eine besonders schonende, gleichmäßige und effektive Einbringung ausgewählter Wirkstoffe direkt in die mittlere Hautschicht (Mesoderm).</p>
+<p>In der Praxis Viva Ästhetik bietet Frau Schnal Ihnen die Mesotherapie in ihrer modernsten Form – mit dem Einsatz einer hochpräzisen Mesopistole. Diese Technologie ermöglicht eine besonders schonende, gleichmäßige und effektive Einbringung ausgewählter Wirkstoffe direkt in die mittlere Hautschicht (Mesoderm).</p>
 
 <h4>Vorteile der Mesotherapie mit der Mesopistole:</h4>
 <ul>

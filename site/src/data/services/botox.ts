@@ -44,11 +44,11 @@ export const botox: ServiceContent = {
 <p>Gerne können Sie die behandelten Areale nach der Behandlung aktivieren (Stirnrunzeln, böse gucken). Das fördert die Verteilung von Botulinumtoxin im Gewebe und somit das Ansprechen der Therapie.</p>
 
 <h4>Muss ich vor der Botoxinjektion etwas beachten?</h4>
-<p>Vor der Botulinumtoxininjektion sollten Sie bis zu fünf Tage vorher kein Aspirin oder andere Blutverdünner eingenommen haben. Ansonsten müssen Sie keine speziellen Maßnahmen beachten. Falls Sie spezielle Fragen haben, wird Sie Frau Shnal während des Informationsgespräches persönlich ausführlich informieren.</p>
+<p>Vor der Botulinumtoxininjektion sollten Sie bis zu fünf Tage vorher kein Aspirin oder andere Blutverdünner eingenommen haben. Ansonsten müssen Sie keine speziellen Maßnahmen beachten. Falls Sie spezielle Fragen haben, wird Sie Frau Schnal während des Informationsgespräches persönlich ausführlich informieren.</p>
 
 <p>Komplikationen sind äußerst selten. An den Einstichstellen kann es vorübergehend zu kleinen Blutergüssen oder minimalen Rötungen kommen. In seltenen Fällen können 24 Stunden nach der Injektion Kopfschmerzen auftreten. Das Herabhängen von der Augenbraue oder dem Oberlied tritt extrem selten auf und ist reversibel.</p>
 <p>Auch bei Infektionen an der vorgesehenen Injektionsstelle, bei bestimmten Viruserkrankungen wie Herpes oder bei Neuromuskulären Störungen.</p>
-<p>Schwangere Frauen und stillende Mütter dürfen aus Vorsicht nicht mit Botulinumtoxin-A behandelt werden. Bei Einnahme von blutverdünnenden Medikamenten ist das Auftreten von kleinen Blutergüssen wahrscheinlicher, eine Behandlung kann in Absprache mit Frau Shnal auf Wunsch dennoch durchgeführt werden.</p>
+<p>Schwangere Frauen und stillende Mütter dürfen aus Vorsicht nicht mit Botulinumtoxin-A behandelt werden. Bei Einnahme von blutverdünnenden Medikamenten ist das Auftreten von kleinen Blutergüssen wahrscheinlicher, eine Behandlung kann in Absprache mit Frau Schnal auf Wunsch dennoch durchgeführt werden.</p>
 
 <h4>Hilft Botox auch gegen Schweiß (Hyperhidrose)?</h4>
 <p>Die Behandlung des vermehrten Schwitzens kann sehr gut mit Botulinumtoxin erfolgen. Das Botulinumtoxin wird hierbei sehr oberflächlich unter die Haut „gequaddelt“ und unterdrückt die Schweißproduktion der Schweißdrüßen z.B. im Bereich der Achseln, Hände oder Füße.</p>

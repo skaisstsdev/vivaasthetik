@@ -24,7 +24,7 @@ export default async function ImpressumPage({ params }: { params: Promise<{ loca
             <h2>Angaben gemäß § 5 TMG</h2>
             <p>
               <strong>VIVA Ästhetik</strong><br />
-              Natalya Shnal<br />
+              Natalya Schnal<br />
               Königstor 47<br />
               34117 Kassel<br />
               Deutschland
@@ -59,7 +59,7 @@ export default async function ImpressumPage({ params }: { params: Promise<{ loca
             <h2>Angaben gemäß § 5 TMG</h2>
             <p>
               <strong>VIVA Ästhetik</strong><br />
-              Natalya Shnal<br />
+              Natalya Schnal<br />
               Königstor 47<br />
               34117 Kassel<br />
               Deutschland

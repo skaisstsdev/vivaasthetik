@@ -75,7 +75,7 @@ export const lipolyse: ServiceContent = {
 <p>Fat Burning durch sportliche Betätigung: Der Zeitpunkt Ihrer Übungen entscheidet maßgeblich darüber, ob eine Fettverbrennung bei Ihnen einsetzt oder nicht. Gewöhnen Sie sich an, Ihre Übungen immer vor dem Frühstück mit nüchternem Magen durchzuführen, damit die Fettverbrennung möglichst schnell einsetzen kann. Sie können sowohl einen Heimtrainer benutzen, als auch Aerobic oder andere Übungen einsetzen, um den Prozeß auszulösen. Auch Joggen oder ein intensives Walking kann die Ergebnisse verbessern helfen.</p>
 
 <h4>Wann sollte keine Behandlung mit der Fett-Weg-Spritze durchgeführt werden?</h4>
-<p>Nicht geeignet und darf nicht durchgeführt werden eine Behandlung mit der Injektions-Lipolyse bei Minderjährigen ,bei Schwangeren und stillenden Müttern sowie bei einigen seltenen, schweren Erkrankungen. Genauere Informationen, ob eine Therapie für Sie geeignet ist, erteilt Ihnen gerne Frau Shnal beim Gespräch.</p>
+<p>Nicht geeignet und darf nicht durchgeführt werden eine Behandlung mit der Injektions-Lipolyse bei Minderjährigen ,bei Schwangeren und stillenden Müttern sowie bei einigen seltenen, schweren Erkrankungen. Genauere Informationen, ob eine Therapie für Sie geeignet ist, erteilt Ihnen gerne Frau Schnal beim Gespräch.</p>
     `,
     ru: `
 <h3>Что такое «Липолиз»?</h3>

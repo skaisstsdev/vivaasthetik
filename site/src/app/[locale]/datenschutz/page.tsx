@@ -26,7 +26,7 @@ export default async function DatenschutzPage({ params }: { params: Promise<{ lo
             <p>
               Ответственным за обработку данных на этом сайте является:<br />
               <strong>VIVA Ästhetik</strong><br />
-              Natalya Shnal<br />
+              Natalya Schnal<br />
               Königstor 47, 34117 Kassel<br />
               Телефон: +49 179 9004902<br />
               E-Mail: vivaasthetik@gmail.com
@@ -57,7 +57,7 @@ export default async function DatenschutzPage({ params }: { params: Promise<{ lo
             <p>
               Diese Datenschutzhinweise gelten für die Datenverarbeitung durch:<br />
               <strong>VIVA Ästhetik</strong><br />
-              Natalya Shnal<br />
+              Natalya Schnal<br />
               Königstor 47, 34117 Kassel<br />
               Telefon: +49 179 9004902<br />
               E-Mail: vivaasthetik@gmail.com
