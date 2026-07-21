@@ -9,7 +9,7 @@ export default function ParallaxMarquee() {
   const text = locale === 'ru' ? "ЭСТЕТИКА В ДЕТАЛЯХ • " : "BEAUTY IN DETAILS • ";
   
   return (
-    <section className="relative w-full bg-white overflow-hidden pt-12 md:pt-24">
+    <section className="relative w-full bg-white overflow-hidden pt-0 md:pt-4">
       
       {/* Marquee Background */}
       <div className="absolute top-[50%] md:top-[45%] -translate-y-1/2 left-0 w-full z-0 pointer-events-none">
