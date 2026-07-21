@@ -1,6 +1,6 @@
 "use client";
 import * as React from "react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useLocale } from 'next-intl';
 
@@ -8,17 +8,24 @@ export default function ParallaxMarquee() {
   const locale = useLocale();
   const text = locale === 'ru' ? "ЕСТЕСТВЕННАЯ КРАСОТА" : "NATÜRLICHE SCHÖNHEIT";
   
+  const containerRef = React.useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+  
+  // As the user scrolls down, the text moves left
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-40%"]);
+
   return (
-    <section className="relative w-full bg-white overflow-hidden pt-0 md:pt-4">
+    <section ref={containerRef} className="relative w-full bg-white overflow-hidden pt-0 md:pt-4">
       
       {/* Marquee Background */}
       <div className="absolute top-[35%] md:top-[45%] -translate-y-1/2 left-0 w-full z-0 pointer-events-none">
         <div className="flex whitespace-nowrap overflow-hidden">
           <motion.div
             className="flex whitespace-nowrap"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ repeat: Infinity, duration: 80, ease: "linear" }}
-            style={{ willChange: "transform" }}
+            style={{ x, willChange: "transform" }}
           >
             {[...Array(8)].map((_, i) => (
               <span 
