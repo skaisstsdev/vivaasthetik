@@ -21,12 +21,12 @@ export default function ParallaxMarquee() {
           <motion.div
             className="flex whitespace-nowrap"
             animate={{ x: ["0%", "-50%"] }}
-            transition={{ repeat: Infinity, duration: 40, ease: "linear" }}
+            transition={{ repeat: Infinity, duration: 120, ease: "linear" }}
           >
             {[...Array(6)].map((_, i) => (
               <span 
                 key={i}
-                className="text-[6rem] sm:text-[10rem] md:text-[14rem] lg:text-[16rem] leading-none px-4 font-light text-transparent bg-clip-text opacity-90"
+                className="text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] leading-none px-4 font-light text-transparent bg-clip-text opacity-90"
                 style={{ 
                   fontFamily: "var(--font-bodoni), Georgia, serif",
                   backgroundImage: "linear-gradient(to right, #b8860b, #e0c273, #d4af37, #b8860b)",
@@ -42,7 +42,7 @@ export default function ParallaxMarquee() {
 
       {/* Foreground Image */}
       <motion.div 
-        className="relative z-10 w-full h-full max-h-[85%] md:max-h-[90%] mx-auto flex justify-center items-end"
+        className="relative z-10 w-full h-full max-h-full mx-auto flex justify-center items-end"
         style={{ y: imageY }}
       >
         <Image
@@ -50,7 +50,7 @@ export default function ParallaxMarquee() {
           alt="Natalya Schnal"
           width={1200}
           height={800}
-          className="object-contain object-bottom w-auto h-full max-w-full drop-shadow-[0_10px_35px_rgba(0,0,0,0.15)]"
+          className="object-contain object-bottom w-auto h-[120%] md:h-[130%] max-w-none transform origin-bottom"
           priority
         />
       </motion.div>
