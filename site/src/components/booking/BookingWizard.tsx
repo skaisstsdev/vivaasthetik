@@ -485,7 +485,7 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
         </div>
         
         <div className="flex flex-col gap-4 animate-in fade-in duration-500 pb-24">
-          {servicesData.map(service => (
+          {servicesData.filter(s => !s.hideBookingButton).map(service => (
             <button
               key={service.slug}
               onClick={() => {
