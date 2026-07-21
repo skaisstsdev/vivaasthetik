@@ -142,7 +142,8 @@ export default function Navbar() {
                 }`}
                 style={{ 
                   transitionDelay: `${index * 50}ms`,
-                  transitionDuration: '500ms'
+                  transitionDuration: '500ms',
+                  fontFamily: 'var(--font-bodoni), Georgia, serif'
                 }}
               >
                 {link.label}
