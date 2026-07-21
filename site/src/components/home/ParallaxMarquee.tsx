@@ -14,8 +14,17 @@ export default function ParallaxMarquee() {
     offset: ["start end", "end start"]
   });
   
-  // As the user scrolls down, the text moves left strictly tied to the scroll
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-2.5%"]);
+  // High stiffness + critical damping (mass 0.1) removes discrete mouse wheel stair-step jitter
+  // while following page scroll instantly with ZERO lag/inertia when scrolling stops.
+  const smoothScroll = useSpring(scrollYProgress, {
+    stiffness: 400,
+    damping: 40,
+    mass: 0.1,
+    restDelta: 0.0001
+  });
+  
+  // Smooth parallax scroll offset
+  const x = useTransform(smoothScroll, [0, 1], ["0%", "-10%"]);
 
   return (
     <section ref={containerRef} className="relative w-full bg-white overflow-hidden pt-0 md:pt-4">
@@ -25,16 +34,21 @@ export default function ParallaxMarquee() {
         <div className="flex whitespace-nowrap overflow-hidden">
           <motion.div
             className="flex whitespace-nowrap"
-            style={{ x, willChange: "transform" }}
+            style={{ 
+              x, 
+              willChange: "transform",
+              transform: "translateZ(0)"
+            }}
           >
             {[...Array(8)].map((_, i) => (
               <span 
                 key={i}
-                className="text-[4.5rem] sm:text-[5.5rem] md:text-[8rem] lg:text-[10rem] leading-none px-6 md:px-12 font-light text-transparent bg-clip-text opacity-90"
+                className="text-[4.5rem] sm:text-[5.5rem] md:text-[8rem] lg:text-[10rem] leading-none px-6 md:px-12 font-light opacity-90 select-none"
                 style={{ 
                   fontFamily: "var(--font-bodoni), Georgia, serif",
                   backgroundImage: "linear-gradient(to right, #b8860b, #e0c273, #d4af37, #b8860b)",
                   WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
                 }}
               >
                 {text}
