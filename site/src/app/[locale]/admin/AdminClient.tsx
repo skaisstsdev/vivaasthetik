@@ -161,12 +161,14 @@ function CalendarTab({ db, locale }: { db: ReturnType<typeof useDatabase>, local
             locale={ru}
             className="font-sans"
             modifiers={{
-              hasBooking: (date) => db.bookings.some(b => b.date === format(date, 'yyyy-MM-dd') && b.status !== 'cancelled')
+              hasBooking: (date) => db.bookings.some(b => b.date === format(date, 'yyyy-MM-dd') && b.status !== 'cancelled'),
+              nonWorking: (date) => db.isDayBlockedOrNonWorking(date)
             }}
             modifiersClassNames={{
               selected: "!bg-blue-600 !text-white !font-bold rounded-md shadow-md hover:!bg-blue-700",
               today: "font-semibold text-gray-900 bg-gray-50 rounded-sm",
-              hasBooking: "bg-blue-50 border border-blue-200 text-blue-800 font-bold relative after:content-[''] after:absolute after:bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-1.5 after:h-1.5 after:bg-blue-600 after:rounded-full"
+              hasBooking: "bg-blue-50 border border-blue-200 text-blue-800 font-bold relative after:content-[''] after:absolute after:bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-1.5 after:h-1.5 after:bg-blue-600 after:rounded-full",
+              nonWorking: "text-red-400 bg-red-50/40 opacity-70"
             }}
           />
         </div>
