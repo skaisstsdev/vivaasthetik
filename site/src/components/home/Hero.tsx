@@ -17,7 +17,7 @@ export default function Hero() {
 
         <h1 className="text-5xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight">
           {t('title')}{' '}
-          <span>{t('titleEm')}</span>
+          <span className="text-gold font-medium">{t('titleEm')}</span>
         </h1>
         <p className="max-w-2xl text-lg text-white/50 font-light mx-auto mb-10 leading-relaxed">
           {t('subtitle')}
