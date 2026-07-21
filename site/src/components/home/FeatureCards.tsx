@@ -37,13 +37,13 @@ export default function FeatureCards() {
 
   return (
     <section className="py-24 px-8 bg-gray-50">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 auto-rows-fr">
         {cards.map((card, i) => (
             <Link
               key={i}
               href={card.href}
               scroll={false}
-              className="group flex flex-col w-full text-left bg-white p-10 hover:shadow-lg transition-shadow duration-300"
+              className="group flex flex-col h-full w-full text-left bg-white p-10 hover:shadow-lg transition-shadow duration-300"
             >
               {/* Number */}
               <p className="text-xs font-mono mb-6 text-gold font-medium">
