@@ -86,11 +86,11 @@ export default function Navbar() {
               onClick={() => setIsMenuOpen(false)}
               className="relative w-[180px] h-[40px] md:w-[220px] md:h-[50px]"
             >
-              <div 
-                className={`w-full h-full bg-gradient-to-tr from-[#a67c00] via-[#fceab8] to-[#a67c00] transition-all duration-300 ${
+              <div
+                className={`w-full h-full transition-all duration-300 ${
                   isScrolled || isMenuOpen 
-                    ? 'drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]' 
-                    : ''
+                    ? 'bg-gradient-to-tr from-[#8a6327] via-[#cca343] to-[#8a6327] drop-shadow-[0_1px_1px_rgba(0,0,0,0.1)]' 
+                    : 'bg-gradient-to-tr from-[#a67c00] via-[#fceab8] to-[#a67c00]'
                 }`}
                 style={{
                   maskImage: 'url(/images/viva_logo_final.png)',
