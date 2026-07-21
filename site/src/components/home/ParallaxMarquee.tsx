@@ -48,8 +48,11 @@ export default function ParallaxMarquee() {
           className="object-cover w-full h-auto block md:hidden"
           priority
         />
-        {/* Desktop Image (Cropped 1.5% at bottom) */}
-        <div className="hidden md:block w-full relative overflow-hidden aspect-[1920/1064]">
+        {/* Desktop Image (Cropped 0.5% at bottom) */}
+        <div 
+          className="hidden md:block w-full relative overflow-hidden"
+          style={{ aspectRatio: "1920/1074.6" }}
+        >
           <Image
             src="/images/desktop.webp"
             alt="Natalya Schnal"
