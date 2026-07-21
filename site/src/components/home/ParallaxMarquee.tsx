@@ -38,7 +38,7 @@ export default function ParallaxMarquee() {
       </div>
 
       {/* Foreground Image */}
-      <div className="relative z-10 w-full max-w-2xl lg:max-w-3xl xl:max-w-4xl mx-auto flex justify-center items-end px-4 md:px-0">
+      <div className="relative z-10 w-full max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto flex justify-center items-end px-4 md:px-0">
         <Image
           src="/images/hero-no-bg-v2.png"
           alt="Natalya Schnal"
