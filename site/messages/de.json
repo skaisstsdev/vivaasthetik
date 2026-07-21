@@ -150,9 +150,9 @@
   "Booking": {
     "title": "Termin buchen",
     "subtitle": "Wählen Sie Ihre gewünschte Behandlung und finden Sie den perfekten Termin für Ihre persönliche Beratung oder Anwendung.",
-    "step1": "1. Behandlung wählen",
-    "step2": "2. Datum & Zeit",
-    "step3": "3. Ihre Daten",
+    "step1": "Behandlung wählen",
+    "step2": "Datum & Zeit",
+    "step3": "Ihre Daten",
     "step1_title": "Wählen Sie Ihre gewünschte Behandlung",
     "step2_title": "Wann möchten Sie zu uns kommen?",
     "step3_title": "Bitte geben Sie Ihre Kontaktdaten ein",
