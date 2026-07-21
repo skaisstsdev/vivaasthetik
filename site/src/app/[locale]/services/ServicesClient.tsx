@@ -101,12 +101,13 @@ export default function ServicesClient({ services, loc }: ServicesClientProps) {
                 {/* Hover revealed content */}
                 <div className={`flex-grow flex flex-col justify-end transition-all duration-500 ease-out ${isActive ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-6 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto'}`}>
                   <h3 
-                    className="text-2xl sm:text-3xl md:text-2xl lg:text-3xl mb-4 text-white break-words hyphens-auto"
+                    className="text-2xl sm:text-3xl md:text-2xl lg:text-3xl mb-2 md:mb-4 text-white truncate w-full"
                     style={{ fontFamily: "var(--font-bodoni), Georgia, serif", fontWeight: 300 }}
+                    title={service.title[loc]}
                   >
                     {service.title[loc]}
                   </h3>
-                  <p className="text-white/70 text-sm md:text-base leading-relaxed mb-6 line-clamp-4">
+                  <p className="text-white/70 text-sm md:text-base leading-relaxed mb-4 md:mb-6 line-clamp-3 md:line-clamp-4">
                     {service.shortDescription[loc]}
                   </p>
                   <div className="flex flex-col gap-2 md:gap-3 flex-shrink-0">
