@@ -22,7 +22,7 @@ export default function Hero() {
         <p className="max-w-2xl text-lg text-white/50 font-light mx-auto mb-10 leading-relaxed">
           {t('subtitle')}
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center w-full mt-4">
+        <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center w-full mt-4">
           <Link
             href="/booking"
             className="px-8 py-3 md:px-12 md:py-4 bg-transparent border border-[#c9a84c] text-[#f5e198] text-xs md:text-sm uppercase tracking-[0.2em] font-medium hover:bg-[#c9a84c] hover:text-white transition-all duration-300"
