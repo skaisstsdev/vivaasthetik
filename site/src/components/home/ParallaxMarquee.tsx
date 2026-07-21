@@ -12,7 +12,7 @@ export default function ParallaxMarquee() {
     <section className="relative w-full bg-white overflow-hidden pt-12 md:pt-24">
       
       {/* Marquee Background */}
-      <div className="absolute top-[35%] md:top-[30%] -translate-y-1/2 left-0 w-full z-0 pointer-events-none">
+      <div className="absolute top-[50%] md:top-[45%] -translate-y-1/2 left-0 w-full z-0 pointer-events-none">
         <div className="flex whitespace-nowrap overflow-hidden">
           <motion.div
             className="flex whitespace-nowrap"
