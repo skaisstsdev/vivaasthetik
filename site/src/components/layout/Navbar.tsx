@@ -131,13 +131,13 @@ export default function Navbar() {
           isMenuOpen ? 'opacity-100 pointer-events-auto z-40' : 'opacity-0 pointer-events-none -z-10 invisible'
         }`}
       >
-        <ul className="flex flex-col gap-6 sm:gap-8 max-w-7xl mx-auto w-full">
+        <ul className="flex flex-col gap-5 sm:gap-6 md:gap-4 max-w-7xl mx-auto w-full">
           {navLinks.map((link, index) => (
             <li key={link.href} className="flex">
               <Link
                 href={link.href}
                 onClick={() => setIsMenuOpen(false)}
-                className={`block py-2 text-4xl sm:text-5xl md:text-5xl font-light text-gray-900 hover:text-gray-600 transition-all transform ${
+                className={`block py-2 md:py-1 text-4xl sm:text-5xl md:text-6xl font-light text-gray-900 hover:text-gray-600 transition-all transform ${
                   isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
                 }`}
                 style={{ 
