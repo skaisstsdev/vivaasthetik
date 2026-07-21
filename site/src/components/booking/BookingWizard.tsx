@@ -440,7 +440,7 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
             </h2>
           </div>
           <div className="flex flex-col gap-4">
-            {servicesData.map(service => (
+            {servicesData.filter(s => !s.hideBookingButton).map(service => (
               <button
                 key={service.slug}
                 onClick={() => {

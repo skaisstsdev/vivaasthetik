@@ -8,6 +8,8 @@ import { fadenlifting } from './fadenlifting';
 import { vampirlifting } from './vampirlifting';
 import { haarausfall } from './haarausfall';
 import { intimlifting } from './intimlifting';
+import { radiesse } from './radiesse';
+import { prpKopfhaut } from './prp-kopfhaut';
 import { ServiceContent } from './types';
 
 export const servicesData: ServiceContent[] = [
@@ -20,7 +22,9 @@ export const servicesData: ServiceContent[] = [
   fadenlifting,
   vampirlifting,
   haarausfall,
-  intimlifting
+  intimlifting,
+  radiesse,
+  prpKopfhaut
 ];
 
 export const getServiceBySlug = (slug: string): ServiceContent | undefined => {

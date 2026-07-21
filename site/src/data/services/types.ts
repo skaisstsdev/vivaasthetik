@@ -21,4 +21,5 @@ export type ServiceContent = {
   shortDescription: LocalizedContent;
   content: LocalizedContent;
   bookingDetails?: BookingDetails;
+  hideBookingButton?: boolean;
 };

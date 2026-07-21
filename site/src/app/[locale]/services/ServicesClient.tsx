@@ -116,14 +116,16 @@ export default function ServicesClient({ services, loc }: ServicesClientProps) {
                     >
                       {loc === 'de' ? 'Mehr erfahren' : 'Узнать больше'}
                     </button>
-                    <div onClick={(e) => e.stopPropagation()}>
-                      <BookNowButton 
-                        serviceSlug={service.slug}
-                        className="py-3 bg-white/10 border border-white/20 text-white hover:bg-white hover:text-gray-900 uppercase tracking-wide text-sm font-medium text-center w-full block transition-all duration-300"
-                      >
-                        {loc === 'de' ? 'Termin buchen' : 'Записаться'}
-                      </BookNowButton>
-                    </div>
+                    {!service.hideBookingButton && (
+                      <div onClick={(e) => e.stopPropagation()}>
+                        <BookNowButton 
+                          serviceSlug={service.slug}
+                          className="py-3 bg-white/10 border border-white/20 text-white hover:bg-white hover:text-gray-900 uppercase tracking-wide text-sm font-medium text-center w-full block transition-all duration-300"
+                        >
+                          {loc === 'de' ? 'Termin buchen' : 'Записаться'}
+                        </BookNowButton>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -173,14 +175,16 @@ export default function ServicesClient({ services, loc }: ServicesClientProps) {
                 <p className="text-gray-700 font-medium text-lg">
                   {loc === 'de' ? 'Interesse an dieser Behandlung?' : 'Заинтересовала эта процедура?'}
                 </p>
-                <div onClick={closeModal}>
-                  <BookNowButton 
-                    serviceSlug={selectedService.slug}
-                    className="w-full sm:w-auto px-10 py-5 bg-black text-white hover:bg-gray-800 transition-colors uppercase tracking-widest text-sm font-medium text-center inline-block shadow-lg"
-                  >
-                    {loc === 'de' ? 'Termin buchen' : 'Записаться на прием'}
-                  </BookNowButton>
-                </div>
+                {!selectedService.hideBookingButton && (
+                  <div onClick={closeModal}>
+                    <BookNowButton 
+                      serviceSlug={selectedService.slug}
+                      className="w-full sm:w-auto px-10 py-5 bg-black text-white hover:bg-gray-800 transition-colors uppercase tracking-widest text-sm font-medium text-center inline-block shadow-lg"
+                    >
+                      {loc === 'de' ? 'Termin buchen' : 'Записаться на прием'}
+                    </BookNowButton>
+                  </div>
+                )}
               </div>
               
             </div>
