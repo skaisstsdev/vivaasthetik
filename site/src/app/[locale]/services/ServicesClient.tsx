@@ -91,8 +91,8 @@ export default function ServicesClient({ services, loc }: ServicesClientProps) {
                 {/* Center: Title (visible by default) */}
                 <div className={`absolute inset-0 flex items-center justify-center p-4 md:p-8 transition-all duration-500 pointer-events-none ${isActive ? 'opacity-0 scale-95' : 'opacity-100 scale-100 group-hover:opacity-0 group-hover:scale-95'}`}>
                   <h3 
-                    className="text-2xl md:text-3xl lg:text-4xl text-center leading-tight text-white/90 break-words hyphens-auto w-full px-2"
-                    style={{ fontFamily: "var(--font-bodoni), Georgia, serif", fontWeight: 300 }}
+                    className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center leading-tight text-white/90 break-words hyphens-auto w-full px-2"
+                    style={{ fontFamily: "var(--font-bodoni), Georgia, serif", fontWeight: 300, wordBreak: "break-word" }}
                   >
                     {service.title[loc]}
                   </h3>
@@ -101,8 +101,8 @@ export default function ServicesClient({ services, loc }: ServicesClientProps) {
                 {/* Hover revealed content */}
                 <div className={`flex-grow flex flex-col justify-end transition-all duration-500 ease-out ${isActive ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-6 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto'}`}>
                   <h3 
-                    className="text-2xl md:text-3xl mb-4 text-white"
-                    style={{ fontFamily: "var(--font-bodoni), Georgia, serif", fontWeight: 300 }}
+                    className="text-xl sm:text-2xl md:text-3xl mb-4 text-white break-words hyphens-auto"
+                    style={{ fontFamily: "var(--font-bodoni), Georgia, serif", fontWeight: 300, wordBreak: "break-word" }}
                   >
                     {service.title[loc]}
                   </h3>

@@ -450,7 +450,10 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
                 className="group flex flex-col md:flex-row md:items-center justify-between text-left p-6 md:p-8 bg-gray-50 border border-transparent hover:bg-white hover:border-gray-200 hover:shadow-sm transition-all duration-300"
               >
                 <div className="flex flex-col gap-2 max-w-xl">
-                  <h3 className="text-xl font-medium text-gray-900 group-hover:text-black transition-colors">
+                  <h3 
+                    className="text-lg md:text-xl font-medium text-gray-900 group-hover:text-black transition-colors break-words hyphens-auto"
+                    style={{ wordBreak: "break-word" }}
+                  >
                     {service.title[locale]}
                   </h3>
                   <p className="text-sm text-gray-500 line-clamp-2 leading-relaxed">
@@ -495,7 +498,10 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
               className="group flex flex-col md:flex-row md:items-center justify-between text-left p-6 md:p-8 bg-gray-50 border border-transparent hover:bg-white hover:border-gray-200 hover:shadow-sm transition-all duration-300"
             >
               <div className="flex flex-col gap-2 max-w-xl">
-                <h3 className="text-xl font-medium text-gray-900 group-hover:text-black transition-colors">
+                <h3 
+                  className="text-lg md:text-xl font-medium text-gray-900 group-hover:text-black transition-colors break-words hyphens-auto"
+                  style={{ wordBreak: "break-word" }}
+                >
                   {service.title[locale]}
                 </h3>
                 <p className="text-sm text-gray-500 line-clamp-2 leading-relaxed">
