@@ -1,5 +1,5 @@
 import { setRequestLocale } from 'next-intl/server';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import dynamic from 'next/dynamic';
 
 // Dynamic imports — separate JS chunks, load in parallel after page shell renders
@@ -17,7 +17,7 @@ export default async function BookingPage({ params }: { params: Promise<{ locale
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const t = useTranslations('Booking');
+  const t = await getTranslations('Booking');
 
   return (
     <main className="bg-white pb-24">
