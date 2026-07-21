@@ -38,13 +38,23 @@ export default function ParallaxMarquee() {
       </div>
 
       {/* Foreground Image */}
-      <div className="relative z-10 w-full max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto flex justify-center items-end px-4 md:px-0">
+      <div className="relative z-10 w-full h-full flex justify-center items-end">
+        {/* Mobile Image */}
         <Image
-          src="/images/hero-no-bg-v3.webp"
+          src="/images/mobile.webp"
           alt="Natalya Schnal"
-          width={1600}
-          height={1000}
-          className="object-contain w-full h-auto block"
+          width={1080}
+          height={1920}
+          className="object-cover w-full h-auto block md:hidden"
+          priority
+        />
+        {/* Desktop Image */}
+        <Image
+          src="/images/desktop.webp"
+          alt="Natalya Schnal"
+          width={1920}
+          height={1080}
+          className="object-cover w-full h-auto hidden md:block"
           priority
         />
       </div>
