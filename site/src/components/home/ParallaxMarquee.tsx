@@ -23,8 +23,8 @@ export default function ParallaxMarquee() {
     restDelta: 0.0001
   });
   
-  // Smooth parallax scroll offset
-  const x = useTransform(smoothScroll, [0, 1], ["0%", "-10%"]);
+  // Smooth parallax scroll offset set to exactly -2.5%
+  const x = useTransform(smoothScroll, [0, 1], ["0%", "-2.5%"]);
 
   return (
     <section ref={containerRef} className="relative w-full bg-white overflow-hidden pt-0 md:pt-4">
