@@ -86,17 +86,22 @@ export default function Navbar() {
               onClick={() => setIsMenuOpen(false)}
               className="relative w-[180px] h-[40px] md:w-[220px] md:h-[50px]"
             >
-              <Image
-                src="/images/viva_logo_final.png"
-                alt="Viva Ästhetik Logo"
-                fill
-                sizes="(max-width: 768px) 180px, 220px"
-                className={`object-contain transition-all duration-300 ${
+              <div 
+                className={`w-full h-full bg-[#c9a84c] transition-all duration-300 ${
                   isScrolled || isMenuOpen 
                     ? 'drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]' 
                     : ''
                 }`}
-                priority
+                style={{
+                  maskImage: 'url(/images/viva_logo_final.png)',
+                  maskSize: 'contain',
+                  maskRepeat: 'no-repeat',
+                  maskPosition: 'center',
+                  WebkitMaskImage: 'url(/images/viva_logo_final.png)',
+                  WebkitMaskSize: 'contain',
+                  WebkitMaskRepeat: 'no-repeat',
+                  WebkitMaskPosition: 'center',
+                }}
               />
             </Link>
           </div>
