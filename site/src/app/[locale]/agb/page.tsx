@@ -39,7 +39,7 @@ export default async function AgbPage({ params }: { params: Promise<{ locale: st
         ) : (
           <div className="prose prose-lg text-gray-600 max-w-none">
             <h2>§1 Geltungsbereich</h2>
-            <p>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle medizinischen und ästhetischen Behandlungen, Beratungen und sonstigen Leistungen, die von der Praxis VIVA Ästhetik (Natalya Shnal) an Patienten erbracht werden.</p>
+            <p>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle medizinischen und ästhetischen Behandlungen, Beratungen und sonstigen Leistungen, die von der Praxis VIVA Ästhetik (Natalya Schnal) an Patienten erbracht werden.</p>
 
             <h2>§2 Terminvereinbarung und Stornierungsbedingungen</h2>
             <p>1. Termine können online, telefonisch oder per E-Mail vereinbart werden. Ein vereinbarter Termin ist verbindlich.</p>

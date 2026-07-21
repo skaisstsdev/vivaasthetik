@@ -20,7 +20,7 @@ export const faltenunterspritzung: ServiceContent = {
 
 <p>Hyaluronsäure wird als synthetisch hergestelltes Gel unter die Haut injiziert und stellt derzeit das am häufigsten genutzte Füllmaterial bei der Faltenbehandlung dar. Es handelt sich um einen resorbierbaren, das heißt ein im Laufe der Zeit abbaubaren Filler.</p>
 
-<p>Seit über 15 Jahren wird Hyaluronsäure als Filler weltweit verwendet und hat sich neben Botox als beliebtes und sicheres Anti-Aging Verfahren stetig weiter entwickelt. Regelmäßig nimmt Frau Shnal an den Masterclasses international renommierter Spezialisten teil, um Ihre Patienten mit den besten Techniken behandeln zu können. Auch wissenschaftlich ist die sichere Wirksamkeit von Hyaluronsäure gut belegt. Wir verwenden ausschließlich hochwertige Materialien namhafter Firmen, deren Produkte die erforderlichen Qualitätsprüfungen vorweisen können.</p>
+<p>Seit über 15 Jahren wird Hyaluronsäure als Filler weltweit verwendet und hat sich neben Botox als beliebtes und sicheres Anti-Aging Verfahren stetig weiter entwickelt. Regelmäßig nimmt Frau Schnal an den Masterclasses international renommierter Spezialisten teil, um Ihre Patienten mit den besten Techniken behandeln zu können. Auch wissenschaftlich ist die sichere Wirksamkeit von Hyaluronsäure gut belegt. Wir verwenden ausschließlich hochwertige Materialien namhafter Firmen, deren Produkte die erforderlichen Qualitätsprüfungen vorweisen können.</p>
 
 <h4>Welche Hyaluronsäure-Filler gibt es?</h4>
 <p>Mittlerweilen gibt es sehr viele verschiedene Filler für die jeweilige Indikation. Am herausragensten ist der Unterschied zwischen vernetzten und unvernetzten Hyaluronsäure-Fillern.</p>
@@ -29,7 +29,7 @@ export const faltenunterspritzung: ServiceContent = {
 
 <p>Unvernetzte Hyaluronsäure kann durch ihre unvernetzte Struktur ausgezeichnet für oberflächliche Falten verwendet werden, z.B. bei Knitterfältchen im Dekolleté oder um die Augen.</p>
 
-<p>Kommen Sie doch einfach zum Beratungsgespräch vorbei. Frau Shnal wird Sie bezüglich der Filler individuell beraten.</p>
+<p>Kommen Sie doch einfach zum Beratungsgespräch vorbei. Frau Schnal wird Sie bezüglich der Filler individuell beraten.</p>
 
 <h4>Welche Bereiche können behandelt werden?</h4>
 <p>Von oberflächlichen kleinen Falten bis hin zum Liquid Lifting, Ihre Ärztin Frau Dr. Schröder weiß ganz genau für welche Indikation welches Material eingesetzt werden soll. Mit Hyaluronsäure können die folgenden Bereiche von uns behandelt werden:</p>
