@@ -46,7 +46,7 @@ export default function ParallaxMarquee() {
         style={{ y: imageY }}
       >
         <Image
-          src="/images/hero-no-bg.png"
+          src="/images/hero-no-bg-v2.png"
           alt="Natalya Schnal"
           width={1200}
           height={800}
