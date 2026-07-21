@@ -43,7 +43,7 @@ export default function FeatureCards() {
               key={i}
               href={card.href}
               scroll={false}
-              className="group block w-full text-left bg-white p-10 hover:shadow-lg transition-shadow duration-300"
+              className="group flex flex-col w-full text-left bg-white p-10 hover:shadow-lg transition-shadow duration-300"
             >
               {/* Number */}
               <p className="text-xs font-mono mb-6 text-gold font-medium">
@@ -58,7 +58,7 @@ export default function FeatureCards() {
                 {card.text}
               </p>
               {/* Link */}
-              <span className="flex items-center gap-2 text-sm text-gray-900 font-medium group-hover:gap-3 transition-all">
+              <span className="flex items-center gap-2 text-sm text-gray-900 font-medium group-hover:gap-3 transition-all mt-auto">
                 {card.link}
                 <ArrowRight size={14} />
               </span>

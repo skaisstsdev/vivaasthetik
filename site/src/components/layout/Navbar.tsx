@@ -137,13 +137,14 @@ export default function Navbar() {
               <Link
                 href={link.href}
                 onClick={() => setIsMenuOpen(false)}
-                className={`block py-2 text-4xl sm:text-5xl md:text-6xl font-light text-gray-900 hover:text-gray-600 transition-all transform ${
+                className={`block py-2 text-4xl sm:text-5xl md:text-5xl font-light text-gray-900 hover:text-gray-600 transition-all transform ${
                   isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
                 }`}
                 style={{ 
                   transitionDelay: `${index * 50}ms`,
                   transitionDuration: '500ms',
-                  fontFamily: 'var(--font-bodoni), Georgia, serif'
+                  fontFamily: 'var(--font-bodoni), Georgia, serif',
+                  wordBreak: 'break-word'
                 }}
               >
                 {link.label}
