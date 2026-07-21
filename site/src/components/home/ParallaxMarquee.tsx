@@ -14,17 +14,8 @@ export default function ParallaxMarquee() {
     offset: ["start end", "end start"]
   });
   
-  // Smooth out the scroll progress so it doesn't jump with mouse wheel ticks
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 40,
-    damping: 15,
-    mass: 0.5,
-    restDelta: 0.001
-  });
-  
-  // As the user scrolls down, the text moves left slightly and very smoothly
-  // We use a small percentage because the inner container is very wide (8 repetitions)
-  const x = useTransform(smoothProgress, [0, 1], ["0%", "-3%"]);
+  // As the user scrolls down, the text moves left strictly tied to the scroll
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-15%"]);
 
   return (
     <section ref={containerRef} className="relative w-full bg-white overflow-hidden pt-0 md:pt-4">
