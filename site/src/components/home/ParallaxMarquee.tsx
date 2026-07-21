@@ -15,7 +15,7 @@ export default function ParallaxMarquee() {
   });
   
   // As the user scrolls down, the text moves left strictly tied to the scroll
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-8%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-4%"]);
 
   return (
     <section ref={containerRef} className="relative w-full bg-white overflow-hidden pt-0 md:pt-4">
