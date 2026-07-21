@@ -42,7 +42,7 @@ export default function WhyUs() {
                 key={idx} 
                 className="flex flex-col gap-4 border-b border-gray-100 pb-12 last:border-0 last:pb-0"
               >
-                <span className="text-sm font-mono text-gray-300">
+                <span className="text-sm font-mono text-gold font-medium">
                   {feature.number}
                 </span>
                 <h3 className="text-2xl md:text-3xl font-light text-gray-900">

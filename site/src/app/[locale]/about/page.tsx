@@ -22,7 +22,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           </h1>
           <p className="max-w-2xl text-lg text-gray-300 font-light mx-auto mb-10 leading-relaxed">
             {t('Hero.subtitle1')}
-            <em className="italic">{t('Hero.subtitle2')}</em>
+            <span>{t('Hero.subtitle2')}</span>
           </p>
         </div>
       </section>
@@ -59,7 +59,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
           {/* Quote Text */}
           <div className="w-full md:w-1/2">
-            <blockquote className="text-2xl md:text-4xl font-light text-gray-900 leading-snug italic">
+            <blockquote className="text-2xl md:text-4xl font-light text-gray-900 leading-snug">
               {t('Quote.text')}
             </blockquote>
           </div>

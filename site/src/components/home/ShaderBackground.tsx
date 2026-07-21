@@ -21,11 +21,11 @@ export default function ShaderBackground({ isStatic = false }: { isStatic?: bool
   }, [isStatic]);
 
   return (
-    // bg-[#0a192f] is painted immediately (CSS, no JS needed) — no flash
-    <div ref={containerRef} className="absolute inset-0 z-0 bg-[#0a192f] overflow-hidden pointer-events-none">
+    // bg-[#061220] is painted immediately (CSS, no JS needed) — no flash
+    <div ref={containerRef} className="absolute inset-0 z-0 bg-[#061220] overflow-hidden pointer-events-none">
       <MeshGradient
         className="w-full h-full absolute inset-0"
-        colors={["#000000", "#0a192f", "#1d4ed8", "#60a5fa"]}
+        colors={["#000000", "#061220", "#0d2a6e", "#1a3a8f"]}
         speed={isStatic || !isVisible ? 0 : 1.2}
       />
     </div>

@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/i18n/routing';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useBooking } from '@/context/BookingContext';
@@ -80,12 +81,23 @@ export default function Navbar() {
 
           {/* Центр: Логотип */}
           <div className="flex-1 flex justify-center">
-            <Link 
+          <Link 
               href="/" 
               onClick={() => setIsMenuOpen(false)}
-              className="text-xl md:text-2xl font-light tracking-[0.2em] uppercase text-center"
+              className="relative w-[180px] h-[40px] md:w-[220px] md:h-[50px]"
             >
-              VIVA <span className="font-medium">Ästhetik</span>
+              <Image
+                src="/images/viva_logo_final.png"
+                alt="Viva Ästhetik Logo"
+                fill
+                sizes="(max-width: 768px) 180px, 220px"
+                className={`object-contain transition-all duration-300 ${
+                  isScrolled || isMenuOpen 
+                    ? 'drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]' 
+                    : ''
+                }`}
+                priority
+              />
             </Link>
           </div>
 
@@ -100,10 +112,10 @@ export default function Navbar() {
             <Link
               href="/booking"
               onClick={() => setIsMenuOpen(false)}
-              className={`hidden sm:block text-xs tracking-[0.15em] uppercase px-8 py-3 border transition-colors ${
+              className={`hidden sm:block text-xs tracking-[0.15em] uppercase px-8 py-3 border transition-all duration-300 ${
                 isScrolled || isMenuOpen
-                  ? 'border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white'
-                  : 'border-white text-white hover:bg-white hover:text-gray-900'
+                  ? 'border-[#c9a84c] text-[#c9a84c] hover:bg-[#c9a84c] hover:text-white'
+                  : 'border-[#c9a84c] text-[#f5e198] hover:bg-[#c9a84c] hover:text-white'
               }`}
             >
               {t('bookCta')}

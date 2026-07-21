@@ -34,8 +34,8 @@ export default function TestimonialsPreview() {
             {items.map((item, i) => (
               <div key={i} className="flex flex-col gap-6 w-[300px] md:w-[400px] whitespace-normal">
                 {/* Quote mark */}
-                <span className="text-4xl font-serif text-gray-200 leading-none">&ldquo;</span>
-                <p className="text-gray-600 leading-relaxed italic">
+                <span className="text-4xl font-serif text-gold leading-none">&ldquo;</span>
+                <p className="text-gray-600 leading-relaxed">
                   {item.text}
                 </p>
                 <p className="text-sm font-medium text-gray-900 tracking-wide mt-auto">

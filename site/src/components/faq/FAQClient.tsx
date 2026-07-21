@@ -27,7 +27,7 @@ export default function FAQClient({ locale, initialData }: { locale: ServiceLoca
             onClick={() => handleCategoryClick(category.id)}
             className={`text-left px-4 py-3 rounded-none transition-colors border-l-2 ${
               activeCategory === category.id
-                ? 'border-gray-900 text-gray-900 bg-gray-50 font-medium'
+                ? 'border-[#cda557] text-gray-900 bg-gray-50 font-medium'
                 : 'border-transparent text-gray-500 hover:text-gray-900 hover:bg-gray-50'
             }`}
           >

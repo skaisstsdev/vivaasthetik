@@ -23,7 +23,7 @@ export default function ConsultationCTA() {
         </p>
         <Link
           href="/booking"
-          className="inline-block px-12 py-5 bg-transparent border border-white text-white text-xs md:text-sm tracking-[0.2em] uppercase font-medium hover:bg-white hover:text-gray-900 transition-colors"
+          className="inline-block px-12 py-5 bg-transparent border border-[#c9a84c] text-[#f5e198] text-xs md:text-sm tracking-[0.2em] uppercase font-medium hover:bg-[#c9a84c] hover:text-white transition-all duration-300"
         >
           {t('cta')}
         </Link>

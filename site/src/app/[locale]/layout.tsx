@@ -10,9 +10,25 @@ import BookingModal from '@/components/booking/BookingModal';
 import { Suspense } from 'react';
 import InfoModal from '@/components/home/InfoModal';
 import { Metadata } from 'next';
+import { Cormorant, Inter } from 'next/font/google';
 
 import CookieBanner from '@/components/layout/CookieBanner';
 import '@/app/globals.css';
+
+const cormorant = Cormorant({
+  subsets: ['latin', 'cyrillic'],
+  weight: ['300', '400', '500'],
+  style: ['normal', 'italic'],
+  variable: '--font-bodoni',
+  display: 'swap',
+});
+
+const inter = Inter({
+  subsets: ['latin', 'cyrillic'],
+  weight: ['300', '400', '500', '600'],
+  variable: '--font-inter',
+  display: 'swap',
+});
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({locale}));
@@ -52,7 +68,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className={`${cormorant.variable} ${inter.variable}`}>
       <body>
         <NextIntlClientProvider messages={messages} locale={locale}>
           <DatabaseProvider>
