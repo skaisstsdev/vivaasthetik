@@ -1,6 +1,7 @@
 import { setRequestLocale } from 'next-intl/server';
 import Hero from '@/components/home/Hero';
 import Intro from '@/components/home/Intro';
+import ParallaxMarquee from '@/components/home/ParallaxMarquee';
 import FeatureCards from '@/components/home/FeatureCards';
 import TestimonialsPreview from '@/components/home/TestimonialsPreview';
 import WhyUs from '@/components/home/WhyUs';
@@ -17,6 +18,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <Hero />
         {/* Intro section that appears exactly after shader */}
         <Intro />
+        <ParallaxMarquee />
         <FeatureCards />
         <WhyUs />
         <TestimonialsPreview />
