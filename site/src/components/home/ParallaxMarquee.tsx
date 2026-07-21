@@ -48,15 +48,16 @@ export default function ParallaxMarquee() {
           className="object-cover w-full h-auto block md:hidden"
           priority
         />
-        {/* Desktop Image */}
-        <Image
-          src="/images/desktop.webp"
-          alt="Natalya Schnal"
-          width={1920}
-          height={1080}
-          className="object-cover w-full h-auto hidden md:block"
-          priority
-        />
+        {/* Desktop Image (Cropped 5% at bottom) */}
+        <div className="hidden md:block w-full relative overflow-hidden aspect-[1920/1026]">
+          <Image
+            src="/images/desktop.webp"
+            alt="Natalya Schnal"
+            fill
+            className="object-cover object-top"
+            priority
+          />
+        </div>
       </div>
       
     </section>
