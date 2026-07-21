@@ -116,7 +116,7 @@ export default function ServicesClient({ services, loc }: ServicesClientProps) {
                     >
                       {loc === 'de' ? 'Mehr erfahren' : 'Узнать больше'}
                     </button>
-                    {!service.hideBookingButton && (
+                    {!service.hideBookingButton ? (
                       <div onClick={(e) => e.stopPropagation()}>
                         <BookNowButton 
                           serviceSlug={service.slug}
@@ -124,6 +124,10 @@ export default function ServicesClient({ services, loc }: ServicesClientProps) {
                         >
                           {loc === 'de' ? 'Termin buchen' : 'Записаться'}
                         </BookNowButton>
+                      </div>
+                    ) : (
+                      <div className="py-3 border border-transparent text-sm w-full block invisible pointer-events-none" aria-hidden="true">
+                        &nbsp;
                       </div>
                     )}
                   </div>
