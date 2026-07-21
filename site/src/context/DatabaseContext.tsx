@@ -195,13 +195,14 @@ export function DatabaseProvider({ children }: { children: React.ReactNode }) {
     const dateStr = format(date, 'yyyy-MM-dd');
     const dayOfWeek = date.getDay();
 
-    if (blockedPeriods.some(p => isWithinInterval(date, { start: parseISO(p.startDate), end: parseISO(p.endDate) }))) {
-      return true;
-    }
     const exc = dateExceptions[dateStr];
     if (exc) {
       if (!exc.isWorking) return true;
       return false; // has specific blocked hours, but day is open
+    }
+
+    if (blockedPeriods.some(p => isWithinInterval(date, { start: parseISO(p.startDate), end: parseISO(p.endDate) }))) {
+      return true;
     }
     const wh = workingHours[dayOfWeek];
     if (!wh || !wh.isWorking) return true;
