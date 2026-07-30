@@ -37,12 +37,12 @@ export default function InfoModal() {
 
   return (
     <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center p-4 sm:p-6 md:p-12 bg-black/20 backdrop-blur-sm animate-in fade-in duration-500 ease-out">
-      <div className="bg-white w-full max-w-5xl max-h-[95vh] flex flex-col rounded-xl shadow-2xl relative overflow-hidden text-gray-900 animate-in zoom-in-95 duration-500 ease-out">
+      <div className="bg-white w-full max-w-5xl max-h-[95vh] flex flex-col rounded-none shadow-2xl relative overflow-hidden text-gray-900 animate-in zoom-in-95 duration-500 ease-out">
         
         {/* Close Button */}
         <button 
           onClick={close}
-          className="absolute top-6 right-6 p-2 text-gray-500 hover:text-gray-900 transition-colors bg-gray-100 hover:bg-gray-200 rounded-full z-50 border border-gray-200 shadow-sm"
+          className="absolute top-6 right-6 p-2 text-gray-500 hover:text-gray-900 transition-colors bg-gray-100 hover:bg-gray-200 rounded-none z-50 border border-gray-200 shadow-sm"
         >
           <X size={24} strokeWidth={1.5} />
         </button>

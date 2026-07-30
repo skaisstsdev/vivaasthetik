@@ -26,13 +26,13 @@ export default function BookingModal() {
       />
 
       {/* Modal Content container */}
-      <div className="relative bg-white w-full max-w-6xl max-h-full overflow-y-auto shadow-2xl rounded-sm flex flex-col animate-in zoom-in-95 duration-500 ease-out">
+      <div className="relative bg-white w-full max-w-6xl max-h-full overflow-y-auto shadow-2xl rounded-none flex flex-col animate-in zoom-in-95 duration-500 ease-out">
         
         {/* Header with close button */}
         <div className="sticky top-0 right-0 z-10 flex justify-end p-4 pointer-events-none">
           <button 
             onClick={closeBooking}
-            className="p-3 bg-white/80 backdrop-blur-md hover:bg-gray-100 text-gray-900 transition-colors rounded-full pointer-events-auto border border-gray-200 shadow-sm"
+            className="p-3 bg-white/80 backdrop-blur-md hover:bg-gray-100 text-gray-900 transition-colors rounded-none pointer-events-auto border border-gray-200 shadow-sm"
           >
             <X className="w-6 h-6" />
           </button>

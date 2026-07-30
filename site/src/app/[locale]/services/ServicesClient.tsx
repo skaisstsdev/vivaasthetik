@@ -146,13 +146,13 @@ export default function ServicesClient({ services, loc }: ServicesClientProps) {
           onClick={closeModal}
         >
           <div 
-            className="bg-white w-full max-w-4xl h-[90vh] md:max-h-[85vh] flex flex-col rounded-xl shadow-2xl relative animate-in fade-in zoom-in-95 duration-500 ease-out overflow-hidden text-gray-900"
+            className="bg-white w-full max-w-4xl h-[90vh] md:max-h-[85vh] flex flex-col rounded-none shadow-2xl relative animate-in fade-in zoom-in-95 duration-500 ease-out overflow-hidden text-gray-900"
             onClick={e => e.stopPropagation()}
           >
             {/* Fixed Close Button inside Modal */}
             <button 
               onClick={closeModal}
-              className="absolute top-6 right-6 p-2 text-gray-500 hover:text-gray-900 transition-colors bg-gray-100 hover:bg-gray-200 rounded-full z-50 border border-gray-200 shadow-sm"
+              className="absolute top-6 right-6 p-2 text-gray-500 hover:text-gray-900 transition-colors bg-gray-100 hover:bg-gray-200 rounded-none z-50 border border-gray-200 shadow-sm"
             >
               <X size={24} strokeWidth={1.5} />
             </button>
