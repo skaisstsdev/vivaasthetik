@@ -18,7 +18,7 @@ export default function Navbar() {
 
   const switchLocale = (locale: 'de' | 'ru') => {
     startTransition(() => {
-      router.replace(pathname, { locale });
+      router.replace(pathname, { locale, scroll: false });
     });
   };
 
