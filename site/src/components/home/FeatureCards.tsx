@@ -9,6 +9,7 @@ type Card = {
   text: string;
   link: string;
   href: string;
+  scroll?: boolean;
 };
 
 export default function FeatureCards() {
@@ -20,18 +21,21 @@ export default function FeatureCards() {
       text: t('servicesText'),
       link: t('servicesLink'),
       href: '/services',
+      scroll: true,
     },
     {
       title: t('clinicTitle'),
       text: t('clinicText'),
       link: t('clinicLink'),
       href: '?info=clinic',
+      scroll: false,
     },
     {
       title: t('techTitle'),
       text: t('techText'),
       link: t('techLink'),
       href: '?info=technology',
+      scroll: false,
     },
   ];
 
@@ -42,7 +46,7 @@ export default function FeatureCards() {
             <Link
               key={i}
               href={card.href}
-              scroll={false}
+              scroll={card.scroll}
               className="group flex flex-col h-full w-full text-left bg-white p-10 hover:shadow-lg transition-shadow duration-300"
             >
               {/* Number */}
