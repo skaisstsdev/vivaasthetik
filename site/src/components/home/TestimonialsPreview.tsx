@@ -50,7 +50,9 @@ export default function TestimonialsPreview() {
       {/* Leave a review link */}
       <div className="text-center mt-16 px-8">
         <a
-          href="#"
+          href="https://g.page/r/CaOO9JFCPATYEBM/review"
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-block border border-gray-300 text-gray-700 text-sm px-8 py-3 hover:border-gray-900 hover:text-gray-900 transition-colors uppercase tracking-widest"
         >
           {t('leaveReview')}
