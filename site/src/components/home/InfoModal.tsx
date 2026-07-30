@@ -90,11 +90,6 @@ export default function InfoModal() {
                 ))}
               </div>
 
-              <div className="bg-gray-50 p-8 rounded-sm border border-gray-200 mt-4">
-                <p className="text-base md:text-lg text-gray-800 font-light leading-relaxed">
-                  {tTech('outro')}
-                </p>
-              </div>
             </div>
           )}
 
