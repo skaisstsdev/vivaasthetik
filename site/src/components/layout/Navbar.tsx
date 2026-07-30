@@ -1,9 +1,9 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { Link, usePathname } from '@/i18n/routing';
+import { Link, usePathname, useRouter } from '@/i18n/routing';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useTransition } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useBooking } from '@/context/BookingContext';
 
@@ -12,7 +12,15 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
+  const [isPending, startTransition] = useTransition();
   const { openBooking } = useBooking();
+
+  const switchLocale = (locale: 'de' | 'ru') => {
+    startTransition(() => {
+      router.replace(pathname, { locale });
+    });
+  };
 
   // Названия роутов и переводы для меню
   const navLinks = [
@@ -108,10 +116,10 @@ export default function Navbar() {
 
           {/* Правая часть: Переключатель языков и кнопка Записаться */}
           <div className="flex-1 flex items-center justify-end gap-6">
-            <div className={`flex items-center gap-2 text-xs font-medium tracking-widest ${isScrolled || isMenuOpen ? 'text-gray-400' : 'text-white/70'}`}>
-              <Link href="/" locale="de" className={`hover:${isScrolled || isMenuOpen ? 'text-gray-900' : 'text-white'} transition-colors`}>DE</Link>
+            <div className={`flex items-center gap-2 text-xs font-medium tracking-widest transition-opacity duration-300 ${isScrolled || isMenuOpen ? 'text-gray-400' : 'text-white/70'} ${isPending ? 'opacity-50 pointer-events-none' : 'opacity-100'}`}>
+              <button onClick={() => switchLocale('de')} className={`hover:${isScrolled || isMenuOpen ? 'text-gray-900' : 'text-white'} transition-colors`}>DE</button>
               <span className="font-light">/</span>
-              <Link href="/" locale="ru" className={`hover:${isScrolled || isMenuOpen ? 'text-gray-900' : 'text-white'} transition-colors`}>RU</Link>
+              <button onClick={() => switchLocale('ru')} className={`hover:${isScrolled || isMenuOpen ? 'text-gray-900' : 'text-white'} transition-colors`}>RU</button>
             </div>
 
             <Link
