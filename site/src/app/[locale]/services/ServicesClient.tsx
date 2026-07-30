@@ -162,7 +162,7 @@ export default function ServicesClient({ services, loc }: ServicesClientProps) {
               
               {/* Header Area */}
               <div className="p-8 md:pt-16 md:pb-12 text-center border-b border-gray-200">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 leading-tight pr-12 md:pr-0">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 leading-tight pr-12 md:pr-0 break-words hyphens-auto">
                   {selectedService.title[loc]}
                 </h2>
               </div>
@@ -170,7 +170,7 @@ export default function ServicesClient({ services, loc }: ServicesClientProps) {
               {/* Content Area */}
               <div className="p-8 md:p-16">
                 <div 
-                  className="prose prose-lg md:prose-xl prose-headings:font-light prose-h3:text-3xl prose-h4:text-2xl max-w-none mx-auto text-gray-800"
+                  className="prose prose-lg md:prose-xl prose-headings:font-light prose-h3:text-3xl prose-h4:text-2xl prose-headings:break-words prose-headings:hyphens-auto break-words max-w-none mx-auto text-gray-800"
                   dangerouslySetInnerHTML={{ __html: selectedService.content[loc] }}
                 />
               </div>
