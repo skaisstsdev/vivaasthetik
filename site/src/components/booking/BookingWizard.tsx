@@ -248,7 +248,7 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
           <div className="flex flex-col gap-10 animate-in fade-in slide-in-from-right-4 duration-500 w-full max-w-lg mx-auto">
               
             <div className="w-full flex justify-center max-w-full overflow-x-auto overflow-y-hidden px-1 py-2">
-              <div className="bg-white border border-gray-100 p-4 sm:p-6 shadow-sm rounded-sm w-fit mx-auto min-w-[280px]">
+              <div className="bg-white border border-gray-100 p-4 sm:p-6 shadow-sm rounded-sm mx-auto w-[calc(7*min(10vw,44px)+2rem+2px)] sm:w-[358px]">
                 <DayPicker 
                   mode="single"
                   selected={selectedDate}
