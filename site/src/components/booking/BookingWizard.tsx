@@ -271,6 +271,19 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
               </div>
             </div>
 
+            <p className="text-sm text-center text-gray-500 -mt-4">
+              {t('whatsapp_hint_pre')}
+              <a
+                href="https://wa.me/491799004902"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-900 underline hover:text-gray-600 transition-colors"
+              >
+                {t('whatsapp_hint_link')}
+              </a>
+              {t('whatsapp_hint_post')}
+            </p>
+
             <div ref={timeSlotsRef} className="flex flex-col gap-6 w-full">
               <h4 className="font-medium text-gray-900 border-b border-gray-100 pb-4 text-center capitalize">
                 {selectedDate 

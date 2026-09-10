@@ -174,7 +174,10 @@
     "form_phone": "Telefonnummer",
     "form_notes": "Notizen / Wünsche",
     "success_title": "Vielen Dank!",
-    "success_text": "Ihre Terminanfrage wurde erfolgreich gesendet. Wir werden uns in Kürze mit Ihnen in Verbindung setzen, um den Termin zu bestätigen."
+    "success_text": "Ihre Terminanfrage wurde erfolgreich gesendet. Wir werden uns in Kürze mit Ihnen in Verbindung setzen, um den Termin zu bestätigen.",
+    "whatsapp_hint_pre": "Keinen passenden Termin gefunden? Schreiben Sie mir gerne per ",
+    "whatsapp_hint_link": "WhatsApp",
+    "whatsapp_hint_post": " – ich finde einen passenden Termin für Sie."
   },
   "WhyUs": {
     "title": "Warum Viva Ästhetik?",
