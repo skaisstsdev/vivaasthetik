@@ -256,11 +256,11 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
                   locale={locale === 'de' ? de : ru}
                   disabled={disabledDays}
                   className="font-sans text-[0.85rem] md:text-[1.05rem]"
-                  style={{ 
-                    '--rdp-day-width': 'min(11vw, 44px)', 
-                    '--rdp-day-height': 'min(11vw, 44px)',
-                    '--rdp-day_button-width': 'min(11vw, 44px)',
-                    '--rdp-day_button-height': 'min(11vw, 44px)' 
+                  style={{
+                    '--rdp-day-width': 'min(10vw, 44px)',
+                    '--rdp-day-height': 'min(10vw, 44px)',
+                    '--rdp-day_button-width': 'min(10vw, 44px)',
+                    '--rdp-day_button-height': 'min(10vw, 44px)'
                   } as React.CSSProperties}
                   modifiersClassNames={{
                     selected: "!bg-[#0a192f]/8 !text-[#0a192f] ring-2 ring-[#0a192f] ring-inset rounded-sm font-semibold",
