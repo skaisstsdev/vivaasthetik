@@ -50,7 +50,7 @@ export function JournalTab({ data }: { data: AdminData }) {
   const isToday = date === toDateStr(new Date());
 
   return (
-    <div className="grid lg:grid-cols-[minmax(320px,380px)_1fr] gap-6 items-start">
+    <div className="grid grid-cols-1 lg:grid-cols-[minmax(320px,380px)_minmax(0,1fr)] gap-6 items-start">
       {/* Calendar */}
       <Card className="p-4 md:p-5">
         <MonthGrid data={data} month={month} onMonthChange={setMonth} selected={date} onDayClick={pickFromCalendar} compact />
@@ -120,7 +120,7 @@ export function JournalTab({ data }: { data: AdminData }) {
               const isBlocked = day.blockedHours.includes(h);
               const outside = !hours.includes(h);
               return (
-                <li key={h} className="grid grid-cols-[52px_1fr] md:grid-cols-[64px_1fr] gap-2 md:gap-3 items-start">
+                <li key={h} className="grid grid-cols-[52px_minmax(0,1fr)] md:grid-cols-[64px_minmax(0,1fr)] gap-2 md:gap-3 items-start">
                   <div className={`pt-3 text-sm md:text-base font-medium tabular-nums ${outside ? 'text-amber-700' : 'text-gray-500'}`}>{h}</div>
                   <div className="flex flex-col gap-2 min-w-0">
                     {hourBookings.map(b => <BookingCard key={b.id} booking={b} data={data} />)}

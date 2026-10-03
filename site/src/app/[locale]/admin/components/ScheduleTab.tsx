@@ -38,7 +38,7 @@ export function ScheduleTab({ data }: { data: AdminData }) {
     <div className="flex flex-col gap-6">
       <HowItWorks />
 
-      <div className="grid xl:grid-cols-[1fr_420px] gap-6 items-start">
+      <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_420px] gap-6 items-start">
         <Card className="p-4 md:p-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5">
             <h2 className="text-lg md:text-xl font-medium">Календарь работы</h2>
@@ -224,7 +224,8 @@ function PeriodPanel({ data, range, onDone, onCancel }: { data: AdminData; range
         </div>
       )}
 
-      {existing > 0 && action !== 'reset' && (
+      {/* Hidden while saving: the optimistic update already contains the new days */}
+      {existing > 0 && action !== 'reset' && !saving && (
         <p className="text-sm text-sky-900 bg-sky-50 border border-sky-200 rounded-lg p-3 flex items-start gap-2">
           <span className="flex-1">
             {existing} {plural(existing, 'день', 'дня', 'дней')} в этом периоде уже {plural(existing, 'имеет', 'имеют', 'имеют')} особые настройки — они будут заменены.
