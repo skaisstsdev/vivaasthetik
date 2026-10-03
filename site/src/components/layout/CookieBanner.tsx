@@ -2,10 +2,12 @@
 
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
+import { usePathname } from 'next/navigation';
 
 export default function CookieBanner() {
   const [isVisible, setIsVisible] = useState(false);
   const t = useTranslations('Cookies');
+  const pathname = usePathname();
 
   useEffect(() => {
     // Check if user has already accepted/declined cookies
@@ -25,7 +27,8 @@ export default function CookieBanner() {
     setIsVisible(false);
   };
 
-  if (!isVisible) return null;
+  // The admin panel sets no tracking cookies and the banner covers its bottom navigation
+  if (!isVisible || pathname?.includes('/admin')) return null;
 
   return (
     <div className="fixed bottom-0 left-0 right-0 bg-gray-900 text-white z-50 p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">

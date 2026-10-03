@@ -34,6 +34,7 @@ model WorkingDay {
   updatedAt DateTime @updatedAt
 }
 
+// Legacy: superseded by DateException rows with a shared groupId. Kept so old data isn't lost.
 model BlockedPeriod {
   id        String   @id @default(cuid())
   startDate String   // YYYY-MM-DD
@@ -45,7 +46,13 @@ model BlockedPeriod {
 model DateException {
   id           String   @id @default(cuid())
   date         String   @unique // YYYY-MM-DD
-  isWorking    Boolean  @default(false) // If true, only blockedHours are blocked. If false, whole day is blocked.
+  isWorking    Boolean  @default(false) // false = day closed. true = open (with optional custom hours / blocked hours)
+  startTime    String?  // HH:MM — custom opening for this day; null = use weekly template
+  endTime      String?  // HH:MM — custom closing for this day; null = use weekly template
   blockedHours String[] // Array of "HH:MM"
+  note         String?  // Reason shown in admin ("Отпуск", "Праздник", ...)
+  groupId      String?  // Days created by one "period" action share this id
   updatedAt    DateTime @updatedAt
+
+  @@index([groupId])
 }

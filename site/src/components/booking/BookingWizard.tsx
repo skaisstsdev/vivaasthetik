@@ -37,7 +37,10 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState('');
 
-  const { addBooking, getAvailableSlots, isDayBlockedOrNonWorking } = useDatabase();
+  const { addBooking, getAvailableSlots, isDayBlockedOrNonWorking, load } = useDatabase();
+
+  // Fetch fresh availability every time the wizard opens
+  useEffect(() => { load(); }, [load]);
 
   // Form State
   const [name, setName] = useState('');
@@ -88,7 +91,7 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
     setIsSubmitting(true);
     setSubmitError('');
     
-    const success = await addBooking({
+    const result = await addBooking({
       serviceSlug: selectedService.slug,
       date: format(selectedDate, 'yyyy-MM-dd'),
       time: selectedTime,
@@ -99,7 +102,7 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
     });
     
     setIsSubmitting(false);
-    if (success) {
+    if (result.ok) {
       setStep(4);
       
       // Prepare EmailJS params
