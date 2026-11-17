@@ -237,9 +237,9 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
         {/* Step Indicator */}
         {step < 4 && (
           <div className="flex flex-col border-b border-gray-100 pb-6 mb-8">
-            <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-400 mb-2">
+            <p className="text-sm font-mono uppercase tracking-[0.2em] text-gray-500 mb-2">
               {step === 2 ? t('step2') : t('step3')}
-            </h3>
+            </p>
             <h2 className="text-3xl font-light text-gray-900 pr-12">
               {step === 2 ? t('step2_title') : t('step3_title')}
             </h2>
@@ -251,7 +251,7 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
           <div className="flex flex-col gap-10 animate-in fade-in slide-in-from-right-4 duration-500 w-full max-w-lg mx-auto">
               
             <div className="w-full flex justify-center max-w-full overflow-x-auto overflow-y-hidden px-1 py-2">
-              <div className="bg-white border border-gray-100 p-4 sm:p-6 shadow-sm rounded-sm mx-auto w-[calc(7*min(10vw,44px)+2rem+2px)] sm:w-[358px]">
+              <div className="bg-white border border-gray-100 p-4 sm:p-6 shadow-sm rounded-none mx-auto w-[calc(7*min(10vw,44px)+2rem+2px)] sm:w-[358px]">
                 <DayPicker 
                   mode="single"
                   selected={selectedDate}
@@ -266,8 +266,8 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
                     '--rdp-day_button-height': 'min(10vw, 44px)'
                   } as React.CSSProperties}
                   modifiersClassNames={{
-                    selected: "!bg-[#0a192f]/8 !text-[#0a192f] ring-2 ring-[#0a192f] ring-inset rounded-sm font-semibold",
-                    today: "font-semibold !text-[#1d4ed8] bg-blue-50 rounded-sm",
+                    selected: "!bg-[#0a192f]/8 !text-[#0a192f] ring-2 ring-[#0a192f] ring-inset rounded-none font-semibold",
+                    today: "font-semibold !text-[#1d4ed8] bg-blue-50 rounded-none",
                     disabled: "!text-gray-300 !cursor-not-allowed !line-through",
                   }}
                 />
@@ -304,7 +304,7 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
                     <button
                     key={time}
                     onClick={() => handleTimeSelect(time)}
-                    className={`p-4 border text-sm md:text-base transition-colors rounded-sm tracking-wide ${
+                    className={`p-4 border text-sm md:text-base transition-colors rounded-none tracking-wide ${
                       selectedTime === time 
                         ? 'border-gray-900 bg-gray-900 text-white shadow-sm' 
                         : 'border-gray-200 hover:border-gray-400 text-gray-700 bg-white hover:bg-gray-50'
@@ -448,9 +448,9 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
       return (
         <div className="p-8 md:p-12">
           <div className="flex flex-col border-b border-gray-100 pb-6 mb-8">
-            <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-400 mb-2">
+            <p className="text-sm font-mono uppercase tracking-[0.2em] text-gray-500 mb-2">
               {t('step1')}
-            </h3>
+            </p>
             <h2 className="text-3xl font-light text-gray-900">
               {t('step1_title')}
             </h2>
@@ -494,9 +494,9 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
     <>
       <div className="mx-auto w-full max-w-4xl flex flex-col gap-8">
         <div className="flex flex-col items-center justify-center border-b border-gray-100 pb-8 mb-8 text-center">
-          <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-400 mb-2">
+          <p className="text-sm font-mono uppercase tracking-[0.2em] text-gray-500 mb-2">
             {t('step1')}
-          </h3>
+          </p>
           <h2 className="text-3xl md:text-4xl font-light text-gray-900">
             {t('step1_title')}
           </h2>
@@ -534,7 +534,7 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
       {/* Overlay Modal for Steps 2+ on the Booking page */}
       {step > 1 && (
         <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center p-4 sm:p-6 md:p-12 bg-black/20 backdrop-blur-sm animate-in fade-in duration-500 ease-out">
-          <div className="bg-white border border-gray-200 w-full max-w-6xl max-h-[95vh] flex flex-col rounded-xl shadow-2xl relative overflow-hidden animate-in zoom-in-95 duration-500 ease-out">
+          <div className="bg-white border border-gray-200 w-full max-w-6xl max-h-[95vh] flex flex-col rounded-none shadow-2xl relative overflow-hidden animate-in zoom-in-95 duration-500 ease-out">
             
             {/* Close Button */}
             <button 
@@ -545,7 +545,7 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
                   setStep(1);
                 }
               }}
-              className="absolute top-6 right-6 p-2 text-gray-400 hover:text-gray-900 transition-colors bg-white hover:bg-gray-100 rounded-full z-50 shadow-sm border border-gray-100"
+              className="absolute top-6 right-6 p-2 text-gray-400 hover:text-gray-900 transition-colors bg-white hover:bg-gray-100 rounded-none z-50 shadow-sm border border-gray-100"
             >
               <X size={24} strokeWidth={1.5} />
             </button>

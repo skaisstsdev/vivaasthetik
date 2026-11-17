@@ -1,11 +1,10 @@
 import { setRequestLocale } from 'next-intl/server';
+import PageHero from '@/components/layout/PageHero';
 import { servicesData } from '@/data/services';
 import { Link } from '@/i18n/routing';
 import BookNowButton from '@/components/booking/BookNowButton';
 import ConsultationCTA from '@/components/home/ConsultationCTA';
-import { Suspense } from 'react';
 import ServicesClient from './ServicesClient';
-import ShaderBackground from '@/components/home/ShaderBackground';
 
 // Функция для определения размера карточки (Bento Grid)
 const getCardClasses = (slug: string) => {
@@ -29,24 +28,12 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
     <>
       <main className="bg-gray-50 pb-0">
       
-      {/* Hero Section */}
-      <section className="relative w-full h-[100svh] flex items-center justify-center overflow-hidden bg-gray-900">
-        <ShaderBackground />
-        <div className="relative z-10 w-full max-w-4xl mx-auto px-6 flex flex-col items-center justify-center text-center pt-20">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-white mb-6 leading-tight">
-            {loc === 'de' ? 'Unsere Leistungen' : 'Наши услуги'}
-          </h1>
-          <p className="max-w-2xl text-lg text-gray-300 font-light mx-auto mb-10 leading-relaxed">
-            {loc === 'de' 
-              ? 'Individuelle Behandlungen im Einklang mit Ihrer natürlichen Schönheit.'
-              : 'Индивидуальные процедуры в гармонии с вашей естественной красотой.'}
-          </p>
-        </div>
-      </section>
+      {/* Мини-хиро */}
+      <PageHero title={loc === 'de' ? 'Unsere Leistungen' : 'Наши услуги'} />
 
       {/* Intro Text Section */}
       <section className="bg-white py-24 md:py-32 border-b border-gray-100">
-        <div className="max-w-4xl mx-auto px-8 text-center">
+        <div className="max-w-4xl mx-auto px-6 md:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-8 leading-tight">
             {loc === 'de' ? 'Behandlung, der Sie vertrauen können' : 'Лечение, которому вы можете доверять'}
           </h2>
@@ -59,9 +46,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
       </section>
       {/* Cards Grid */}
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-24 md:py-32">
-        <Suspense fallback={<div>Loading...</div>}>
-          <ServicesClient services={servicesData} loc={loc} />
-        </Suspense>
+        <ServicesClient services={servicesData} loc={loc} />
       </section>
 
       {/* Bottom CTA */}

@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next';
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://vivaasthetik.de';
   const locales = ['de', 'ru'];
-  const routes = ['', '/services', '/booking', '/about', '/contact', '/faq'];
+  const routes = ['', '/services', '/prices', '/booking', '/about', '/contact', '/faq'];
 
   const sitemap: MetadataRoute.Sitemap = [];
 

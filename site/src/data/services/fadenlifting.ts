@@ -121,6 +121,150 @@ export const fadenlifting: ServiceContent = {
 <p>Гиалуроновые филлеры, при необходимости, могут быть введены как до, так и во время процедуры нитевого лифтинга — в рамках одной сессии, если это показано с эстетической точки зрения и не вызывает перегрузки тканей.</p>
     `
   },
+  layout: {
+    "de": {
+      "intro": {
+        "title": "Was ist ein Fadenlifting?",
+        "html": "<p>Das Fadenlifting ist eine effektive Methode zur Wiederherstellung der natürlichen Gesichtskontur. Das Fadenlifting hat gegenüber dem herkömmlichen Lifting für den Patienten viele Vorteile: Es bedeutet eine deutlich geringere Belastung, keine Narbenbildung, ein geringes Schmerz- und Entzündungsrisiko, keine lange Ausfallzeit.</p>"
+      },
+      "areas": {
+        "title": "Behandelbare Areale und erwarteter Effekt",
+        "groups": [
+          {
+            "title": "Lifting-Effekt",
+            "items": [
+              "Hängebäckchen, Doppelkinn",
+              "Augenbrauen"
+            ]
+          },
+          {
+            "title": "Glättung und/oder Lifting-Effekt",
+            "items": [
+              "Wangen",
+              "Marionettenfalten",
+              "Nasolabialfalte",
+              "Hals"
+            ]
+          },
+          {
+            "title": "Glättung",
+            "items": [
+              "Augenfältchen",
+              "Oberlippenfältchen",
+              "Dekolleté"
+            ]
+          }
+        ]
+      },
+      "blocks": [
+        {
+          "title": "Wie wirkt das Fadenlifting:",
+          "html": "<p>Die eingesetzten Fäden bewirken eine Aktivierung reparativer Prozesse (6 – 10 Tage), eine Förderung der lokalen Blut-Mikrozirkulation (wenige Tage bis 2 – 4 Monate), Aktivierung des Stoffwechsels der Bindegewebszellen (Fibroblasten) und Erhöhung ihrer Anzahl sowie eine Stimulierung und Synthese von Kollagen, Elastinfasern und Hyaluronsäure (2 – 6 Monate).</p><p>Es gibt verschiedene Fäden für verschiedene Bedürfnisse. Sie alle straffen und glätten die Haut und sorgen für ein frischeres, strahlenderes Hautbild. Je nach Art der verwendeten Fäden kann das Ergebnis bis hin zu einem Lifting oder Neuformung der Gesichtskonturen gehen. Wie lange die Wirkung anhält und wie stark sie ausfällt, hängt auch von der Art des Fadens ab.</p>"
+        },
+        {
+          "title": "Was bewirkt das Fadenlifting:",
+          "html": "<ul><li>Lifting eingefallener Konturen</li><li>Hautverjüngung (Straffung, Verbesserung des Teints)</li><li>Faltenbehandlung</li></ul>"
+        },
+        {
+          "title": "Wie läuft die Behandlung mit dem Fadenlifting ab:",
+          "html": "<p>Im ersten Schritt zeichnet Frau Schnal die zu behandelnden Areale ein und betäubt lokal die Eintrittsstellen. Dann werden die Lifting-Fäden in das Unterhaut-Fettgewebe eingeführt. Je nach Region und gewünschtem Effekt werden unterschiedliche Fäden und Techniken verwendet. Feine, glatte oder leicht spiralige Fäden stimulieren die Bildung von neuem Bindegewebe, so dass die Haut straffer und glatter wird. Bestimmte Arten von Fäden können außerdem das Gesichts- oder Halsgewebe anheben und so in seine ursprüngliche Position zurückbringen. Diese neue und sanfte Methode hinterlässt weder Wunden noch Narben. Die Fäden werden nach gewisser Zeit (je nach Art des Fadens) vom Gewebe resorbiert.</p>"
+        },
+        {
+          "title": "Ist eine Fadenlifting-Behandlung schmerzhaft:",
+          "html": "<p>Vor der Behandlung wird eine lokale Betäubung an den Eintrittsstellen gesetzt, so dass die Behandlung nahezu schmerzfrei ist.</p>"
+        },
+        {
+          "title": "Was sollte nach der Fadenlifting-Behandlung beachtet werden:",
+          "html": "<p>Vermeiden Sie Reiben und jeden direkten Druck auf das behandelte Areal für 1 Woche (z.B. Gesichtsmassagen, Zahnbehandlungen). Meiden Sie Sonnenlicht und Sonnenstudios für 1 Woche, ebenso sollten Sie auf Sport und den Besuch von Sauna, Schwimmbad oder Dampfbad für 1 Woche verzichten.</p>"
+        },
+        {
+          "title": "Wann sind die Ergebnisse des Fadenliftings sichtbar und wie lange hält das Fadenlifting an:",
+          "html": "<p>Das Ergebnis ist je nach eingesetzten Fäden sofort bis verzögert sichtbar. Bei den PDO-Fäden tritt der maximale Effekt nach ca. 4 bis 8 Wochen ein. Anschließend werden die Fäden langsam vom Körper abgebaut. Während des Abbaus wird im Unterhautgewebe verstärkt Kollagen gebildet und das Bindehautgewebe gefestigt. Ein natürliches Stützgerüst entsteht. Die Effekte halten je nach Fadenmaterial 1 bis 3 Jahre an.</p>"
+        },
+        {
+          "title": "Welche Risiken und mögliche Nebenwirkungen gibt es beim Fadenlifting:",
+          "html": "<p>Unmittelbar nach der Behandlung kann es zu lokalen Schwellungen und vorübergehendem Schmerzempfinden kommen. Neben injektionsbedingten Blutungen können leichte Ödeme oder Erytheme entstehen, die mit Juckreiz und Druckschmerzhaftigkeit verbunden sein könne. eine leichte Rötung, Blutergüsse oder Schwellung sichtbar sein. Diese Nebenwirkungen sind in der Regel nur vorübergehend und klingen nach 1-3 Tagen ab. In seltenen Fällen können kleine Hämatome, Verhärtungen, Hypertrophien, Teleangiektasien oder Knötchenbildungen auftreten, die jedoch narbenfrei abheilen. Infektionen sind äußerst selten und können durch Schmutz oder durch Eindringen von unsauberen Wasser entstehen. Bitte informieren Sie Fr. Schnal, wenn Entzündungsreaktionen oder andere unerwünschten Nebenwirkungen länger anhalten. Damit diese entsprechend behandelt werden können.</p>"
+        }
+      ],
+      "faq": [
+        {
+          "q": "Verträgt sich meine regelmäßige Faltenbehandlung mit Botox- oder Hyaluronsäure mit dem Fadenlifting?",
+          "a": "Das Fadenlifting kann sehr gut mit anderen ästhetischen Maßnahmen wie Botox, Hyaluron-Filler oder Laser kombiniert werden. Bei Botox empfiehlt sich ein zeitlich versetztes Vorgehen, zunächst wird Botox injiziert, nach 14 Tagen kann das Fadenlifting erfolgen. Filler können ggf. auch in einer Sitzung gemeinsam mit dem Fadenlift injiziert werden."
+        }
+      ]
+    },
+    "ru": {
+      "intro": {
+        "title": "Что такое «Нитевой лифтинг»?",
+        "html": "<p>Нитевой лифтинг — это эффективный метод восстановления естественного контура лица. Нитевой лифтинг имеет много преимуществ по сравнению с традиционным лифтингом для пациента: это значительно меньшая нагрузка, отсутствие образования шрамов, низкий риск боли и воспаления, отсутствие длительного времени восстановления.</p>"
+      },
+      "areas": {
+        "title": "Области обработки и ожидаемый эффект",
+        "groups": [
+          {
+            "title": "Лифтинг-эффект",
+            "items": [
+              "Обвисшие щеки, двойной подбородок",
+              "Брови"
+            ]
+          },
+          {
+            "title": "Выравнивание и/или лифтинг-эффект",
+            "items": [
+              "Щеки",
+              "Марионеточные морщины",
+              "Носогубные складки",
+              "Шея"
+            ]
+          },
+          {
+            "title": "Выравнивание",
+            "items": [
+              "Морщины вокруг глаз",
+              "Морщины верхней губы",
+              "Декольте"
+            ]
+          }
+        ]
+      },
+      "blocks": [
+        {
+          "title": "Как действует нитевой лифтинг:",
+          "html": "<p>Используемые нити активируют репаративные процессы (6 – 10 дней), способствуют местной микроциркуляции крови (несколько дней до 2 – 4 месяцев), активируют обмен веществ клеток соединительной ткани (фибробластов) и увеличивают их количество, а также стимулируют и синтезируют коллаген, эластиновые волокна и гиалуроновую кислоту (2 – 6 месяцев).</p><p>Существуют разные нити для разных потребностей. Все они подтягивают и разглаживают кожу, обеспечивая более свежий и сияющий вид. В зависимости от типа используемых нитей результат может варьироваться от лифтинга до изменения контуров лица. Как долго продлится эффект и насколько он будет выраженным, также зависит от типа нити.</p>"
+        },
+        {
+          "title": "Что дает нитевой лифтинг:",
+          "html": "<p>Нитевой лифтинг оказывает комплексное омолаживающее действие:</p><ul><li>Подтягивает и восстанавливает утраченную чёткость контуров лица</li><li>Улучшает качество кожи: повышает упругость, улучшает тон и текстуру</li><li>Снижает выраженность морщин и заломов</li></ul>"
+        },
+        {
+          "title": "Как проходит процедура нитевого лифтинга:",
+          "html": "<p>На первом этапе врач госпожа Шналь детально размечает зоны коррекции и проводит местную анестезию в точках введения нитей. Затем специальные лифтинговые нити вводятся в подкожную жировую ткань. В зависимости от области воздействия и желаемого результата применяются различные типы нитей и техники их установки.</p><p>Тонкие, гладкие или спиралевидные нити стимулируют выработку коллагена, что способствует естественному уплотнению и разглаживанию кожи. Некоторые виды нитей также обладают выраженным подтягивающим эффектом — они механически фиксируют ткани и возвращают их в более молодое положение.</p><p>Процедура малотравматична: не требует разрезов, не оставляет шрамов и имеет короткий восстановительный период. Нити полностью рассасываются в тканях в течение нескольких месяцев, продолжая стимулировать омоложение кожи.</p>"
+        },
+        {
+          "title": "Болезненна ли процедура нитевого лифтинга:",
+          "html": "<p>Процедура проходит практически безболезненно. Перед введением нитей в зонах прокола проводится местная анестезия, благодаря чему пациенты ощущают минимальный дискомфорт во время лечения.</p>"
+        },
+        {
+          "title": "Что важно учитывать после нитевого лифтинга:",
+          "html": "<p>Для оптимального результата и комфортного восстановления соблюдайте следующие рекомендации в течение одной недели после процедуры:</p><ul><li>Избегайте трения и давления на обработанные участки (например, массаж лица, активные косметические процедуры, стоматологическое лечение).</li><li>Не подвергайте кожу прямому солнечному воздействию и не посещайте солярий.</li><li>Воздержитесь от физических нагрузок, посещения сауны, бани, бассейна и паровой комнаты.</li></ul>"
+        },
+        {
+          "title": "Когда результаты нитяного лифтонга становятся видимыми и как долго он сохраняется:",
+          "html": "<p>Результат виден сразу или с задержкой в зависимости от используемых нитей. При использовании PDO-нитей максимальный эффект достигается примерно через 4-8 недель. Затем нити медленно биодеградируют организмом. В процессе разложения в подкожной ткани активно образуется коллаген, и соединительная ткань укрепляется. Формируется естественный каркас. Эффекты сохраняются в зависимости от материала нитей от 1 до 3 лет.</p>"
+        },
+        {
+          "title": "Какие риски и возможные побочные эффекты существуют при нитевом лифтинге:",
+          "html": "<p>После проведения процедуры нитевого лифтинга могут наблюдаться местные отёки и кратковременные болевые ощущения. Также возможно появление незначительных кровоизлияний в местах инъекций, легкой эритемы, отечности или покраснения кожи. Эти проявления, как правило, сопровождаются умеренной болезненностью при пальпации и зудом, и обычно проходят в течение 1–3 дней без дополнительного вмешательства.</p><p>В отдельных случаях возможны формирование небольших гематом, локальных уплотнений, гипертрофий, телеангиэктазий или узелков. Эти изменения, как правило, самостоятельно разрешаются и не оставляют рубцовых изменений.</p><p>Инфекционные осложнения возникают крайне редко и, как правило, связаны с нарушением правил антисептики или контактом с загрязнённой водой в постпроцедурный период.</p><p>Если воспалительные реакции или иные нежелательные проявления сохраняются дольше обычного, пожалуйста, своевременно сообщите об этом доктору Шналь для назначения соответствующего лечения.</p>"
+        }
+      ],
+      "faq": [
+        {
+          "q": "Совместимы ли мои регулярные процедуры по лечению морщин с ботоксом или гиалуроновой кислотой с нитяным лифтингом?",
+          "a": "Совместимость нитевого лифтинга с ботулинотерапией и гиалуроновыми филлерами Нитевой лифтинг прекрасно сочетается с другими эстетическими методами омоложения, включая инъекции ботулотоксина (ботокса), гиалуроновые филлеры, а также лазерные процедуры. Для достижения оптимального результата рекомендуется последовательный подход. В случае использования ботулотоксина его введение целесообразно проводить за 10–14 дней до процедуры нитевого лифтинга. Это позволяет ботулотоксину полноценно проявить своё действие и способствует более точному позиционированию нитей. Гиалуроновые филлеры, при необходимости, могут быть введены как до, так и во время процедуры нитевого лифтинга — в рамках одной сессии, если это показано с эстетической точки зрения и не вызывает перегрузки тканей."
+        }
+      ]
+    }
+  },
   bookingDetails: {
     duration: { de: 'ca. 20-60 min', ru: 'около 20–60 минут' },
     pain: { de: 'kaum - gering', ru: 'минимальные до лёгких' },

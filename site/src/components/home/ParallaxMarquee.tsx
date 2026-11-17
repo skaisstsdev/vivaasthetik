@@ -23,8 +23,18 @@ export default function ParallaxMarquee() {
     restDelta: 0.0001
   });
   
-  // Smooth parallax scroll offset set to exactly -2.5%
-  const x = useTransform(smoothScroll, [0, 1], ["0%", "-2.5%"]);
+  // Бесконечная лента: все надписи одинаковые, поэтому сдвиг берётся по модулю
+  // ширины одной надписи — шов не виден, лента едет влево при прокрутке вниз
+  // и вправо при прокрутке вверх. Когда блок посередине экрана (progress 0.5),
+  // надпись начинается ровно с «N».
+  const firstRef = React.useRef<HTMLSpanElement>(null);
+  const SPEED = 500; // сколько пикселей проезжает лента за полный проход блока по экрану
+  const x = useTransform(smoothScroll, (p) => {
+    const w = firstRef.current?.offsetWidth || 0;
+    if (!w) return 0;
+    const d = (p - 0.5) * SPEED;
+    return -(((d % w) + w) % w);
+  });
 
   return (
     <section ref={containerRef} className="relative w-full bg-white overflow-hidden pt-0 md:pt-4">
@@ -43,7 +53,8 @@ export default function ParallaxMarquee() {
             {[...Array(8)].map((_, i) => (
               <span 
                 key={i}
-                className="text-[4.5rem] sm:text-[5.5rem] md:text-[8rem] lg:text-[10rem] leading-none px-6 md:px-12 font-light opacity-90 select-none"
+                ref={i === 0 ? firstRef : undefined}
+                className="text-[4.5rem] sm:text-[5.5rem] md:text-[4.8rem] lg:text-[6rem] leading-none px-6 md:px-8 font-light opacity-90 select-none"
                 style={{ 
                   fontFamily: "var(--font-bodoni), Georgia, serif",
                   backgroundImage: "linear-gradient(to right, #b8860b, #e0c273, #d4af37, #b8860b)",
@@ -59,15 +70,16 @@ export default function ParallaxMarquee() {
       </div>
 
       {/* Foreground Image */}
-      <div className="relative z-10 w-full h-full flex justify-center items-end">
+      <div className="relative z-10 w-full md:w-2/3 mx-auto h-full flex justify-center items-end">
         {/* Mobile Image */}
         <Image
           src="/images/mobile.webp"
           alt="Natalya Schnal"
-          width={1080}
-          height={1920}
+          width={2620}
+          height={2640}
           className="object-cover w-full h-auto block md:hidden"
-          priority
+          // Видна только на телефоне — на десктопе браузер возьмёт крошечный вариант
+          sizes="(max-width: 767px) 100vw, 1px"
         />
         {/* Desktop Image (Cropped 0.5% at bottom) */}
         <div 
@@ -79,7 +91,8 @@ export default function ParallaxMarquee() {
             alt="Natalya Schnal"
             fill
             className="object-cover object-top"
-            priority
+            // Видна только от md — на телефоне браузер возьмёт крошечный вариант
+            sizes="(min-width: 768px) 67vw, 1px"
           />
         </div>
       </div>

@@ -34,6 +34,32 @@ export const prpKopfhaut: ServiceContent = {
 </ul>
 `
   },
+  layout: {
+    "de": {
+      "intro": {
+        "title": "PRP-Therapie für die Kopfhaut",
+        "html": "<p>Die PRP-Therapie (Platelet-Rich Plasma) ist eine innovative und natürliche Methode zur Behandlung von Haarausfall und zur Stimulierung des Haarwachstums. Dabei wird aus Ihrem eigenen Blut plättchenreiches Plasma gewonnen und sanft in die Kopfhaut injiziert.</p><p>Die im Plasma enthaltenen Wachstumsfaktoren regen die Zellerneuerung an, verbessern die Durchblutung der Haarfollikel und verlängern die Wachstumsphase der Haare. So wird dünner werdendes Haar gestärkt und neues Haarwachstum gefördert.</p>"
+      },
+      "blocks": [
+        {
+          "title": "Vorteile der PRP-Therapie:",
+          "html": "<ul><li><strong>100% Natürlich:</strong> Da körpereigenes Material verwendet wird, gibt es keine allergischen Reaktionen oder Unverträglichkeiten.</li><li><strong>Effektivität:</strong> Sichtbare Verbesserung der Haardichte und Haarstruktur sowie Minderung von Haarausfall.</li><li><strong>Nachhaltigkeit:</strong> Regt die Haarfollikel zur tiefgreifenden und langfristigen Regeneration an.</li></ul>"
+        }
+      ]
+    },
+    "ru": {
+      "intro": {
+        "title": "PRP-терапия для кожи головы",
+        "html": "<p>PRP-терапия (плазма, обогащенная тромбоцитами) — это инновационный и абсолютно естественный метод лечения выпадения волос и стимуляции их роста. В процессе процедуры из вашей собственной крови выделяется плазма, обогащенная тромбоцитами, и микроинъекциями вводится в кожу головы.</p><p>Факторы роста, содержащиеся в плазме, стимулируют обновление клеток, значительно улучшают кровообращение волосяных фолликулов и продлевают фазу роста волос. Это укрепляет истонченные волосы и способствует росту новых.</p>"
+      },
+      "blocks": [
+        {
+          "title": "Преимущества PRP-терапии:",
+          "html": "<ul><li><strong>100% Естественно:</strong> Поскольку используется собственный биоматериал, аллергические реакции и отторжение полностью исключены.</li><li><strong>Эффективность:</strong> Видимое улучшение густоты и структуры волос, а также заметное снижение их выпадения.</li><li><strong>Долговечность:</strong> Стимулирует волосяные фолликулы к глубокой и долгосрочной регенерации.</li></ul>"
+        }
+      ]
+    }
+  },
   bookingDetails: {
     duration: {
       de: 'ca. 30–45 Minuten',

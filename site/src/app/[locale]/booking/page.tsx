@@ -1,4 +1,5 @@
 import { setRequestLocale } from 'next-intl/server';
+import PageHero from '@/components/layout/PageHero';
 import { getTranslations } from 'next-intl/server';
 import dynamic from 'next/dynamic';
 
@@ -11,7 +12,6 @@ const BookingWizard = dynamic(() => import('@/components/booking/BookingWizard')
   ),
 });
 
-const ShaderBackground = dynamic(() => import('@/components/home/ShaderBackground'));
 
 export default async function BookingPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -20,22 +20,12 @@ export default async function BookingPage({ params }: { params: Promise<{ locale
   const t = await getTranslations('Booking');
 
   return (
-    <main className="bg-white pb-24">
+    <main className="bg-white">
       
-      {/* Hero Section — bg-gray-900 shows instantly while shader loads */}
-      <section className="relative w-full h-[100svh] flex items-center justify-center overflow-hidden bg-gray-900">
-        <ShaderBackground />
-        <div className="relative z-10 w-full max-w-4xl mx-auto px-6 flex flex-col items-center justify-center text-center pt-20">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-white mb-6 leading-tight">
-            {t('title')}
-          </h1>
-          <p className="max-w-2xl text-lg text-gray-300 font-light mx-auto mb-10 leading-relaxed">
-            {t('subtitle')}
-          </p>
-        </div>
-      </section>
+      {/* Мини-хиро */}
+      <PageHero title={t('title')} />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-8 mt-24 flex flex-col gap-12">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 py-24 md:py-32 flex flex-col gap-12">
         <BookingWizard />
       </div>
     </main>

@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,300;0,6..96,400;0,6..96,500;1,6..96,300;1,6..96,400;1,6..96,500&display=swap');
 
 /* Gold token — static metallic reflection, no animation */
 :root {
@@ -23,6 +22,9 @@ h1, h2, h3, h4 {
   font-weight: 300;
   letter-spacing: 0.15em;
   text-transform: uppercase;
+  /* Длинное слово, которое не влезает в строку на телефоне, переносится,
+     а не растягивает страницу вбок. Обычные заголовки это не затрагивает. */
+  overflow-wrap: break-word;
 }
 
 /* Inter as body/UI font — thin weight to not overpower headings */
@@ -162,3 +164,8 @@ video::part(media-controls-overlay-play-button) {
 .admin-ui :is(.font-thin, .font-extralight, .font-light, .font-normal) { font-weight: 400; }
 .admin-ui :is(.font-medium, .font-semibold, .font-bold, .font-extrabold) { font-weight: 600; }
 .admin-ui :is(input, select, textarea, button) { font-weight: inherit; }
+
+/* Календарь записи: острые углы, как у всего сайта (по умолчанию кнопки дней круглые) */
+.rdp-day_button {
+  border-radius: 0 !important;
+}

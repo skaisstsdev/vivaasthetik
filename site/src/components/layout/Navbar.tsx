@@ -26,6 +26,7 @@ export default function Navbar() {
   const navLinks = [
     { href: '/' as const, label: t('home') },
     { href: '/services' as const, label: t('services') },
+    { href: '/prices' as const, label: t('prices') },
     { href: '/about' as const, label: t('about') },
     { href: '/booking' as const, label: t('booking') },
     { href: '/faq' as const, label: t('faq') },
@@ -116,16 +117,16 @@ export default function Navbar() {
 
           {/* Правая часть: Переключатель языков и кнопка Записаться */}
           <div className="flex-1 flex items-center justify-end gap-6">
-            <div className={`flex items-center gap-2 text-xs font-medium tracking-widest transition-opacity duration-300 ${isScrolled || isMenuOpen ? 'text-gray-400' : 'text-white/70'} ${isPending ? 'opacity-50 pointer-events-none' : 'opacity-100'}`}>
-              <button onClick={() => switchLocale('de')} className={`hover:${isScrolled || isMenuOpen ? 'text-gray-900' : 'text-white'} transition-colors`}>DE</button>
+            <div className={`flex items-center gap-2 text-xs font-medium tracking-widest transition-opacity duration-300 ${isScrolled || isMenuOpen ? 'text-gray-500' : 'text-white/70'} ${isPending ? 'opacity-50 pointer-events-none' : 'opacity-100'}`}>
+              <button onClick={() => switchLocale('de')} className={`${isScrolled || isMenuOpen ? 'hover:text-gray-900' : 'hover:text-white'} transition-colors`}>DE</button>
               <span className="font-light">/</span>
-              <button onClick={() => switchLocale('ru')} className={`hover:${isScrolled || isMenuOpen ? 'text-gray-900' : 'text-white'} transition-colors`}>RU</button>
+              <button onClick={() => switchLocale('ru')} className={`${isScrolled || isMenuOpen ? 'hover:text-gray-900' : 'hover:text-white'} transition-colors`}>RU</button>
             </div>
 
             <Link
               href="/booking"
               onClick={() => setIsMenuOpen(false)}
-              className={`hidden sm:block text-xs tracking-[0.15em] uppercase px-8 py-3 border transition-all duration-300 ${
+              className={`hidden sm:inline-flex items-center h-11 whitespace-nowrap text-xs tracking-[0.2em] font-medium uppercase px-8 border transition-colors duration-300 ${
                 isScrolled || isMenuOpen
                   ? 'border-[#c9a84c] text-[#c9a84c] hover:bg-[#c9a84c] hover:text-white'
                   : 'border-[#c9a84c] text-[#f5e198] hover:bg-[#c9a84c] hover:text-white'
@@ -140,17 +141,17 @@ export default function Navbar() {
 
       {/* Полноэкранное меню, открывается по бургеру */}
       <div 
-        className={`fixed inset-0 bg-white transition-all duration-500 ease-out flex flex-col justify-center px-8 md:px-24 pt-32 pb-12 overflow-y-auto ${
+        className={`fixed inset-0 bg-white transition-all duration-500 ease-out flex flex-col justify-center px-8 md:px-24 pt-[12vh] pb-[4vh] overflow-y-auto ${
           isMenuOpen ? 'opacity-100 pointer-events-auto z-40' : 'opacity-0 pointer-events-none -z-10 invisible'
         }`}
       >
-        <ul className="flex flex-col gap-5 sm:gap-6 md:gap-4 max-w-7xl mx-auto w-full">
+        <ul className="flex flex-col gap-[1.4vh] max-w-7xl mx-auto w-full">
           {navLinks.map((link, index) => (
             <li key={link.href} className="flex">
               <Link
                 href={link.href}
                 onClick={() => setIsMenuOpen(false)}
-                className={`block py-2 md:py-1 text-4xl sm:text-5xl md:text-6xl font-light text-gray-900 hover:text-gray-600 transition-all transform ${
+                className={`block py-1 text-[clamp(1.6rem,min(5.8vh,10vw),4rem)] leading-tight font-light text-gray-900 hover:text-gray-600 transition-all transform ${
                   isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
                 }`}
                 style={{ 

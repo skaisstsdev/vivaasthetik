@@ -79,6 +79,80 @@ export const mesotherapie: ServiceContent = {
 <p>В зависимости от области применения и результатов обследования врач составит с вами индивидуальный план лечения. Для достижения оптимальных результатов необходимо несколько сеансов и периодические обновления в течение года.</p>
     `
   },
+  layout: {
+    "de": {
+      "intro": {
+        "title": "Was ist eine Mesotherapie?",
+        "html": "<p>Die Mesotherapie stellt eine Behandlungsmethode dar, bei der Vitamine, Nährstoffe und Enzyme mit sehr feinen Nadeln in die mittlere Hautschicht eingebracht werden. Die konzentrierten Wirkstoffe werden direkt an den Zielort gebracht, so dass sehr geringe Mengen genügen.</p><p>In der Praxis Viva Ästhetik bietet Frau Schnal Ihnen die Mesotherapie in ihrer modernsten Form – mit dem Einsatz einer hochpräzisen Mesopistole. Diese Technologie ermöglicht eine besonders schonende, gleichmäßige und effektive Einbringung ausgewählter Wirkstoffe direkt in die mittlere Hautschicht (Mesoderm).</p>"
+      },
+      "blocks": [
+        {
+          "title": "Vorteile der Mesotherapie mit der Mesopistole:",
+          "html": "<ul><li><strong>Höchste Präzision:</strong> Die computergesteuerte Injektion gewährleistet eine exakte Dosierung und Eindringtiefe – individuell an die Hautbedürfnisse angepasst.</li><li><strong>Sanfte Anwendung:</strong> Im Vergleich zur manuellen Methode ist die Behandlung nahezu schmerzfrei und reduziert das Risiko von Hämatomen.</li><li><strong>Maximale Wirkung:</strong> Durch die gleichmäßige Verteilung der Wirkstoffe wie Hyaluronsäure, Vitamine oder Peptide werden sichtbare Ergebnisse schneller erreicht.</li><li><strong>Minimale Ausfallzeit:</strong> Die Behandlung ist besonders schonend – Alltagstauglichkeit sofort nach der Anwendung.</li></ul>"
+        },
+        {
+          "title": "Welche Einsatzgebiete gibt es für die Mesotherapie:",
+          "html": "<p>Für die Mesotherapie gibt es unterschiedliche Einsatzgebiete. Sie wird zur Hautverjüngung bei müder, erschlaffender Haut und Fältchen, bei verschiedenen Formen des Haarausfalls bei Männern und Frauen sowie zur Behandlung von Schwangerschafts- und Dehnungsstreifen.</p>"
+        },
+        {
+          "title": "Was ist vor der Behandlung zu beachten:",
+          "html": "<p>Vor der Behandlung ist es wichtig keine blutverdünnenden Mittel einzunehmen oder sich impfen zu lassen. Außerdem sollten am Behandlungstag keine Cremes, Make-up oder Puder an den zu behandelnden Stellen aufgetragen werden.</p>"
+        },
+        {
+          "title": "Wie wird die Behandlung durchgeführt:",
+          "html": "<p>Vor Beginn der Behandlung wird eine Betäubungscreme auf die Haut aufgetragen. Nach einer kurzen Einwirkzeit erfolgt eine gründliche Reinigung der zu behandelnden Haut. Dann werden mit Hilfe von äußerst feinen, kurzen Injektionsnadeln Wirkstoffe in die Haut eingebracht. Während der Behandlung können sie ein leichtes Stechen oder Brennen verspüren.</p>"
+        },
+        {
+          "title": "Wie sieht meine Haut nach der Behandlung aus:",
+          "html": "<p>Nach der Behandlung treten leichte Rötungen und eine leichte Schwellung der Haut auf, die in den nächsten Tagen abklingen. Es können auch kleine Blutergüsse entstehen.</p>"
+        },
+        {
+          "title": "Was ist nach der Behandlung zu beachten:",
+          "html": "<p>In der ersten Zeit nach der Behandlung sollten keine Vollbäder, Massagen, Packungen oder Lymphdrainagen erfolgen.</p><p>Des Weiteren sollten Sie bitte die behandelten Stellen vor direkter Sonnenstrahlung schützen, nicht in die Sauna gehen, in den ersten 3 Tagen dort keine Röntgenbestrahlungen oder Elektrotherapie durchführen lassen und keine gefärbten, neuen oder zu engen Kleidungsstücke an dieser Stelle tragen.</p>"
+        },
+        {
+          "title": "Wie viele Behandlungen sind notwendig:",
+          "html": "<p>Je nach Einsatzgebiet und Befund wird die Ärztin mit Ihnen einen individuellen Behandlungsplan erstellen. Um optimale Ergebnisse zu erzielen, sind mehrere Sitzungen und über das Jahr verteilte Auffrischungen notwendig.</p>"
+        }
+      ]
+    },
+    "ru": {
+      "intro": {
+        "title": "Что такое «Мезотерапия»?",
+        "html": "<p>Мезотерапия представляет собой метод лечения, при котором витамины, питательные вещества и ферменты вводятся в средний слой кожи с помощью очень тонкой иглы. Концентрированные активные вещества доставляются непосредственно в целевую область, что позволяет использовать минимальные дозы.</p><p>В клинике Viva Ästhetik доктор Шналь предлагает мезотерапию с использованием современного мезопистолета, который обеспечивает точное и эффективное введение активных веществ в средний слой кожи (мезодерму).</p>"
+      },
+      "blocks": [
+        {
+          "title": "Преимущества мезотерапии с мезопистолетом:",
+          "html": "<ul><li><strong>Высшая точность:</strong> компьютеризированная инъекция обеспечивает точную дозировку и глубину проникновения – индивидуально подстраивается под потребности кожи.</li><li><strong>Мягкое применение:</strong> по сравнению с ручным методом процедура практически безболезненна и снижает риск образования гематом.</li><li><strong>Максимальный эффект:</strong> благодаря равномерному распределению активных веществ, таких как гиалуроновая кислота, витамины или пептиды, видимые результаты достигаются быстрее.</li><li><strong>Минимальное время восстановления:</strong> Процедура является щадящей, и вы можете сразу вернуться к привычному ритму жизни.</li></ul>"
+        },
+        {
+          "title": "Какие области применения существуют для мезотерапии:",
+          "html": "<p>Для мезотерапии существуют различные области применения. Она используется для омоложения кожи при усталой, обвисшей коже и мелких морщинах, при различных формах выпадения волос у мужчин и женщин, а также для лечения растяжек и стрий.</p>"
+        },
+        {
+          "title": "Что нужно учитывать перед процедурой:",
+          "html": "<p>Перед процедурой важно не принимать разжижающие кровь средства и не делать прививки. Кроме того, в день процедуры не следует наносить кремы, макияж или пудру на обрабатываемые участки.</p>"
+        },
+        {
+          "title": "Как проводится процедура:",
+          "html": "<p>Перед началом процедуры на кожу наносится анестезирующий крем. После короткого времени воздействия проводится тщательная очистка обрабатываемой кожи. Затем с помощью очень тонких, коротких инъекционных игл активные вещества вводятся в кожу. Во время процедуры вы можете почувствовать легкое покалывание или жжение.</p>"
+        },
+        {
+          "title": "Как будет выглядеть моя кожа после процедуры:",
+          "html": "<p>После процедуры могут появиться легкие покраснения и небольшая отечность кожи, которые исчезнут в течение нескольких дней. Также могут возникнуть небольшие синяки.</p>"
+        },
+        {
+          "title": "Что нужно учитывать после процедуры:",
+          "html": "<p>В первое время после процедуры не следует принимать ванны, делать массажи, обертывания или лимфодренаж.</p><p>Кроме того, пожалуйста, защищайте обработанные участки от прямых солнечных лучей, не посещайте сауну, в первые 3 дня не проводите рентгеновские облучения или электролечение и не носите окрашенные, новые или слишком тесные вещи в этой области.</p>"
+        },
+        {
+          "title": "Сколько процедур необходимо:",
+          "html": "<p>В зависимости от области применения и результатов обследования врач составит с вами индивидуальный план лечения. Для достижения оптимальных результатов необходимо несколько сеансов и периодические обновления в течение года.</p>"
+        }
+      ]
+    }
+  },
   bookingDetails: {
     duration: { de: 'ca. 30-60 Minuten', ru: 'около 30–60 минут' },
     pain: { de: 'gering bis moderat (abhängig von der Region)', ru: 'от лёгких до умеренных (в зависимости от зоны обработки)' },

@@ -27,6 +27,22 @@ export const intimlifting: ServiceContent = {
 <p>Эта сдержанная и эффективная терапия не только способствует улучшению самочувствия, но и поддерживает личную уверенность в себе.</p>
     `
   },
+  layout: {
+    "de": {
+      "intro": {
+        "title": "Was ist ein Intimlifting?",
+        "html": "<p>Das Intimlifting ist eine moderne, minimalinvasive Behandlung zur sanften Straffung und Verjüngung des Intimbereichs.</p><p>Durch den Einsatz innovativer Methoden wird die Elastizität des Gewebes verbessert, die Hautstruktur gestärkt und das ästhetische Erscheinungsbild harmonisch optimiert.</p><p>Diese diskrete und effektive Therapie trägt nicht nur zu einem gesteigerten Wohlbefinden bei, sondern unterstützt auch das persönliche Selbstvertrauen.</p>"
+      },
+      "blocks": []
+    },
+    "ru": {
+      "intro": {
+        "title": "Что такое «Интимный лифтинг»?",
+        "html": "<p>Интим-лифтинг - это современная малоинвазивная процедура для мягкого подтяжки и омоложения интимной зоны.</p><p>Использование инновационных методов повышает эластичность тканей, укрепляет текстуру кожи и гармонично оптимизирует эстетический вид.</p><p>Эта сдержанная и эффективная терапия не только способствует улучшению самочувствия, но и поддерживает личную уверенность в себе.</p>"
+      },
+      "blocks": []
+    }
+  },
   bookingDetails: {
     duration: { de: 'ca. 30–60 Minuten', ru: 'около 30–60 минут' },
     pain: { de: 'leicht bis mittel, individuell unterschiedlich', ru: 'лёгкие до умеренных, индивидуально' },

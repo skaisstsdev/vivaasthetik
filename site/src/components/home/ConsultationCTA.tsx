@@ -1,29 +1,30 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { btnGold } from '@/lib/ui';
 import { Link } from '@/i18n/routing';
 import BookNowButton from '@/components/booking/BookNowButton';
-import ShaderBackground from './ShaderBackground';
+import StaticGradient from './StaticGradient';
 
 export default function ConsultationCTA() {
   const t = useTranslations('ConsultationCTA');
 
   return (
-    <section className="relative py-24 px-8 overflow-hidden text-white">
-      <ShaderBackground />
+    <section className="relative py-24 md:py-28 px-6 md:px-8 overflow-hidden text-white">
+      <StaticGradient />
       <div className="relative z-10 max-w-2xl mx-auto text-center">
-        <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-4">
+        <p className="text-xs uppercase tracking-[0.3em] text-white/60 mb-4">
           {t('eyebrow')}
         </p>
         <h2 className="text-3xl md:text-4xl font-light mb-6 leading-snug">
           {t('title')}
         </h2>
-        <p className="text-gray-400 leading-relaxed mb-10">
+        <p className="text-white/70 leading-relaxed mb-10">
           {t('text')}
         </p>
         <Link
           href="/booking"
-          className="inline-block px-12 py-5 bg-transparent border border-[#c9a84c] text-[#f5e198] text-xs md:text-sm tracking-[0.2em] uppercase font-medium hover:bg-[#c9a84c] hover:text-white transition-all duration-300"
+          className={btnGold}
         >
           {t('cta')}
         </Link>

@@ -1,4 +1,5 @@
 import { setRequestLocale } from 'next-intl/server';
+import PageHero from '@/components/layout/PageHero';
 
 export default async function AgbPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -6,16 +7,10 @@ export default async function AgbPage({ params }: { params: Promise<{ locale: st
 
   return (
     <main className="bg-white text-gray-900 min-h-screen">
-      {/* Hero Section */}
-      <div className="bg-[#0a0a0a] text-white pt-32 pb-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-light tracking-wide">
-            {locale === 'ru' ? 'Условия и положения (AGB)' : 'Allgemeine Geschäftsbedingungen (AGB)'}
-          </h1>
-        </div>
-      </div>
+      {/* Мини-хиро */}
+      <PageHero title={locale === 'ru' ? 'Условия и положения (AGB)' : 'Allgemeine Geschäftsbedingungen (AGB)'} />
 
-      <div className="max-w-4xl mx-auto px-6 py-20">
+      <div className="max-w-4xl mx-auto px-6 md:px-8 py-20 md:py-24">
         {locale === 'ru' ? (
           <div className="prose prose-lg text-gray-600 max-w-none">
             <h2>§1 Область применения</h2>

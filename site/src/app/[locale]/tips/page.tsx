@@ -1,8 +1,7 @@
 import { setRequestLocale, getTranslations } from 'next-intl/server';
+import PageHero from '@/components/layout/PageHero';
 import ConsultationCTA from '@/components/home/ConsultationCTA';
 import TipsClient from '@/components/tips/TipsClient';
-import dynamic from 'next/dynamic';
-const ShaderBackground = dynamic(() => import('@/components/home/ShaderBackground'));
 import { tipsData } from '@/data/tips';
 
 export default async function TipsPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -13,22 +12,12 @@ export default async function TipsPage({ params }: { params: Promise<{ locale: s
   const serviceLocale = locale as 'de' | 'ru';
 
   return (
-    <main className="bg-white pb-24">
-      {/* Hero Section */}
-      <section className="relative w-full h-[100svh] flex items-center justify-center overflow-hidden bg-gray-900">
-        <ShaderBackground />
-        <div className="relative z-10 w-full max-w-4xl mx-auto px-6 flex flex-col items-center justify-center text-center pt-20">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-white mb-6 leading-tight">
-            {t('title')}
-          </h1>
-          <p className="max-w-2xl text-lg text-gray-300 font-light mx-auto mb-10 leading-relaxed">
-            {t('subtitle')}
-          </p>
-        </div>
-      </section>
+    <main className="bg-white">
+      {/* Мини-хиро */}
+      <PageHero title={t('title')} />
 
       {/* Tips Content */}
-      <section className="max-w-6xl mx-auto px-6 md:px-8 mt-24 mb-24">
+      <section className="max-w-7xl mx-auto px-6 md:px-8 py-24 md:py-32">
         <TipsClient locale={serviceLocale} initialData={tipsData} />
       </section>
 

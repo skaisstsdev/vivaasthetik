@@ -128,6 +128,157 @@ export const vampirlifting: ServiceContent = {
 </ul>
     `
   },
+  layout: {
+    "de": {
+      "intro": {
+        "title": "Was ist ein Vampir-Lifting?",
+        "html": "<p>Das „Vampir Lifting“, die sog. PRP-Plasmatherapie (Platelet-Rich-Plasma = plättchenreiches Plasma), ist eine Innovation im Bereich der ästhetischen Medizin zur Hautverjüngung und Biostimulation. Bei der Behandlung wird Eigenblut mittels Blutentnahme gewonnen, speziell aufbereitet und nach spezieller Vorbereitung der Haut (z.B. durch Needling oder Peeling) auf die Haut aufgetragen.</p>"
+      },
+      "areas": {
+        "title": "Behandelbare Bereiche",
+        "groups": [
+          {
+            "title": "Gesicht, Hals & Dekolleté",
+            "items": [
+              "Gesicht („Vampir Lifting“)",
+              "Hals",
+              "Dekolleté"
+            ]
+          },
+          {
+            "title": "Kopfhaut & Hände",
+            "items": [
+              "Kopfhaut",
+              "Handrücken"
+            ]
+          },
+          {
+            "title": "Narben & Streifen",
+            "items": [
+              "Schwangerschafts- und Dehnungsstreifen",
+              "OP- und Verletzungsnarben",
+              "Aknenarben"
+            ]
+          }
+        ]
+      },
+      "blocks": [
+        {
+          "title": "Wie wirkt die PRP-Therapie:",
+          "html": "<p>Die Technik stammt aus der Regenerationsmedizin und der Stammzellforschung. Das aufbereitete Blutplasma regt die Zellerneuerung an, indem es das Wachstum von Kollagen sowie Haut- und Unterhautzellen stimuliert. Die Unterspritzung der Haut mit PRP führt zur Aktivierung von Bindegewebszellen (sog. Fibroblasten), die die Produktion von Elastin und Kollagen anregen. Zudem lockt das Unterspritzen PRP Stammzellen des Bindegewebes an, die den natürlichen Prozess der Geweberegeneration mit Kollagenneubildung aktivieren. Die Hyaluronsäure-Bildung steigt, womit vermehrt Wasser gebunden und Feuchtigkeit gespeichert wird. Das Ergebnis der PRP-Therapie ist ein verbessertes, geglättetes Hautbild mit einer Erneuerung der Haut und des Bindegewebes von innen.</p>"
+        },
+        {
+          "title": "Welche Wirkung kann ich nach der PRP-Therapie erwarten:",
+          "html": "<ul><li>Verbesserung des Hautbildes, Hautstraffung, Faltenglättung</li><li>Verbesserung des Hautbildes im Bereich des Halses und des Dekolleté</li><li>Schnelle Hautabheilung nach Laser- oder Peeling-Behandlungen</li><li>Minderung von Augenringen</li><li>Stimulierung des Haarwachstums</li></ul>"
+        },
+        {
+          "title": "Was bewirkt die PRP-Therapie bei dunklen Augenringen:",
+          "html": "<p>Die Partie um die Augen ist besonders fragil und kann durch eine gestörte Mikrozirkulation eine bläuliche Färbung erfahren. Wachstumsfaktoren im körpereigenen Blutkonzentrat (PRP) stimulieren die Mikroblutzirkulation um die Augenpartie, so dass die Helligkeit verbessert wird und die Haut um die Augen an Stärke wiedergewinnt.</p>"
+        },
+        {
+          "title": "Was bewirkt die PRP-Therapie bei Haarausfall:",
+          "html": "<p>Injektionen von PRP in die Kopfhaut stimulieren die Stammzellen in den Haarwurzeln und die Mikrozirkulation durch Bildung neuer Blutgefäße. Dadurch wird der Haarwuchs unterstützt.</p>"
+        },
+        {
+          "title": "Was ist das „Cellular Matrix Gel“:",
+          "html": "<p>Ein neues Verfahren des Vampir Liftings erlaubt es jetzt noch bessere Ergebnisse zu erzielen. Hierbei enthält das Blutröhrchen 2 ml unvernetzte Hyaluronsäure, welches dem PRP beigemischt wird. Mit diesem Verfahren ist es möglich der Haut eine sehr hohe Menge an Feuchtigkeit und Nährstoffen zuzuführen.</p><p>Ein weiterer Vorteil ist die hohe Viskosität des Plasma-Hyaluronsäure Gels. Dabei werden die Thrombozyten und die Wachstumsfaktoren im Gel eingeschlossen und verbleiben über längere Zeit an der Injektionsstelle, wodurch sich die Wirkdauer des PRP erhöht.</p>"
+        },
+        {
+          "title": "Wie läuft eine PRP-Behandlung ab:",
+          "html": "<p>Zunächst wird Blut aus der Armvene entnommen und in einem speziellen Röhrchen zentrifugiert. Anschließend wird das aktivierte Plasma auf die vorbereitete Haut aufgetragen.</p>"
+        },
+        {
+          "title": "Wie viele PRP-Behandlungen sind notwendig:",
+          "html": "<p>Für ein effektives und lang anhaltendes Ergebnis sollten 3 Behandlungen im Abstand von 4 Wochen erfolgen. Anschließend reichen jährliche Auffrischungen, um das Ergebnis zu erhalten.</p>"
+        },
+        {
+          "title": "Was sollte vor und nach einer PRP-Behandlung beachtet werden:",
+          "html": "<p>Vor der PRP-Behandlung sollten mindestens 5 Tage kein Aspirin oder andere Blutverdünner eingenommen werden, um Blutungen und Blutergüsse zu vermeiden. Nach der Behandlung sollten für mindestens 6 Wochen starkes Sonnenlicht und Solarien gemieden werden.</p>"
+        },
+        {
+          "title": "Welche Komplikationen und Nebenwirkungen können bei der PRP-Therapie auftreten:",
+          "html": "<p>Mögliche Nebenwirkungen sind einzig die Folgen der Injektionen, also Rötung, Blutergüsse und Infektion. Da PRP ein körpereigenes Produkt ist, treten allergische Reaktionen selten auf.</p>"
+        }
+      ],
+      "contraindications": {
+        "title": "Gegenanzeigen",
+        "items": [
+          "Keloidneigung",
+          "Schwangerschaft und Stillzeit",
+          "akute Hauterkrankungen im zu behandelnden Areal (Entzündungen, Neurodermitis, Akne)",
+          "aktive oder chronische Infektionskrankheiten ( insbes. Hepatitis, HIV)",
+          "Tumorerkrankungen",
+          "akute Autoimmun oder rheumatologische Erkrankungen",
+          "1 Woche vorher keine Einnahme von ASS oder anderen nichtsteroidalen Antiphlogistika außer Paracetamol",
+          "schwere Blutungsneigungen (Hämophilie)"
+        ]
+      }
+    },
+    "ru": {
+      "intro": {
+        "title": "Что такое «Вампир-лифтинг»?",
+        "html": "<p>«Вампир Лифтинг», так называемая PRP-плазмотерапия (плазма, богатая тромбоцитами = тромбоцитарная плазма), является инновацией в области эстетической медицины для омоложения кожи и биостимуляции. Во время процедуры используется собственная кровь пациента: она забирается, проходит специальную обработку для выделения тромбоцитарной плазмы, после чего наносится или вводится в кожу.</p><p>Первоначально техника использовалась в травматологии, хирургии и спортивной медицине для ускоренного заживления тканей. Сегодня она успешно применяется в эстетической медицине — для естественного и безопасного омоложения.</p>"
+      },
+      "areas": {
+        "title": "Показания к процедуре",
+        "groups": [
+          {
+            "title": "Кожа",
+            "items": [
+              "— Тусклая, обезвоженная кожа",
+              "— Потеря упругости и эластичности",
+              "— Мелкие морщины и первые возрастные изменения",
+              "— Тёмные круги под глазами, отёчность",
+              "— Рубцы, постакне, расширенные поры",
+              "— Восстановление после агрессивных процедур (лазер, пилинг и др.)"
+            ]
+          },
+          {
+            "title": "Волосы",
+            "items": [
+              "— Выпадение волос (в том числе андрогенетическое)"
+            ]
+          },
+          {
+            "title": "Суставы и ткани",
+            "items": [
+              "— Остеоартриты и хронические боли в суставах",
+              "— Восстановление после травм и операций на суставах и мягких тканях",
+              "— Улучшение заживления повреждений связок и сухожилий",
+              "— Ремонт хрящевой ткани"
+            ]
+          }
+        ]
+      },
+      "blocks": [
+        {
+          "title": "Как работает PRP:",
+          "html": "<p>После забора крови проводится специальная обработка, в результате которой выделяется концентрат тромбоцитарной плазмы.</p><p>Эта плазма вводится в кожу инъекционно, часто в сочетании с микронидлингом или лёгким пилингом, что усиливает её проникновение и эффективность.</p>"
+        },
+        {
+          "title": "PRP активирует ключевые механизмы восстановления кожи:",
+          "html": "<ul><li>стимулирует фибробласты — клетки, отвечающие за синтез коллагена и эластина;</li><li>усиливает выработку гиалуроновой кислоты, повышая уровень увлажнённости кожи;</li><li>активирует стволовые клетки и запускает процессы регенерации тканей на глубоком уровне.</li></ul><p>Результат — более плотная, гладкая и сияющая кожа с восстановлением её структуры и тонуса изнутри.</p>"
+        },
+        {
+          "title": "Курс терапии:",
+          "html": "<p>Рекомендуется курс из 3–4 процедур с интервалом 3–4 недели.</p><p>Поддерживающие процедуры — 1–2 раза в год.</p><p>PRP-терапия — это деликатное и научно обоснованное омоложение, без синтетических препаратов, на базе собственных биологических ресурсов организма.</p><p>Эффективно. Безопасно. Естественно.</p>"
+        }
+      ],
+      "contraindications": {
+        "title": "Противопоказания",
+        "items": [
+          "склонность к келоидам",
+          "беременность и период грудного вскармливания",
+          "острые кожные заболевания в обрабатываемой области (воспаления, нейродермит, акне)",
+          "активные или хронические инфекционные заболевания (в частности, гепатит, ВИЧ)",
+          "онкологические заболевания",
+          "острые аутоиммунные или ревматологические заболевания",
+          "за 1 неделю до процедуры не принимать аспирин или другие нестероидные противовоспалительные средства, кроме парацетамола",
+          "тяжелые кровотечения (гемофилия)"
+        ]
+      }
+    }
+  },
   bookingDetails: {
     duration: { de: 'ca. 90 min', ru: 'около 90 минут' },
     pain: { de: 'leicht', ru: 'лёгкие' },

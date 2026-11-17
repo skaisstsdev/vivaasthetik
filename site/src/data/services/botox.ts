@@ -114,6 +114,102 @@ export const botox: ServiceContent = {
 <p>Кроме того, при мигрени можно целенаправленно обрабатывать триггерные точки, чтобы профилактировать или уменьшить частоту и интенсивность приступов. Ботулотоксин (ботокс) официально одобрен как лекарственное средство для лечения хронической мигрени.</p>
     `
   },
+  layout: {
+    de: {
+      intro: {
+        title: 'Was ist eine Botox-Behandlung?',
+        html: '<p>Die Gesichtsmuskulatur ist fest mit der Gesichtshaut verbunden. Spannt man diese Muskeln an entstehen sichtbare Falten. Im Laufe des Lebens verbleiben viele dieser Falten auch im entspannten Zustand im Gesicht. Eine Faltenbehandlung der mimischen Falten mit Botox ist eine sehr verbreitete Maßnahme zur Glättung mimischer Gesichtsfalten.</p>'
+      },
+      areas: {
+        title: 'Anwendungsbereiche',
+        groups: [
+          { title: 'Stirn & Augenpartie', items: ['Querfalten', 'Zornesfalten', 'Krähenfüße', 'Knitterfalten am Unterlid', 'Augenbrauenlift', 'Open-Eye-Look/Lidspaltenvergrößerung (bei schmalen Augen, besonders beim Lachen)'] },
+          { title: 'Nase & Mund', items: ['„Bunny-Lines“/Nasenfalten', 'Gummy-Smile/Zahnfleischlachen', '„negative Mimik“/Marionettenlinien', 'Falten der Ober- und Unterlippen'] },
+          { title: 'Kinn, Hals & Dekolleté', items: ['Pflastersteinkinn', 'Platysmastränge/ausgeprägte vertikale Halsstränge', 'Knitterfältchen im Dekolleté'] },
+          { title: 'Weitere Anwendungen', items: ['vermehrte Schweißbildung der Achseln, Hände und Füße (Hyperhidrose)', 'prophylaktisch/therapeutisch bei Migräne'] }
+        ]
+      },
+      blocks: [
+        {
+          title: 'Wann sind erste Therapieergebnisse sichtbar und wie lange hält das Ergebnis an:',
+          html: '<p>Das endgültige und zufrieden stellende Resultat einer Faltenbehandlung sieht man nach etwa 3-14 Tagen. Die Wirkung hält ca. 3-6 Monate an.</p>'
+        },
+        {
+          title: 'Kann ich nach der Behandlung meiner gewohnten Tätigkeit nachgehen:',
+          html: '<p>Nach der Botoxbehandlung können Sie Ihren normalen Aktivitäten sofort wieder nachgehen und sind gesellschaftsfähig. Am Tag der Behandlung sollten Sie darauf achten ihren Kopf nicht nach unten zu richten, um das Entstehen von kleinen Blutergüssen zu vermeiden. Bei Bedarf können Sie die behandelten Areale zu Hause nochmals kühlen. Bis zu drei Tage nach der Behandlung sollten Sie keine Saunagänge oder sportliche Aktivitäten planen. Der Verzicht auf Alkohol und Nikotin ist ratsam.</p><p>Gerne können Sie die behandelten Areale nach der Behandlung aktivieren (Stirnrunzeln, böse gucken). Das fördert die Verteilung von Botulinumtoxin im Gewebe und somit das Ansprechen der Therapie.</p>'
+        },
+        {
+          title: 'Muss ich vor der Botoxinjektion etwas beachten:',
+          html: '<p>Vor der Botulinumtoxininjektion sollten Sie bis zu fünf Tage vorher kein Aspirin oder andere Blutverdünner eingenommen haben. Ansonsten müssen Sie keine speziellen Maßnahmen beachten. Falls Sie spezielle Fragen haben, wird Sie Frau Schnal während des Informationsgespräches persönlich ausführlich informieren.</p><p>Komplikationen sind äußerst selten. An den Einstichstellen kann es vorübergehend zu kleinen Blutergüssen oder minimalen Rötungen kommen. In seltenen Fällen können 24 Stunden nach der Injektion Kopfschmerzen auftreten. Das Herabhängen von der Augenbraue oder dem Oberlid tritt extrem selten auf und ist reversibel.</p>'
+        }
+      ],
+      contraindications: {
+        title: 'Gegenanzeigen',
+        items: [
+          'Infektionen an der vorgesehenen Injektionsstelle',
+          'bestimmte Viruserkrankungen, z. B. Herpes',
+          'neuromuskuläre Störungen',
+          'Schwangerschaft und Stillzeit (aus Vorsicht keine Behandlung mit Botulinumtoxin-A)'
+        ],
+        note: 'Bei Einnahme von blutverdünnenden Medikamenten ist das Auftreten von kleinen Blutergüssen wahrscheinlicher, eine Behandlung kann in Absprache mit Frau Schnal auf Wunsch dennoch durchgeführt werden.'
+      },
+      faq: [
+        {
+          q: 'Hilft Botox auch gegen Schweiß (Hyperhidrose)?',
+          a: 'Die Behandlung des vermehrten Schwitzens kann sehr gut mit Botulinumtoxin erfolgen. Das Botulinumtoxin wird hierbei sehr oberflächlich unter die Haut „gequaddelt“ und unterdrückt die Schweißproduktion der Schweißdrüßen z.B. im Bereich der Achseln, Hände oder Füße.'
+        },
+        {
+          q: 'Stimmt es, dass nach Faltenbehandlungen der Stirn Migräne-Patienten über eine Besserung der Migräne berichten?',
+          a: 'Die Besserung der Migräne kann tatsächlich als „guter“-Nebeneffekt einer Faltenbehandlung sein. Zusätzlich können spezielle, zusätzliche Triggerpunkte mit Botox zur Vorbeugung und Milderung der Migräne behandelt werden. Botulinumtoxin (Botox) ist ein für die Behandlung der chronischen Migräne zugelassenes Medikament.'
+        }
+      ]
+    },
+    ru: {
+      intro: {
+        title: 'Что такое „Ботулинотерапия“?',
+        html: '<p>Мимическая мускулатура лица тесно связана с кожей. При напряжении этих мышц образуются видимые морщины. Со временем многие из них сохраняются на лице даже в расслабленном состоянии. Коррекция мимических морщин с помощью ботокса — широко применяемая методика разглаживания морщин.</p>'
+      },
+      areas: {
+        title: 'Области применения ботулинотерапии',
+        groups: [
+          { title: 'Лоб и область глаз', items: ['Горизонтальные морщины лба', 'Межбровные морщины («морщины гнева»)', '«Гусиные лапки» в уголках глаз', 'Мелкие морщины нижнего века', 'Лифтинг бровей', 'Эффект «открытого взгляда» (расширение глазной щели при узких глазах, особенно при улыбке)'] },
+          { title: 'Нос и область рта', items: ['«Кроличьи морщины» на переносице', '«Гамми-смайл» (оголённые дёсны при улыбке)', '«Негативная мимика» / линии марионетки', 'Морщины верхней и нижней губы'] },
+          { title: 'Подбородок, шея и декольте', items: ['«Булыжный подбородок» (неровности и ямочки на подбородке)', 'Вертикальные тяжи на шее (платизма)', 'Мелкие морщины в области декольте'] },
+          { title: 'Другие показания', items: ['Повышенное потоотделение подмышек, ладоней и стоп (гипергидроз)', 'Профилактика и лечение мигрени'] }
+        ]
+      },
+      blocks: [
+        {
+          title: 'Когда становятся заметны первые результаты и сколько длится эффект:',
+          html: '<p>Полный и удовлетворительный эффект проявляется примерно через 3–14 дней после процедуры.</p><p>Длительность действия — от 3 до 6 месяцев.</p><p>После инъекции ботокса вы можете сразу вернуться к обычной деятельности и остаётесь социально активными.</p><p>В день процедуры следует избегать наклонов головы вниз, чтобы минимизировать риск появления гематом. При необходимости можно охладить обработанные участки дома.</p><p>В течение трёх дней после процедуры рекомендуется воздержаться от посещения сауны и занятий спортом. Также желательно отказаться от алкоголя и курения.</p><p>После инъекций можно активно использовать мимику (нахмуривание, поднятие бровей), что способствует более равномерному распределению ботулотоксина в тканях и повышает эффективность терапии.</p>'
+        },
+        {
+          title: 'Что нужно учитывать перед процедурой ботулинотерапии:',
+          html: '<p>За 5 дней до процедуры не рекомендуется приём аспирина и других антикоагулянтов. Иных специальных подготовительных мер не требуется. При наличии дополнительных вопросов вас подробно проконсультирует г-жа Шналь на предварительной консультации.</p><p>Осложнения возникают крайне редко. На местах инъекций могут кратковременно появиться незначительные покраснения или небольшие кровоизлияния. Иногда через 24 часа может возникнуть головная боль. Опущение века или брови наблюдается крайне редко и носит временный характер.</p>'
+        }
+      ],
+      contraindications: {
+        title: 'Противопоказания',
+        items: [
+          'активные кожные инфекции в зоне инъекций',
+          'острые вирусные заболевания (например, герпес)',
+          'заболевания нервно-мышечной системы',
+          'беременность и лактация (в целях предосторожности)'
+        ],
+        note: 'Приём антикоагулянтов увеличивает риск появления гематом, однако процедура может быть проведена после согласования с врачом.'
+      },
+      faq: [
+        {
+          q: 'Помогает ли ботокс при повышенном потоотделении (гипергидрозе)?',
+          a: 'Да, лечение избыточного потоотделения с помощью ботулотоксина весьма эффективно. Препарат вводится поверхностно внутрикожно (в технике «папул»), подавляя активность потовых желез, например, в области подмышек, ладоней или стоп. Это приводит к значительному снижению потоотделения в обработанных зонах.'
+        },
+        {
+          q: 'Правда ли, что после коррекции лобных морщин у пациентов с мигренью наблюдается улучшение состояния?',
+          a: 'Да, действительно, снижение симптомов мигрени может быть положительным побочным эффектом после ботулинотерапии в области лба. Кроме того, при мигрени можно целенаправленно обрабатывать триггерные точки, чтобы профилактировать или уменьшить частоту и интенсивность приступов. Ботулотоксин (ботокс) официально одобрен как лекарственное средство для лечения хронической мигрени.'
+        }
+      ]
+    }
+  },
   bookingDetails: {
     duration: { de: 'ca. 20-40 min', ru: 'около 20–40 минут' },
     pain: { de: 'kaum - gering', ru: 'минимальные или отсутствуют' },

@@ -1,9 +1,12 @@
 import { setRequestLocale } from 'next-intl/server';
+import PageHero from '@/components/layout/PageHero';
+import { parseServiceContent } from '@/lib/serviceContent';
+import ServiceFacts from '@/components/services/ServiceFacts';
+import ServiceFaq from '@/components/services/ServiceFaq';
+import ServiceLayout from '@/components/services/ServiceLayout';
 import { getServiceBySlug, servicesData } from '@/data/services';
 import { notFound } from 'next/navigation';
-import BookNowButton from '@/components/booking/BookNowButton';
-import dynamic from 'next/dynamic';
-const ShaderBackground = dynamic(() => import('@/components/home/ShaderBackground'));
+import BookingBand from '@/components/services/BookingBand';
 import { Link } from '@/i18n/routing';
 import { ArrowLeft } from 'lucide-react';
 
@@ -29,60 +32,91 @@ export default async function ServiceDetailPage({
 
   const loc = locale as 'de' | 'ru';
 
-  return (
-    <main className="bg-white pb-24">
-      
-      {/* Full-screen Hero Section for the specific service */}
-      <section className="relative w-full h-[100svh] flex items-center justify-center bg-gray-900 overflow-hidden">
-        <ShaderBackground />
+  // В текстах услуг разделы размечены h3/h4; здесь они становятся главами (h2) и карточками (h3).
+  const layout = service.layout?.[loc];
+  const chapters = layout ? [] : parseServiceContent(service.content[loc]);
+  const bodyCls =
+    'prose-base md:prose-lg prose-strong:text-gray-900 prose-li:my-1.5 [&_ul.list-cols]:md:columns-2 [&_ul.list-cols]:gap-x-10 [&_ul.list-cols_li]:break-inside-avoid';
+  const proseCls =
+    'prose prose-gray max-w-none prose-p:leading-relaxed prose-li:marker:text-[#c9a84c] prose-ul:my-4 prose-p:my-4 first:prose-p:mt-0 text-gray-700';
 
-        <div className="relative z-10 w-full max-w-5xl mx-auto px-6 md:px-12 flex flex-col items-center justify-center text-center">
-          
-          <Link 
-            href="/services" 
-            className="inline-flex items-center gap-3 text-xs md:text-sm uppercase tracking-widest text-white/70 hover:text-white transition-colors mb-10 md:mb-16"
+  return (
+    <main className="bg-white">
+      
+      {/* Мини-хиро */}
+      <PageHero
+        title={service.title[loc]}
+        top={
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-3 text-xs md:text-sm uppercase tracking-widest text-white/70 hover:text-white transition-colors mb-8 md:mb-10"
           >
             <ArrowLeft size={16} />
             {loc === 'de' ? 'Zurück zu Leistungen' : 'Назад к услугам'}
           </Link>
+        }
+      />
 
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-light text-white mb-8 leading-tight">
-            {service.title[loc]}
-          </h1>
-          
-          <p className="text-lg md:text-xl text-gray-300 max-w-3xl font-light leading-relaxed">
-            {service.shortDescription[loc]}
-          </p>
-        </div>
+      {/* Коротко о процедуре */}
+      {service.bookingDetails && <ServiceFacts details={service.bookingDetails} loc={loc} />}
 
-      </section>
+      {layout ? (
+        <ServiceLayout layout={layout} loc={loc} />
+      ) : (
+      <div className="max-w-7xl mx-auto px-6 md:px-8 py-20 md:py-28 flex flex-col gap-20 md:gap-28">
+        {chapters.map((chapter, i) => (
+          <section key={i}>
+            {(chapter.title || chapter.html) && (
+              <div className={`grid grid-cols-[minmax(0,1fr)] gap-6 lg:gap-20 ${chapter.title ? 'lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]' : ''}`}>
+                {chapter.title && (
+                  <h2 className="text-3xl md:text-4xl text-gray-900 leading-tight">{chapter.title}</h2>
+                )}
+                {chapter.html && (
+                  <div
+                    className={`${proseCls} prose-lg md:prose-xl ${chapter.title ? '' : 'max-w-4xl'}`}
+                    dangerouslySetInnerHTML={{ __html: chapter.html }}
+                  />
+                )}
+              </div>
+            )}
+            {chapter.cards.length > 0 && (
+              <div className="mt-12 md:mt-16 border-b border-gray-200">
+                {chapter.cards.map((card, j) => (
+                  <article
+                    key={j}
+                    className="grid grid-cols-[minmax(0,1fr)] lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-5 lg:gap-16 py-9 md:py-12 border-t border-gray-200"
+                  >
+                    <div className="flex gap-4 md:gap-5">
+                      <span aria-hidden="true" className="font-mono text-sm tracking-widest text-[#8a6327] pt-1.5">
+                        {String(j + 1).padStart(2, '0')}
+                      </span>
+                      <h3 className="text-2xl md:text-[1.7rem] font-medium text-gray-900 !normal-case !tracking-normal leading-snug">
+                        {card.title}
+                      </h3>
+                    </div>
+                    <div
+                      className={
+                        card.important
+                          ? 'bg-[#faf6ea] border-l-2 border-[#c9a84c] p-6 md:p-8'
+                          : ''
+                      }
+                    >
+                      <div className={`${proseCls} ${bodyCls}`} dangerouslySetInnerHTML={{ __html: card.html }} />
+                    </div>
+                  </article>
+                ))}
+              </div>
+            )}
+          </section>
+        ))}
+      </div>
+      )}
 
-      {/* Main Content Section */}
-      <section className="max-w-3xl mx-auto px-6 md:px-8 pt-24 md:pt-32">
-        <div 
-          className="prose prose-lg md:prose-xl prose-gray prose-headings:font-light prose-h3:text-3xl prose-h4:text-2xl max-w-none mb-24"
-          dangerouslySetInnerHTML={{ __html: service.content[loc] }}
-        />
+      {/* Частые вопросы по процедуре */}
+      <ServiceFaq slug={service.slug} loc={loc} extra={layout?.faq} />
 
-        {/* Booking CTA for this specific service */}
-        <div className="relative bg-[#111111] p-10 md:p-16 text-center text-white flex flex-col items-center overflow-hidden">
-          <ShaderBackground />
-          <div className="relative z-10 flex flex-col items-center">
-            <h3 className="text-2xl md:text-3xl font-light mb-6">
-              {loc === 'de' ? 'Interesse an dieser Behandlung?' : 'Заинтересовала эта процедура?'}
-            </h3>
-            <p className="text-gray-400 mb-10 text-lg">
-              {loc === 'de' ? 'Vereinbaren Sie jetzt einen Beratungstermin.' : 'Запишитесь на консультацию прямо сейчас.'}
-            </p>
-            <BookNowButton 
-              serviceSlug={service.slug}
-              className="inline-block bg-transparent border border-white text-white px-10 py-5 text-sm uppercase tracking-wider font-medium hover:bg-white hover:text-gray-900 transition-colors"
-            >
-              {loc === 'de' ? 'Termin buchen' : 'Записаться на прием'}
-            </BookNowButton>
-          </div>
-        </div>
-      </section>
+      {/* Запись */}
+      <BookingBand loc={loc} serviceSlug={service.slug} hideBooking={service.hideBookingButton} />
 
     </main>
   );

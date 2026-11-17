@@ -33,6 +33,22 @@ export const haarausfall: ServiceContent = {
 <p>Испытайте с Viva Ästhetik силу современнейшей техники для полного, жизненного волоса!</p>
     `
   },
+  layout: {
+    "de": {
+      "intro": {
+        "title": "Was ist eine Mesotherapie für Haare?",
+        "html": "<p>Die Mesotherapie ist eine moderne und bewährte Methode zur Behandlung von Haarausfall und zur Förderung des Haarwachstums. In der Praxis Viva Ästhetik wird eine hochpräzise, hochmoderne Mesopistole eingesetzt, um ausgewählte Wirkstoffe wie Vitamine, Aminosäuren, Mineralstoffe und Hyaluronsäure direkt in die mittlere Hautschicht der Kopfhaut einzubringen.</p><p>Durch diese gezielte Versorgung werden die Haarwurzeln gestärkt, die Durchblutung verbessert und das natürliche Haarwachstum nachhaltig angeregt. Die Anwendung ist besonders sanft, nahezu schmerzfrei und ermöglicht eine gleichmäßige Verteilung der Wirkstoffe für optimale Ergebnisse.</p><p>Nach nur wenigen Sitzungen kann das Haar kräftiger, dichter und gesünder erscheinen. Die Mesotherapie erfordert keine Ausfallzeit und lässt sich ideal in den Alltag integrieren.</p><p>Erleben Sie mit Viva Ästhetik die Kraft modernster Technik für volles, vitales Haar!</p>"
+      },
+      "blocks": []
+    },
+    "ru": {
+      "intro": {
+        "title": "Что такое «Мезотерапия для волос»?",
+        "html": "<p>Мезотерапия — это современный и проверенный метод лечения выпадения волос и стимуляции роста волос. В практике Viva Эстетик используется высокоточная, современная мезопистолет, чтобы вводить выбранные активные вещества, такие как витамины, аминокислоты, минералы и гиалуроновую кислоту, непосредственно в средний слой кожи головы.</p><p>Благодаря этой целенаправленной поддержке корни волос укрепляются, улучшается кровообращение и естественный рост волос стимулируется на длительный срок. Процедура особенно мягкая, практически безболезненная и обеспечивает равномерное распределение активных веществ для оптимальных результатов.</p><p>Всего после нескольких сеансов волосы могут выглядеть крепче, гуще и здоровее. Мезотерапия не требует времени на восстановление и идеально вписывается в повседневную жизнь.</p><p>Испытайте с Viva Ästhetik силу современнейшей техники для полного, жизненного волоса!</p>"
+      },
+      "blocks": []
+    }
+  },
   bookingDetails: {
     duration: { de: 'ca. 30–45 Minuten', ru: 'около 30–45 минут' },
     pain: { de: 'gering bis moderat (je nach Empfindlichkeit der Kopfhaut)', ru: 'от лёгких до умеренных (в зависимости от чувствительности кожи головы)' },

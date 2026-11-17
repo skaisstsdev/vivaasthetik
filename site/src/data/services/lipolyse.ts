@@ -148,6 +148,214 @@ export const lipolyse: ServiceContent = {
 <p>Не подходит и не должно проводиться лечение инъекционной липолизой у несовершеннолетних, беременных и кормящих матерей, а также при некоторых редких, тяжелых заболеваниях. Более подробную информацию о том, подходит ли вам терапия, с удовольствием предоставит госпожа Шналь на встрече.</p>
     `
   },
+  layout: {
+    "de": {
+      "intro": {
+        "title": "Was ist eine Lipolyse?",
+        "html": "<p>Der Wirkstoff der Fett-Weg-Spritze ist das aus der Sojabohne gewonnene Naturpräparat Phosphatidylcholin (PPC). Mit einer Spritze wird das Naturpräparat Phosphatidylcholin (PPC) direkt in die unerwünschten Fettpolster injiziert. Dieser Wirkstoff wird in gleicher Zusammensetzung im Körper produziert und erfüllt dort vielfältige Aufgaben, besonders im Fettstoffwechsel. Dank der Weiterentwicklung ist es gelungen, heute schnellere und bessere Behandlungsergebnisse zu erzielen und die Therapie zu standardisieren.</p><p>Die Injektions-Lipolyse dient der Reduktion kleinerer, umschriebener Fettpolster und damit der Veränderung der Kontur. Patienten, die damit eine Gewichtsverringerrung erwarten, sollten sich ernährungsmedizinisch behandeln lassen. Das Gewicht wird durch Injektions-Lipolyse nicht bzw. nur in ganz geringem Umfang reduziert.</p>"
+      },
+      "areas": {
+        "title": "Behandelbare Bereiche",
+        "groups": [
+          {
+            "title": "Gesicht & Hals",
+            "items": [
+              "Gesichtsbereich",
+              "Doppelkinn",
+              "Wangen",
+              "Nacken"
+            ]
+          },
+          {
+            "title": "Bauch, Hüfte & Rücken",
+            "items": [
+              "Love-Handles (bei Männern)",
+              "Hüften",
+              "Ober- und Unterbauch",
+              "Rückenpartien"
+            ]
+          },
+          {
+            "title": "Beine & Gesäß",
+            "items": [
+              "Reiterhosen",
+              "Oberschenkel (innen)",
+              "Oberschenkel",
+              "unteres Gesäß / Übergang zum Oberschenkel Oberschenkel",
+              "Knie"
+            ]
+          },
+          {
+            "title": "Arme & weitere Bereiche",
+            "items": [
+              "Fettwulste an den Schulter-Arm-Gelenken",
+              "Oberarme",
+              "Cellulite-Behandlung",
+              "Lipome"
+            ]
+          }
+        ]
+      },
+      "blocks": [
+        {
+          "title": "Wie wird die Fett-Weg Spritze angewandt und wie wirkt die Fett-Weg-Spritze:",
+          "html": "<p>Das Mittel wird mittels feinster Nadeln direkt in die betroffenen Bereiche injiziert, wodurch ein Abschmelzen der Fettzellen und ein gesteigerter Fettabbau angeregt werden. Das Fett wird dabei vom Körper auf natürlichem Wege und dauerhaft abgebaut. Der Körperumfang dieser Region verringert sich meßbar. Auch die Haut zieht sich aufgrund ihrer Elastizität zusammen und die vom NETZWERK entwickelte Injektionstechnik erzeugt zudem eine glatte, straffe Oberfläche.</p>"
+        },
+        {
+          "title": "Wie lange wirkt die Fett-Weg-Spritze:",
+          "html": "<p>Einmal aufgelöste Fettzellen bilden sich dem jetzigen Erkenntnisstand nach nicht wieder neu. Dadurch ist es möglich, Fettpolster dauerhaft zu reduzieren. Wenn sich Ihr Gewicht nicht verändert, bleiben die Resultate konstant.</p>"
+        },
+        {
+          "title": "Wie häufig muss die Behandlung wiederholt werden:",
+          "html": "<p>In der Regel sind 2-4 Behandlungen im Abstand von 4-8 Wochen notwendig, um die Therapie erfolgreich abzuschließen.</p><p>Über 80% der Patienten sind nach 2 bis 3 Behandlungen mit den Ergebnissen sehr zufrieden.</p>"
+        },
+        {
+          "title": "Was ist der besondere Vorteil der Fettweg-Spritze / Injektions-Lipolyse:",
+          "html": "<p>Die Injektions-Lipolyse ermöglicht eine dauerhafte Reduzierung von Fettpolstern, vor allem an Stellen, die sich weder durch Diäten oder Sport gezielt verringern lassen. Dabei sind keine aufwendigen Vor- und Nachbehandlungen nötig. Ebenso entfallen Einschränkungen in der Arbeitsfähigkeit, außer bei der Behandlung von Gesichtsregionen.</p>"
+        },
+        {
+          "title": "Wieviele Behandlungen sind nötig:",
+          "html": "<p>In der Regel reichen 2-4 Anwendungen im Abstand von jeweils 4-8Wochen.</p>"
+        },
+        {
+          "title": "Ist die Behandlung mit der Fettweg-Spritze / Injektions-Lipolyse schmerzhaft:",
+          "html": "<p>Da es im Unterhautgewebe nur wenige Nervenfasern gibt, sind die Injektionen nicht schmerzhaft. Den Einstich spürt man kurz und fühlt dann einen leichten Juckreiz.</p>"
+        },
+        {
+          "title": "Welche Nebenwirkungen sind mit der Fett-weg Spritze / Injektions-Lipolyse verbunden:",
+          "html": "<p>Direkt nach der Therapie können leichte Schwellungen und Druckempfindlichkeit sowie Rötung und/ oder Juckreiz entstehen, die 2 bis 7 Tage andauern können. Etwa 3 Tage ist auf Massage, Sauna und Sport zu verzichten. Eine vollständige Risikoaufklärung erhalten Sie von dem behandelnden Arzt.</p>"
+        },
+        {
+          "title": "Unterstützende Maßnahmen bei der Behandlung mit der Fettwegspritze",
+          "html": "<p>Sie können durch Ihre Mitarbeit die Ergebnisse der Therapie positiv beeinflussen. Hier finden Sie einige Hinweise zur positiven Beeinflussung der Therapieergebnisse: Die Therapie stellt keinen Ersatz dar für eine Veränderung Ihrer Ernährungsgewohnheiten. Einige Patienten haben die irrige Auffassung, daß sie gerade wegen der Therapie sogar mehr essen können als zuvor. Eine Gewichtszunahme ist dann in den meisten Fällen eine unerwünschte Nebenwirkung. Verabschieden Sie sich also möglichst vor Beginn der Therapieaufnahme von der Vorstellung, daß die Therapie ein Ersatz für notwendige Veränderungen sein könnte.</p><p>Nehmen Sie vor und nach der Therapie möglichst viel Flüssigkeit zu sich, möglichst stilles Wasser. Ihr Kreislauf wird dadurch unterstützt, So fühlen sich wesentlich wohler, wenn Sie Ihren Wasserkonsum in den ersten Tagen auf bis zu 4 l am Tag erhöhen.</p><p>Dinner Canceling: Dies ist eine sehr einfache Methode zur Veränderung Ihrer Eßgewohnheiten. Wenn Sie jeden 2. Tag auf Mahlzeiten und Alkohol nach 17.00 Uhr verzichten können, wird sich Ihr körperliches Befinden in kurzer Zeit erheblich verbessern. Greifen Sie nach 17.00 Uhr nur noch auf stilles Wasser oder kalorienfreie Getränke zurück. Ihr Körper wird es Ihnen danken.</p><p>Fat Burning durch sportliche Betätigung: Der Zeitpunkt Ihrer Übungen entscheidet maßgeblich darüber, ob eine Fettverbrennung bei Ihnen einsetzt oder nicht. Gewöhnen Sie sich an, Ihre Übungen immer vor dem Frühstück mit nüchternem Magen durchzuführen, damit die Fettverbrennung möglichst schnell einsetzen kann. Sie können sowohl einen Heimtrainer benutzen, als auch Aerobic oder andere Übungen einsetzen, um den Prozeß auszulösen. Auch Joggen oder ein intensives Walking kann die Ergebnisse verbessern helfen.</p>"
+        }
+      ],
+      "contraindications": {
+        "title": "Gegenanzeigen",
+        "items": [
+          "Minderjährige",
+          "Schwangere und stillende Mütter",
+          "einige seltene, schwere Erkrankungen"
+        ],
+        "note": "Genauere Informationen, ob eine Therapie für Sie geeignet ist, erteilt Ihnen gerne Frau Schnal beim Gespräch."
+      },
+      "faq": [
+        {
+          "q": "Kann ich mit Hilfe der Fett-weg-Spritze / Injektions-Lipolyse abnehmen?",
+          "a": "Die Therapie ist nicht geeignet zur Gewichtsreduktion, sondern zum Abschmelzen unschöner lokal eingegrenzter Fettpölsterchen wie z.B. bei Doppelkinn, Reiterhosen, an Bauch und Oberarm."
+        },
+        {
+          "q": "Wie entscheide ich, ob eine Injektions-Lipolyse oder eine Liposuction für mich sinnvoller ist?",
+          "a": "Lange Zeit war die Liposuction die einzige Möglichkeit, Fettansammlungen gezielt zu entfernen. Mit Hilfe der Injektions-Lipolyse ist es nun aber mittlerweile möglich, mit minimalem Aufwand schonend Fettpölsterchen zu entfernen. Der wesentliche Unterschied besteht darin, daß die Injektions-Lipolyse eine nicht operative Behandlungsmethode ist, während die Liposuction einen operativen Eingriff erfordert. Bei der Liposuction verschwindet das Fett in kürzester Zeit. Die Injektions-Lipolyse ermöglicht eine langsamere Veränderung der Körperkontur und damit des eigenen Selbstbildes innerhalb von einigen Monaten. Die Injektions-Lipolyse ist außerdem eine ideale Behandlungsmethode nach einer Liposuction zur Beseitigung von übrig gebliebenem Fettgewebe und der Straffung der umgebenden Haut."
+        }
+      ]
+    },
+    "ru": {
+      "intro": {
+        "title": "Что такое «Липолиз»?",
+        "html": "<p>Инъекционный липолиз — нехирургический способ коррекции контуров тела</p><p>Активным компонентом процедуры является фосфатидилхолин (PPC) — природное вещество, получаемое из соевых бобов. Вещество идентично тому, что синтезируется в организме человека и играет ключевую роль в жировом обмене, особенно в процессах эмульгирования и выведения жиров.</p><p>Препарат вводится с помощью тонкой иглы непосредственно в область локальных жировых отложений. Это способствует постепенному разрушению жировых клеток, после чего продукты их распада выводятся естественным путём через лимфатическую систему.</p><p>Благодаря современным технологиям и усовершенствованной формуле, процедура стала более эффективной, предсказуемой и безопасной.</p>"
+      },
+      "areas": {
+        "title": "Области применения",
+        "groups": [
+          {
+            "title": "Лицо и шея",
+            "items": [
+              "Область лица",
+              "Двойной подбородок",
+              "Щеки",
+              "Шея"
+            ]
+          },
+          {
+            "title": "Живот, бока и спина",
+            "items": [
+              "«Любовные ручки» (у мужчин)",
+              "Бедра",
+              "Верхний и нижний живот",
+              "Области спины"
+            ]
+          },
+          {
+            "title": "Ноги и ягодицы",
+            "items": [
+              "Бриджи",
+              "Внутренняя часть бедра",
+              "Бедра",
+              "нижняя часть ягодиц / переход к бедру",
+              "Колени"
+            ]
+          },
+          {
+            "title": "Руки и другое",
+            "items": [
+              "Жировые валики на плечевых и локтевых суставах",
+              "Верхние руки",
+              "Лечение целлюлита",
+              "Липомы"
+            ]
+          }
+        ]
+      },
+      "blocks": [
+        {
+          "title": "Что важно знать:",
+          "html": "<p>Инъекционный липолиз не является методом снижения массы тела. Он подходит для коррекции небольших, устойчивых жировых отложений, например, в области подбородка, живота, бёдер или спины. Если целью пациента является общее снижение веса, рекомендуется консультация со специалистом по питанию или диетологии.</p>"
+        },
+        {
+          "title": "Как применяется инъекция для удаления жира и как она действует:",
+          "html": "<p>Средство вводится с помощью самых тонких игл непосредственно в пораженные области, что способствует разрушению жировых клеток и увеличению расщепления жира. Жир при этом естественным образом и постоянно выводится из организма. Объем тела в этой области уменьшается измеримо. Также кожа сжимается благодаря своей эластичности, а разработанная сетью инъекционная техника создает гладкую, упругую поверхность.</p>"
+        },
+        {
+          "title": "Как долго действует инъекция для удаления жира:",
+          "html": "<p>Один раз растворенные жировые клетки, согласно текущим знаниям, не восстанавливаются. Это позволяет постоянно уменьшать жировые отложения. Если ваш вес не изменяется, результаты остаются постоянными.</p>"
+        },
+        {
+          "title": "Как часто нужно повторять лечение:",
+          "html": "<p>Как правило, необходимо 2-4 процедуры с интервалом 4-8 недель, чтобы успешно завершить терапию.</p><p>Более 80% пациентов очень довольны результатами после 2-3 процедур.</p>"
+        },
+        {
+          "title": "В чем особое преимущество инъекционной липолизы / инъекционной липолизы:",
+          "html": "<p>Инъекционная липолиза позволяет добиться постоянного уменьшения жировых отложений, особенно в тех местах, которые нельзя целенаправленно уменьшить с помощью диет или спорта. При этом не требуются сложные подготовительные и последующие процедуры. Также отсутствуют ограничения в трудоспособности, кроме случаев лечения областей лица.</p>"
+        },
+        {
+          "title": "Сколько процедур необходимо:",
+          "html": "<p>Как правило, достаточно 2-4 процедур с интервалом 4-8 недель.</p>"
+        },
+        {
+          "title": "Болезненно ли лечение с помощью инъекционной липолизы:",
+          "html": "<p>Поскольку в подкожной ткани всего несколько нервных волокон, инъекции не болезненны. Укол ощущается кратковременно, а затем появляется легкий зуд.</p>"
+        },
+        {
+          "title": "Какие побочные эффекты связаны с инъекционной липолизой:",
+          "html": "<p>Сразу после терапии могут возникнуть легкие отеки и чувствительность к давлению, а также покраснение и/или зуд, которые могут длиться от 2 до 7 дней. Примерно 3 дня следует воздерживаться от массажа, сауны и спорта. Полное информирование о рисках вы получите от лечащего врача.</p>"
+        },
+        {
+          "title": "Поддерживающие меры при лечении с помощью инъекционной липолизы",
+          "html": "<p>Вы можете положительно повлиять на результаты терапии своим участием. Вот несколько советов по положительному влиянию на результаты терапии: Терапия не является заменой изменениям в ваших пищевых привычках. Некоторые пациенты ошибочно полагают, что именно из-за терапии они могут есть даже больше, чем раньше. Увеличение веса в большинстве случаев является нежелательным побочным эффектом.</p><p>Поэтому постарайтесь как можно скорее до начала терапии избавиться от представления о том, что терапия может быть заменой необходимым изменениям.</p><p>Пейте как можно больше жидкости до и после терапии, желательно негазированной воды. Это поддержит ваш кровообращение, и вы будете чувствовать себя гораздо лучше, если в первые дни увеличите потребление воды до 4 л в день.</p><p>Отмена ужина: Это очень простой метод изменения ваших пищевых привычек. Если вы сможете отказаться от еды и алкоголя после 17:00 каждые 2 дня, ваше физическое состояние значительно улучшится в короткие сроки. После 17:00 пейте только негазированную воду или безкалорийные напитки. Ваше тело скажет вам спасибо.</p><p>Сжигание жира через физическую активность: Время ваших упражнений существенно влияет на то, начнется ли у вас сжигание жира или нет. Привыкайте выполнять свои упражнения всегда перед завтраком на голодный желудок, чтобы сжигание жира могло начаться как можно быстрее. Вы можете использовать как домашний тренажер, так и аэробику или другие упражнения, чтобы запустить процесс. Также бег или интенсивная ходьба могут помочь улучшить результаты.</p>"
+        }
+      ],
+      "contraindications": {
+        "title": "Противопоказания",
+        "items": [
+          "несовершеннолетние",
+          "беременные и кормящие матери",
+          "некоторые редкие, тяжёлые заболевания"
+        ],
+        "note": "Более подробную информацию о том, подходит ли вам терапия, с удовольствием предоставит госпожа Шналь на встрече."
+      },
+      "faq": [
+        {
+          "q": "Могу ли я похудеть с помощью инъекционной липолизы / инъекционной липолизы?",
+          "a": "Терапия не предназначена для снижения веса, а для устранения некрасивых локализованных жировых отложений, таких как, например, двойной подбородок, «верхние брюки», на животе и верхних руках."
+        },
+        {
+          "q": "Как мне решить, что инъекционная липолиза или липосакция более целесообразна для меня?",
+          "a": "Долгое время липосакция была единственным способом целенаправленного удаления жировых отложений. Однако с помощью инъекционной липолизы теперь возможно бережно удалять жировые отложения с минимальными усилиями. Основное отличие заключается в том, что инъекционная липолиза является неоперативным методом лечения, в то время как липосакция требует хирургического вмешательства. При липосакции жир исчезает за короткое время. Инъекционная липолиза позволяет медленнее изменять контуры тела и, следовательно, собственное восприятие себя в течение нескольких месяцев. Инъекционная липолиза также является идеальным методом лечения после липосакции для устранения оставшихся жировых тканей и подтяжки окружающей кожи."
+        }
+      ]
+    }
+  },
   bookingDetails: {
     duration: { de: 'ca. 15 - 40 min', ru: 'около 15–40 минут' },
     pain: { de: 'kaum - gering', ru: 'минимальные' },

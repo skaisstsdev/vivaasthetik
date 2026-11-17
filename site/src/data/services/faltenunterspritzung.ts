@@ -148,6 +148,124 @@ export const faltenunterspritzung: ServiceContent = {
 <p>Беременным и кормящим женщинам не рекомендуется использование гиалуроновой кислоты по соображениям безопасности.</p>
     `
   },
+  layout: {
+    de: {
+      intro: {
+        title: "Was ist eine Faltenunterspritzung?",
+        html: "<p>Hyaluronsäure ist ein natürlicher, wichtiger Feuchtigkeitsspeicher in unserer Haut der oft bei der Faltenbehandlung verwendet oft. Sie verleiht dem Gesicht Elastizität, Spannkraft, Glätte und seine weichen Konturen. Mit zunehmendem Lebensalter nimmt der Hyaluronsäuregehalt der Haut ab. Die Haut verliert ihr jugendliches und weiches Aussehen, es entstehen Falten.</p><p>Es treten zunächst Knitterfalten, später tiefere Falten wie die Nasolabialfalten oder die sogenannten Marionettenfalten im seitlichen Kinnbereich auf. Auch die Konturen werden kantiger oder wirken eingefallen und erschlafft. Mit Hyaluronsäure kann dieser Volumenverlust im Wangenbereich, den Schläfen oder den Lippen auf sehr einfache Weise wieder ausgeglichen werden.</p><p>Hyaluronsäure wird als synthetisch hergestelltes Gel unter die Haut injiziert und stellt derzeit das am häufigsten genutzte Füllmaterial bei der Faltenbehandlung dar. Es handelt sich um einen resorbierbaren, das heißt ein im Laufe der Zeit abbaubaren Filler.</p><p>Seit über 15 Jahren wird Hyaluronsäure als Filler weltweit verwendet und hat sich neben Botox als beliebtes und sicheres Anti-Aging Verfahren stetig weiter entwickelt. Regelmäßig nimmt Frau Schnal an den Masterclasses international renommierter Spezialisten teil, um Ihre Patienten mit den besten Techniken behandeln zu können. Auch wissenschaftlich ist die sichere Wirksamkeit von Hyaluronsäure gut belegt. Wir verwenden ausschließlich hochwertige Materialien namhafter Firmen, deren Produkte die erforderlichen Qualitätsprüfungen vorweisen können.</p>"
+      },
+      areas: {
+        title: "Behandelbare Bereiche",
+        groups: [
+          { title: "Falten & Linien", items: ["Nasolabialfalten", "Marionettenfalten", "Falten der Ober- und Unterlippe", "Tränenrinnen", "Krähenfüße", "Zornesfalte", "Stirnfalten"] },
+          { title: "Lippen", items: ["Lippenkonturierung", "Volumenaufbau der Lippen"] },
+          { title: "Volumen & Kontur", items: ["Wangenaufbau", "Harmonisierung der Gesichtskontur", "Brauenmodulation", "Betonung des Ohres/Minderung der Falte vor dem Ohr", "Liquid Lifting"] },
+          { title: "Weitere Bereiche", items: ["Handrückenaufbau", "Anhebung von Aknenarben", "Filler-Behandlung für den Intimbereich – mehr Volumen & Straffheit"] }
+        ]
+      },
+      blocks: [
+        {
+          title: "Welche Hyaluronsäure-Filler gibt es:",
+          html: "<p>Mittlerweilen gibt es sehr viele verschiedene Filler für die jeweilige Indikation. Am herausragensten ist der Unterschied zwischen vernetzten und unvernetzten Hyaluronsäure-Fillern.</p><p>Die vernetzten Hyaluronsäure-Filler bestehen, wie ihr Name hinweist, aus quervernetzter Hyaluronsäure. Diese Struktur leiht den Fillern Stabilität und eignet sich hervorragend für die Behandlung mittlerer bis tiefer Falten sowie zum Volumenaufbau.</p><p>Unvernetzte Hyaluronsäure kann durch ihre unvernetzte Struktur ausgezeichnet für oberflächliche Falten verwendet werden, z.B. bei Knitterfältchen im Dekolleté oder um die Augen.</p><p>Kommen Sie doch einfach zum Beratungsgespräch vorbei. Frau Schnal wird Sie bezüglich der Filler individuell beraten.</p>"
+        },
+        {
+          title: "Wie lange hält die Wirkung bei den verschiedenen Hyaluronsäuren an und welche gibt es:",
+          html: "<p>Die Wirkung hält je nach Region 6-18 Monate an und kann beliebig häufig wiederholt werden. Je nach Faltentiefe kommen unterschiedlich stark vernetzte Hyaluronsäuren zum Einsatz. Stark vernetztes Material wird zum Auffüllen tiefer Falten, beim Wangenaufbau und beim Liquid Lifting verwandt und hat eine längere Haltbarkeit. Unvernetzte Hyaluronsäure wird mit feinsten Nadeln in die Haut injiziert und verhilft müder, erschlaffter Haut wieder zu mehr Elastizität. Unvernetzte Hyaluronsäure wird schneller abgebaut und die Behandlungen werden in regelmäßigen Abständen wiederholt. Aber auch bei tieferen Falten sorgt ein so genanntes touch up, ein Nachspritzen nach 6 Monaten für eine längere Haltbarkeit des gewünschten Effektes.</p>"
+        },
+        {
+          title: "Wie lange dauert die Faltenunterspritzung und erfolgt eine Betäubung:",
+          html: "<p>Die Behandlung dauert in der Regel ca. 30 - 60 min. Je nach Bedarf wird im Vorfeld eine hautbetäubende Creme auf die zu behandelnden Hautareale aufgetragen. Einigen Hyaluronsäuregelen ist auch ein örtliches Betäubungsmittel zugesetzt, so dass die Injektion weitgehend schmerzfrei verläuft.</p>"
+        },
+        {
+          title: "Was kann ich vorbeugend tun, um Schwellungen oder Hämatome zu vermeiden:",
+          html: "<p>Sie können vor und nach der Behandlung je 5 Kügelchen (Globuli) Arnika D12 unter der Zunge zergehen lassen. Verzichten Sie 1 Woche vor und nach der Behandlung auf die Einnahme blutverdünnender Medikamente (z.B. ASS).</p>"
+        },
+        {
+          title: "Gibt es Alternativen zur Hyaluronsäure:",
+          html: "<p>Eine Alternative bei tiefen Falten oder zum Volumenaufbau sowie zum Lifting bietet das Calcium hydroxylapatit- Radiesse®️ .</p>"
+        }
+      ],
+      contraindications: {
+        title: "Gegenanzeigen",
+        items: [
+          "Überempfindlichkeit gegen Hyaluronsäure oder einen der sonstigen Bestandteile des Arzneimittels",
+          "Infektionen an der vorgesehenen Injektionsstelle, z. B. bei bestimmten Viruserkrankungen wie Herpes oder starker Akne",
+          "Immunsuppression",
+          "Neigung zu Keloiden",
+          "blutverdünnende Medikamente oder Gerinnungsstörungen (von der Behandlung wird abgeraten)",
+          "Schwangerschaft und Stillzeit (aus Vorsicht keine Behandlung mit Hyaluronsäure)"
+        ]
+      },
+      faq: [
+        {
+          q: "Wie sehe ich direkt nach der Faltenbehandlung mit Hyaluronsäure aus?",
+          a: "Nach der Behandlung kann vorübergehend eine leichte Rötung oder Schwellung sichtbar sein, manchmal kann sich ein kleiner Bluterguss bilden. All dies bildet sich meist sehr schnell wieder zurück, die Patienten können unter Berücksichtigung kleiner Maßnahmen ihrer normalen Beschäftigung nachgehen."
+        },
+        {
+          q: "Bin ich nach der Faltenunterspritzung gesellschaftsfähig? Auf was sollte ich nach der Behandlung achten?",
+          a: "Sie können sofort nach der Behandlung mit Fillern Ihrer gewohnten Alltagsbeschäftigung oder Arbeit nachgehen. Am Tag der Behandlung sollten sie die zuvor behandelten Bereiche nicht mehr massieren. Durch das beigefügte lokale Betäubungsmittel können Sie in den behandelten Bereichen noch den Tag ein Taubheitsgefühl spüren. Nach der Behandlung können Sie ebenfalls wieder duschen. Auch schwere körperliche Arbeiten, Kopfüber-Bewegungen und Sport am ersten Tag nach der Behandlung und kosmetische Behandlungen an den beiden ersten Tagen nach der Behandlung sind zu vermeiden."
+        }
+      ]
+    },
+    ru: {
+      intro: {
+        title: "Что такое «Контурная пластика морщин»?",
+        html: "<p>Гиалуроновая кислота представляет собой современный гелеобразный филлер, который вводится под кожу для восполнения объема и разглаживания морщин. Это биосовместимый и полностью рассасывающийся материал, который со временем естественным образом расщепляется ферментами организма до воды и углекислого газа.</p><p>Процесс распада занимает в среднем от 6 до 18 месяцев — в зависимости от плотности препарата, зоны введения, обмена веществ и индивидуальных особенностей пациента.</p><p>Уже более 15 лет гиалуроновая кислота применяется в качестве филлера по всему миру и наравне с ботоксом зарекомендовала себя как эффективная и безопасная антивозрастная процедура.</p><p>Г-жа Шналь регулярно принимает участие в мастер-классах международных экспертов, чтобы предлагать своим пациентам наиболее современные и эффективные методики.</p><p>Безопасность и эффективность гиалуроновой кислоты научно подтверждены.</p><p>Мы используем только сертифицированные препараты от известных производителей, прошедшие необходимые испытания качества.</p>"
+      },
+      areas: {
+        title: "Эстетические зоны коррекции",
+        groups: [
+          { title: "Морщины и линии", items: ["Носогубные складки", "Марионеточные морщины", "Морщины верхней и нижней губы", "Слёзная борозда", "«Гусиные лапки»", "Межбровные морщины", "Лобные морщины"] },
+          { title: "Губы", items: ["Контурирование губ", "Увеличение объёма губ"] },
+          { title: "Объём и контур", items: ["Восстановление объёма щёк", "Коррекция овала лица", "Моделирование бровей", "Область перед ушами (уменьшение складок, акцент на ушной раковине)", "Объёмное безоперационное омоложение лица (Liquid Lifting)"] },
+          { title: "Другие зоны", items: ["Тыльная сторона кистей", "Поднятие атрофических рубцов после акне", "Интимная коррекция: увеличение объёма и повышение упругости"] }
+        ]
+      },
+      blocks: [
+        {
+          title: "Какие виды филлеров на основе гиалуроновой кислоты существуют:",
+          html: "<p>В настоящее время существует большое разнообразие филлеров, специально разработанных для разных эстетических задач.</p><p>Наиболее важным отличием является структура гиалуроновой кислоты — филлеры бывают сшитыми (верифицированными) и несшитыми (несвязанными).</p><p>Несшитые филлеры с более лёгкой текстурой идеально подходят для коррекции мелких поверхностных морщин и могут использоваться для обработки области декольте и вокруг глаз. Они мягче и быстрее рассасываются, делая их подходящими для менее глубоких морщин.</p><p>Сшитые (связанные) филлеры, наоборот, обладают более плотной структурой, что делает их идеальными для коррекции более глубоких морщин и объёмных изменений, таких как носогубные складки или восстановление объёма щёк.</p>"
+        },
+        {
+          title: "Как долго сохраняется эффект от различных филлеров на основе гиалуроновой кислоты и какие они бывают:",
+          html: "<p>Сшитые филлеры используются для коррекции глубоких морщин, восстановления объёма в щёках и для проведения Liquid Lifting. Эти филлеры обеспечивают долговременный эффект.</p><p>Несшитая гиалуроновая кислота вводится с помощью тончайших игл и помогает восстановить упругость и эластичность уставшей и дряблой кожи. Она быстрее рассасывается, и процедуры нужно повторять через более короткие интервалы. Тем не менее, для глубоких морщин может применяться метод touch-up, когда через 6 месяцев выполняется дополнительная инъекция для продления эффекта.</p>"
+        },
+        {
+          title: "Как долго длится процедура введения филлеров и используется ли анестезия:",
+          html: "<p>Процедура, как правило, занимает от 15 до 30 минут. В зависимости от потребности перед процедурой на обрабатываемые участки кожи может быть нанесён крем-анестетик. Некоторые гели на основе гиалуроновой кислоты содержат уже местное обезболивающее средство, что делает инъекции почти безболезненными.</p>"
+        },
+        {
+          title: "Что можно сделать для предотвращения отёков и синяков:",
+          html: "<p>Перед и после процедуры рекомендуется рассасывать по 5 гранул Арники D12 под языком. Также следует избегать приема кроверазжижающих препаратов (например, Аспирин) за неделю до и после процедуры.</p>"
+        },
+        {
+          title: "Существуют ли альтернативы гиалуроновой кислоте:",
+          html: "<p>Альтернативой гиалуроновой кислоте для коррекции глубоких морщин, восстановления объёма и лифтинга является кальция гидроксиапатит (Radiesse®️ ).</p>"
+        }
+      ],
+      contraindications: {
+        title: "Противопоказания",
+        items: [
+          "повышенная чувствительность к препарату или его компонентам",
+          "инфекции в области предполагаемой инъекции (например, герпес или тяжёлая акне)",
+          "иммуносупрессивная терапия",
+          "склонность к келоидным рубцам",
+          "приём кроверазжижающих препаратов или нарушения свёртываемости крови",
+          "беременность и лактация (по соображениям безопасности)"
+        ]
+      },
+      faq: [
+        {
+          q: "Как я буду выглядеть сразу после процедуры введения гиалуроновой кислоты?",
+          a: "После процедуры возможны небольшие покраснение или отёк, а также иногда может образоваться небольшой синяк. Все эти явления обычно проходят довольно быстро. Пациенты могут сразу вернуться к своей повседневной деятельности с учётом небольших предосторожностей."
+        },
+        {
+          q: "Буду ли я выглядеть нормально после процедуры? Могу ли я вернуться к обычной жизни? На что стоит обратить внимание после процедуры?",
+          a: "Вы можете сразу вернуться к обычной деятельности или работе после введения филлеров. Однако в день процедуры рекомендуется не массировать обработанные участки кожи. Из-за содержащегося в препарате анестетика может сохраняться ощущение онемения в обработанных зонах в течение дня. После процедуры также можно принять душ. Тем не менее, в течение первых суток стоит избегать тяжёлых физических нагрузок, движений головой вниз и спорта. Также в течение первых двух дней следует воздержаться от косметических процедур."
+        }
+      ]
+    }
+  },
   bookingDetails: {
     duration: { de: 'ca. 15-60 min', ru: 'от 15 до 60 минут' },
     pain: { de: 'leicht-mäßig', ru: 'лёгкие до умеренных' },

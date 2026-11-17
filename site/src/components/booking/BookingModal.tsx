@@ -1,9 +1,16 @@
 'use client';
 
 import { useBooking } from '@/context/BookingContext';
-import BookingWizard from './BookingWizard';
+import dynamic from 'next/dynamic';
 import { X } from 'lucide-react';
 import { useEffect, useState } from 'react';
+
+// Мастер записи (календарь, date-fns, EmailJS) грузится отдельным файлом
+// только когда модалка открыта, а не на каждой странице сайта.
+const BookingWizard = dynamic(() => import('./BookingWizard'), {
+  ssr: false,
+  loading: () => <div className="h-96 animate-pulse bg-gray-50" aria-hidden="true" />,
+});
 
 export default function BookingModal() {
   const { isOpen, closeBooking } = useBooking();

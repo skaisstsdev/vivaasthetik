@@ -40,8 +40,8 @@ export default function FeatureCards() {
   ];
 
   return (
-    <section className="py-24 px-8 bg-gray-50">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 auto-rows-fr">
+    <section className="py-24 md:py-32 px-6 md:px-8 bg-gray-50">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 auto-rows-fr">
         {cards.map((card, i) => (
             <Link
               key={i}

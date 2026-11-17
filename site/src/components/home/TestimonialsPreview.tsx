@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { btnOutlineDark } from '@/lib/ui';
 import { Link } from '@/i18n/routing';
 
 export default function TestimonialsPreview() {
@@ -14,11 +15,11 @@ export default function TestimonialsPreview() {
   }));
 
   return (
-    <section className="py-24 bg-white overflow-hidden">
-      <div className="max-w-6xl mx-auto px-8">
+    <section className="py-24 md:py-32 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-3">
+          <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-3">
             {t('eyebrow')}
           </p>
           <h2 className="text-4xl md:text-5xl font-light text-gray-900">
@@ -48,12 +49,12 @@ export default function TestimonialsPreview() {
       </div>
 
       {/* Leave a review link */}
-      <div className="text-center mt-16 px-8">
+      <div className="text-center mt-16 px-6 md:px-8">
         <a
           href="https://g.page/r/CaOO9JFCPATYEBM/review"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block border border-gray-300 text-gray-700 text-sm px-8 py-3 hover:border-gray-900 hover:text-gray-900 transition-colors uppercase tracking-widest"
+          className={btnOutlineDark}
         >
           {t('leaveReview')}
         </a>

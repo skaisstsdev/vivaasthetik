@@ -1,7 +1,7 @@
 import { setRequestLocale, getTranslations } from 'next-intl/server';
+import PageHero from '@/components/layout/PageHero';
 import ConsultationCTA from '@/components/home/ConsultationCTA';
-import dynamic from 'next/dynamic';
-const ShaderBackground = dynamic(() => import('@/components/home/ShaderBackground'));
+import ContactForm from '@/components/contact/ContactForm';
 
 export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -10,22 +10,12 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
   const t = await getTranslations({ locale, namespace: 'Contact' });
 
   return (
-    <main className="bg-white pb-24">
-      {/* Hero Section */}
-      <section className="relative w-full h-[100svh] flex items-center justify-center overflow-hidden bg-gray-900">
-        <ShaderBackground />
-        <div className="relative z-10 w-full max-w-4xl mx-auto px-6 flex flex-col items-center justify-center text-center pt-20">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-white mb-6 leading-tight">
-            {t('title')}
-          </h1>
-          <p className="max-w-2xl text-lg text-gray-300 font-light mx-auto mb-10 leading-relaxed">
-            {t('subtitle')}
-          </p>
-        </div>
-      </section>
+    <main className="bg-white">
+      {/* Мини-хиро */}
+      <PageHero title={t('title')} />
 
       {/* Contact Content */}
-      <section className="max-w-7xl mx-auto px-6 md:px-12 mt-24 mb-24">
+      <section className="max-w-7xl mx-auto px-6 md:px-8 py-24 md:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           
           {/* Info & Form */}
@@ -83,36 +73,17 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
               </div>
             </div>
 
-            {/* Simple Contact Form */}
-            <div className="mt-8 p-8 bg-gray-50 border border-gray-100">
-              <h2 className="text-2xl font-light text-gray-900 mb-6">{t('formTitle')}</h2>
-              <form className="flex flex-col gap-6">
-                <input 
-                  type="text" 
-                  placeholder={t('formName')} 
-                  className="w-full bg-white border border-gray-200 px-4 py-3 outline-none focus:border-gray-900 transition-colors"
-                  required 
-                />
-                <input 
-                  type="email" 
-                  placeholder={t('formEmail')} 
-                  className="w-full bg-white border border-gray-200 px-4 py-3 outline-none focus:border-gray-900 transition-colors"
-                  required 
-                />
-                <textarea 
-                  placeholder={t('formMessage')} 
-                  rows={4}
-                  className="w-full bg-white border border-gray-200 px-4 py-3 outline-none focus:border-gray-900 transition-colors resize-none"
-                  required 
-                ></textarea>
-                <button 
-                  type="button" 
-                  className="bg-gray-900 text-white px-8 py-4 uppercase tracking-widest text-sm hover:bg-gray-800 transition-colors mt-2"
-                >
-                  {t('formSubmit')}
-                </button>
-              </form>
-            </div>
+            {/* Форма обратной связи */}
+            <ContactForm
+              loc={locale as 'de' | 'ru'}
+              labels={{
+                title: t('formTitle'),
+                name: t('formName'),
+                email: t('formEmail'),
+                message: t('formMessage'),
+                submit: t('formSubmit'),
+              }}
+            />
           </div>
 
           {/* Map */}

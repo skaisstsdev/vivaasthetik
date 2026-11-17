@@ -94,6 +94,106 @@ export const lippenkorrektur: ServiceContent = {
 <p>Гиалуроновая кислота не должна применяться у людей с повышенной чувствительностью к препарату или его компонентам.Кроме того, её не следует использовать при наличии инфекций в области предполагаемой инъекции (например, при герпесе или тяжёлой акне), а также у пациентов, принимающих иммуносупрессивную терапию и имеющих склонность к келоидным рубцам, а также принимающих кроверазжижающие препараты или имеющих нарушения свертываемости крови.Беременным и кормящим женщинам не рекомендуется использование гиалуроновой кислоты по соображениям безопасности.</p>
     `
   },
+  layout: {
+    "de": {
+      "intro": {
+        "title": "Was ist eine Lippenkorrektur?",
+        "html": "<p>Hyaluronsäure ist ein natürlicher, wichtiger Feuchtigkeitsspeicher in unserer Haut. Sie verleiht dem Gesicht Elastizität, Spannkraft, Glätte und seine weichen Konturen. Mit zunehmendem Lebensalter nimmt der Hyaluronsäuregehalt der Haut ab. Die Haut verliert ihr jugendliches und weiches Aussehen, es entstehen Falten.</p>"
+      },
+      "blocks": [
+        {
+          "title": "Was ist das besondere an der Hyaluronsäure für die Lippen:",
+          "html": "<p>Das besondere an der Hyaluronsäure für die Lippen ist ihre spezielle Struktur, welche einerseits besonders gut für den Volumenaufbau geeignet ist und sich zusätzlich geschmeidig und weich anfühlt. Sie ist auch hervorragend zur Konturierung der Lippen geeignet, um diese dezent zu betonen und kleine Knitterfalten auszugleichen. Ihre Lippen werden wieder frischer aussehen und bleiben dabei ganz natürlich.</p><p>Es handelt sich um einen resorbierbaren, das heißt ein im Laufe der Zeit abbaubaren Filler.</p>"
+        },
+        {
+          "title": "Welche Effekte können mit der Behandlung der Lippen erreicht werden:",
+          "html": "<p>Nach ausführlicher Beratung werden individuelle Ziele für die Behandlung der Lippen festgelegt. Möglich sind:</p><ul><li>Glättung der kleinen Falten an der Ober- und Unterlippe (vermehrt bei Rauchern)</li><li>Konturierung der Lippen für definierte Lippen</li><li>Volumenaufbau für vollere Lippen</li><li>Auffüllen der seitlichen Lippenenden für einen freundlichen Ausdruck</li><li>Auffüllen der Marionettenfalten</li></ul>"
+        },
+        {
+          "title": "Wie lange hält die Wirkung bei an:",
+          "html": "<p>Die Wirkung hält 6-12 Monate an und kann beliebig häufig wiederholt werden.</p>"
+        },
+        {
+          "title": "Wie lange dauert die Faltenunterspritzung und erfolgt eine Betäubung:",
+          "html": "<p>Die Behandlung dauert in der Regel ca. 20 - 30 min.</p><p>Die Lippen zählen zu den empfindlichen Regionen unseres Gesichtes. Bei uns in der Praxis wird ca. 30 Minuten vor der Behandlung eine lokale Betäubung als Creme aufgetragen. Zusätzlich ist die von uns verwendete Hyaluronsäure mit einem Lokalanästhetikum angereichert, so dass die Injektion weitgehend schmerzfrei verläuft. Die lokale Betäubung kann bis zu Stunden nach der Behandlung als Taubheitsgefühl oder leichtes Prickeln zu spüren sein.</p>"
+        },
+        {
+          "title": "Auf was sollte ich nach der Behandlung achten:",
+          "html": "<p>Am Tag der Behandlung sollten sie die zuvor behandelten Bereiche nicht mehr massieren. Auf sehr warme oder kalte Getränke sollte am Tag der Behandlung verzichtet werden. Nach der Behandlung können Sie ebenfalls wieder duschen.</p>"
+        },
+        {
+          "title": "Was kann ich vorbeugend tun, um Schwellungen oder Hämatome zu vermeiden:",
+          "html": "<p>Sie können vor und nach der Behandlung je 5 Kügelchen (Globuli) Arnika D12 unter der Zunge zergehen lassen. Verzichten Sie 1 Woche vor und nach der Behandlung auf die Einnahme blutverdünnender Medikamente (z.B. ASS).</p>"
+        }
+      ],
+      "contraindications": {
+        "title": "Gegenanzeigen",
+        "items": [
+          "Überempfindlichkeit gegen Hyaluronsäure oder einen der sonstigen Bestandteile des Arzneimittels",
+          "Infektionen an der vorgesehenen Injektionsstelle, z. B. bei bestimmten Viruserkrankungen wie Herpes oder starker Akne",
+          "Immunsuppression",
+          "Neigung zu Keloiden",
+          "blutverdünnende Medikamente oder Gerinnungsstörungen (von der Behandlung wird abgeraten)",
+          "Schwangerschaft und Stillzeit (aus Vorsicht keine Behandlung mit Hyaluronsäure)"
+        ]
+      },
+      "faq": [
+        {
+          "q": "Wie sehe ich direkt nach der Behandlung aus? Bin ich nach der Behandlung gesellschaftsfähig?",
+          "a": "Nach der Behandlung kann vorübergehend eine leichte Rötung oder Schwellung sichtbar sein, manchmal kann sich ein kleiner Bluterguss bilden. All dies bildet sich meist sehr schnell wieder zurück, die Patienten können unter Berücksichtigung kleiner Maßnahmen ihrer normalen Beschäftigung nachgehen."
+        }
+      ]
+    },
+    "ru": {
+      "intro": {
+        "title": "Что такое «Коррекция губ»?",
+        "html": "<p>Гиалуроновая кислота является естественным, важным запасом влаги в нашей коже. Она придает лицу эластичность, упругость, гладкость и мягкие контуры. С возрастом содержание гиалуроновой кислоты в коже уменьшается. Кожа теряет свой юношеский и мягкий вид, появляются морщины.</p>"
+      },
+      "blocks": [
+        {
+          "title": "В чем особенность гиалуроновой кислоты для губ:",
+          "html": "<p>Особенность гиалуроновой кислоты для губ заключается в ее специальной структуре, которая, с одной стороны, особенно хорошо подходит для создания объема и, кроме того, ощущается гладкой и мягкой. Она также отлично подходит для контурирования губ, чтобы подчеркнуть их сдержанно и сгладить мелкие морщинки. Ваши губы будут выглядеть свежими и при этом останутся совершенно естественными.</p><p>Это резорбируемый (то есть со временем рассасывающийся) филлер.</p>"
+        },
+        {
+          "title": "Каких эффектов можно достичь при коррекции губ:",
+          "html": "<p>После детального обсуждения и оценки индивидуальных особенностей формулируются персонализированные цели коррекции. Возможны следующие результаты:</p><ul><li>Сглаживание мелких морщин в области верхней и нижней губ, особенно выраженных у курильщиков</li><li>Чёткое контурирование губ для более выразительной формы</li><li>Увеличение объёма губ для достижения более полной и гармоничной формы</li><li>Коррекция уголков губ для более дружелюбного и открытого выражения лица</li><li>Заполнение марионеточных складок для общего омоложения нижней трети лица</li></ul>"
+        },
+        {
+          "title": "Сколько держится эффект:",
+          "html": "<p>Результат сохраняется в среднем от 6 до 12 месяцев и может быть повторён при необходимости неограниченное количество раз.</p>"
+        },
+        {
+          "title": "Сколько времени занимает коррекция губ морщин и будет ли анестезия:",
+          "html": "<p>Процедура обычно длится около 20 - 30 минут.</p><p>Губы — одна из самых чувствительных зон лица.</p><p>Чтобы обеспечить максимальный комфорт, примерно за 30 минут до процедуры мы наносим местный анестезирующий крем.</p><p>Дополнительно, используемый нами препарат гиалуроновой кислоты содержит анестетик, благодаря чему инъекции практически безболезненны.</p><p>После процедуры может сохраняться ощущение лёгкого онемения или покалывания, которое проходит в течение нескольких часов.</p>"
+        },
+        {
+          "title": "На что мне следует обратить внимание после процедуры:",
+          "html": "<p>После инъекции филлеров в губы есть несколько важных вещей, которых следует избегать, чтобы предотвратить осложнения и достичь наилучшего результата.</p><p>Прочитай внимательно в нашем разделе рекомендации или уточни во время процедуры у госпожи Шналь.</p>"
+        },
+        {
+          "title": "Что можно сделать для предотвращения отёков и синяков:",
+          "html": "<p>Перед и после процедуры рекомендуется рассасывать по 5 гранул Арники D12 под языком. Также следует избегать приема кроверазжижающих препаратов (например, Аспирин) за неделю до и после процедуры.</p>"
+        }
+      ],
+      "contraindications": {
+        "title": "Противопоказания",
+        "items": [
+          "повышенная чувствительность к препарату или его компонентам",
+          "инфекции в области предполагаемой инъекции (например, герпес или тяжёлая акне)",
+          "иммуносупрессивная терапия",
+          "склонность к келоидным рубцам",
+          "приём кроверазжижающих препаратов или нарушения свёртываемости крови",
+          "беременность и лактация (по соображениям безопасности)"
+        ]
+      },
+      "faq": [
+        {
+          "q": "Как я буду выглядеть сразу после процедуры? Буду ли я социально приемлемым после процедуры?",
+          "a": "После процедуры возможны временные реакции кожи, такие как лёгкое покраснение, отёчность или небольшой синяк. Эти проявления, как правило, проходят быстро. При соблюдении несложных рекомендаций пациенты могут вскоре вернуться к своему обычному ритму жизни."
+        }
+      ]
+    }
+  },
   bookingDetails: {
     duration: { de: 'ca. 20-30 min', ru: 'около 20–30 минут' },
     pain: { de: 'leicht-mäßig', ru: 'лёгкие до умеренных' },

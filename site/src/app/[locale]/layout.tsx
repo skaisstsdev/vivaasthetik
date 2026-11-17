@@ -13,12 +13,14 @@ import { Metadata } from 'next';
 import { Cormorant, Inter } from 'next/font/google';
 
 import CookieBanner from '@/components/layout/CookieBanner';
+import StickyActionBar from '@/components/layout/StickyActionBar';
 import '@/app/globals.css';
 
 const cormorant = Cormorant({
   subsets: ['latin', 'cyrillic'],
-  weight: ['300', '400', '500'],
-  style: ['normal', 'italic'],
+  // 300 — все заголовки, 500 — заголовки с font-medium. 400 и курсив не используются.
+  weight: ['300', '500'],
+  style: ['normal'],
   variable: '--font-bodoni',
   display: 'swap',
 });
@@ -113,6 +115,7 @@ export default async function LocaleLayout({
               <Navbar />
               {children}
               <Footer />
+              <StickyActionBar />
               <Suspense fallback={null}>
                 <BookingModal />
               </Suspense>

@@ -42,6 +42,42 @@ export const biorevitalisierung: ServiceContent = {
 <p>Для стойкого эффекта биоревитализация проводится курсом из 3–4 процедур с интервалом 2–4 недели. В дальнейшем возможны поддерживающие сеансы каждые 3–6 месяцев.</p>
     `
   },
+  layout: {
+    "de": {
+      "intro": {
+        "title": "Was ist eine Biorevitalisierung?",
+        "html": "<p>Die Biorevitalisierung ist eine innovative Behandlung zur Wiederherstellung der Jugendlichkeit und Gesundheit der Haut. Dabei werden hochwertige Inhaltsstoffe, wie Hyaluronsäure, tief in die Haut eingeschleust, um ihre Feuchtigkeitsbalance zu verbessern, die Elastizität zu steigern und den natürlichen Glanz zurückzubringen.</p><p>In der Praxis Viva Ästhetik verwenden wir nur hochwertige Hyaluronsäure, die intensiv Feuchtigkeit spendet und die Produktion von Kollagen und Elastin anregt. Dies führt nicht nur zu einer Minderung feiner Falten, sondern auch zu einer allgemeinen Verjüngung und einem gesunden, frischen Hautbild.</p><p>Die Biorevitalisierung verbessert die Hautstruktur, verleiht der Haut ein strahlendes Aussehen und reduziert Anzeichen von Müdigkeit und Alterserscheinungen. Diese Behandlung ist ideal für alle, die das jugendliche Aussehen ihrer Haut wiederherstellen möchten und eine spürbare Verbesserung der Hauttextur wünschen.</p><p>Die Biorevitalisierung ist sicher, effektiv und nahezu schmerzfrei. Bereits nach der ersten Sitzung sind sichtbare Verbesserungen zu erkennen, mit zunehmendem Effekt nach einem Behandlungszyklus.</p><p>Verwöhnen Sie Ihre Haut mit Biorevitalisierung in Viva Ästhetik und genießen Sie das Gefühl von Frische und Selbstvertrauen!</p>"
+      },
+      "blocks": []
+    },
+    "ru": {
+      "intro": {
+        "title": "Что такое «Биоревитализация»?",
+        "html": "<p>Биоревитализация — это современная инъекционная процедура, направленная на восстановление молодости и здоровья кожи.</p><p>С помощью гиалуроновой кислоты и других активных компонентов кожа глубоко увлажняется, улучшается её структура, повышается эластичность и возвращается естественное сияние.</p>"
+      },
+      "areas": {
+        "title": "Показания к процедуре",
+        "groups": [
+          {
+            "title": "",
+            "items": [
+              "— Сухость и обезвоженность кожи",
+              "— Тусклый, уставший тон лица",
+              "— Мелкие морщины и потеря упругости",
+              "— Подготовка или восстановление кожи после солнца, стрессов или пилингов",
+              "— Профилактика возрастных изменений"
+            ]
+          }
+        ]
+      },
+      "blocks": [
+        {
+          "title": "Рекомендуемый курс:",
+          "html": "<p>Для стойкого эффекта биоревитализация проводится курсом из 3–4 процедур с интервалом 2–4 недели. В дальнейшем возможны поддерживающие сеансы каждые 3–6 месяцев.</p>"
+        }
+      ]
+    }
+  },
   bookingDetails: {
     duration: { de: 'ca. 30 Minuten', ru: 'около 30 минут' },
     pain: { de: 'gering (meist mit sehr feinen Nadeln)', ru: 'минимальные (используются очень тонкие иглы)' },

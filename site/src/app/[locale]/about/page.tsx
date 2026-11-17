@@ -1,7 +1,6 @@
 import { setRequestLocale, getTranslations } from 'next-intl/server';
+import PageHero from '@/components/layout/PageHero';
 import Image from 'next/image';
-import dynamic from 'next/dynamic';
-const ShaderBackground = dynamic(() => import('@/components/home/ShaderBackground'));
 import ConsultationCTA from '@/components/home/ConsultationCTA';
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -11,21 +10,10 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   const t = await getTranslations({ locale, namespace: 'About' });
 
   return (
-    <main className="bg-white pb-24">
+    <main className="bg-white">
       
-      {/* Hero Section */}
-      <section className="relative w-full h-[100svh] flex items-center justify-center overflow-hidden bg-gray-900">
-        <ShaderBackground />
-        <div className="relative z-10 w-full max-w-4xl mx-auto px-6 flex flex-col items-center justify-center text-center pt-20">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-white mb-6 leading-tight">
-            {t('Hero.title')}
-          </h1>
-          <p className="max-w-2xl text-lg text-gray-300 font-light mx-auto mb-10 leading-relaxed">
-            {t('Hero.subtitle1')}
-            <span>{t('Hero.subtitle2')}</span>
-          </p>
-        </div>
-      </section>
+      {/* Мини-хиро */}
+      <PageHero title={t('Hero.title')} />
 
       {/* Professional Journey */}
       <section className="py-24 md:py-32 px-6 md:px-8 border-b border-gray-100">
