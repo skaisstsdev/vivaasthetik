@@ -6,6 +6,17 @@ import Image from 'next/image';
 import FAQClient from '@/components/faq/FAQClient';
 import { faqData } from '@/data/faq';
 
+import { buildMetadata, type Loc } from '@/lib/seo';
+import { pageSeo, crumbNames } from '@/data/seo';
+import { breadcrumbs } from '@/lib/schema';
+import JsonLd from '@/components/seo/JsonLd';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const l = locale as Loc;
+  return buildMetadata({ locale: l, path: '/faq', ...pageSeo.faq[l] });
+}
+
 export default async function FAQPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
@@ -15,6 +26,12 @@ export default async function FAQPage({ params }: { params: Promise<{ locale: st
 
   return (
     <main className="bg-white">
+      <JsonLd
+        data={breadcrumbs(locale as Loc, [
+          { name: crumbNames.home[locale as Loc], path: '' },
+          { name: crumbNames.faq[locale as Loc], path: '/faq' },
+        ])}
+      />
       {/* Мини-хиро */}
       <PageHero title={t('title')} />
 

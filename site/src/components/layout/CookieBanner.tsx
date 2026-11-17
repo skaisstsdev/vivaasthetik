@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
+import { CONSENT_EVENT } from '@/lib/analytics';
 
 export default function CookieBanner() {
   const [isVisible, setIsVisible] = useState(false);
@@ -19,11 +20,13 @@ export default function CookieBanner() {
 
   const handleAccept = () => {
     localStorage.setItem('cookie_consent', 'accepted');
+    window.dispatchEvent(new Event(CONSENT_EVENT));
     setIsVisible(false);
   };
 
   const handleDecline = () => {
     localStorage.setItem('cookie_consent', 'declined');
+    window.dispatchEvent(new Event(CONSENT_EVENT));
     setIsVisible(false);
   };
 

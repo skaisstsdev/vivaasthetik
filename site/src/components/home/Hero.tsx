@@ -14,9 +14,12 @@ export default function Hero() {
       <ShaderBackground />
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-5xl mx-auto px-6 flex flex-col items-center justify-center text-center pt-20">
+      <div className="relative z-10 w-full max-w-[110rem] mx-auto px-6 flex flex-col items-center justify-center text-center pt-20">
 
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white mb-8 leading-[1.1]">
+        <p className="text-xs md:text-sm uppercase tracking-[0.3em] text-white mb-6 md:mb-8">
+          {t('eyebrow')}
+        </p>
+        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[clamp(3.5rem,6.2vw,5.25rem)] lg:whitespace-nowrap text-white mb-8 leading-[1.1]">
           {t('title')}{' '}
           <span>{t('titleEm')}</span>
         </h1>

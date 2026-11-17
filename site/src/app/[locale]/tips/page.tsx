@@ -4,6 +4,17 @@ import ConsultationCTA from '@/components/home/ConsultationCTA';
 import TipsClient from '@/components/tips/TipsClient';
 import { tipsData } from '@/data/tips';
 
+import { buildMetadata, type Loc } from '@/lib/seo';
+import { pageSeo, crumbNames } from '@/data/seo';
+import { breadcrumbs } from '@/lib/schema';
+import JsonLd from '@/components/seo/JsonLd';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const l = locale as Loc;
+  return buildMetadata({ locale: l, path: '/tips', ...pageSeo.tips[l] });
+}
+
 export default async function TipsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
@@ -13,6 +24,12 @@ export default async function TipsPage({ params }: { params: Promise<{ locale: s
 
   return (
     <main className="bg-white">
+      <JsonLd
+        data={breadcrumbs(locale as Loc, [
+          { name: crumbNames.home[locale as Loc], path: '' },
+          { name: crumbNames.tips[locale as Loc], path: '/tips' },
+        ])}
+      />
       {/* Мини-хиро */}
       <PageHero title={t('title')} />
 

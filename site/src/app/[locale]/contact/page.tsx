@@ -3,6 +3,17 @@ import PageHero from '@/components/layout/PageHero';
 import ConsultationCTA from '@/components/home/ConsultationCTA';
 import ContactForm from '@/components/contact/ContactForm';
 
+import { buildMetadata, type Loc } from '@/lib/seo';
+import { pageSeo, crumbNames } from '@/data/seo';
+import { breadcrumbs } from '@/lib/schema';
+import JsonLd from '@/components/seo/JsonLd';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const l = locale as Loc;
+  return buildMetadata({ locale: l, path: '/contact', ...pageSeo.contact[l] });
+}
+
 export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
@@ -11,6 +22,12 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
 
   return (
     <main className="bg-white">
+      <JsonLd
+        data={breadcrumbs(locale as Loc, [
+          { name: crumbNames.home[locale as Loc], path: '' },
+          { name: crumbNames.contact[locale as Loc], path: '/contact' },
+        ])}
+      />
       {/* Мини-хиро */}
       <PageHero title={t('title')} />
 

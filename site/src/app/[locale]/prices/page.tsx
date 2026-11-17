@@ -7,6 +7,11 @@ import { serviceGroups } from '@/data/serviceGroups';
 import { prices } from '@/data/prices';
 import type { ServiceContent } from '@/data/services/types';
 
+import { buildMetadata, type Loc } from '@/lib/seo';
+import { pageSeo, crumbNames } from '@/data/seo';
+import { breadcrumbs } from '@/lib/schema';
+import JsonLd from '@/components/seo/JsonLd';
+
 const t = {
   title: { de: 'Preise', ru: 'Цены' },
   factorsTitle: { de: 'Wovon der Preis abhängt', ru: 'От чего зависит цена' },
@@ -43,6 +48,12 @@ const t = {
   },
 };
 
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const l = locale as Loc;
+  return buildMetadata({ locale: l, path: '/prices', ...pageSeo.prices[l] });
+}
+
 export default async function PricesPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
@@ -62,6 +73,12 @@ export default async function PricesPage({ params }: { params: Promise<{ locale:
 
   return (
     <main className="bg-white">
+      <JsonLd
+        data={breadcrumbs(locale as Loc, [
+          { name: crumbNames.home[locale as Loc], path: '' },
+          { name: crumbNames.prices[locale as Loc], path: '/prices' },
+        ])}
+      />
       <PageHero title={t.title[loc]} />
 
       {/* От чего зависит цена */}

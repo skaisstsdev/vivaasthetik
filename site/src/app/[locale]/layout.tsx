@@ -14,6 +14,10 @@ import { Cormorant, Inter } from 'next/font/google';
 
 import CookieBanner from '@/components/layout/CookieBanner';
 import StickyActionBar from '@/components/layout/StickyActionBar';
+import JsonLd from '@/components/seo/JsonLd';
+import Analytics from '@/components/analytics/Analytics';
+import { SITE_URL, OG_IMAGE, type Loc } from '@/lib/seo';
+import { siteGraph } from '@/lib/schema';
 import '@/app/globals.css';
 
 const cormorant = Cormorant({
@@ -48,35 +52,16 @@ export async function generateMetadata(
       default: t('title'),
     },
     description: t('description'),
-    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://vivaasthetik.de'),
-    alternates: {
-      languages: {
-        de: '/de',
-        ru: '/ru',
-      },
-    },
+    metadataBase: new URL(SITE_URL),
+    applicationName: 'VIVA Ästhetik',
+    // Заголовок, описание, canonical и hreflang задаёт каждая страница (lib/seo.ts)
     openGraph: {
-      title: t('title'),
-      description: t('description'),
-      url: '/',
       siteName: 'VIVA Ästhetik',
-      locale: locale,
+      locale: locale === 'de' ? 'de_DE' : 'ru_RU',
       type: 'website',
-      images: [
-        {
-          url: '/images/hero-bg.jpg',
-          width: 1200,
-          height: 630,
-          alt: 'VIVA Ästhetik Kassel',
-        },
-      ],
+      images: [{ url: OG_IMAGE.url, width: OG_IMAGE.width, height: OG_IMAGE.height, alt: 'VIVA Ästhetik Kassel' }],
     },
-    twitter: {
-      card: 'summary_large_image',
-      title: t('title'),
-      description: t('description'),
-      images: ['/images/hero-bg.jpg'],
-    },
+    twitter: { card: 'summary_large_image', images: [OG_IMAGE.url] },
     robots: {
       index: true,
       follow: true,
@@ -87,6 +72,11 @@ export async function generateMetadata(
         'max-image-preview': 'large',
         'max-snippet': -1,
       },
+    },
+    // Подтверждение сайта в Google Search Console / Bing Webmaster — включается переменными окружения
+    verification: {
+      ...(process.env.NEXT_PUBLIC_GSC_VERIFICATION ? { google: process.env.NEXT_PUBLIC_GSC_VERIFICATION } : {}),
+      ...(process.env.NEXT_PUBLIC_BING_VERIFICATION ? { other: { 'msvalidate.01': process.env.NEXT_PUBLIC_BING_VERIFICATION } } : {}),
     },
   };
 }
@@ -109,6 +99,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${cormorant.variable} ${inter.variable}`}>
       <body>
+        <JsonLd data={siteGraph(locale as Loc)} />
         <NextIntlClientProvider messages={messages} locale={locale}>
           <DatabaseProvider>
             <BookingProvider>
@@ -123,6 +114,7 @@ export default async function LocaleLayout({
                 <InfoModal />
               </Suspense>
               <CookieBanner />
+              <Analytics />
             </BookingProvider>
           </DatabaseProvider>
         </NextIntlClientProvider>

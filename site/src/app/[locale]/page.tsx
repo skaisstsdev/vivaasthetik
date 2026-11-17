@@ -3,9 +3,17 @@ import Hero from '@/components/home/Hero';
 import Intro from '@/components/home/Intro';
 import ParallaxMarquee from '@/components/home/ParallaxMarquee';
 import FeatureCards from '@/components/home/FeatureCards';
-import TestimonialsPreview from '@/components/home/TestimonialsPreview';
+import GoogleReviews from '@/components/home/GoogleReviews';
 import WhyUs from '@/components/home/WhyUs';
 import ConsultationCTA from '@/components/home/ConsultationCTA';
+import { buildMetadata, type Loc } from '@/lib/seo';
+import { pageSeo } from '@/data/seo';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const l = locale as Loc;
+  return buildMetadata({ locale: l, path: '', absoluteTitle: true, ...pageSeo.home[l] });
+}
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -21,7 +29,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <ParallaxMarquee />
         <FeatureCards />
         <WhyUs />
-        <TestimonialsPreview />
+        <GoogleReviews loc={loc} />
         <ConsultationCTA />
       </main>
     </>

@@ -88,6 +88,14 @@ body {
 .animate-marquee {
   animation: marquee 120s linear infinite;
 }
+/* Пауза ленты: при наведении и пока открыт отзыв (обычные утилиты Tailwind проигрывают этому правилу) */
+.marquee-host:hover .animate-marquee,
+.animate-marquee.is-paused {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee { animation-play-state: paused; }
+}
 /* Cache bust 1784025189 */
 html, body { overscroll-behavior-y: none; }
 

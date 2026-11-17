@@ -4,8 +4,8 @@ export const botox: ServiceContent = {
   slug: 'botox',
   imageSrc: '/images/services/botox_final.webp',
   title: {
-    de: 'Botox-Behandlung',
-    ru: 'Ботокс-лечение'
+    de: 'Botulinumtoxin-Behandlung (Botox®)',
+    ru: 'Ботулинотерапия (Botox®)'
   },
   shortDescription: {
     de: 'Die Botox-Behandlung ist eine der bekanntesten Methoden, um Mimikfalten zu glätten. Botox entspannt gezielt die Gesichtsmuskeln, die für die Bildung von Linien und Falten verantwortlich sind. Diese Behandlung sorgt für ein glatteres, jüngeres Aussehen, ohne dabei die natürliche Mimik zu beeinträchtigen.',

@@ -13,6 +13,7 @@ import { useBooking } from '@/context/BookingContext';
 import { useDatabase } from '@/context/DatabaseContext';
 import 'react-day-picker/style.css';
 import emailjs from '@emailjs/browser';
+import { track } from '@/lib/analytics';
 
 type Step = 1 | 2 | 3 | 4;
 
@@ -104,6 +105,7 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
     setIsSubmitting(false);
     if (result.ok) {
       setStep(4);
+      track('booking_submitted', { service: selectedService.slug });
       
       // Prepare EmailJS params
       const templateParams = {

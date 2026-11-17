@@ -4,6 +4,7 @@ import { FormEvent, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { Link } from '@/i18n/routing';
 import { btnDark } from '@/lib/ui';
+import { track } from '@/lib/analytics';
 
 // Ключи EmailJS (публичные, видны в браузере). Сервис и ключ те же, что у формы записи.
 // Шаблон: пока стоит шаблон письма о записи; когда в EmailJS будет создан отдельный
@@ -86,6 +87,7 @@ export default function ContactForm({ loc, labels }: { loc: 'de' | 'ru'; labels:
         EMAILJS.publicKey,
       );
       form.reset();
+      track('contact_submitted');
       setStatus('success');
     } catch (error) {
       console.error('Contact form failed:', error);

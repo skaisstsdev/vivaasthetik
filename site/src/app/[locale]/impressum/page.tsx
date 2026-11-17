@@ -1,12 +1,29 @@
 import { setRequestLocale } from 'next-intl/server';
 import PageHero from '@/components/layout/PageHero';
 
+import { buildMetadata, type Loc } from '@/lib/seo';
+import { pageSeo, crumbNames } from '@/data/seo';
+import { breadcrumbs } from '@/lib/schema';
+import JsonLd from '@/components/seo/JsonLd';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const l = locale as Loc;
+  return buildMetadata({ locale: l, path: '/impressum', ...pageSeo.impressum[l] });
+}
+
 export default async function ImpressumPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
 
   return (
     <main className="bg-white text-gray-900 min-h-screen">
+      <JsonLd
+        data={breadcrumbs(locale as Loc, [
+          { name: crumbNames.home[locale as Loc], path: '' },
+          { name: crumbNames.impressum[locale as Loc], path: '/impressum' },
+        ])}
+      />
       {/* Мини-хиро */}
       <PageHero title={locale === 'ru' ? 'Импрессум (Impressum)' : 'Impressum'} />
 

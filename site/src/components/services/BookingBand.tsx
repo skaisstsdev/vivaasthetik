@@ -16,7 +16,7 @@ export default function BookingBand({
       <div className="max-w-7xl mx-auto px-6 md:px-8 py-20 md:py-24 grid grid-cols-[minmax(0,1fr)] gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center lg:gap-20">
         <div>
           <h2 id="book-title" className="text-3xl md:text-4xl text-gray-900 leading-tight mb-5">
-            {loc === 'de' ? 'Möchten Sie einen Termin vereinbaren?' : 'Хотите записаться на приём?'}
+            {loc === 'de' ? 'Möchten Sie einen Termin in Kassel vereinbaren?' : 'Хотите записаться на приём в Касселе?'}
           </h2>
           <p className="text-gray-600 text-lg leading-relaxed max-w-2xl">
             {loc === 'de'

@@ -1,14 +1,15 @@
 import { MetadataRoute } from 'next';
+import { SITE_URL } from '@/lib/seo';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://vivaasthetik.de';
-
   return {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: '/admin/',
+      // Админка лежит под /de/admin и /ru/admin
+      disallow: ['/de/admin', '/ru/admin', '/admin'],
     },
-    sitemap: `${baseUrl}/sitemap.xml`,
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_URL,
   };
 }

@@ -2,8 +2,14 @@ import { setRequestLocale } from 'next-intl/server';
 import PageHero from '@/components/layout/PageHero';
 import { parseServiceContent } from '@/lib/serviceContent';
 import ServiceFacts from '@/components/services/ServiceFacts';
-import ServiceFaq from '@/components/services/ServiceFaq';
+import ServiceFaq, { getServiceFaqItems } from '@/components/services/ServiceFaq';
 import ServiceLayout from '@/components/services/ServiceLayout';
+import AuthorBlock from '@/components/services/AuthorBlock';
+import RelatedServices from '@/components/services/RelatedServices';
+import JsonLd from '@/components/seo/JsonLd';
+import { buildMetadata, type Loc } from '@/lib/seo';
+import { serviceSeo, crumbNames } from '@/data/seo';
+import { breadcrumbs, serviceWebPage, faqPage } from '@/lib/schema';
 import { getServiceBySlug, servicesData } from '@/data/services';
 import { notFound } from 'next/navigation';
 import BookingBand from '@/components/services/BookingBand';
@@ -15,6 +21,15 @@ export function generateStaticParams() {
   return ['de', 'ru'].flatMap(locale => 
     slugs.map(slug => ({ locale, slug }))
   );
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }) {
+  const { locale, slug } = await params;
+  const l = locale as Loc;
+  const service = getServiceBySlug(slug);
+  const seo = serviceSeo[slug]?.[l];
+  if (!service || !seo) return {};
+  return buildMetadata({ locale: l, path: `/services/${slug}`, ...seo });
 }
 
 export default async function ServiceDetailPage({ 
@@ -34,6 +49,8 @@ export default async function ServiceDetailPage({
 
   // В текстах услуг разделы размечены h3/h4; здесь они становятся главами (h2) и карточками (h3).
   const layout = service.layout?.[loc];
+  const seo = serviceSeo[slug]?.[loc];
+  const faqItems = getServiceFaqItems(service.slug, loc, layout?.faq);
   const chapters = layout ? [] : parseServiceContent(service.content[loc]);
   const bodyCls =
     'prose-base md:prose-lg prose-strong:text-gray-900 prose-li:my-1.5 [&_ul.list-cols]:md:columns-2 [&_ul.list-cols]:gap-x-10 [&_ul.list-cols_li]:break-inside-avoid';
@@ -42,6 +59,17 @@ export default async function ServiceDetailPage({
 
   return (
     <main className="bg-white">
+      <JsonLd
+        data={[
+          breadcrumbs(loc, [
+            { name: crumbNames.home[loc], path: '' },
+            { name: crumbNames.services[loc], path: '/services' },
+            { name: service.title[loc], path: `/services/${service.slug}` },
+          ]),
+          serviceWebPage(loc, service.slug, service.title[loc], seo?.description ?? service.shortDescription[loc]),
+          faqPage(faqItems),
+        ]}
+      />
       
       {/* Мини-хиро */}
       <PageHero
@@ -112,8 +140,14 @@ export default async function ServiceDetailPage({
       </div>
       )}
 
+      {/* Врач */}
+      <AuthorBlock loc={loc} />
+
       {/* Частые вопросы по процедуре */}
       <ServiceFaq slug={service.slug} loc={loc} extra={layout?.faq} />
+
+      {/* Похожие процедуры */}
+      <RelatedServices slug={service.slug} loc={loc} />
 
       {/* Запись */}
       <BookingBand loc={loc} serviceSlug={service.slug} hideBooking={service.hideBookingButton} />

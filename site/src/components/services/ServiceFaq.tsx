@@ -16,6 +16,22 @@ const faqBySlug: Record<string, string[]> = {
   lipolyse: ['lipolysis'],
 };
 
+export type FaqItem = { id: string; q: string; a: string };
+
+/** Вопросы для страницы услуги: сначала перенесённые с неё, затем из общего FAQ (до 8). */
+export function getServiceFaqItems(
+  slug: string,
+  loc: 'de' | 'ru',
+  extra: { q: string; a: string }[] = [],
+): FaqItem[] {
+  const ids = faqBySlug[slug] ?? ['general'];
+  const own = faqData
+    .filter((c) => ids.includes(c.id))
+    .flatMap((c) => c.items)
+    .map((i) => ({ id: `faq-${i.id}`, q: i.q[loc], a: i.a[loc] }));
+  return [...extra.map((e, i) => ({ id: `extra-${i}`, q: e.q, a: e.a })), ...own].slice(0, 8);
+}
+
 export default function ServiceFaq({
   slug,
   loc,
@@ -25,13 +41,7 @@ export default function ServiceFaq({
   loc: 'de' | 'ru';
   extra?: { q: string; a: string }[];
 }) {
-  const ids = faqBySlug[slug] ?? ['general'];
-  const own = faqData
-    .filter((c) => ids.includes(c.id))
-    .flatMap((c) => c.items)
-    .map((i) => ({ id: `faq-${i.id}`, q: i.q[loc], a: i.a[loc] }));
-  // Вопросы, перенесённые со страницы услуги, идут первыми.
-  const items = [...extra.map((e, i) => ({ id: `extra-${i}`, q: e.q, a: e.a })), ...own].slice(0, 8);
+  const items = getServiceFaqItems(slug, loc, extra);
   if (!items.length) return null;
 
   return (

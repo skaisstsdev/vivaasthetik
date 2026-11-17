@@ -6,6 +6,11 @@ import BookNowButton from '@/components/booking/BookNowButton';
 import ConsultationCTA from '@/components/home/ConsultationCTA';
 import ServicesClient from './ServicesClient';
 
+import { buildMetadata, type Loc } from '@/lib/seo';
+import { pageSeo, crumbNames } from '@/data/seo';
+import { breadcrumbs } from '@/lib/schema';
+import JsonLd from '@/components/seo/JsonLd';
+
 // Функция для определения размера карточки (Bento Grid)
 const getCardClasses = (slug: string) => {
   // Выделяем самые популярные процедуры, делая их в 2 раза шире на планшетах и ПК
@@ -18,6 +23,12 @@ const getCardClasses = (slug: string) => {
   return 'col-span-1';
 };
 
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const l = locale as Loc;
+  return buildMetadata({ locale: l, path: '/services', ...pageSeo.services[l] });
+}
+
 export default async function ServicesPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
@@ -27,9 +38,26 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
   return (
     <>
       <main className="bg-gray-50 pb-0">
+      <JsonLd
+        data={breadcrumbs(locale as Loc, [
+          { name: crumbNames.home[locale as Loc], path: '' },
+          { name: crumbNames.services[locale as Loc], path: '/services' },
+        ])}
+      />
       
       {/* Мини-хиро */}
-      <PageHero title={loc === 'de' ? 'Unsere Leistungen' : 'Наши услуги'} />
+      <PageHero
+        title={
+          loc === 'de' ? (
+            <>
+              Unsere
+              <br className="sm:hidden" /> Leistungen
+            </>
+          ) : (
+            'Наши услуги'
+          )
+        }
+      />
 
       {/* Intro Text Section */}
       <section className="bg-white py-24 md:py-32 border-b border-gray-100">
