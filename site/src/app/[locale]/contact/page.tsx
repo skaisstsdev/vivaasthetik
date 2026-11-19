@@ -36,7 +36,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-24 md:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           
-          {/* Info & Form */}
+          {/* Info */}
           <div className="flex flex-col gap-12">
             <div>
               <h2 className="text-3xl font-light text-gray-900 mb-8">{t('infoTitle')}</h2>
@@ -90,23 +90,25 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                 </div>
               </div>
             </div>
-
-            {/* Форма обратной связи */}
-            <ContactForm
-              loc={locale as 'de' | 'ru'}
-              labels={{
-                title: t('formTitle'),
-                name: t('formName'),
-                email: t('formEmail'),
-                message: t('formMessage'),
-                submit: t('formSubmit'),
-              }}
-            />
           </div>
 
           {/* Map */}
           <ConsentMap loc={locale as 'de' | 'ru'} />
 
+        </div>
+
+        <div className="max-w-2xl mx-auto mt-20 md:mt-28">
+          {/* Форма обратной связи */}
+          <ContactForm
+            loc={locale as 'de' | 'ru'}
+            labels={{
+              title: t('formTitle'),
+              name: t('formName'),
+              email: t('formEmail'),
+              message: t('formMessage'),
+              submit: t('formSubmit'),
+            }}
+          />
         </div>
       </section>
 

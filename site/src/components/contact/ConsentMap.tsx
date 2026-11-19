@@ -33,7 +33,7 @@ export default function ConsentMap({ loc }: { loc: 'de' | 'ru' }) {
   const [ready, setReady] = useState(false);
 
   return (
-    <div className="relative h-[600px] lg:h-auto min-h-[360px] bg-gray-100 border border-gray-200">
+    <div className="relative h-[420px] lg:h-auto lg:min-h-[420px] bg-gray-100 border border-gray-200">
       {requested && (
         <iframe
           title={c.iframeTitle}
