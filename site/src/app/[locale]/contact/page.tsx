@@ -2,6 +2,7 @@ import { setRequestLocale, getTranslations } from 'next-intl/server';
 import PageHero from '@/components/layout/PageHero';
 import ConsultationCTA from '@/components/home/ConsultationCTA';
 import ContactForm from '@/components/contact/ContactForm';
+import ConsentMap from '@/components/contact/ConsentMap';
 
 import { buildMetadata, type Loc } from '@/lib/seo';
 import { pageSeo, crumbNames } from '@/data/seo';
@@ -104,16 +105,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
           </div>
 
           {/* Map */}
-          <div className="h-[600px] lg:h-auto bg-gray-100 border border-gray-200">
-            <iframe 
-              width="100%" 
-              height="100%" 
-              style={{ border: 0 }}
-              loading="lazy" 
-              allowFullScreen 
-              src="https://maps.google.com/maps?q=K%C3%B6nigstor%2047,%2034117%20Kassel&t=&z=15&ie=UTF8&iwloc=&output=embed"
-            ></iframe>
-          </div>
+          <ConsentMap loc={locale as 'de' | 'ru'} />
 
         </div>
       </section>

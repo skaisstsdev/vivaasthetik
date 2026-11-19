@@ -60,6 +60,9 @@ export default async function DatenschutzPage({ params }: { params: Promise<{ lo
             <p>При вашем согласии (ст. 6 абз. 1 п. a) DSGVO, § 25 абз. 1 TDDDG) мы используем Google Analytics 4 — сервис веб-аналитики компании Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ирландия. Сервис использует cookie и фиксирует, например, просмотренные страницы, клики по номеру телефона, WhatsApp и электронной почте, отправку форм, примерный регион, тип устройства и браузер. Адреса IP не сохраняются в журналах Google Analytics. Данные хранятся 14 месяцев, после чего удаляются автоматически. Возможна передача данных в США на основании решения Еврокомиссии об адекватности (EU-US Data Privacy Framework) и стандартных договорных условий.</p>
             <p>Без вашего согласия Google Analytics не загружается. Согласие можно отозвать в любой момент через ссылку «Настройки cookie» внизу страницы; отзыв не влияет на законность обработки до отзыва. Подробнее: https://policies.google.com/privacy</p>
 
+            <h2>4b. Google Maps</h2>
+            <p>На странице «Kontakt» мы показываем карту Google Maps (Google Ireland Limited). Карта загружается только после вашего нажатия на кнопку «Загрузить карту» (ст. 6 абз. 1 п. a) DSGVO, § 25 абз. 1 TDDDG). При загрузке Google получает ваш IP-адрес и данные браузера и может устанавливать cookie. Без нажатия данные в Google не передаются. Ссылка «Открыть в Google Maps» ведёт на сайт Google, подробнее: https://policies.google.com/privacy</p>
+
             <h2>5. Права субъекта данных</h2>
             <p>Вы имеете право:<br />
             - запрашивать информацию о ваших персональных данных, обрабатываемых нами;<br />
@@ -94,6 +97,9 @@ export default async function DatenschutzPage({ params }: { params: Promise<{ lo
             <h2>4a. Google Analytics</h2>
             <p>Mit Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG) nutzen wir Google Analytics 4, einen Webanalysedienst der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Der Dienst verwendet Cookies und erfasst z. B. aufgerufene Seiten, Klicks auf Telefonnummer, WhatsApp und E-Mail, das Absenden von Formularen, die ungefähre Region, Gerätetyp und Browser. IP-Adressen werden in Google Analytics nicht protokolliert. Die Daten werden 14 Monate gespeichert und danach automatisch gelöscht. Eine Übermittlung in die USA kann auf Grundlage des EU-US Data Privacy Framework und von Standardvertragsklauseln erfolgen.</p>
             <p>Ohne Ihre Einwilligung wird Google Analytics nicht geladen. Sie können Ihre Einwilligung jederzeit über den Link „Cookie-Einstellungen“ im Fußbereich mit Wirkung für die Zukunft widerrufen. Weitere Informationen: https://policies.google.com/privacy</p>
+
+            <h2>4b. Google Maps</h2>
+            <p>Auf der Seite „Kontakt“ zeigen wir eine Karte von Google Maps (Google Ireland Limited). Die Karte wird erst nach Ihrem Klick auf „Karte laden“ geladen (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG). Dabei erhält Google Ihre IP-Adresse und Browserdaten und kann Cookies setzen. Ohne Ihren Klick werden keine Daten an Google übertragen. Der Link „In Google Maps öffnen“ führt auf die Website von Google, weitere Informationen: https://policies.google.com/privacy</p>
 
             <h2>5. Betroffenenrechte</h2>
             <p>Sie haben das Recht:<br />
