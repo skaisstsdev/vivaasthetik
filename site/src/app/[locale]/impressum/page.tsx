@@ -28,80 +28,64 @@ export default async function ImpressumPage({ params }: { params: Promise<{ loca
       <PageHero title={locale === 'ru' ? 'Импрессум (Impressum)' : 'Impressum'} />
 
       <div className="max-w-4xl mx-auto px-6 md:px-8 py-20 md:py-24">
-        {locale === 'ru' ? (
-          <div className="prose prose-lg text-gray-600 max-w-none">
+        <div className="prose prose-lg text-gray-600 max-w-none">
+          {locale === 'ru' && (
             <p className="mb-8 text-sm text-gray-400">
-              * В соответствии с немецким законодательством (Telemediengesetz), юридическая информация предоставляется на немецком языке.
+              * В соответствии с немецким законодательством (§ 5 DDG) юридическая информация предоставляется на немецком языке и имеет юридическую силу в этой редакции.
             </p>
-            <h2>Angaben gemäß § 5 TMG</h2>
-            <p>
-              <strong>VIVA Ästhetik</strong><br />
-              Natalya Schnal<br />
-              Königstor 47<br />
-              34117 Kassel<br />
-              Deutschland
-            </p>
+          )}
 
-            <h2>Kontakt</h2>
-            <p>
-              Telefon: +49 179 9004902<br />
-              E-Mail: vivaasthetik@gmail.com
-            </p>
+          <h2>Angaben gemäß § 5 DDG</h2>
+          <p>
+            <strong>VIVA Ästhetik</strong><br />
+            Natalya Schnal, Ärztin<br />
+            Königstor 47<br />
+            34117 Kassel<br />
+            Deutschland
+          </p>
 
-            <h2>Berufsbezeichnung und berufsrechtliche Regelungen</h2>
-            <p>
-              <strong>Gesetzliche Berufsbezeichnung:</strong> Ärztin<br />
-              <strong>Zuständige Kammer:</strong> Landesärztekammer Hessen<br />
-              <strong>Verliehen in:</strong> Kasachstan (anerkannt in der Bundesrepublik Deutschland)
-            </p>
-            <p>
-              Es gelten die folgenden berufsrechtlichen Regelungen:<br />
-              Berufsordnung für die Ärztinnen und Ärzte in Hessen<br />
-              Heilberufegesetz des Landes Hessen<br />
-              Die Regelungen können auf der Website der zuständigen Ärztekammer eingesehen werden.
-            </p>
+          <h2>Kontakt</h2>
+          <p>
+            Telefon: <a href="tel:+491799004902">+49 179 9004902</a><br />
+            E-Mail: <a href="mailto:vivaasthetik@gmail.com">vivaasthetik@gmail.com</a>
+          </p>
 
-            <h2>Verbraucherstreitbeilegung/Universalschlichtungsstelle</h2>
-            <p>
-              Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
-            </p>
-          </div>
-        ) : (
-          <div className="prose prose-lg text-gray-600 max-w-none">
-            <h2>Angaben gemäß § 5 TMG</h2>
-            <p>
-              <strong>VIVA Ästhetik</strong><br />
-              Natalya Schnal<br />
-              Königstor 47<br />
-              34117 Kassel<br />
-              Deutschland
-            </p>
+          <h2>Berufsbezeichnung und berufsrechtliche Regelungen</h2>
+          <p>
+            <strong>Berufsbezeichnung:</strong> Ärztin<br />
+            <strong>Zuständige Ärztekammer:</strong> Landesärztekammer Hessen, Im Vogelsgesang 3, 60488 Frankfurt am Main, <a href="https://www.laekh.de" target="_blank" rel="noopener noreferrer">www.laekh.de</a><br />
+            <strong>Berufsbezeichnung verliehen in:</strong> Kasachstan (Anerkennung in der Bundesrepublik Deutschland)
+          </p>
+          <p>
+            Es gelten die folgenden berufsrechtlichen Regelungen: Berufsordnung für die Ärztinnen und Ärzte in Hessen und Hessisches Heilberufsgesetz. Sie können über die Website der Landesärztekammer Hessen eingesehen werden.
+          </p>
 
-            <h2>Kontakt</h2>
-            <p>
-              Telefon: +49 179 9004902<br />
-              E-Mail: vivaasthetik@gmail.com
-            </p>
+          <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+          <p>
+            Natalya Schnal<br />
+            Königstor 47, 34117 Kassel
+          </p>
 
-            <h2>Berufsbezeichnung und berufsrechtliche Regelungen</h2>
-            <p>
-              <strong>Gesetzliche Berufsbezeichnung:</strong> Ärztin<br />
-              <strong>Zuständige Kammer:</strong> Landesärztekammer Hessen<br />
-              <strong>Verliehen in:</strong> Kasachstan (anerkannt in der Bundesrepublik Deutschland)
-            </p>
-            <p>
-              Es gelten die folgenden berufsrechtlichen Regelungen:<br />
-              Berufsordnung für die Ärztinnen und Ärzte in Hessen<br />
-              Heilberufegesetz des Landes Hessen<br />
-              Die Regelungen können auf der Website der zuständigen Ärztekammer eingesehen werden.
-            </p>
+          <h2>Hinweis zu den Inhalten dieser Website</h2>
+          <p>
+            Die Informationen auf dieser Website dienen der allgemeinen Information über unser Behandlungsangebot. Sie ersetzen weder eine ärztliche Untersuchung noch eine persönliche Beratung. Ob und wie eine Behandlung für Sie geeignet ist, klären wir im persönlichen Gespräch. Ein bestimmter Behandlungserfolg kann nicht garantiert werden.
+          </p>
 
-            <h2>Verbraucherstreitbeilegung/Universalschlichtungsstelle</h2>
-            <p>
-              Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
-            </p>
-          </div>
-        )}
+          <h2>Verbraucherstreitbeilegung</h2>
+          <p>
+            Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+          </p>
+
+          <h2>Haftung für Links</h2>
+          <p>
+            Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für diese fremden Inhalte übernehmen wir keine Gewähr. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter verantwortlich. Bei Bekanntwerden von Rechtsverletzungen entfernen wir solche Links umgehend.
+          </p>
+
+          <h2>Urheberrecht</h2>
+          <p>
+            Die auf dieser Website veröffentlichten Texte, Bilder und sonstigen Inhalte unterliegen dem deutschen Urheberrecht. Eine Vervielfältigung, Bearbeitung oder Verbreitung bedarf der schriftlichen Zustimmung der Betreiberin.
+          </p>
+        </div>
       </div>
     </main>
   );

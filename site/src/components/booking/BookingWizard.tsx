@@ -14,6 +14,7 @@ import { useDatabase } from '@/context/DatabaseContext';
 import 'react-day-picker/style.css';
 import emailjs from '@emailjs/browser';
 import { track } from '@/lib/analytics';
+import { Link } from '@/i18n/routing';
 
 type Step = 1 | 2 | 3 | 4;
 
@@ -383,7 +384,29 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
                   onChange={e => setNotes(e.target.value)}
                   className="border border-gray-300 p-3 outline-none focus:border-gray-900 transition-colors h-32 resize-none text-gray-900 bg-white" 
                 ></textarea>
+                <p className="text-xs text-gray-500 leading-relaxed">
+                  {locale === 'de'
+                    ? 'Bitte tragen Sie hier nur ein, was für die Terminplanung nötig ist. Gesundheitsangaben besprechen wir in der Beratung.'
+                    : 'Указывайте здесь только то, что нужно для планирования приёма. Данные о здоровье мы обсудим на консультации.'}
+                </p>
               </div>
+
+              <label className="flex items-start gap-3 text-sm text-gray-600 leading-relaxed cursor-pointer">
+                <input type="checkbox" required className="mt-1 h-4 w-4 flex-shrink-0 accent-[#8a6327]" />
+                <span>
+                  {locale === 'de' ? 'Ich habe die ' : 'Я прочитал(а) '}
+                  <Link href="/datenschutz" target="_blank" className="underline hover:text-gray-900">
+                    {locale === 'de' ? 'Datenschutzerklärung' : 'политику конфиденциальности'}
+                  </Link>
+                  {locale === 'de' ? ' und die ' : ' и '}
+                  <Link href="/agb" target="_blank" className="underline hover:text-gray-900">
+                    {locale === 'de' ? 'AGB' : 'условия (AGB)'}
+                  </Link>
+                  {locale === 'de'
+                    ? ' gelesen und bin damit einverstanden, dass meine Angaben zur Terminvereinbarung verarbeitet werden.'
+                    : ' и согласен(на) с тем, что мои данные будут обработаны для записи на приём.'}
+                </span>
+              </label>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 mt-8 pt-8 border-t border-gray-100 w-full">
