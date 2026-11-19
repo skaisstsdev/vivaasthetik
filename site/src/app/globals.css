@@ -173,6 +173,15 @@ video::part(media-controls-overlay-play-button) {
 .admin-ui :is(.font-medium, .font-semibold, .font-bold, .font-extrabold) { font-weight: 600; }
 .admin-ui :is(input, select, textarea, button) { font-weight: inherit; }
 
+/* Заголовок мини-хиро на телефоне: крупнее, трекинг чуть меньше, чтобы длинные слова
+   (Faltenunterspritzung) помещались без разрыва посреди слова */
+@media (max-width: 767px) {
+  h1.page-hero-title {
+    font-size: 2rem;
+    letter-spacing: 0.07em;
+  }
+}
+
 /* Календарь записи: острые углы, как у всего сайта (по умолчанию кнопки дней круглые) */
 .rdp-day_button {
   border-radius: 0 !important;
