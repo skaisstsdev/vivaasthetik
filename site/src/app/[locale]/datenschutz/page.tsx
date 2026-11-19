@@ -56,6 +56,10 @@ export default async function DatenschutzPage({ params }: { params: Promise<{ lo
             <h2>4. Файлы Cookie</h2>
             <p>Мы используем файлы cookie на нашем сайте. Это небольшие файлы, которые ваш браузер создает автоматически и которые сохраняются на вашем устройстве при посещении нашего сайта. Файлы cookie не причиняют вреда вашему устройству и не содержат вирусов. Мы используем их, чтобы сделать использование нашего предложения более приятным для вас.</p>
 
+            <h2>4a. Google Analytics</h2>
+            <p>При вашем согласии (ст. 6 абз. 1 п. a) DSGVO, § 25 абз. 1 TDDDG) мы используем Google Analytics 4 — сервис веб-аналитики компании Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ирландия. Сервис использует cookie и фиксирует, например, просмотренные страницы, клики по номеру телефона, WhatsApp и электронной почте, отправку форм, примерный регион, тип устройства и браузер. Адреса IP не сохраняются в журналах Google Analytics. Данные хранятся 14 месяцев, после чего удаляются автоматически. Возможна передача данных в США на основании решения Еврокомиссии об адекватности (EU-US Data Privacy Framework) и стандартных договорных условий.</p>
+            <p>Без вашего согласия Google Analytics не загружается. Согласие можно отозвать в любой момент через ссылку «Настройки cookie» внизу страницы; отзыв не влияет на законность обработки до отзыва. Подробнее: https://policies.google.com/privacy</p>
+
             <h2>5. Права субъекта данных</h2>
             <p>Вы имеете право:<br />
             - запрашивать информацию о ваших персональных данных, обрабатываемых нами;<br />
@@ -86,6 +90,10 @@ export default async function DatenschutzPage({ params }: { params: Promise<{ lo
 
             <h2>4. Cookies</h2>
             <p>Wir setzen auf unserer Seite Cookies ein. Hierbei handelt es sich um kleine Dateien, die Ihr Browser automatisch erstellt und die auf Ihrem Endgerät gespeichert werden, wenn Sie unsere Seite besuchen. In dem Cookie werden Informationen abgelegt, die sich jeweils im Zusammenhang mit dem spezifisch eingesetzten Endgerät ergeben. Dies bedeutet jedoch nicht, dass wir dadurch unmittelbar Kenntnis von Ihrer Identität erhalten. Der Einsatz von Cookies dient einerseits dazu, die Nutzung unseres Angebots für Sie angenehmer zu gestalten.</p>
+
+            <h2>4a. Google Analytics</h2>
+            <p>Mit Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG) nutzen wir Google Analytics 4, einen Webanalysedienst der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Der Dienst verwendet Cookies und erfasst z. B. aufgerufene Seiten, Klicks auf Telefonnummer, WhatsApp und E-Mail, das Absenden von Formularen, die ungefähre Region, Gerätetyp und Browser. IP-Adressen werden in Google Analytics nicht protokolliert. Die Daten werden 14 Monate gespeichert und danach automatisch gelöscht. Eine Übermittlung in die USA kann auf Grundlage des EU-US Data Privacy Framework und von Standardvertragsklauseln erfolgen.</p>
+            <p>Ohne Ihre Einwilligung wird Google Analytics nicht geladen. Sie können Ihre Einwilligung jederzeit über den Link „Cookie-Einstellungen“ im Fußbereich mit Wirkung für die Zukunft widerrufen. Weitere Informationen: https://policies.google.com/privacy</p>
 
             <h2>5. Betroffenenrechte</h2>
             <p>Sie haben das Recht:<br />

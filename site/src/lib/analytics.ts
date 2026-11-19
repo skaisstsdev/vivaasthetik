@@ -10,3 +10,4 @@ export function track(name: string, params?: Record<string, unknown>) {
 
 export const CONSENT_KEY = 'cookie_consent';
 export const CONSENT_EVENT = 'viva-consent-changed';
+export const CONSENT_OPEN_EVENT = 'viva-consent-open';

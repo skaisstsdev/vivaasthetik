@@ -2,10 +2,12 @@
 
 import { useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/i18n/routing';
+import { CONSENT_OPEN_EVENT } from '@/lib/analytics';
 
 export default function Footer() {
   const t = useTranslations('Footer');
   const nav = useTranslations('Navigation');
+  const cookies = useTranslations('Cookies');
   const pathname = usePathname();
 
   if (pathname.startsWith('/admin')) return null;
@@ -82,6 +84,15 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <button
+                  type="button"
+                  onClick={() => window.dispatchEvent(new Event(CONSENT_OPEN_EVENT))}
+                  className="text-sm text-gray-500 hover:text-gray-900 transition-colors text-left"
+                >
+                  {cookies('settings')}
+                </button>
+              </li>
             </ul>
           </div>
         </div>

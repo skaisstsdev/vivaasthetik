@@ -289,7 +289,9 @@
     "formSubmit": "Nachricht senden"
   },
   "Cookies": {
-    "text": "Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu verbessern. Wenn Sie diese Website weiterhin nutzen, gehen wir davon aus, dass Sie damit einverstanden sind.",
+    "text": "Wir möchten mit Google Analytics anonymisiert auswerten, wie unsere Website genutzt wird. Dafür werden Cookies nur mit Ihrer Einwilligung gesetzt. Sie können diese jederzeit über „Cookie-Einstellungen“ im Fußbereich widerrufen.",
+    "privacy": "Datenschutzerklärung",
+    "settings": "Cookie-Einstellungen",
     "accept": "Akzeptieren",
     "decline": "Ablehnen"
   }

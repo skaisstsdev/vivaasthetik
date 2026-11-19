@@ -3,7 +3,8 @@
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
-import { CONSENT_EVENT } from '@/lib/analytics';
+import { Link } from '@/i18n/routing';
+import { CONSENT_EVENT, CONSENT_OPEN_EVENT } from '@/lib/analytics';
 
 export default function CookieBanner() {
   const [isVisible, setIsVisible] = useState(false);
@@ -16,6 +17,10 @@ export default function CookieBanner() {
     if (!cookieConsent) {
       setIsVisible(true);
     }
+    // «Cookie-Einstellungen» в футере: баннер можно открыть снова и отозвать согласие
+    const open = () => setIsVisible(true);
+    window.addEventListener(CONSENT_OPEN_EVENT, open);
+    return () => window.removeEventListener(CONSENT_OPEN_EVENT, open);
   }, []);
 
   const handleAccept = () => {
@@ -25,7 +30,13 @@ export default function CookieBanner() {
   };
 
   const handleDecline = () => {
+    const wasAccepted = localStorage.getItem('cookie_consent') === 'accepted';
     localStorage.setItem('cookie_consent', 'declined');
+    // Уже загруженный скрипт GA останавливается только перезагрузкой страницы
+    if (wasAccepted) {
+      window.location.reload();
+      return;
+    }
     window.dispatchEvent(new Event(CONSENT_EVENT));
     setIsVisible(false);
   };
@@ -37,7 +48,10 @@ export default function CookieBanner() {
     <div className="fixed bottom-0 left-0 right-0 bg-gray-900 text-white z-50 p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
       <div className="max-w-3xl">
         <p className="text-sm text-gray-300 leading-relaxed">
-          {t('text')}
+          {t('text')}{' '}
+          <Link href="/datenschutz" className="underline underline-offset-2 text-white hover:text-gray-200">
+            {t('privacy')}
+          </Link>
         </p>
       </div>
       <div className="flex gap-4 flex-shrink-0 w-full md:w-auto">
