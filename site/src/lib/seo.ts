@@ -34,6 +34,13 @@ export const PRACTICE = {
 
 export const OG_IMAGE = { url: '/images/og-default.jpg', width: 1200, height: 630 };
 
+/** Фото врача в трёх пропорциях: подсказка Google, какую картинку показывать рядом с сайтом в поиске. */
+export const DOCTOR_PHOTO = {
+  wide: { url: '/images/about/natalya-schnal-16x9.jpg', width: 1200, height: 675 },
+  standard: { url: '/images/about/natalya-schnal-4x3.jpg', width: 1200, height: 900 },
+  square: { url: '/images/about/natalya-schnal-1x1.jpg', width: 900, height: 900 },
+};
+
 /** Абсолютный адрес страницы: /de/services/botox → https://www.vivaasthetik.de/de/services/botox */
 export function pageUrl(locale: Loc, path = ''): string {
   return `${SITE_URL}/${locale}${path === '/' ? '' : path}`;
@@ -48,11 +55,14 @@ type BuildArgs = {
   /** Для главной: заголовок без добавления « | VIVA Ästhetik » */
   absoluteTitle?: boolean;
   noindex?: boolean;
+  /** Своя картинка для превью и поиска; по умолчанию логотип */
+  image?: { url: string; width: number; height: number };
 };
 
 /** Заголовок, описание, canonical, hreflang, Open Graph и Twitter для одной страницы. */
-export function buildMetadata({ locale, path = '', title, description, absoluteTitle, noindex }: BuildArgs): Metadata {
+export function buildMetadata({ locale, path = '', title, description, absoluteTitle, noindex, image }: BuildArgs): Metadata {
   const p = path === '/' ? '' : path;
+  const img = image ?? OG_IMAGE;
   const url = pageUrl(locale, p);
   return {
     title: absoluteTitle ? { absolute: title } : title,
@@ -73,13 +83,13 @@ export function buildMetadata({ locale, path = '', title, description, absoluteT
       url,
       title,
       description,
-      images: [{ url: OG_IMAGE.url, width: OG_IMAGE.width, height: OG_IMAGE.height, alt: PRACTICE.fullName }],
+      images: [{ url: img.url, width: img.width, height: img.height, alt: PRACTICE.fullName }],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      images: [OG_IMAGE.url],
+      images: [img.url],
     },
     ...(noindex ? { robots: { index: false, follow: true } } : {}),
   };

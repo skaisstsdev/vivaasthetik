@@ -1,4 +1,4 @@
-import { PRACTICE, SITE_URL, pageUrl, OG_IMAGE, type Loc } from '@/lib/seo';
+import { PRACTICE, SITE_URL, pageUrl, OG_IMAGE, type Loc, DOCTOR_PHOTO } from '@/lib/seo';
 import { servicesData } from '@/data/services';
 import { serviceSeo } from '@/data/seo';
 
@@ -40,7 +40,7 @@ export function siteGraph(locale: Loc) {
             : 'Практика эстетической медицины в Касселе: коррекция морщин, гиалуроновые филлеры, мезотерапия, PRP, нитевой лифтинг и другие процедуры у врача Натальи Шналь.',
         url: pageUrl(locale),
         logo: abs('/images/viva_monogram.png'),
-        image: [abs(OG_IMAGE.url)],
+        image: [abs(DOCTOR_PHOTO.wide.url), abs(DOCTOR_PHOTO.standard.url), abs(DOCTOR_PHOTO.square.url), abs(OG_IMAGE.url)],
         telephone: PRACTICE.phone,
         email: PRACTICE.email,
         address: {
@@ -76,6 +76,7 @@ export function siteGraph(locale: Loc) {
         '@id': DOCTOR_ID,
         name: PRACTICE.doctor,
         jobTitle: locale === 'de' ? 'Ärztin' : 'Врач',
+        image: abs(DOCTOR_PHOTO.square.url),
         worksFor: { '@id': PRACTICE_ID },
         url: pageUrl(locale, '/about'),
         knowsLanguage: ['de', 'ru'],
@@ -93,6 +94,24 @@ export function siteGraph(locale: Loc) {
         publisher: { '@id': PRACTICE_ID },
       },
     ],
+  };
+}
+
+/** Главная страница: какое фото считать основным (Google показывает его рядом с сайтом в поиске). */
+export function homeWebPage(locale: Loc) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    url: pageUrl(locale),
+    inLanguage: locale,
+    isPartOf: { '@id': WEBSITE_ID },
+    about: { '@id': PRACTICE_ID },
+    primaryImageOfPage: {
+      '@type': 'ImageObject',
+      url: abs(DOCTOR_PHOTO.wide.url),
+      width: DOCTOR_PHOTO.wide.width,
+      height: DOCTOR_PHOTO.wide.height,
+    },
   };
 }
 

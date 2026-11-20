@@ -3,7 +3,7 @@ import PageHero from '@/components/layout/PageHero';
 import Image from 'next/image';
 import ConsultationCTA from '@/components/home/ConsultationCTA';
 
-import { buildMetadata, type Loc } from '@/lib/seo';
+import { buildMetadata, DOCTOR_PHOTO, type Loc } from '@/lib/seo';
 import { pageSeo, crumbNames } from '@/data/seo';
 import { breadcrumbs } from '@/lib/schema';
 import JsonLd from '@/components/seo/JsonLd';
@@ -11,7 +11,7 @@ import JsonLd from '@/components/seo/JsonLd';
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const l = locale as Loc;
-  return buildMetadata({ locale: l, path: '/about', ...pageSeo.about[l] });
+  return buildMetadata({ locale: l, path: '/about', ...pageSeo.about[l], image: DOCTOR_PHOTO.wide });
 }
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
