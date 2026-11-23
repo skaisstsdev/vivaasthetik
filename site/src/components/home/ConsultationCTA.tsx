@@ -10,7 +10,7 @@ export default function ConsultationCTA() {
   const t = useTranslations('ConsultationCTA');
 
   return (
-    <section className="relative py-24 md:py-28 px-6 md:px-8 overflow-hidden text-white">
+    <section data-chat-dark className="relative py-24 md:py-28 px-6 md:px-8 overflow-hidden text-white">
       <StaticGradient />
       <div className="relative z-10 max-w-2xl mx-auto text-center">
         <p className="text-xs uppercase tracking-[0.3em] text-white/60 mb-4">

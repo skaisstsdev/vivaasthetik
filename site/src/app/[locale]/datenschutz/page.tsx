@@ -102,7 +102,10 @@ export default async function DatenschutzPage({ params }: { params: Promise<{ lo
             <h2>16. Автоматизированные решения не принимаются</h2>
             <p>Автоматизированного принятия решений, включая профилирование по ст. 22 DSGVO, не происходит.</p>
 
-            <h2>17. Изменения</h2>
+            <h2>17. ИИ-ассистент (VIVA Assistent)</h2>
+            <p>На сайте работает чат-ассистент на основе искусственного интеллекта. Вы общаетесь с программой, а не с человеком, и не получаете медицинской консультации. Текст ваших сообщений (без явных e-mail, телефонов и номеров счетов, которые мы удаляем автоматически) передаётся для подготовки ответа провайдеру OpenAI (OpenAI Ireland Ltd. / OpenAI, L.L.C., США). Правовое основание: ст. 6 абз. 1 п. b и f DSGVO (ответ на ваш запрос, удобная работа сайта). Мы не сохраняем содержимое диалогов на нашей стороне: история хранится только в памяти открытой страницы и пропадает при её закрытии. OpenAI может сохранять данные запросов ограниченное время для предотвращения злоупотреблений (по данным OpenAI, как правило, до 30 дней), но не использует их для обучения моделей. Пожалуйста, не вводите в чат медицинские и другие личные данные. Для записи используйте форму записи.</p>
+
+            <h2>18. Изменения</h2>
             <p>Мы изменяем эту политику, когда меняются сайт, наши сервисы или законодательство. Действует редакция, опубликованная здесь.</p>
           </div>
         ) : (
@@ -177,7 +180,10 @@ export default async function DatenschutzPage({ params }: { params: Promise<{ lo
             <h2>16. Keine automatisierte Entscheidungsfindung</h2>
             <p>Eine automatisierte Entscheidungsfindung einschließlich Profiling nach Art. 22 DSGVO findet nicht statt.</p>
 
-            <h2>17. Änderungen</h2>
+            <h2>17. KI-Assistent (VIVA Assistent)</h2>
+            <p>Auf dieser Website steht ein Chat-Assistent auf Basis künstlicher Intelligenz zur Verfügung. Sie kommunizieren mit einem Programm, nicht mit einem Menschen, und erhalten keine ärztliche Beratung. Der Text Ihrer Nachrichten (ohne offensichtliche E-Mail-Adressen, Telefon- und Kontonummern, die wir automatisch entfernen) wird zur Erstellung der Antwort an den Anbieter OpenAI (OpenAI Ireland Ltd. bzw. OpenAI, L.L.C., USA) übermittelt. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b und lit. f DSGVO (Beantwortung Ihrer Anfrage, nutzerfreundlicher Betrieb der Website). Wir speichern die Inhalte der Unterhaltungen nicht selbst: Der Verlauf liegt nur im Arbeitsspeicher der geöffneten Seite und entfällt beim Schließen. OpenAI kann Anfragedaten zur Missbrauchserkennung für begrenzte Zeit speichern (nach Angaben von OpenAI in der Regel bis zu 30 Tage), nutzt sie aber nicht zum Training seiner Modelle. Bitte geben Sie im Chat keine Gesundheitsdaten oder sonstigen persönlichen Daten ein. Für Terminanfragen nutzen Sie bitte das Buchungsformular.</p>
+
+            <h2>18. Änderungen</h2>
             <p>Wir passen diese Datenschutzerklärung an, wenn sich die Website, unsere Dienste oder die Rechtslage ändern. Es gilt die jeweils hier veröffentlichte Fassung.</p>
           </div>
         )}

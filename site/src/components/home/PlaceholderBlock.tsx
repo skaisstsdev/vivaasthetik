@@ -53,7 +53,7 @@ export default function PlaceholderBlock({ desktopVideo, mobileVideo, desktopPos
   }, [shouldLoadVideo]);
 
   return (
-    <section 
+    <section data-chat-dark
       className="relative w-full h-[100svh] md:h-[85vh] overflow-hidden"
       style={{
         backgroundColor: '#0a192f',

@@ -13,6 +13,7 @@ import { Metadata } from 'next';
 import { Cormorant, Inter } from 'next/font/google';
 
 import CookieBanner from '@/components/layout/CookieBanner';
+import ChatWidget from '@/components/chat/ChatWidget';
 import StickyActionBar from '@/components/layout/StickyActionBar';
 import JsonLd from '@/components/seo/JsonLd';
 import Analytics from '@/components/analytics/Analytics';
@@ -113,6 +114,7 @@ export default async function LocaleLayout({
               <Suspense fallback={null}>
                 <InfoModal />
               </Suspense>
+              <ChatWidget />
               <CookieBanner />
               <Analytics />
             </BookingProvider>
