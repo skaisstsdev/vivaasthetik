@@ -71,7 +71,9 @@ export async function POST(req: Request) {
   }
   const loc: Loc = body.locale === 'ru' ? 'ru' : 'de';
 
-  if (!process.env.OPENAI_API_KEY) return textResponse(MSG[loc].error, 503);
+  // Пробелы и переводы строк по краям (бывают при вставке в Vercel) ломают заголовок авторизации
+  const apiKey = process.env.OPENAI_API_KEY?.replace(/\s+/g, '');
+  if (!apiKey) return textResponse(MSG[loc].error, 503);
 
   // Проверка и обрезка входящих реплик
   const raw = Array.isArray(body.messages) ? body.messages : [];
@@ -96,7 +98,7 @@ export async function POST(req: Request) {
   const limit = checkRateLimit(clientIp(req));
   if (!limit.ok) return textResponse(MSG[loc].busy, 429);
 
-  const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+  const client = new OpenAI({ apiKey });
 
   // Модерация бесплатна. Если сервис недоступен, чат продолжает работать.
   try {

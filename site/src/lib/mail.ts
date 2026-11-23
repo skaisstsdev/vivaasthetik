@@ -7,17 +7,23 @@ import { SITE_URL } from '@/lib/seo';
 
 export type Loc = 'de' | 'ru';
 
-const FROM = process.env.MAIL_FROM || 'VIVA Ästhetik <termin@vivaasthetik.de>';
-const ADMIN_TO = process.env.MAIL_ADMIN_TO || 'vivaasthetik@gmail.com';
-const REPLY_TO = process.env.MAIL_REPLY_TO || 'vivaasthetik@gmail.com';
+// Значения из Vercel иногда сохраняются с пробелами и переводами строк по краям: чистим их,
+// иначе заголовок авторизации становится недопустимым и письмо не уходит.
+const clean = (v: string | undefined) => v?.replace(/[\r\n]+/g, ' ').trim() || undefined;
+
+const FROM = clean(process.env.MAIL_FROM) || 'VIVA Ästhetik <termin@vivaasthetik.de>';
+const ADMIN_TO = clean(process.env.MAIL_ADMIN_TO) || 'vivaasthetik@gmail.com';
+const REPLY_TO = clean(process.env.MAIL_REPLY_TO) || 'vivaasthetik@gmail.com';
+// В ключе пробелов не бывает вообще
+const API_KEY = process.env.RESEND_API_KEY?.replace(/\s+/g, '') || undefined;
 
 const PHONE = '+49 179 9004902';
 const ADDRESS = 'Königstor 47, 34117 Kassel';
 
 let client: Resend | null = null;
 function getClient(): Resend | null {
-  if (!process.env.RESEND_API_KEY) return null;
-  return (client ??= new Resend(process.env.RESEND_API_KEY));
+  if (!API_KEY) return null;
+  return (client ??= new Resend(API_KEY));
 }
 
 async function send(opts: { to: string; subject: string; html: string; text: string; replyTo?: string }) {
