@@ -12,7 +12,6 @@ import { ArrowRight, X, ChevronDown, ChevronLeft, ChevronRight, Loader2 } from '
 import { useBooking } from '@/context/BookingContext';
 import { useDatabase } from '@/context/DatabaseContext';
 import 'react-day-picker/style.css';
-import emailjs from '@emailjs/browser';
 import { track } from '@/lib/analytics';
 import { Link } from '@/i18n/routing';
 
@@ -101,47 +100,14 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
       clientEmail: email,
       clientPhone: phone,
       clientNotes: notes,
+      locale: locale === 'ru' ? 'ru' : 'de',
     });
     
     setIsSubmitting(false);
     if (result.ok) {
       setStep(4);
       track('booking_submitted', { service: selectedService.slug });
-      
-      // Prepare EmailJS params
-      const templateParams = {
-        service_name: selectedService.title[locale],
-        booking_date: format(selectedDate, 'dd.MM.yyyy'),
-        booking_time: selectedTime,
-        client_name: name,
-        client_email: email,
-        email: email, // Fallback in case they used {{email}} in EmailJS
-        client_phone: phone,
-        client_notes: notes || 'Нет комментариев'
-      };
-
-        // Send email to Admin
-        emailjs.send(
-          'service_69x9vql',
-          'template_sitesq1',
-          templateParams,
-          'AY8TnxaGP6C_LoA28'
-        ).catch(error => {
-          console.error('Admin email failed:', error);
-          alert('Ошибка отправки админу: ' + (error.text || error.message || JSON.stringify(error)));
-        });
-
-        // Send email to Client
-        emailjs.send(
-          'service_69x9vql',
-          'template_b6dht9m',
-          templateParams,
-          'AY8TnxaGP6C_LoA28'
-        ).catch(error => {
-          console.error('Client email failed:', error);
-          alert('Ошибка отправки клиенту: ' + (error.text || error.message || JSON.stringify(error)));
-        });
-
+      // Письма клиенту и в практику отправляет сервер (src/lib/mail.ts)
     } else {
       setSubmitError(locale === 'de' ? 'Dieser Termin ist leider nicht mehr verfügbar.' : 'К сожалению, это время уже занято.');
     }

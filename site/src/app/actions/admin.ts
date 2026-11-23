@@ -1,11 +1,13 @@
 'use server';
 
 import { randomUUID } from 'crypto';
+import { after } from 'next/server';
 import { prisma } from '@/lib/prisma';
+import { sendStatusEmail } from '@/lib/mail';
 import {
   checkPassword, createAdminSession, destroyAdminSession, requireAdmin, UnauthorizedError,
 } from '@/lib/adminAuth';
-import { DayOverride, WeekDay, DATE_RE, TIME_RE, datesInRange, hourOf } from '@/lib/availability';
+import { DayOverride, WeekDay, DATE_RE, TIME_RE, datesInRange, hourOf, todayInBerlin } from '@/lib/availability';
 
 // Every mutation returns a fresh snapshot of all admin data, so the client
 // replaces its state with server truth in one round trip (no refetch races).
@@ -134,6 +136,11 @@ export async function setBookingStatus(id: string, status: BookingStatus) {
       await assertSlotFree(booking.date, booking.time, id);
     }
     await prisma.booking.update({ where: { id }, data: { status } });
+    // «Подтверждено/ожидает» только пометка для админки, клиенту письмо не уходит.
+    // Письмо уходит при отмене (если клиент указал e-mail и запись ещё впереди).
+    if (status === 'cancelled' && booking.status !== 'cancelled' && booking.clientEmail && booking.date >= todayInBerlin()) {
+      after(() => sendStatusEmail('cancelled', booking));
+    }
   });
 }
 
@@ -142,7 +149,11 @@ export async function rescheduleBooking(id: string, date: string, time: string) 
     assertDate(date);
     if (!TIME_RE.test(time)) throw new UserError('Некорректное время');
     await assertSlotFree(date, time, id);
-    await prisma.booking.update({ where: { id }, data: { date, time } });
+    const before = await prisma.booking.findUnique({ where: { id } });
+    const updated = await prisma.booking.update({ where: { id }, data: { date, time } });
+    if (before && (before.date !== date || before.time !== time) && updated.status !== 'cancelled' && updated.clientEmail) {
+      after(() => sendStatusEmail('rescheduled', updated));
+    }
   });
 }
 

@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic';
 import { X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-// Мастер записи (календарь, date-fns, EmailJS) грузится отдельным файлом
+// Мастер записи (календарь, date-fns) грузится отдельным файлом
 // только когда модалка открыта, а не на каждой странице сайта.
 const BookingWizard = dynamic(() => import('./BookingWizard'), {
   ssr: false,

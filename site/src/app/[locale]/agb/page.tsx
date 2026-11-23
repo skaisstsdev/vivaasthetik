@@ -38,7 +38,7 @@ export default async function AgbPage({ params }: { params: Promise<{ locale: st
             <p>Настоящие Общие условия (AGB) применяются ко всем врачебным и эстетическим процедурам, консультациям и другим услугам, которые практика VIVA Ästhetik (Natalya Schnal, Königstor 47, 34117 Kassel) оказывает пациентам. Иные условия пациента не применяются.</p>
 
             <h2>§ 2 Договор на лечение, информирование и согласие</h2>
-            <p>1. Договор на лечение заключается договорённостью о приёме и подтверждением со стороны практики, не позднее начала лечения. Применяются положения §§ 630a и далее BGB.</p>
+            <p>1. Договор на лечение заключается договорённостью о приёме и его подтверждением со стороны практики, не позднее начала лечения. При онлайн-записи на сайте время бронируется и подтверждается сразу: подтверждение показывается на экране и отправляется по e-mail. Применяются положения §§ 630a и далее BGB.</p>
             <p>2. Перед каждой процедурой проводится личная консультация. Врач объясняет ход процедуры, ожидаемую пользу и риски, возможные альтернативы и уход после неё. Процедура проводится только после того, как пациент дал согласие после такого информирования. Согласие можно отозвать в любой момент.</p>
             <p>3. Запись на консультацию не означает, что процедура будет проведена. Если по медицинским причинам процедуру проводить не следует, врач вправе от неё отказаться.</p>
 
@@ -77,7 +77,7 @@ export default async function AgbPage({ params }: { params: Promise<{ locale: st
             <p>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle ärztlichen und ästhetischen Behandlungen, Beratungen und sonstigen Leistungen, die die Praxis VIVA Ästhetik (Natalya Schnal, Königstor 47, 34117 Kassel) gegenüber Patientinnen und Patienten erbringt. Abweichende Bedingungen des Patienten gelten nicht.</p>
 
             <h2>§ 2 Behandlungsvertrag, Aufklärung und Einwilligung</h2>
-            <p>1. Der Behandlungsvertrag kommt durch die Vereinbarung eines Termins und die Bestätigung durch die Praxis zustande, spätestens mit dem Beginn der Behandlung. Es gelten die Vorschriften der §§ 630a ff. BGB.</p>
+            <p>1. Der Behandlungsvertrag kommt durch die Vereinbarung eines Termins und dessen Bestätigung durch die Praxis zustande, spätestens mit dem Beginn der Behandlung. Bei einer Online-Buchung über die Website wird der Termin sofort reserviert und bestätigt; die Bestätigung wird auf dem Bildschirm angezeigt und per E-Mail versendet. Es gelten die Vorschriften der §§ 630a ff. BGB.</p>
             <p>2. Vor jeder Behandlung findet ein persönliches Beratungsgespräch statt. Die Ärztin klärt dabei über Ablauf, Chancen und Risiken, mögliche Alternativen und Nachsorge auf. Eine Behandlung erfolgt erst, wenn der Patient nach der Aufklärung eingewilligt hat. Die Einwilligung kann jederzeit widerrufen werden.</p>
             <p>3. Ein Termin zur Beratung bedeutet nicht, dass eine Behandlung durchgeführt wird. Besteht aus ärztlicher Sicht ein Grund, eine Behandlung nicht durchzuführen, kann die Ärztin sie ablehnen.</p>
 

@@ -17,6 +17,7 @@ model Booking {
   clientEmail String?
   clientPhone String?
   clientNotes String?
+  locale      String?  // язык страницы при записи (de/ru); у старых записей пусто
   status      String   @default("pending") // pending, confirmed, cancelled
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt

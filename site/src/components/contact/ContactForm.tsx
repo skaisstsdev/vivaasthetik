@@ -1,15 +1,10 @@
 'use client';
 
 import { FormEvent, useState } from 'react';
-import emailjs from '@emailjs/browser';
+import { submitContact } from '@/app/actions/contact';
 import { Link } from '@/i18n/routing';
 import { btnDark } from '@/lib/ui';
 import { track } from '@/lib/analytics';
-
-// Ключи EmailJS (публичные, видны в браузере). Сервис и ключ те же, что у формы записи.
-// Шаблон: пока стоит шаблон письма о записи; когда в EmailJS будет создан отдельный
-// шаблон для контактов, достаточно заменить contactTemplate на его ID.
-const EMAILJS = { service: 'service_69x9vql', contactTemplate: 'template_sitesq1', publicKey: 'AY8TnxaGP6C_LoA28' };
 
 type Labels = { title: string; name: string; email: string; message: string; submit: string };
 type Status = 'idle' | 'sending' | 'success' | 'error';
@@ -52,40 +47,16 @@ export default function ContactForm({ loc, labels }: { loc: 'de' | 'ru'; labels:
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    // Скрытое поле-ловушка для спам-ботов: человек его не видит и не заполняет.
-    if (String(data.get('website') || '').trim() !== '') {
-      setStatus('success');
-      return;
-    }
-
     setStatus('sending');
     try {
-      const name = String(data.get('name') || '').trim();
-      const email = String(data.get('email') || '').trim();
-      const message = String(data.get('message') || '').trim();
-      await emailjs.send(
-        EMAILJS.service,
-        EMAILJS.contactTemplate,
-        {
-          // Поля для отдельного шаблона контактов
-          from_name: name,
-          from_email: email,
-          reply_to: email,
-          message,
-          site_language: loc === 'de' ? 'DE' : 'RU',
-          sent_at: new Date().toLocaleString('de-DE', { timeZone: 'Europe/Berlin' }),
-          // Поля прежнего шаблона записи — чтобы форма работала и пока он подключён
-          service_name: loc === 'de' ? 'Kontaktformular (Website)' : 'Форма контактов (сайт)',
-          booking_date: '—',
-          booking_time: '—',
-          client_name: name,
-          client_email: email,
-          email,
-          client_phone: '—',
-          client_notes: message,
-        },
-        EMAILJS.publicKey,
-      );
+      const res = await submitContact({
+        name: String(data.get('name') || ''),
+        email: String(data.get('email') || ''),
+        message: String(data.get('message') || ''),
+        website: String(data.get('website') || ''), // скрытая ловушка для ботов, проверяется на сервере
+        locale: loc,
+      });
+      if (!res.ok) throw new Error(res.reason);
       form.reset();
       track('contact_submitted');
       setStatus('success');
