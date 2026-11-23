@@ -114,7 +114,7 @@ export async function createBooking(input: CreateBookingInput): Promise<CreateBo
   if (result.ok) {
     after(async () => {
       await Promise.allSettled([
-        sendNewBookingToAdmin(data, locale),
+        sendNewBookingToAdmin(data),
         sendBookingConfirmationToClient(data),
       ]);
     });

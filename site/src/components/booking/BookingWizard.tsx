@@ -407,7 +407,7 @@ export default function BookingWizard({ inModal = false }: BookingWizardProps) {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">{t('success_title')}</h2>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-light text-gray-900 mb-6">{t('success_title')}</h2>
             <p className="text-gray-500 text-lg max-w-md leading-relaxed mb-12">
               {t('success_text')}
             </p>

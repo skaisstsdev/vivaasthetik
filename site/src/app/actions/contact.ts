@@ -44,6 +44,6 @@ export async function submitContact(input: {
   const ip = (h.get('x-forwarded-for')?.split(',')[0] || h.get('x-real-ip') || 'unknown').trim();
   if (limited(ip)) return { ok: false, reason: 'rate' };
 
-  const ok = await sendContactMessage({ name, email, message, loc: input.locale === 'ru' ? 'ru' : 'de' });
+  const ok = await sendContactMessage({ name, email, message });
   return ok ? { ok: true } : { ok: false, reason: 'send' };
 }

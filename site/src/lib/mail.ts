@@ -152,7 +152,7 @@ export async function sendBookingConfirmationToClient(b: BookingMail) {
 }
 
 /** Письмо в практику: новая запись с сайта (по-русски, как админка). */
-export async function sendNewBookingToAdmin(b: BookingMail, loc: Loc) {
+export async function sendNewBookingToAdmin(b: BookingMail) {
   const service = serviceTitle(b.serviceSlug, 'ru');
   const when = `${fmtDate(b.date, 'ru')}, ${b.time}`;
   const rows: [string, string][] = [
@@ -161,7 +161,6 @@ export async function sendNewBookingToAdmin(b: BookingMail, loc: Loc) {
     ['Клиент', esc(b.clientName)],
     ['E-mail', b.clientEmail ? `<a href="mailto:${esc(b.clientEmail)}" style="color:${GOLD}">${esc(b.clientEmail)}</a>` : '—'],
     ['Телефон', b.clientPhone ? `<a href="tel:${esc(b.clientPhone.replace(/\s/g, ''))}" style="color:${GOLD}">${esc(b.clientPhone)}</a>` : '—'],
-    ['Язык сайта', loc === 'de' ? 'Немецкий' : 'Русский'],
     ['Комментарий', b.clientNotes ? esc(b.clientNotes).replace(/\n/g, '<br>') : '—'],
   ];
   const body =
@@ -180,11 +179,10 @@ export async function sendNewBookingToAdmin(b: BookingMail, loc: Loc) {
 
 // ---------- 2. Контактная форма ----------
 
-export async function sendContactMessage(m: { name: string; email: string; message: string; loc: Loc }) {
+export async function sendContactMessage(m: { name: string; email: string; message: string }) {
   const rows: [string, string][] = [
     ['Имя', esc(m.name)],
     ['E-mail', `<a href="mailto:${esc(m.email)}" style="color:${GOLD}">${esc(m.email)}</a>`],
-    ['Язык сайта', m.loc === 'de' ? 'Немецкий' : 'Русский'],
   ];
   const body =
     h('Сообщение с сайта') +
@@ -195,7 +193,7 @@ export async function sendContactMessage(m: { name: string; email: string; messa
     to: ADMIN_TO,
     subject: oneLine(`Сообщение с сайта — ${m.name}`),
     html: layout({ preheader: m.message.slice(0, 90), title: 'Сообщение с сайта', bodyHtml: body, loc: 'ru' }),
-    text: `Имя: ${m.name}\nE-mail: ${m.email}\nЯзык: ${m.loc}\n\n${m.message}`,
+    text: `Имя: ${m.name}\nE-mail: ${m.email}\n\n${m.message}`,
     replyTo: m.email,
   });
 }
