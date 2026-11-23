@@ -1,6 +1,12 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/* Шрифты: файлы подключены в layout.tsx через @fontsource (без загрузки с Google) */
+:root {
+  --font-bodoni: 'Cormorant';
+  --font-inter: 'Inter';
+}
+
 /* Gold token — static metallic reflection, no animation */
 :root {
   --gold-gradient: linear-gradient(

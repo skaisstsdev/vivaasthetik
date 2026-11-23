@@ -10,7 +10,6 @@ import BookingModal from '@/components/booking/BookingModal';
 import { Suspense } from 'react';
 import InfoModal from '@/components/home/InfoModal';
 import { Metadata } from 'next';
-import { Cormorant, Inter } from 'next/font/google';
 
 import CookieBanner from '@/components/layout/CookieBanner';
 import ChatWidget from '@/components/chat/ChatWidget';
@@ -19,23 +18,15 @@ import JsonLd from '@/components/seo/JsonLd';
 import Analytics from '@/components/analytics/Analytics';
 import { SITE_URL, OG_IMAGE, type Loc } from '@/lib/seo';
 import { siteGraph } from '@/lib/schema';
+// Шрифты лежат в проекте (пакеты @fontsource), с Google при сборке и на сайте не загружаются.
+// Cormorant: 300 (все заголовки) и 500 (заголовки с font-medium). Inter: основной текст.
+import '@fontsource/cormorant/300.css';
+import '@fontsource/cormorant/500.css';
+import '@fontsource/inter/300.css';
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter/600.css';
 import '@/app/globals.css';
-
-const cormorant = Cormorant({
-  subsets: ['latin', 'cyrillic'],
-  // 300 — все заголовки, 500 — заголовки с font-medium. 400 и курсив не используются.
-  weight: ['300', '500'],
-  style: ['normal'],
-  variable: '--font-bodoni',
-  display: 'swap',
-});
-
-const inter = Inter({
-  subsets: ['latin', 'cyrillic'],
-  weight: ['300', '400', '500', '600'],
-  variable: '--font-inter',
-  display: 'swap',
-});
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({locale}));
@@ -98,7 +89,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`${cormorant.variable} ${inter.variable}`}>
+    <html lang={locale}>
       <body>
         <JsonLd data={siteGraph(locale as Loc)} />
         <NextIntlClientProvider messages={messages} locale={locale}>
