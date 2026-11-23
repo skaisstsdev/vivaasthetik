@@ -36,6 +36,16 @@ function textResponse(text: string, status = 200) {
   });
 }
 
+// Подсказка модели: язык последнего сообщения (кириллицу определяем точно, латиницу оставляем модели)
+function detectLang(text: string): string | undefined {
+  if (/[іїєґІЇЄҐ]/.test(text)) return 'Ukrainian';
+  if (/[а-яё]/i.test(text)) return 'Russian';
+  const de = /\b(ich|wie|was|kann|ist|nicht|und|der|die|das|ein|eine|bitte|sie|können|wann|wo|ob|für|mit|gibt|haben|möchte|welche)\b|[äöüß]/i.test(text);
+  const en = /\b(can|the|is|are|do|does|how|what|when|where|my|your|you|i|pay|card|price|cost|much|book|appointment|hello|hi)\b/i.test(text);
+  if (en && !de) return 'English';
+  return undefined;
+}
+
 function clientIp(req: Request): string {
   const fwd = req.headers.get('x-forwarded-for');
   return (fwd ? fwd.split(',')[0] : req.headers.get('x-real-ip') || 'unknown').trim();
@@ -107,9 +117,10 @@ export async function POST(req: Request) {
     .join(' ');
   const context = retrieveContext(recentUserText, loc);
   const instructions =
-    buildSystemPrompt(loc) +
+    buildSystemPrompt(loc, detectLang(last.content)) +
     '\n\n# SITE CONTEXT (excerpts from the website for the current question)\n' +
-    (context || '(no specific page matched; use the facts above)');
+    (context || '(no specific page matched; use the facts above)') +
+    `\n\nFINAL REMINDER: the context above is in ${loc === 'de' ? 'German' : 'Russian'}, but you must write your reply in ${detectLang(last.content) ?? "the language of the user's last message"}. Translate the facts.`;
 
   try {
     const stream = await client.responses.create({

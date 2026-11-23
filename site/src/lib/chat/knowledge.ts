@@ -26,9 +26,9 @@ const norm = (s: string) => s.toLowerCase().replace(/ё/g, 'е');
 
 // Слова-запросы, по которым бот находит услугу. Корень слова достаточно, поиск идёт по вхождению.
 const SYNONYMS: Record<string, string[]> = {
-  botox: ['botox', 'botulin', 'ботокс', 'ботулин', 'морщин', 'falten', 'mimik', 'schweiß', 'hyperhidrose', 'мигрен', 'migräne', 'потлив'],
-  faltenunterspritzung: ['filler', 'hyaluron', 'филлер', 'гиалурон', 'faltenunterspritzung', 'unterspritz', 'объем', 'объём', 'volumen', 'скул', 'jochbein', 'kinn', 'подбород'],
-  lippenkorrektur: ['lippe', 'lippen', 'губ', 'lips'],
+  botox: ['botox', 'botoks', 'botulin', 'ботокс', 'ботулин', 'морщин', 'falten', 'mimik', 'schweiß', 'hyperhidrose', 'мигрен', 'migräne', 'потлив'],
+  faltenunterspritzung: ['filler', 'філер', 'wrinkle filler', 'hyaluron', 'филлер', 'гиалурон', 'faltenunterspritzung', 'unterspritz', 'объем', 'объём', 'volumen', 'скул', 'jochbein', 'kinn', 'подбород'],
+  lippenkorrektur: ['lip ', 'lips', 'губи', 'dudak', 'lippe', 'lippen', 'губ', 'lips'],
   biorevitalisierung: ['biorevital', 'биоревитал', 'увлажнен', 'hydration', 'skinbooster'],
   mesotherapie: ['mesother', 'мезотер', 'мезо', 'коктейл'],
   vampirlifting: ['vampir', 'prp', 'вампир', 'плазмолифтинг', 'eigenblut', 'плазм'],
@@ -171,11 +171,29 @@ function relevantFaq(query: string, loc: Loc, max = 4): string[] {
     .map((x) => `Q: ${x.it.q[loc]}\nA: ${stripHtml(x.it.a[loc]).slice(0, 1800)}`);
 }
 
+function quickFacts(loc: Loc): string {
+  const labels = BOOKING_LABELS[loc];
+  return servicesData
+    .map((svc) => {
+      const lines = [`### ${svc.title[loc]} (slug: ${svc.slug})`, priceLine(svc.slug, loc)];
+      if (svc.bookingDetails) {
+        for (const k of ['duration', 'pain', 'anesthesia', 'onset', 'durationOfEffect', 'restrictions'] as const) {
+          const v = svc.bookingDetails[k]?.[loc];
+          if (v) lines.push(`${labels[k]}: ${v}`);
+        }
+      }
+      return lines.filter(Boolean).join('\n');
+    })
+    .join('\n\n');
+}
+
 /** Контекст из сайта под конкретный вопрос: подходящие услуги и пункты FAQ. */
 export function retrieveContext(query: string, loc: Loc): string {
   const svcs = relevantServices(query);
   const faq = relevantFaq(query, loc);
   const out: string[] = [];
+  // Ни одна услуга не распознана (например, вопрос на другом языке): даём краткие факты по всем
+  if (!svcs.length) out.push('## QUICK FACTS FOR ALL TREATMENTS (source of truth)\n' + quickFacts(loc));
   if (svcs.length) out.push('## SERVICE PAGES (source of truth)\n' + svcs.map((s) => serviceDoc(s, loc)).join('\n\n'));
   if (faq.length) out.push('## FAQ ENTRIES\n' + faq.join('\n\n'));
   return out.join('\n\n');

@@ -98,7 +98,7 @@ export default function GoogleReviews({ loc }: { loc: Loc }) {
           <div
             key={copy}
             aria-hidden={copy === 1 ? true : undefined}
-            className={`flex gap-12 w-max flex-shrink-0 items-start animate-marquee ${openId ? 'is-paused' : ''}`}
+            className={`flex gap-12 w-max flex-shrink-0 items-start animate-marquee`}
           >
             {items.map((r) => {
               const text = r.text[loc];
